@@ -1,5 +1,5 @@
 /**********************************/
-/* General Style for the homePage */
+/**********General Style***********/
 /**********************************/
 @font-face {
     font-family: 'Gotham Pro';
@@ -12,44 +12,57 @@
     font-weight: normal;
     font-style: normal;
 }
-
 body {
     margin: 0;
-    background-color: rgb(243, 243, 243);
-    /* background-color: rgba(0, 0, 0, 0.50); */
+    background-color: rgb(255, 255, 255);
 }
-#mainWrapper {
-    background-color: rgb(243, 243, 243);
+.mainWrapper {
+    background-color: rgb(255, 255, 255);
     border-radius: 20px;
-    height: 99.9vh;
+    height: 100vh;
     margin: auto;
     width: 65%;
     padding: 35px;
+    font-family: 'Gotham Pro';
+}
+.neonBlue {
+    /* background-color: rgb(123, 147, 255); */
+    box-shadow:
+        inset 50px 0 100px rgb(0, 153, 255),
+        inset -50px 0 100px rgb(251, 255, 0);
+}
+.neonYellow {
+    /* background-color: rgb(253, 255, 123); */
+    box-shadow:
+        inset 60px 0 120px rgb(251, 255, 0),
+        inset -60px 0 120px rgb(132, 0, 255);
+}
+
+
+/************ Styling for homeView ************/
+.homePage {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     color: white;
-    font-family: 'Gotham Pro';
 }
 
-#banner {
-    background-color: rgb(37, 37, 37);
+#banner, #mainContent, #nav {
+    background-color: rgb(206, 206, 206);
+    box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
     border-radius: 20px;
+}
+#banner {
     height: 15%;
 }
 #logo {
     border-radius: 20px;
 }
-
 #mainContent {
-    background-color: rgb(37, 37, 37);
     height: 60%;
-    border-radius: 20px;
 }
 
 #nav {
-    background-color: rgb(37, 37, 37);
-    border-radius: 20px;
     height: 15%;
 }
 ul {
@@ -73,17 +86,10 @@ ul li {
     text-align: center;
     font-size: 0.9em;
 }
-
-ul li:first-child {
-    background-color: rgb(123, 147, 255);
-}
-
-ul li:nth-child(2) {
-    background-color: rgb(253, 255, 123);
-}
-
 ul li>img {
     height: 60%;
     width: 50%;
 }
 
+
+/************ Styling for landingView ************/
