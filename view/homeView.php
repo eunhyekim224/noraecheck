@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>noraecheck</title>
-	    <link rel="stylesheet" href="../public/css/style.css"/> 
+	    <link rel="stylesheet" href="public/css/style.css"/> 
     </head> 
     <body>
         <div id="mainWrapper">
@@ -12,25 +12,27 @@
                 Banner Picture
             </header>
             <section id="mainContent">
-                My List
+                <?php include('myListView.php'); ?>
             </section>
             <nav id="nav">
-                <ul>
+                <ul id="menuIcons">
                     <li>
-                        <img src="../public/images/search.png"/>
+                        <img src="public/images/search.png"/>
                         <div>Search</div>
                     </li>
                     <li>
-                        <img src="../public/images/profile.png"/>
+                        <img src="public/images/profile.png"/>
                         <div>Profile</div>
                     </li>
                     <li>
-                        <img src="../public/images/challenge.png"/>
+                        <img src="public/images/challenge.png"/>
                         <div>Challenge</div>
                     </li>
-                    <li>
-                        <img src="../public/images/songList.png"/>
-                        <div>My List</div>
+                    <li id="myListIcon">    
+                        <a href="index.php?action=showMyList" title="Go to my list">
+                            <img src="public/images/songList.png"/>
+                            <p>My List</p>
+                        </a>
                     </li>
                 </ul>
             </nav>
