@@ -18,9 +18,8 @@
             ));
             if (!$status) {
                 throw new PDOException('Impossible to add the member!');
-            } 
+            }
         } 
-
         public function getMember($username, $password) {
             $db = $this->dbConnect();
             $members = $db->prepare('SELECT username, password FROM comments WHERE username = :username AND password = :password');
