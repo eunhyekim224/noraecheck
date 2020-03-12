@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        
+        <title>Title of the page</title>
+        <style>
+            #fileContent {
+                display: flex;
+            }
+            .day{
+                border: 1px solid lightblue;
+                margin:2%;
+                min-width: 5%;
+                min-height: 5%;
+
+            }
+        </style>
+    </head>
+    
+    <body>
+        <body>
+            <div class="searchDiv">
+                <!-- div with label form and submit button -->
+                <label for="categories">Search by: </label>
+                <select name="categories" id="categories">
+                    <option value="song">Song</option>
+                    <option value="singer">Artist</option>
+                    <option value="no">Song Code</option>
+                  </select>
+                <input type="text" name="searchedWords" id="searchedWords" size="50" maxlength="50" required/>
+                
+                <input type="button" value="submit" id="submit"; />
+            </div>
+            <div id="searchResultsDiv">
+
+            </div>
+    
+            <!-- divs that will display the weather results -->
+            
+   
+        <script src="songApi.js"></script>
+    </body>
+</html>
