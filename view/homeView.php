@@ -10,9 +10,7 @@
         Banner Picture
     </header>
     <section id="mainContent">
-    <?php include("myListView.php");
-    echo "test";
-    echo __DIR__;?>
+    <?php include("myListView.php");?>
         <!-- add divs with the list of songs from js function -->
     </section>   
     <nav id="nav">

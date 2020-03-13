@@ -22,7 +22,7 @@ li {
 }
 
 .mainWrapper {
-    background-color: rgb(243, 243, 243);
+    /* background-color: rgb(243, 243, 243); */
     border-radius: 20px;
     height: 99.9vh;
     margin: auto;
@@ -156,4 +156,8 @@ li {
     font-size: 0.9em;
 }
 
-
+/* Mobile Management */
+@media all and (max-device-width: 480px)
+{
+    
+}
