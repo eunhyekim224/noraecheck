@@ -159,5 +159,10 @@ li {
 /* Mobile Management */
 @media all and (max-device-width: 480px)
 {
-    
+    #banner {
+        background-color: white;
+        box-shadow: 0 0 0 rgb(255, 255, 255);
+        border-radius: 0;
+        border: 1px solid red;
+    }
 }
