@@ -6,7 +6,7 @@
     use \Wcoding\Noraecheck\Model\PlaylistManager;
 
     function showLandingPage() {
-        header();
+        require("view/landingView.php");
     }
     
     function signUp($email, $username, $password) {
@@ -22,7 +22,9 @@
     }
 
     function showAllPlaylists($memberId) {
-        //getAllPlaylists
+        $playlistManager = new PlaylistManager;
+        $playlists = $playlistManager->getAllPlaylists($memberId);
+        require("view/homeView.php");
     }
 
     function showPlaylist($memberId, $name) {
