@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <title>noraecheck</title>
-	    <link rel="stylesheet" href="public/css/style.css"/> 
+        <link rel="stylesheet" href="public/css/style.css"/> 
+        <script src="https://kit.fontawesome.com/6254ef993b.js" crossorigin="anonymous"></script>
     </head> 
     <body>
         <div id="mainWrapper">
