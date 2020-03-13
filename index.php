@@ -1,7 +1,7 @@
 <?php
     require("./controller/controller.php");
     /**
-     * TODO: verify cookies, if cookies set, showAllPlaylists
+     * TODO: verify cookies, if cookies set, showAllPlaylists, if not showLandingPage
      */
 
     try {
@@ -13,7 +13,7 @@
                 throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
             }
         } else {
-            showLandingPage();
+            showAllPlaylists(1);
         }
     }
     catch(PDOException $e) {

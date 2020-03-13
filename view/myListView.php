@@ -7,7 +7,10 @@
         <div id="playlistInfo">
             <p><?= $playlist['playlistName'] ?></p>
             <p>by <?= $playlist['username'] ?></p>
-            <p><?= $playlist['playlistCreationDate'] ?></p> 
+            <p>
+                <?= $playlist['songCount'] ?>
+                <?= $playlist['playlistCreationDate'] ?>
+            </p>
         </div>
     </li>
 <?php } ?>
