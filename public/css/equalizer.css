@@ -1,0 +1,569 @@
+#eqWrapper{
+    width:60%;
+    height:30vh;
+    margin:auto;
+    display:flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    background-color: grey;
+}
+
+.eqBar{
+    height:5%;
+    width:5%;
+    background-color: azure;
+}
+
+#eqBar1{
+    animation: bar1Animation 10s infinite;
+}
+#eqBar2{
+    animation: bar2Animation 10s infinite;
+}
+#eqBar3{
+    animation: bar3Animation 10s infinite;
+}
+#eqBar4{
+    animation: bar4Animation 10s infinite;
+}
+#eqBar5{
+    animation: bar5Animation 10s infinite;
+}
+#eqBar6{
+    animation: bar6Animation 10s infinite;
+}
+#eqBar7{
+    animation: bar7Animation 10s infinite;
+}
+#eqBar8{
+    animation: bar8Animation 10s infinite;
+}
+#eqBar9{
+    animation: bar9Animation 10s infinite;
+}
+#eqBar10{
+    animation: bar10Animation .5s infinite;
+}
+#eqBar11{
+    animation: bar11Animation .05s ease-in-out infinite;
+}
+#eqBar12{
+    animation: bar12Animation 10s infinite;
+}
+
+
+@keyframes bar1Animation {
+    0%{
+        height:0%;
+    }
+    10%{
+        height:0%;
+    }
+    20% {
+        height:0%;
+
+    }
+    30% {
+        height:0%;
+
+    }
+    40% {
+        height:0%;
+
+    }
+    50% {
+        height:0%;
+
+    }
+    60% {
+        height:0%;
+
+    }
+    70% {
+        height:0%;
+
+    }
+    80% {
+        height:0%;
+
+    }
+    90% {
+        height:0%;
+
+    }
+    100% {
+        height:0%;
+
+    }
+}
+
+@keyframes bar2Animation {
+    0%{
+        height:0%;
+    }
+    10%{
+        height:0%;
+    }
+    20% {
+        height:0%;
+
+    }
+    30% {
+        height:0%;
+
+    }
+    40% {
+        height:0%;
+
+    }
+    50% {
+        height:0%;
+
+    }
+    60% {
+        height:0%;
+
+    }
+    70% {
+        height:0%;
+
+    }
+    80% {
+        height:0%;
+
+    }
+    90% {
+        height:0%;
+
+    }
+    100% {
+        height:0%;
+
+    }
+}
+
+@keyframes bar3Animation {
+    0%{
+        height:0%;
+    }
+    10%{
+        height:0%;
+    }
+    20% {
+        height:0%;
+
+    }
+    30% {
+        height:0%;
+
+    }
+    40% {
+        height:0%;
+
+    }
+    50% {
+        height:0%;
+
+    }
+    60% {
+        height:0%;
+
+    }
+    70% {
+        height:0%;
+
+    }
+    80% {
+        height:0%;
+
+    }
+    90% {
+        height:0%;
+
+    }
+    100% {
+        height:0%;
+
+    }
+}
+
+@keyframes bar4Animation {
+    0%{
+        height:0%;
+    }
+    10%{
+        height:0%;
+    }
+    20% {
+        height:0%;
+
+    }
+    30% {
+        height:0%;
+
+    }
+    40% {
+        height:0%;
+
+    }
+    50% {
+        height:0%;
+
+    }
+    60% {
+        height:0%;
+
+    }
+    70% {
+        height:0%;
+
+    }
+    80% {
+        height:0%;
+
+    }
+    90% {
+        height:0%;
+
+    }
+    100% {
+        height:0%;
+
+    }
+}
+
+
+@keyframes bar5Animation {
+    0%{
+        height:0%;
+    }
+    10%{
+        height:0%;
+    }
+    20% {
+        height:0%;
+
+    }
+    30% {
+        height:0%;
+
+    }
+    40% {
+        height:0%;
+
+    }
+    50% {
+        height:0%;
+
+    }
+    60% {
+        height:0%;
+
+    }
+    70% {
+        height:0%;
+
+    }
+    80% {
+        height:0%;
+
+    }
+    90% {
+        height:0%;
+
+    }
+    100% {
+        height:0%;
+
+    }
+}
+
+
+@keyframes bar6Animation {
+    0%{
+        height:0%;
+    }
+    10%{
+        height:0%;
+    }
+    20% {
+        height:0%;
+
+    }
+    30% {
+        height:0%;
+
+    }
+    40% {
+        height:0%;
+
+    }
+    50% {
+        height:0%;
+
+    }
+    60% {
+        height:0%;
+
+    }
+    70% {
+        height:0%;
+
+    }
+    80% {
+        height:0%;
+
+    }
+    90% {
+        height:0%;
+
+    }
+    100% {
+        height:0%;
+
+    }
+}
+
+
+@keyframes bar7Animation {
+    0%{
+        height:0%;
+    }
+    10%{
+        height:0%;
+    }
+    20% {
+        height:0%;
+
+    }
+    30% {
+        height:0%;
+
+    }
+    40% {
+        height:0%;
+
+    }
+    50% {
+        height:0%;
+
+    }
+    60% {
+        height:0%;
+
+    }
+    70% {
+        height:0%;
+
+    }
+    80% {
+        height:0%;
+
+    }
+    90% {
+        height:0%;
+
+    }
+    100% {
+        height:0%;
+
+    }
+}
+
+
+@keyframes bar8Animation {
+    0%{
+        height:0%;
+    }
+    10%{
+        height:0%;
+    }
+    20% {
+        height:0%;
+
+    }
+    30% {
+        height:0%;
+
+    }
+    40% {
+        height:0%;
+
+    }
+    50% {
+        height:0%;
+
+    }
+    60% {
+        height:0%;
+
+    }
+    70% {
+        height:0%;
+
+    }
+    80% {
+        height:0%;
+
+    }
+    90% {
+        height:0%;
+
+    }
+    100% {
+        height:0%;
+
+    }
+}
+
+@keyframes bar9Animation {
+    0%{
+        height:0%;
+    }
+    10%{
+        height:0%;
+    }
+    20% {
+        height:0%;
+
+    }
+    30% {
+        height:0%;
+
+    }
+    40% {
+        height:0%;
+
+    }
+    50% {
+        height:0%;
+
+    }
+    60% {
+        height:0%;
+
+    }
+    70% {
+        height:0%;
+
+    }
+    80% {
+        height:0%;
+
+    }
+    90% {
+        height:0%;
+
+    }
+    100% {
+        height:0%;
+
+    }
+}
+
+
+@keyframes bar10Animation {
+    0%{
+        height:50%;
+    }
+    10%{
+        height:90%;
+    }
+   
+    100% {
+        height:30%;
+
+    }
+    
+}
+
+@keyframes bar11Animation {
+    0%{
+        height:0%;
+    }
+    10%{
+        height:0%;
+    }
+    20% {
+        height:0%;
+
+    }
+    30% {
+        height:0%;
+
+    }
+    40% {
+        height:0%;
+
+    }
+    50% {
+        height:0%;
+
+    }
+    60% {
+        height:0%;
+
+    }
+    70% {
+        height:0%;
+
+    }
+    80% {
+        height:0%;
+
+    }
+    90% {
+        height:0%;
+
+    }
+    100% {
+        height:0%;
+
+    }
+}
+
+@keyframes bar12Animation {
+    0%{
+        height:0%;
+    }
+    10%{
+        height:0%;
+    }
+    20% {
+        height:0%;
+
+    }
+    30% {
+        height:0%;
+
+    }
+    40% {
+        height:0%;
+
+    }
+    50% {
+        height:0%;
+
+    }
+    60% {
+        height:0%;
+
+    }
+    70% {
+        height:0%;
+
+    }
+    80% {
+        height:0%;
+
+    }
+    90% {
+        height:0%;
+
+    }
+    100% {
+        height:0%;
+
+    }
+}
+

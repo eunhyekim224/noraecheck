@@ -17,46 +17,50 @@ function loadFile(entry,category){//function takes inputs from these two variabl
             //the array we'll return
             let arrayToReturn = [];
             
-            //go through the response and 
+            
             for (let i = 0,c = obj.length; i < c; i++){
                 if(obj[i].brand === 'tj'){
                     let nameAndTitle = obj[i].singer + obj[i].title;
+                    nameAndTitle = nameAndTitle.toLowerCase().replace(/ /g,'');
                     tjCodeMap.set(nameAndTitle,obj[i].no);
                 }else if(obj[i].brand === 'kumyoung'){
                     let nameAndTitle = obj[i].singer + obj[i].title;
+                    nameAndTitle = nameAndTitle.toLowerCase().replace(/ /g,'');
                     kumyoungCodeMap.set(nameAndTitle,obj[i].no);
                 }
         
             }
             for (let i = 0,c = obj.length; i < c; i++){
-                if(tjCodeMap.has(obj[i].singer + obj[i].title) && kumyoungCodeMap.has(obj[i].singer + obj[i].title)){
+                let songKey = obj[i].singer + obj[i].title;
+                songKey = songKey.toLowerCase().replace(/ /g,'');
+                if(tjCodeMap.has(songKey) && kumyoungCodeMap.has(songKey)){
                     let songEntry = {
                         singer: obj[i].singer,
                         song: obj[i].title,
-                        tj_code: tjCodeMap.get(obj[i].singer + obj[i].title),
-                        kumyoung_code: kumyoungCodeMap.get(obj[i].singer + obj[i].title)
+                        tj_code: tjCodeMap.get(songKey),
+                        kumyoung_code: kumyoungCodeMap.get(songKey)
                     };
                     arrayToReturn.push(songEntry);
-                    tjCodeMap.delete(obj[i].singer + obj[i].title);
-                    kumyoungCodeMap.delete(obj[i].singer + obj[i].title);
+                    tjCodeMap.delete(songKey);
+                    kumyoungCodeMap.delete(songKey);
                     
-                } else if(tjCodeMap.has(obj[i].singer + obj[i].title)){
+                } else if(tjCodeMap.has(songKey)){
                     let songEntry = {
                         singer: obj[i].singer,
                         song: obj[i].title,
-                        tj_code: tjCodeMap.get(obj[i].singer + obj[i].title)
+                        tj_code: tjCodeMap.get(songKey)
                     };
                     arrayToReturn.push(songEntry);
-                    tjCodeMap.delete(obj[i].singer + obj[i].title);
+                    tjCodeMap.delete(songKey);
                     
-                } else if(kumyoungCodeMap.has(obj[i].singer + obj[i].title)){
+                } else if(kumyoungCodeMap.has(songKey)){
                     let songEntry = {
                         singer: obj[i].singer,
                         song: obj[i].title,
-                        kumyoung_code: kumyoungCodeMap.get(obj[i].singer + obj[i].title)
+                        kumyoung_code: kumyoungCodeMap.get(songKey)
                     };
                     arrayToReturn.push(songEntry);
-                    kumyoungCodeMap.delete(obj[i].singer + obj[i].title);
+                    kumyoungCodeMap.delete(songKey);
                     
                 }
         
