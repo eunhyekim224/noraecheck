@@ -8,7 +8,7 @@
         <div class="brandName kr">노래책</div>
     </div>
     <div id="equalizer">
-        <!-- include equalizer here -->
+        <?php include('equalizer.php');?>
     </div>
     <div id="accountBtns">
         <div id="signIn" class="neonBlue">Sign in</div>
