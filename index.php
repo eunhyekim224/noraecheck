@@ -21,14 +21,14 @@
         $code = $e->getCode();
         $line = $e->getLine();
         $file = $e->getFile();
-        require('./view/errorViewPDO.php');
+        require('./view/errorPDO.php');
     }
     catch(Exception $e) {
         $msg = $e->getMessage();
         $code = $e->getCode();
         $line = $e->getLine();
         $file = $e->getFile();
-        require('./view/errorView.php');
+        require('./view/error.php');
     }
     
 
