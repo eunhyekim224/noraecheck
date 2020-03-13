@@ -1,0 +1,95 @@
+/**********************************/
+/**********General Style***********/
+/**********************************/
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url(../fonts/GothamPro.eot);
+    src: url('GothamPro.eot?#iefix') format('embedded-opentype'),
+        url(../fonts/GothamPro.woff) format('woff'),
+        url(../fonts/GothamPro.ttf) format('truetype'),
+        url(../fonts/GothamPro.svg) format('svg'),
+        url(../fonts/GothaPro.otf) format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
+.mainWrapper {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    height: 100vh;
+    margin: auto;
+    width: 65%;
+    padding: 35px;
+    font-family: 'Gotham Pro';
+}
+.neonBlue {
+    /* background-color: rgb(123, 147, 255); */
+    box-shadow:
+        inset 50px 0 100px rgb(0, 153, 255),
+        inset -50px 0 100px rgb(251, 255, 0);
+}
+.neonYellow {
+    /* background-color: rgb(253, 255, 123); */
+    box-shadow:
+        inset 60px 0 120px rgb(251, 255, 0),
+        inset -60px 0 120px rgb(132, 0, 255);
+}
+
+
+/************ Styling for homeView ************/
+.homePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+#banner, #mainContent, #nav {
+    background-color: rgb(206, 206, 206);
+    box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
+    border-radius: 20px;
+}
+#banner {
+    height: 15%;
+}
+#logo {
+    border-radius: 20px;
+}
+#mainContent {
+    height: 60%;
+}
+
+#nav {
+    height: 15%;
+}
+ul {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+}
+ul li {
+    align-items: baseline;
+    width: 10%;
+    height: 50%;
+    padding: 3px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    font-size: 0.9em;
+}
+ul li>img {
+    height: 60%;
+    width: 50%;
+}
+
+
+/************ Styling for landingView ************/
