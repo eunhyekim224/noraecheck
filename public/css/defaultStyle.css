@@ -16,8 +16,18 @@ body {
     margin: 0;
     background-color: rgb(255, 255, 255);
 }
+<<<<<<< HEAD:public/css/defaultStyle.css
 .mainWrapper {
     background-color: rgb(255, 255, 255);
+=======
+
+li {
+    list-style-type: none;
+}
+
+#mainWrapper {
+    background-color: rgb(243, 243, 243);
+>>>>>>> dae684854599808b4cd5fc8d91118b6ccfcf6f28:public/css/style.css
     border-radius: 20px;
     height: 100vh;
     margin: auto;
@@ -65,7 +75,7 @@ body {
 #nav {
     height: 15%;
 }
-ul {
+#menuIcons {
     /* border: 1px solid red; */
     margin: 0;
     padding: 0;
@@ -76,7 +86,7 @@ ul {
     align-items: center;
     color: black;
 }
-ul li {
+#menuIcons li {
     align-items: baseline;
     width: 10%;
     height: 50%;
@@ -86,10 +96,78 @@ ul li {
     text-align: center;
     font-size: 0.9em;
 }
+<<<<<<< HEAD:public/css/defaultStyle.css
 ul li>img {
+=======
+
+#menuIcons li:first-child {
+    background-color: rgb(123, 147, 255);
+}
+
+#menuIcons li:nth-child(2) {
+    background-color: rgb(253, 255, 123);
+}
+
+#menuIcons li>img {
+>>>>>>> dae684854599808b4cd5fc8d91118b6ccfcf6f28:public/css/style.css
     height: 60%;
     width: 50%;
 }
 
+<<<<<<< HEAD:public/css/defaultStyle.css
 
 /************ Styling for landingView ************/
+=======
+#menuIcons a {
+    text-decoration: none;
+    color: black
+}
+
+#myListIcon img {
+    max-width: 100%;
+    max-height: 66%;
+}
+
+#menuIcons li p {
+    margin-top: 0;
+}
+
+#playlistImg {
+    max-width: 100%;
+    max-height: 66%;
+}
+
+#mainContent h1 {
+    padding-left: 5%;
+}
+
+/* LIST VIEW */
+
+#myList {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+#myList li {
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+    height: 20%;
+}
+
+#myList img {
+    max-height: 100%;
+    background-color: white;
+    margin-right: 3%;
+    padding: 0.5%;
+}
+
+#playlistInfo {
+    margin-top: -2%;
+    font-size: 0.9em;
+}
+
+
+>>>>>>> dae684854599808b4cd5fc8d91118b6ccfcf6f28:public/css/style.css

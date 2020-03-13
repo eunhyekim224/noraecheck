@@ -14,7 +14,7 @@
             $status = $addMember->execute(array(
                 'email' => htmlspecialchars($email),
                 'username' => htmlspecialchars($username),
-                'password' =>  password_hash(htmlspecialchars($password, PASSWORD_DEFAULT)
+                'password' =>  password_hash(htmlspecialchars($password, PASSWORD_DEFAULT))
             ));
             if (!$status) {
                 throw new PDOException('Impossible to add the member!');
