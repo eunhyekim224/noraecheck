@@ -7,6 +7,7 @@
         <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gamja+Flower&display=swap"/> -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua&display=swap"/> 
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
     </head> 
     <body>
         <?= $content?>
