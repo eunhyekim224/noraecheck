@@ -13,25 +13,28 @@
         <!-- add divs with the list of songs from js function -->
     </section>
     <nav id="nav">
-        <ul>
+        <ul id="menuIcons">
             <li class="neonBlue">
                 <img src="../public/images/search.png"/>
-                <div>Search</div>
+                <p>Search</p>
             </li>
             <li class="neonBlue">
                 <img src="../public/images/profile.png"/>
-                <div>Profile</div>
+                <p>Profile</p>
             </li>
             <li class="neonBlue">
                 <img src="../public/images/challenge.png"/>
-                <div>Challenge</div>
+                <p>Challenge</p>
             </li>
-            <li class="neonBlue">
-                <img src="../public/images/songList.png"/>
-                <div>My List</div>
+            <li id="myListIcon" class="neonBlue">
+                <a href="index.php?action=showMyList" title="Go to my list">
+                    <img src="../public/images/songList.png"/>
+                    <p>My List</p>
+                </a>
             </li>
         </ul>
     </nav>
 </div>
 <?php $content = ob_get_clean();?>
 <?php require('defaultTemplate.php');?>
+

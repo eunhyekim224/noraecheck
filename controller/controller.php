@@ -22,7 +22,9 @@
     }
 
     function showAllPlaylists($memberId) {
-        //getAllPlaylists
+        $playlistManager = new PlaylistManager;
+        $playlists = $playlistManager->getAllPlaylists($memberId);
+        require("view/homeView.php");
     }
 
     function showPlaylist($memberId, $name) {
