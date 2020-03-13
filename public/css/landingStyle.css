@@ -102,8 +102,7 @@ body {
     margin:auto;
     display:flex;
     align-items: flex-end;
-    justify-content: space-evenly;
-    
+    justify-content: space-evenly;   
 }
 
 .eqBar{
@@ -150,9 +149,7 @@ body {
 }
 
 
-
 /* Animations */
-
 
 @keyframes fade1 {
     0% {opacity: 1;}
@@ -162,6 +159,7 @@ body {
     80% {opacity: 1;}
     100% {opacity: 1;}
 }
+
 @keyframes fade2 {
     0% {opacity: 0;}
     20% {opacity: 1;}
@@ -170,7 +168,6 @@ body {
     80% {opacity: 0;}
     100% {opacity: 0;}
 }
-
 
 @keyframes bar1Animation {
     0%{
@@ -184,53 +181,39 @@ body {
     }
     19% {
         height:30%;
-
     }
     20% {
         height:60%;
-
     }
     24% {
         height:50%;
-
     }
     25% {
         height:70%;
-
-    }
-    
+    }   
     39% {
         height:30%;
-
     }
     40% {
         height:60%;
-
     }
     64% {
         height:30%;
-
     }
     65% {
         height:60%;
-
     }
     79% {
         height:50%;
-
     }
     80% {
         height:60%;
-
     }
     85% {
         height:60%;
-
-    }
-    
+    }    
     99% {
         height:30%;
-
     }
 }
 
@@ -246,53 +229,39 @@ body {
     }
     19% {
         height:25%;
-
     }
     20% {
         height:70%;
-
     }
     24% {
         height:30%;
-
     }
     24% {
         height:65%;
-
-    }
-    
+    }    
     39% {
         height:35%;
-
     }
     40% {
         height:70%;
-
     }
     64% {
         height:35%;
-
     }
     65% {
         height:70%;
-
     }
     79% {
         height:50%;
-
     }
     80% {
         height:70%;
-
     }
     85% {
         height:60%;
-
-    }
-    
+    }   
     99% {
         height:30%;
-
     }
 }
 
@@ -308,48 +277,35 @@ body {
     }
     19% {
         height:45%;
-
     }
     20% {
         height:80%;
-
-    }
-    
+    }    
     39% {
         height:40%;
-
     }
     40% {
         height:85%;
-
     }
     64% {
         height:50%;
-
     }
     65% {
         height:80%;
-
     }
     79% {
         height:60%;
-
     }
     80% {
         height:80%;
-
     }
     85% {
         height:90%;
-
-    }
-    
+    }    
     99% {
         height:30%;
-
     }
 }
-
 
 @keyframes bar4Animation {
     0%{
@@ -363,47 +319,36 @@ body {
     }
     19% {
         height:50%;
-
     }
     20% {
         height:90%;
-
-    }
-    
+    }    
     39% {
         height:35%;
-
     }
     40% {
         height:90%;
-
     }
     64% {
         height:35%;
-
     }
     65% {
         height:90%;
-
     }
     79% {
         height:70%;
-
     }
     80% {
         height:90%;
-
     }
     85% {
         height:60%;
-
-    }
-    
+    }    
     99% {
         height:40%;
-
     }
 }
+
 @keyframes bar5Animation {
     0%{
         height:75%;
@@ -416,73 +361,53 @@ body {
     }
     19% {
         height:45%;
-
     }
     20% {
         height:75%;
-
-    }
-    
+    }    
     39% {
         height:45%;
-
     }
     40% {
         height:60%;
-
     }
     49% {
         height:35%;
-
     }
     50% {
         height:45%;
-
     }
     59% {
         height:30%;
-
     }
     60% {
         height:45%;
-
     }
     64% {
         height:35%;
-
     }
     65% {
         height:70%;
-
     }
     69% {
         height:35%;
-
     }
     70% {
         height:50%;
-
     }
     79% {
         height:40%;
-
     }
     80% {
         height:70%;
-
     }
     85% {
         height:55%;
-
-    }
-    
+    }    
     99% {
         height:30%;
-
     }
 }
-
-
 
 @keyframes bar6Animation {
     0%{
@@ -496,72 +421,53 @@ body {
     }
     19% {
         height:30%;
-
     }
     20% {
         height:60%;
-
-    }
-    
+    }   
     39% {
         height:35%;
-
     }
     40% {
         height:60%;
-
     }
     49% {
         height:35%;
-
     }
     50% {
         height:50%;
-
     }
     59% {
         height:30%;
-
     }
     60% {
         height:50%;
-
     }
     64% {
         height:35%;
-
     }
     65% {
         height:60%;
-
     }
     69% {
         height:30%;
-
     }
     70% {
         height:60%;
-
     }
     79% {
         height:40%;
-
     }
     80% {
         height:90%;
-
     }
     85% {
         height:60%;
-
-    }
-    
+    }    
     99% {
         height:40%;
-
     }
 }
-
 
 @keyframes bar7Animation {
     0%{
@@ -578,67 +484,53 @@ body {
     }
     20% {
         height:65%;
-
     }
     29%{
         height:40%;
     }
     30% {
         height:55%;
-
     }
     39%{
         height:40%;
     }
     40% {
         height:55%;
-
     }
     49%{
         height:60%;
     }
     50% {
         height:75%;
-
     }
     59%{
         height:60%;
     }
     60% {
         height:65%;
-
     }
     69% {
         height:40%;
-
     }
     70% {
         height:55%;
-
     }
     79% {
         height:40%;
-
     }
     80% {
         height:55%;
-
     }
     89% {
         height:40%;
-
     }
     90% {
         height:65%;
-
     }
     99% {
         height:30%;
-
-    }
-    
+    }   
 }
-
 
 @keyframes bar8Animation {
     0%{
@@ -655,67 +547,53 @@ body {
     }
     20% {
         height:65%;
-
     }
     29%{
         height:30%;
     }
     30% {
         height:65%;
-
     }
     39%{
         height:30%;
     }
     40% {
         height:65%;
-
     }
     49%{
         height:60%;
     }
     50% {
         height:75%;
-
     }
     59%{
         height:60%;
     }
     60% {
         height:75%;
-
     }
     69% {
         height:60%;
-
     }
     70% {
         height:65%;
-
     }
     79% {
         height:40%;
-
     }
     80% {
         height:65%;
-
     }
     89% {
         height:40%;
-
     }
     90% {
         height:65%;
-
     }
     99% {
         height:30%;
-
-    }
-    
+    }  
 }
-
 
 @keyframes bar9Animation {
     0%{
@@ -732,67 +610,53 @@ body {
     }
     20% {
         height:75%;
-
     }
     29%{
         height:30%;
     }
     30% {
         height:75%;
-
     }
     39%{
         height:30%;
     }
     40% {
         height:65%;
-
     }
     49%{
         height:40%;
     }
     50% {
         height:75%;
-
     }
     59%{
         height:40%;
     }
     60% {
         height:75%;
-
     }
     69% {
         height:50%;
-
     }
     70% {
         height:75%;
-
     }
     79% {
         height:50%;
-
     }
     80% {
         height:75%;
-
     }
     89% {
         height:30%;
-
     }
     90% {
         height:75%;
-
     }
     99% {
         height:30%;
-
-    }
-    
+    }   
 }
-
 
 @keyframes bar10Animation {
     0%{
@@ -800,13 +664,10 @@ body {
     }
     10%{
         height:90%;
-    }
-   
+    }   
     100% {
         height:30%;
-
-    }
-    
+    }   
 }
 
 @keyframes bar11Animation {
@@ -815,35 +676,23 @@ body {
     }
     10%{
         height:60%;
-    }
-   
+    }  
     100% {
         height:15%;
-
-    }
-    
+    }   
 }
 
 @keyframes bar12Animation {
     0%{
         height:40%;
     }
-
     49%{
         height:20%;
     }
     50%{
         height:30%;
-    }
-    
-   
+    } 
     99% {
         height:15%;
-
-    }
-    
+    }  
 }
-
-
-
-
