@@ -18,7 +18,6 @@ body {
 }
 .mainWrapper {
     background-color: rgb(255, 255, 255);
-    border-radius: 20px;
     height: 100vh;
     margin: auto;
     width: 65%;
@@ -92,4 +91,4 @@ ul li>img {
 }
 
 
-/************ Styling for landingView ************/
+/************ Styling for signupView ************/

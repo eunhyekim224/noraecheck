@@ -6,7 +6,7 @@
     use \Wcoding\Noraecheck\Model\PlaylistManager;
 
     function showLandingPage() {
-        header();
+        // header();
     }
     
     function signUp($email, $username, $password) {
