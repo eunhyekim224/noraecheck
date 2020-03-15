@@ -7,7 +7,9 @@
     <?php include("homeBanner.php"); ?>
     
     <section id="mainContent">
-    <?php include("homeMyList.php");?>
+    <?php 
+    // include("homeMyList.php");
+    ?>
         <!-- add divs with the list of songs from js function -->
     </section>   
     <nav id="nav">
