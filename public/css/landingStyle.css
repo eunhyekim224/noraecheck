@@ -734,3 +734,12 @@ body {
         height: 15%;
     }
 }
+
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 100px) {
+    body {
+        background-color: blue;
+    }
+}
