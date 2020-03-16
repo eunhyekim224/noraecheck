@@ -1,5 +1,3 @@
-
-            
 <div class='eqBar'id="eqBar1"></div>
 <div class='eqBar'id="eqBar2"></div>
 <div class='eqBar'id="eqBar3"></div>

@@ -108,10 +108,17 @@ body {
     justify-content: space-evenly;
 }
 
+<<<<<<< HEAD
 .eqBar {
     height: 5%;
     width: 5%;
     background-color: azure;
+=======
+.eqBar{
+    height:5%;
+    width:5%;
+    background-color: white;
+>>>>>>> 310c37dadf6596cd653d07457ddcfbf8dd91adf7
 }
 
 #eqBar1 {
@@ -166,6 +173,7 @@ body {
 /* Animations */
 
 @keyframes fade1 {
+<<<<<<< HEAD
     0% {
         opacity: 1;
     }
@@ -205,6 +213,23 @@ body {
     100% {
         opacity: 0;
     }
+=======
+    0% {opacity: 1;}
+    20% {opacity: 1;}
+    40% {opacity: 0;}
+    60% {opacity: 0;}
+    80% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fade2 {
+    0% {opacity: 0;}
+    20% {opacity: 0;}
+    40% {opacity: 1;}
+    60% {opacity: 1;}
+    80% {opacity: 1;}
+    100% {opacity: 0;}
+>>>>>>> 310c37dadf6596cd653d07457ddcfbf8dd91adf7
 }
 
 @keyframes bar1Animation {
