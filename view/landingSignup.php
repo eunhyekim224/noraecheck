@@ -1,5 +1,5 @@
 <?php $title = 'noraecheck - Create account';?>
-<?php $style = 'defaultStyle.css';?>
+<?php $style = 'style.css';?>
 
 <?php ob_start();?>
 
@@ -53,4 +53,4 @@
     </form>
 </div>
 <?php $content = ob_get_clean();?>
-<?php require('defaultTemplate.php');?>
+<?php require('template.php');?>
