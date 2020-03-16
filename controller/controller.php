@@ -59,7 +59,7 @@
         //addPlaylist
     }
 
-    function showAllPlaylists($memberId) {
+    function showAllPlaylists($username) {
         $playlistManager = new PlaylistManager;
         $playlists = $playlistManager->getAllPlaylists($username);
         require("view/home.php");

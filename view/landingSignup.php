@@ -24,8 +24,6 @@
         echo '<p class="error">please enter a valid email address</p> ';
     }
 
-
-
         ?>
     <form method="POST" action="index.php">
         <p>
