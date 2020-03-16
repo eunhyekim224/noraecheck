@@ -8,6 +8,8 @@
         if (isset($_REQUEST['action'])) {
             $action = $_REQUEST['action'];
             if ($action === 'showMyList') {
+                $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
+                showAllPlaylists($memberId); 
                 showAllPlaylists(1); //$_SESSION['memberId']
             } else {
                 throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
