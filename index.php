@@ -13,7 +13,9 @@
                 throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
             }
         } else {
-            showLandingPage();
+            $error = isset($_GET['error']) ? $_GET['error'] : '';
+            $status = isset($_GET['success']) ? $_GET['success'] : '';
+            showLandingPage($error,$status);
         }
     }
     catch(PDOException $e) {
