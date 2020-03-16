@@ -13,24 +13,26 @@
             $status = $addMember->execute(array(
                 'email' => htmlspecialchars($email),
                 'username' => htmlspecialchars($username),
-                'password' =>  password_hash(htmlspecialchars($password, PASSWORD_DEFAULT))
+                'password' =>  password_hash(htmlspecialchars($password), PASSWORD_DEFAULT)
             ));
             if (!$status) {
                 throw new PDOException('Impossible to add the member!');
             }
-        } 
-        public function getMember($username, $password) {
+            
+        } //this wasn't working because password entered didn't match password hash. now it only selects where the passwords line up and then evaluates password in the controller
+        public function getMember($username) {
             $db = $this->dbConnect();
-            $members = $db->prepare('SELECT username, password FROM comments WHERE username = :username AND password = :password');
+            $members = $db->prepare("SELECT username, password FROM members WHERE username = :username");
             $resp = $members->execute(array(
-                'username' => $username,
-                'password' => $password
+                'username' => $username
             ));
             if(!$resp) {
                 throw new PDOException('Invalid username or password!');
             }
-            return $members;
+            $memFetch = $members->fetch();
+            return $memFetch;
         }
+        
 
 
     }

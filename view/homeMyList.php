@@ -3,7 +3,7 @@
 <ul id="myList">
 <?php while ($playlist = $playlists->fetch()) { ?>
     <li>
-        <img src="public/images/mic.png" id="playListImg">
+        <img src="public/images/mic.png" class="playListImg">
         <div id="playlistInfo">
             <p><?= $playlist['playlistName']; ?></p>
             <p>by <?= $playlist['username']; ?></p>
