@@ -87,6 +87,8 @@ body {
     font-size: 1.1em;
     margin: 0 0 10px 0;
     text-transform: uppercase;
+    color:black;
+    text-decoration: none;
 }
 
 #brandBlock {
@@ -94,7 +96,9 @@ body {
     color: white;
 }
 
-
+#loginForm{
+    display:none;
+}
 
 #eqWrapper{
     width:60%;
@@ -148,6 +152,7 @@ body {
 #eqBar12{
     animation: bar12Animation 1s ease-in-out infinite;
 }
+
 
 
 
