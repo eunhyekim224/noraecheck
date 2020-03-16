@@ -8,10 +8,21 @@
 ?>
 <div class="mainWrapper homePage">
     <!-- include banner php file instead of header tag -->
-    <?php include("homeBanner.php"); ?>
+    <div id='search'>
+        <div id="searchOptions">
+            <div class="searchOption" id="song"><span>song</span></div>
+            <div class="searchOption" id="singer"><span>artist</span></div>
+            <div class="searchOption" id="code"><span>code</span></div>
+        </div>
+        <input type="text" name="entry" id="entry" size="30" maxlength="50" required/>
+        <input type="hidden" name="category" id="category" value="song">
+        <button type="button"  id="submit"><img src="public/images/search.png"/></button>
+    </div>
+    <script src="./public/js/searchBarDisplay.js"></script>
+    
     
     <section id="mainContent">
-    <?php include("homeMyList.php");?>
+    
         <!-- add divs with the list of songs from js function -->
     </section>   
     <nav id="nav">
@@ -43,6 +54,7 @@
         </ul>
     </nav>
 </div>
+<script src="./public/js/songApi.js"></script>
 <?php $content = ob_get_clean();?>
 <?php require('template.php');?>
 
