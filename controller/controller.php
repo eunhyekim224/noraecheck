@@ -7,7 +7,7 @@
     use \Wcoding\Noraecheck\Model\PlaylistManager;
 
     function showLandingPage($error,$status) {
-        require("view/landingView.php");
+        require("view/landing.php");
     }
     
     function signUp($email, $username, $password, $passwordConf,$error) {
@@ -29,7 +29,7 @@
                 header('Location: index.php?action=register&error=logOld');
             }
         } else {
-            require("view/signupView.php");
+            require("view/landingSignup.php");
         }  
     }
 
@@ -44,15 +44,15 @@
                         header('Location: index.php?action=showMyList');
                 } else {
                     $error = 'passError';
-                    require("view/landingView.php");
+                    require("view/landing.php");
                 }
             } else {
                 $error = 'logError';
-                require("view/landingView.php");
+                require("view/landing.php");
             }
         }else{
             $error = 'missingField';
-            require("view/landingView.php");
+            require("view/landing.php");
         }
     }
 
@@ -63,7 +63,7 @@
     function showAllPlaylists($username) {
         $playlistManager = new PlaylistManager;
         $playlists = $playlistManager->getAllPlaylists($username);
-        require("view/homeView.php");
+        require("view/home.php");
     }
 
     function showPlaylist($memberId, $name) {
