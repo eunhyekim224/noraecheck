@@ -252,9 +252,11 @@ li {
 /* Mobile Management */
 
 @media all and (max-device-width: 480px) {
+    body {
+        background-color: rgb(243, 243, 243);
+    }
     .mainWrapper {
-        /* background-color: rgb(243, 243, 243); */
-        border-radius: 20px;
+        border-radius: 0;
         height: 100vh;
         margin: auto;
         width: auto;
@@ -264,9 +266,9 @@ li {
     }
 
     #banner {
-        background-color: white;
-        box-shadow: 0 0 0 rgb(255, 255, 255);
-        border-radius: 0;
+        background-color: rgb(206, 206, 206);
+        box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
+        border-radius: 20px;
         height: 15%;
         position: absolute;
         top: 0;
@@ -277,16 +279,18 @@ li {
     }
     #bannerImage {
         margin: 0;
+        padding: 0 0 0 ;
     }
     #bannerImage img {
         width: 100%;
         height: 100%;
+        padding-left: 150%;
     }
 
     #mainContent {
         height: 70%;
         position: absolute;
-        top: 16.5%;
+        top: 17.5%;
         width: 100%;
     }
     #mainContent h1 {
@@ -312,7 +316,7 @@ li {
         height: 10%;
         width: 100%;
         position: fixed;
-        top: 90%
+        top: 89%
     }
     #nav li p {
         display: none;
