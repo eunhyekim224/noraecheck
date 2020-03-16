@@ -10,7 +10,7 @@ session_start();
             $action = $_REQUEST['action'];
             if ($action === 'showMyList') {
                 $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
-                showAllPlaylists($memberId); 
+                showAllPlaylists($username); 
             } else if ($action === 'register') {
                 $username = isset($_POST['loginNew']) ? $_POST['loginNew'] : '';
                 $pass1 = isset($_POST['pwd']) ? $_POST['pwd'] : '';
@@ -24,6 +24,10 @@ session_start();
                 $error = isset($_GET['error']) ? $_GET['error'] : '';
                 $status = isset($_GET['success']) ? $_GET['success'] : '';
                 logIn($username,$password,$error,$status);
+                
+            } else if ($action === 'search'){
+                $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
+                search($username);
                 
             } else {
                 throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
