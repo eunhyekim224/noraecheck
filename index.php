@@ -13,7 +13,8 @@
                 throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
             }
         } else {
-            showLandingPage();
+            // showLandingPage();
+            require('view/landingSignup.php');
         }
     }
     catch(PDOException $e) {
