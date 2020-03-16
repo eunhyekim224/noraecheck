@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+            
+>>>>>>> 78254015effa1a17b3fa76d6d2ab31c77139662e
 <div class='eqBar'id="eqBar1"></div>
 <div class='eqBar'id="eqBar2"></div>
 <div class='eqBar'id="eqBar3"></div>

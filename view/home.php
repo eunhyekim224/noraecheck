@@ -12,6 +12,7 @@
     </section>   
     <nav id="nav">
         <ul id="menuIcons">
+<<<<<<< HEAD
             <li id="myListIcon" class="neonBlue">
                 <a href="index.php?action=showMyList" title="Go to my list">
                     <img src="public/images/songList.png"/>
@@ -34,6 +35,24 @@
                 <a href="#" title="Go to search">
                     <img src="public/images/search.png"/>
                     <p>Search</p>
+=======
+            <li class="neonBlue">
+                <img src="public/images/search.png"/>
+                <p>Search</p>
+            </li>
+            <li class="neonBlue">
+                <img src="public/images/profile.png"/>
+                <p>Profile</p>
+            </li>
+            <li class="neonBlue">
+                <img src="public/images/challenge.png"/>
+                <p>Challenge</p>
+            </li>
+            <li id="myListIcon" class="neonBlue">
+                <a href="index.php?action=showMyList" title="Go to my list">
+                    <img src="public/images/songList.png"/>
+                    <p>My List</p>
+>>>>>>> 78254015effa1a17b3fa76d6d2ab31c77139662e
                 </a>
             </li>
         </ul>
