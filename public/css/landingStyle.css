@@ -1,0 +1,698 @@
+/**********************************/
+/**********General Style***********/
+/**********************************/
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url(../fonts/GothamPro.eot);
+    src: url('GothamPro.eot?#iefix') format('embedded-opentype'),
+        url(../fonts/GothamPro.woff) format('woff'),
+        url(../fonts/GothamPro.ttf) format('truetype'),
+        url(../fonts/GothamPro.svg) format('svg'),
+        url(../fonts/GothaPro.otf) format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    margin: 0;
+    background-color: rgb(206, 206, 206);
+}
+.neonBlue {
+    /* background-color: rgb(123, 147, 255); */
+    box-shadow:
+        inset 50px 0 100px rgb(0, 153, 255),
+        inset -50px 0 100px rgb(251, 255, 0);
+}
+.neonYellow {
+    /* background-color: rgb(253, 255, 123); */
+    box-shadow:
+        inset 60px 0 120px rgb(251, 255, 0),
+        inset -60px 0 120px rgb(132, 0, 255);
+}
+
+#landingWrapper {
+    height: 100vh;
+    margin: auto;
+    width: 65%;
+    padding: 35px;
+    text-align: center;
+    font-family: 'Gotham Pro';
+}
+
+#brandBlock {
+    position: relative;
+    color: white;
+    height: 20%;
+    /* border: 1px solid red; */
+}
+.brandName {
+    font-size: 5em;
+    font-family: "Jua";
+}
+.en {
+    position: absolute;
+    top:20%;
+    left: 30%;
+    animation: fade1 10s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.kr {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    opacity: 0;
+    animation: fade2 10s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+#equalizer {
+    height: 25%;
+    width:45%;
+    margin-left: AUTO;
+    margin-RIGHT: AUTO;
+    margin-bottom:15%;
+    margin-top: 5%;
+    display:flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+#accountBtns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#signIn, #createAccount {
+    width: 25%;
+    height: 20%;
+    padding: 14px 0;
+    border-radius: 10px;
+    background-color: white;
+    vertical-align: middle;
+    font-size: 1.1em;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+#eqWrapper{
+    width:60%;
+    height:30vh;
+    margin:auto;
+    display:flex;
+    align-items: flex-end;
+    justify-content: space-evenly;   
+}
+
+.eqBar{
+    height:5%;
+    width:5%;
+    background-color: azure;
+}
+
+#eqBar1{
+    animation: bar1Animation 10s ease-in-out infinite;
+}
+#eqBar2{
+    animation: bar2Animation 10s ease-in-out infinite;
+}
+#eqBar3{
+    animation: bar3Animation 10s ease-in-out infinite;
+}
+#eqBar4{
+    animation: bar4Animation 10s ease-in-out infinite;
+}
+#eqBar5{
+    animation: bar5Animation 10s ease-in-out infinite;
+}
+#eqBar6{
+    animation: bar6Animation 10s ease-in-out infinite;
+}
+#eqBar7{
+    animation: bar7Animation 5s ease-in-out infinite;
+}
+#eqBar8{
+    animation: bar8Animation 7.5s ease-in-out infinite;
+}
+#eqBar9{
+    animation: bar9Animation 7.5s ease-in-out infinite;
+}
+#eqBar10{
+    animation: bar10Animation 1s ease-in-out infinite;
+}
+#eqBar11{
+    animation: bar11Animation 1s ease-in-out infinite;
+}
+#eqBar12{
+    animation: bar12Animation 1s ease-in-out infinite;
+}
+
+
+/* Animations */
+
+@keyframes fade1 {
+    0% {opacity: 1;}
+    20% {opacity: 0;}
+    40% {opacity: 0;}
+    60% {opacity: 1;}
+    80% {opacity: 1;}
+    100% {opacity: 1;}
+}
+
+@keyframes fade2 {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    40% {opacity: 1;}
+    60% {opacity: 0;}
+    80% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+@keyframes bar1Animation {
+    0%{
+        height:60%;
+    }
+    9%{
+        height:50%;
+    }
+    10%{
+        height:70%;
+    }
+    19% {
+        height:30%;
+    }
+    20% {
+        height:60%;
+    }
+    24% {
+        height:50%;
+    }
+    25% {
+        height:70%;
+    }   
+    39% {
+        height:30%;
+    }
+    40% {
+        height:60%;
+    }
+    64% {
+        height:30%;
+    }
+    65% {
+        height:60%;
+    }
+    79% {
+        height:50%;
+    }
+    80% {
+        height:60%;
+    }
+    85% {
+        height:60%;
+    }    
+    99% {
+        height:30%;
+    }
+}
+
+@keyframes bar2Animation {
+    0%{
+        height:70%;
+    }
+    9%{
+        height:50%;
+    }
+    10%{
+        height:70%;
+    }
+    19% {
+        height:25%;
+    }
+    20% {
+        height:70%;
+    }
+    24% {
+        height:30%;
+    }
+    24% {
+        height:65%;
+    }    
+    39% {
+        height:35%;
+    }
+    40% {
+        height:70%;
+    }
+    64% {
+        height:35%;
+    }
+    65% {
+        height:70%;
+    }
+    79% {
+        height:50%;
+    }
+    80% {
+        height:70%;
+    }
+    85% {
+        height:60%;
+    }   
+    99% {
+        height:30%;
+    }
+}
+
+@keyframes bar3Animation {
+    0%{
+        height:80%;
+    }
+    9%{
+        height:45%;
+    }
+    10%{
+        height:80%;
+    }
+    19% {
+        height:45%;
+    }
+    20% {
+        height:80%;
+    }    
+    39% {
+        height:40%;
+    }
+    40% {
+        height:85%;
+    }
+    64% {
+        height:50%;
+    }
+    65% {
+        height:80%;
+    }
+    79% {
+        height:60%;
+    }
+    80% {
+        height:80%;
+    }
+    85% {
+        height:90%;
+    }    
+    99% {
+        height:30%;
+    }
+}
+
+@keyframes bar4Animation {
+    0%{
+        height:90%;
+    }
+    9%{
+        height:50%;
+    }
+    10%{
+        height:90%;
+    }
+    19% {
+        height:50%;
+    }
+    20% {
+        height:90%;
+    }    
+    39% {
+        height:35%;
+    }
+    40% {
+        height:90%;
+    }
+    64% {
+        height:35%;
+    }
+    65% {
+        height:90%;
+    }
+    79% {
+        height:70%;
+    }
+    80% {
+        height:90%;
+    }
+    85% {
+        height:60%;
+    }    
+    99% {
+        height:40%;
+    }
+}
+
+@keyframes bar5Animation {
+    0%{
+        height:75%;
+    }
+    9%{
+        height:45%;
+    }
+    10%{
+        height:75%;
+    }
+    19% {
+        height:45%;
+    }
+    20% {
+        height:75%;
+    }    
+    39% {
+        height:45%;
+    }
+    40% {
+        height:60%;
+    }
+    49% {
+        height:35%;
+    }
+    50% {
+        height:45%;
+    }
+    59% {
+        height:30%;
+    }
+    60% {
+        height:45%;
+    }
+    64% {
+        height:35%;
+    }
+    65% {
+        height:70%;
+    }
+    69% {
+        height:35%;
+    }
+    70% {
+        height:50%;
+    }
+    79% {
+        height:40%;
+    }
+    80% {
+        height:70%;
+    }
+    85% {
+        height:55%;
+    }    
+    99% {
+        height:30%;
+    }
+}
+
+@keyframes bar6Animation {
+    0%{
+        height:60%;
+    }
+    9%{
+        height:40%;
+    }
+    10%{
+        height:60%;
+    }
+    19% {
+        height:30%;
+    }
+    20% {
+        height:60%;
+    }   
+    39% {
+        height:35%;
+    }
+    40% {
+        height:60%;
+    }
+    49% {
+        height:35%;
+    }
+    50% {
+        height:50%;
+    }
+    59% {
+        height:30%;
+    }
+    60% {
+        height:50%;
+    }
+    64% {
+        height:35%;
+    }
+    65% {
+        height:60%;
+    }
+    69% {
+        height:30%;
+    }
+    70% {
+        height:60%;
+    }
+    79% {
+        height:40%;
+    }
+    80% {
+        height:90%;
+    }
+    85% {
+        height:60%;
+    }    
+    99% {
+        height:40%;
+    }
+}
+
+@keyframes bar7Animation {
+    0%{
+        height:55%;
+    }
+    9%{
+        height:30%;
+    }
+    10%{
+        height:55%;
+    }
+    19%{
+        height:30%;
+    }
+    20% {
+        height:65%;
+    }
+    29%{
+        height:40%;
+    }
+    30% {
+        height:55%;
+    }
+    39%{
+        height:40%;
+    }
+    40% {
+        height:55%;
+    }
+    49%{
+        height:60%;
+    }
+    50% {
+        height:75%;
+    }
+    59%{
+        height:60%;
+    }
+    60% {
+        height:65%;
+    }
+    69% {
+        height:40%;
+    }
+    70% {
+        height:55%;
+    }
+    79% {
+        height:40%;
+    }
+    80% {
+        height:55%;
+    }
+    89% {
+        height:40%;
+    }
+    90% {
+        height:65%;
+    }
+    99% {
+        height:30%;
+    }   
+}
+
+@keyframes bar8Animation {
+    0%{
+        height:65%;
+    }
+    9%{
+        height:30%;
+    }
+    10%{
+        height:65%;
+    }
+    19%{
+        height:30%;
+    }
+    20% {
+        height:65%;
+    }
+    29%{
+        height:30%;
+    }
+    30% {
+        height:65%;
+    }
+    39%{
+        height:30%;
+    }
+    40% {
+        height:65%;
+    }
+    49%{
+        height:60%;
+    }
+    50% {
+        height:75%;
+    }
+    59%{
+        height:60%;
+    }
+    60% {
+        height:75%;
+    }
+    69% {
+        height:60%;
+    }
+    70% {
+        height:65%;
+    }
+    79% {
+        height:40%;
+    }
+    80% {
+        height:65%;
+    }
+    89% {
+        height:40%;
+    }
+    90% {
+        height:65%;
+    }
+    99% {
+        height:30%;
+    }  
+}
+
+@keyframes bar9Animation {
+    0%{
+        height:75%;
+    }
+    9%{
+        height:30%;
+    }
+    10%{
+        height:75%;
+    }
+    19%{
+        height:30%;
+    }
+    20% {
+        height:75%;
+    }
+    29%{
+        height:30%;
+    }
+    30% {
+        height:75%;
+    }
+    39%{
+        height:30%;
+    }
+    40% {
+        height:65%;
+    }
+    49%{
+        height:40%;
+    }
+    50% {
+        height:75%;
+    }
+    59%{
+        height:40%;
+    }
+    60% {
+        height:75%;
+    }
+    69% {
+        height:50%;
+    }
+    70% {
+        height:75%;
+    }
+    79% {
+        height:50%;
+    }
+    80% {
+        height:75%;
+    }
+    89% {
+        height:30%;
+    }
+    90% {
+        height:75%;
+    }
+    99% {
+        height:30%;
+    }   
+}
+
+@keyframes bar10Animation {
+    0%{
+        height:50%;
+    }
+    10%{
+        height:90%;
+    }   
+    100% {
+        height:30%;
+    }   
+}
+
+@keyframes bar11Animation {
+    0%{
+        height:20%;
+    }
+    10%{
+        height:60%;
+    }  
+    100% {
+        height:15%;
+    }   
+}
+
+@keyframes bar12Animation {
+    0%{
+        height:40%;
+    }
+    49%{
+        height:20%;
+    }
+    50%{
+        height:30%;
+    } 
+    99% {
+        height:15%;
+    }  
+}
