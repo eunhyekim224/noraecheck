@@ -129,7 +129,6 @@ li {
     padding-left: 5%;
 }
 
-
 /* LIST VIEW */
 
 #myList {
@@ -151,6 +150,7 @@ li {
     background-color: white;
     margin-right: 3%;
     padding: 0.5%;
+    border-radius: 10px;
 }
 
 #playlistInfo {
