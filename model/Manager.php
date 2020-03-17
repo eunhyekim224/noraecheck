@@ -1,5 +1,4 @@
 <?php
-    namespace Wcoding\Noraecheck\Model;
 
     class Manager { 
         protected function dbConnect() {

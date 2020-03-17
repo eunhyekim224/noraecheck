@@ -1,9 +1,14 @@
 <h1>my playlists</h1> 
 <!-- $_SESSION['username']-->
 <ul id="myList">
+<li id="createImg">
+    <input type="image" name="newPlaylist" id="newPlaylist" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg">
+    <p>Create a new playlist</p>
+    <?php include('newPlaylistModal.php'); ?>
+</li>
 <?php while ($playlist = $playlists->fetch()) { ?>
     <li>
-        <img src="public/images/mic.png" class="playListImg">
+        <img src="public/images/mic.png" id="playListImg">
         <div id="playlistInfo">
             <p><?= $playlist['playlistName']; ?></p>
             <p>by <?= $playlist['username']; ?></p>
@@ -17,3 +22,4 @@
     </li>
 <?php } ?>
 </ul>
+<script src="./public/js/modal.js"></script>
