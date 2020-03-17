@@ -4,63 +4,75 @@ let searchOptionIndex = 'song';
 let song = document.getElementById('song');
 let singer = document.getElementById('singer');
 let code = document.getElementById('code');
-let entry = document.getElementById('entry');
-let submit = document.getElementById('submit');
-let category = document.getElementById('category');
+
 
 function switchOptions(index){
+    let entry = document.getElementById('entry');
+    let category = document.getElementById('category');
+
+    song.classList.remove("searchOptionExpanded");
+    singer.classList.remove("searchOptionExpanded");
+    code.classList.remove("searchOptionExpanded");
+    song.classList.remove("searchOptionSelected");
+    singer.classList.remove("searchOptionSelected");
+    code.classList.remove("searchOptionSelected");
+
     switch(index){
         case 'song':
-            song.style.display="flex";
-            song.style.alignItems="center";
-            song.style.borderTopLeftRadius="15px";
-            song.style.borderBottomLeftRadius="15px";
-            singer.style.display="none";
-            code.style.display="none";
-            entry.style.display="block";
-            submit.style.display="block";
+            singer.classList.add("hidden");
+            code.classList.add("hidden");
+            entry.style.width='80%';
+            searchOptions.style.width='10%';
             category.value="song";
             break;
         case 'singer':
-            song.style.display="none";
-            singer.style.display="flex";
-            singer.style.alignItems="center";
-            singer.style.borderTopLeftRadius="15px";
-            singer.style.borderBottomLeftRadius="15px";
-            code.style.display="none";
-            entry.style.display="block";
-            submit.style.display="block";
+            singer.classList.remove("hidden");
+            song.classList.add("hidden");
+            code.classList.add("hidden");
+            
+            entry.style.width='80%';
+            searchOptions.style.width='10%';
+
             category.value="singer";
+           
             break;
         case 'code':
-            song.style.display="none";
-            singer.style.display="none";
-            code.style.display="flex";
-            code.style.alignItems="center";
-            code.style.borderTopLeftRadius="15px";
-            code.style.borderBottomLeftRadius="15px";
-            code.style.borderTopRightRadius="0px";
-            code.style.borderBottomRightRadius="0px";
-            entry.style.display="block";
-            submit.style.display="block";
+            song.classList.add("hidden");
+            singer.classList.add("hidden");
+            
+            entry.style.width='80%';
+            searchOptions.style.width='10%';
+
             category.value="code";
+           
+            
             break;
         case 'all':
-            song.style.display="flex";
-            singer.style.display="flex";
-            singer.style.borderTopLeftRadius="0px";
-            singer.style.borderBottomLeftRadius="0px";
-            code.style.display="flex";
-            code.style.borderTopLeftRadius="0px";
-            code.style.borderBottomLeftRadius="0px";
-            song.style.borderTopLeftRadius="15px";
-            song.style.borderBottomLeftRadius="15px";
-            code.style.borderTopRightRadius="15px";
-            code.style.borderBottomRightRadius="15px";
-            entry.style.display="none";
-            submit.style.display="none";
+            // everything is displayed
+            singer.classList.remove("hidden");
+            code.classList.remove("hidden");
+            song.classList.remove("hidden");
+            // set the expanded style
+            song.classList.add("searchOptionExpanded");
+            singer.classList.add("searchOptionExpanded");
+            code.classList.add("searchOptionExpanded");
+
+            searchOptions.style.width='37%';
+            entry.style.width='65%';
+            switch (category.value){
+                case 'song':
+                    song.classList.add("searchOptionSelected");
+                    break;
+
+                case 'singer':
+                    singer.classList.add("searchOptionSelected");
+                     break;
+                case 'code':
+                    code.classList.add("searchOptionSelected");
+                    break;
+            }
+
             break;
-    
     }
 }
 
