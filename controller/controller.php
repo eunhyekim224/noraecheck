@@ -2,9 +2,6 @@
     
     require_once("./model/MemberManager.php");
     require_once("./model/PlaylistManager.php");
-    
-    use \Wcoding\Noraecheck\Model\MemberManager;
-    use \Wcoding\Noraecheck\Model\PlaylistManager;
 
     function showLandingPage($error,$status) {
         require("view/landing.php");
