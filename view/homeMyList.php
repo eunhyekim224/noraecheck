@@ -5,9 +5,14 @@
     <li>
         <img src="public/images/mic.png" class="playListImg">
         <div id="playlistInfo">
-            <p><?= $playlist['playlistName'] ?></p>
-            <p>by <?= $playlist['username'] ?></p>
-            <p><?= $playlist['playlistCreationDate'] ?></p> 
+            <p><?= $playlist['playlistName']; ?></p>
+            <p>by <?= $playlist['username']; ?></p>
+            <p>
+                <i class="fas fa-music" title="number of songs"></i>
+                <?= $playlist['songCount'];?>
+                <i class="far fa-calendar-alt" title="creation date"></i>
+                <?= $playlist['playlistCreationDate']; ?>
+            </p>
         </div>
     </li>
 <?php } ?>

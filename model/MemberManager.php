@@ -1,7 +1,5 @@
 <?php
-    namespace Wcoding\Noraecheck\Model;
-
-    require_once('./model/Manager.php');
+    require_once('model/Manager.php');
 
     /**
     * TODO: function to deleteMember (delete account)
