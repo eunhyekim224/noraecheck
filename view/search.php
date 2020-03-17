@@ -10,9 +10,9 @@
     <!-- include banner php file instead of header tag -->
     <div id='search'>
         <div id="searchOptions">
-            <div class="searchOption" id="song"><span>song</span></div>
-            <div class="searchOption" id="singer"><span>artist</span></div>
-            <div class="searchOption" id="code"><span>code</span></div>
+            <div class="searchOption" id="song" ><span>song</span></div>
+            <div class="searchOption hidden" id="singer"><span>artist</span></div>
+            <div class="searchOption hidden" id="code"><span>code</span></div>
         </div>
         <input type="text" name="entry" id="entry" size="30" maxlength="50" required/>
         <input type="hidden" name="category" id="category" value="song">

@@ -75,7 +75,7 @@ function loadFile(entry,category){//function takes inputs from these two variabl
             
         } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status !== 200 & xhr.status === 0){
 
-            alert('please enter something to look for \n\n Code:' + xhr.status + '\nText : ' + xhr.statusText);
+            alert('please enter something to search for \n\n Code:' + xhr.status + '\nText : ' + xhr.statusText);
             
         }
 
