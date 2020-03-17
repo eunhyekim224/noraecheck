@@ -745,10 +745,10 @@ body {
 }
 
 
-/* MEDIA QUERY */
+/* MEDIA QUERY march 16 */
 
-@media screen and (max-width: 100px) {
+@media all and (max-device-width: 480px) {
     body {
-        background-color: blue;
+        background-color: rgb(243, 243, 243);
     }
 }
