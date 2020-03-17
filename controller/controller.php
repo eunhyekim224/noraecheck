@@ -68,5 +68,11 @@
     function showPlaylist($memberId, $name) {
         //getPlaylist
     }
+    function search($username) {
+        $playlistManager = new PlaylistManager;
+        $playlists = $playlistManager->getAllPlaylists($username);
+        require("view/search.php");
+    }
+    
 
 
