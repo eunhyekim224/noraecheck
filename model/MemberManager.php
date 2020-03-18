@@ -1,5 +1,5 @@
 <?php
-   namespace Wcoding\Noraecheck\Model;
+//    namespace Wcoding\Noraecheck\Model;
    
     require_once('model/Manager.php');
 
