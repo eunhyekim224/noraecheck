@@ -11,7 +11,7 @@ session_start();
             $action = $_REQUEST['action'];
             if ($action === 'showMyList') {
                 $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
-                showAllPlaylists($memberId); 
+                showAllPlaylists(1); 
             } else if ($action === 'register') {
                 $username = isset($_POST['loginNew']) ? $_POST['loginNew'] : '';
                 $pass1 = isset($_POST['pwd']) ? $_POST['pwd'] : '';

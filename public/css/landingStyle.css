@@ -765,7 +765,6 @@
                 position: relative;
                 color: white;
                 height: 20%;
-                /* border: 1px solid red; */
             }
             .en {
                 position: absolute;
@@ -835,10 +834,4 @@
                 width: 5%;
                 background-color: white;
             }
-            /* #eqBar12 {
-                display: none;
-            }
-            #eqBar11 {
-                display: none;
-            } */
         }
