@@ -3,7 +3,7 @@
         <span class="close">&times;</span>
         <p>Name your playlist</p>
         <form method="post" action="index.php">
-            <input type="hidden" name="newPlaylist">
+            <input type="hidden" name="action" id="action" value="newPlaylist">
             <input type="text" name="playlistName">
             <div>
                 <input type="submit" name="create" value="CREATE">
