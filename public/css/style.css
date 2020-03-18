@@ -253,7 +253,8 @@ li {
 
 @media all and (max-device-width: 480px) {
     body {
-        background-color: rgb(243, 243, 243);
+        /* background-color: rgb(243, 243, 243); */
+        background-color: rgb(206, 206, 206);
     }
     .mainWrapper {
         border-radius: 0;
@@ -268,6 +269,7 @@ li {
     #banner {
         background-color: rgb(206, 206, 206);
         box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
+        /* box-shadow: -60px 0 120px rgb(206, 206, 206) inset; */
         border-radius: 20px;
         height: 15%;
         position: absolute;
@@ -292,6 +294,8 @@ li {
         position: absolute;
         top: 17.5%;
         width: 100%;
+        /* box-shadow: -60px 0 120px rgb(240, 240, 240) inset; */
+        box-shadow: -60px 0 120px rgb(206, 206, 206) inset;
     }
     #mainContent h1 {
         font-size: 6em;
