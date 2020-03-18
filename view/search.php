@@ -12,7 +12,7 @@
         <div id="searchOptions" class="searchOptions">
             <div class="searchOption" id="song" ><span>song</span></div>
             <div class="searchOption hidden" id="singer"><span>artist</span></div>
-            <div class="searchOption hidden" id="code"><span>code</span></div>
+            <div class="searchOption hidden" id="no"><span>code</span></div>
         </div>
         <input type="text" name="entry" class = "entry"id="entry" size="30" maxlength="50" required/>
         <input type="hidden" name="category" id="category" value="song">
@@ -21,9 +21,11 @@
     <script src="./public/js/searchBarDisplay.js"></script>
     
     
-    <section id="mainContent">
-    
+    <section id="results">
+        <h1>Results</h1>
+        <div id="searchResults">
         <!-- add divs with the list of songs from js function -->
+        </div>
     </section>   
     <nav id="nav">
         <ul id="menuIcons">
