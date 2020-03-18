@@ -9,8 +9,8 @@ try {
     if (isset($_REQUEST['action'])) {
         $action = $_REQUEST['action'];
         if ($action === 'showMyList') {
-            $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
-            showAllPlaylists(1); 
+            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            showAllPlaylists($memberId); 
         } else if ($action === 'register') {
             $username = isset($_POST['loginNew']) ? $_POST['loginNew'] : '';
             $pass1 = isset($_POST['pwd']) ? $_POST['pwd'] : '';
@@ -25,7 +25,7 @@ try {
             $status = isset($_GET['success']) ? $_GET['success'] : '';
             logIn($username,$password,$error,$status);
         } else if ($action === 'newPlaylist') {
-            if (isset($_SESSION['username']) && isset($_POST['playlistName']) && $_POST['playlistName'] !== '') {
+            if (isset($_SESSION['memberId']) && isset($_POST['playlistName']) && $_POST['playlistName'] !== '') {
                 makePlaylist($_SESSION['username'], $_POST['playlistName']);
             }
         } else if ($action === 'search') {

@@ -21,7 +21,7 @@
         } //this wasn't working because password entered didn't match password hash. now it only selects where the passwords line up and then evaluates password in the controller
         public function getMember($username) {
             $db = $this->dbConnect();
-            $members = $db->prepare("SELECT username, password FROM members WHERE username = :username");
+            $members = $db->prepare("SELECT id, username, password FROM members WHERE username = :username");
             $resp = $members->execute(array(
                 'username' => $username
             ));

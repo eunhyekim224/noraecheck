@@ -141,7 +141,7 @@ li {
 #myList li {
     display: flex;
     flex-direction: row;
-    padding: 3%;
+    padding: 2%;
     height: 20%;
 }
 
@@ -154,12 +154,16 @@ li {
 }
 
 #playlistInfo {
-    margin-top: -2%;
-    font-size: 0.9em;
+    margin-top: -15px;
 }
 
-#createImg input[type="image"] {
-    width: 10%;
+#createTxt {
+    display: flex;
+    align-items: center;
+}
+
+#createPlaylist input[type="image"] {
+    width: 10.6%;
     background-color: white;
     border-radius: 10px;
     margin-right: 3%;
@@ -180,29 +184,48 @@ li {
 }
   
 .modalContent {
-    background-color: #fefefe;
-    color: rgb(80, 79, 79);
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 30%; 
+    background-color: rgb(206, 206, 206);
+    box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
+    color: white;
+    margin: 15% auto;
+    padding: 1% 0px 3.5% 0px;
+    width: 35%;
+    height: 20%;
     text-align: center;
     border-radius: 10px;
-}
-  
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-  
-.close:hover, .close:focus {
-    color: rgb(151, 47, 47);
-    text-decoration: none;
-    cursor: pointer;
+    font-size: 1.7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+.modalButtons {
+    padding: 6% 0 4% 0;
+}
+
+.modalButtons input {
+    border: 0;
+    font-size: 0.8em;
+    padding: 2%;
+    border-radius: 10px;
+    width: 25%;
+    color: white;
+}
+
+.modalButtons input:hover, .modalButtons input:focus {
+    background: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100% );
+}
+
+.modalContent input[type="text"], 
+.modalContent input[type="text"]:focus {
+    border-radius: 10px;
+    width: 50%;
+    height: 34%;
+    border: none;
+    background-color: white;
+    outline: none;
+    color: black;
+}
 
 
 /* Scrollbar */
@@ -384,6 +407,7 @@ li {
     body {
         background-color: rgb(243, 243, 243);
     }
+
     .mainWrapper {
         border-radius: 0;
         height: 100vh;
@@ -403,13 +427,16 @@ li {
         top: 0;
         width: 100%;
     }
+
     #banner .word {
         display: none;
     }
+
     #bannerImage {
         margin: 0;
         padding: 0 0 0 ;
     }
+
     #bannerImage img {
         width: 100%;
         height: 100%;
@@ -422,13 +449,16 @@ li {
         top: 17.5%;
         width: 100%;
     }
+
     #mainContent h1 {
         font-size: 6em;
         margin: 30px 0 30px 0
     }
+
     #myList li {
         height: fit-content;
     }
+
     #myList img {
         height: 90%;
         width: 30%;
@@ -436,9 +466,36 @@ li {
         margin-right: 3%;
         padding: 0.5%;
     }
-    #playlistInfo {
+
+    #myList #createPlaylist {
+        padding-bottom: 0;
+    }
+
+    #createPlaylist input[type="image"] {  
+        height: 82%;
+        width: 30%;
+    }
+
+    #playlistInfo, #createTxt {
         margin-top: -2%;
         font-size: 2.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 6%;
+    }
+
+    #playlistInfo p {
+        margin-top: 0;
+    }
+
+    /* create playlist MODAL */
+
+    .modalContent {
+        width: 100%;
+        display: flex;
+        margin-top: 75%;
+        font-size: 3.5em;
     }
 
     #nav {

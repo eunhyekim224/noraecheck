@@ -33,11 +33,12 @@
     function logIn($username,$password,$error,$status) {
         $loginManager = new MemberManager;
         if($username AND $password){
-            $userInfo = $loginManager->getMember($username,$password);
+            $userInfo = $loginManager->getMember($username, $password);
             //getMember confirms userId, password is checked below
             if($userInfo){
-                if (password_verify($password,$userInfo['password'])){
+                if (password_verify($password, $userInfo['password'])){
                         $_SESSION['username'] = $userInfo['username'];
+                        $_SESSION['memberId'] = $userInfo['id'];
                         header('Location: index.php?action=showMyList');
                 } else {
                     $error = 'passError';
@@ -59,9 +60,9 @@
         require("view/home.php");
     }
 
-    function showAllPlaylists($username) {
+    function showAllPlaylists($memberId) {
         $playlistManager = new PlaylistManager;
-        $playlists = $playlistManager->getAllPlaylists($username);
+        $playlists = $playlistManager->getAllPlaylists($memberId);
         require("view/home.php");
     }
 
