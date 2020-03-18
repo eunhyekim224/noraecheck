@@ -46,4 +46,4 @@
 </div>
 <script src="./public/js/login.js"></script>
 <?php $content = ob_get_clean();?>
-<?php require('Template.php');?>
+<?php require('template.php');?>

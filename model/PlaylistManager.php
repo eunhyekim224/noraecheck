@@ -9,13 +9,12 @@
      */
 
     class PlaylistManager extends Manager {
-        public function addPlaylist($memberId, $name, $songs) {
+        public function addPlaylist($memberId, $name) {
             $db = $this->dbConnect();          
-            $addMember = $db->prepare("INSERT INTO playlists(memberId, name, songs) VALUES(:memberId, :name, :songs)");
+            $addMember = $db->prepare("INSERT INTO playlists(memberId, name) VALUES(:memberId, :name)");
             $status = $addMember->execute(array(
                 'memberId' => $memberId,
                 'name' => htmlspecialchars($name),
-                'songs' =>  $songs
             ));
             if (!$status) {
                 throw new PDOException('Unable to create the playlist!');

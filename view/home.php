@@ -3,7 +3,7 @@
 
 <?php ob_start();?>
 <?php if (!$_SESSION['username']){
-    header("location:index.php");
+    // header("location:index.php");
 }
 ?>
 <div class="mainWrapper homePage">
