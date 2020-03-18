@@ -94,6 +94,17 @@ body {
     font-size: 1.1em;
     margin: 0 0 10px 0;
     text-transform: uppercase;
+    color:black;
+    text-decoration: none;
+}
+
+#brandBlock {
+    position: relative;
+    color: white;
+}
+
+#loginForm{
+    display:none;
 }
 
 #eqWrapper{

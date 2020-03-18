@@ -2,6 +2,10 @@
 <?php $style = 'style.css';?>
 
 <?php ob_start();?>
+<?php if (!$_SESSION['username']){
+    // header("location:index.php");
+}
+?>
 <div class="mainWrapper homePage">
     <!-- include banner php file instead of header tag -->
     <?php include("homeBanner.php"); ?>
@@ -31,7 +35,7 @@
                 </a>
             </li>
             <li class="neonBlue">
-                <a href="#" title="Go to search">
+                <a href="index.php?action=search" title="Go to search">
                     <img src="public/images/search.png"/>
                     <p>Search</p>
                 </a>

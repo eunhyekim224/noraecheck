@@ -94,8 +94,8 @@ function loadFile(entry,category){//function takes inputs from these two variabl
 
 (function(){
     var submit = document.getElementById('submit');
-    var categories = document.getElementById('categories');
-    let input = document.getElementById('searchInput');
+    var categories = document.getElementById('category');
+    let input = document.getElementById('entry');
 
     // submit.addEventListener('click', function() {
     //     loadFile(input.value,categories.value);   
