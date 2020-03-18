@@ -236,15 +236,22 @@ li {
     -webkit-text-fill-color: transparent;
 }
 
+
+/*----------- search page style -----------------*/
+
 #search{
     padding:1%;
     display:flex;
     width:98%;
 }
-#searchOptions{
+.searchOptions{
     color:black;
     display:flex;
     width:10%
+}
+
+.searchOptionsExpanded{
+    width:37%;
 }
 
 .searchOption{
@@ -284,12 +291,12 @@ li {
 }
 
 
-#submit,#entry,#searchOptions{
+#submit,#entry,.searchOptions{
     height:65%;
     margin:0%
 }
 
-#entry{
+.entry{
     width:80%;
     border: none;
     padding-top:0px;
@@ -297,6 +304,10 @@ li {
     padding-left: 10px;
     font-size: 8vh;
     /* justify-self: right; */
+}
+
+.compactEntry{
+    width:65%;
 }
 #entry:focus{
     outline:none;
@@ -328,6 +339,70 @@ li {
 }
 
 /**********landingSignup Style***********/
+
+.signupPage{
+    background-color: rgb(206, 206, 206);
+
+}
+
+#registrationContent{
+    padding:5%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+#kakaoLogin img{
+    height: 10%;
+    width: 10%
+}
+
+#registrationContent form{
+    width:50%;
+    
+}
+
+#registrationContent p,#kakaoLogin{
+    display:flex;
+    justify-content:justify;
+    align-content: center;
+    background-color: rgb(228, 225, 225);
+    padding:3%;
+    border-radius: 20px;
+    
+    
+}
+
+#kakaoLogin{
+    background-color: rgb(251, 255, 0);
+    font-family: 'Jua', sans-serif;
+    font-size: xx-large;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 10%;;
+    padding:1%;
+}
+#kakaoLogin span{
+    margin-right:5%;
+}
+
+#registrationContent p label{
+    width:50%
+    
+}
+#registrationContent p input{
+    flex-grow: 1;
+    
+}
+
+#reset,#submitRegister{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 
 
 
@@ -423,5 +498,88 @@ li {
     #menuIcons li img {
         height: 100px;
         width: 100px;
+    }
+
+    /*_____ sign up page media queries_____ */
+
+
+    .signupPage{
+        background-color: rgb(206, 206, 206);
+    
+    }
+    
+    #registrationContent form{
+        margin-top: 30%;
+        width:90%;
+        font-size: xx-large;
+        
+    }
+
+    #firstP{
+        margin-bottom: 10%; 
+    }
+
+    #lastP{
+        margin-top: 10%; 
+    }
+    #registrationContent p label{
+        width:45%
+        
+    }
+    #registrationContent p input{
+        height:4vh;
+        font-size: 3vh;
+
+        
+    }
+
+    #kakaoLogin{
+        margin-top:5%;
+        margin-bottom: 15%;
+        font-size: 4vh;
+        
+    }
+
+
+    /*_____ search page media queries_____ */
+    .searchOptions{
+        width:20%;
+    }
+    .searchOptionsExpanded{
+        width:50%;
+    }
+
+    .searchOption{
+        font-size: 3vh;
+    }
+
+    .searchOptionSelected {
+        background-color : azure !important;
+    }
+    .searchOptionExpanded {
+        width : 30%; 
+        font-size: 3vh;  
+        padding-left: 3%;
+        padding-right : 3%;
+    }
+
+    #searchOptions>div:hover,#submit:hover{
+        background-color:rgb(240, 239,239);
+    }
+    #submit{
+        background-color: rgb(240, 239, 239);
+        border: none;
+        width:15%;
+        border-radius: 0px 15px 15px 0px;
+    }
+
+    .entry{
+        width:65%;
+        font-size: 4vh;
+    }
+
+    .compactEntry{
+        width:35%;
+        font-size: 3vh;
     }
 }

@@ -21,17 +21,16 @@ function switchOptions(index){
         case 'song':
             singer.classList.add("hidden");
             code.classList.add("hidden");
-            entry.style.width='80%';
-            searchOptions.style.width='10%';
+            searchOptions.classList.remove('searchOptionsExpanded');
             category.value="song";
+            entry.classList.remove("compactEntry");
             break;
         case 'singer':
             singer.classList.remove("hidden");
             song.classList.add("hidden");
             code.classList.add("hidden");
-            
-            entry.style.width='80%';
-            searchOptions.style.width='10%';
+            entry.classList.remove("compactEntry");
+            searchOptions.classList.remove('searchOptionsExpanded');
 
             category.value="singer";
            
@@ -40,8 +39,8 @@ function switchOptions(index){
             song.classList.add("hidden");
             singer.classList.add("hidden");
             
-            entry.style.width='80%';
-            searchOptions.style.width='10%';
+            entry.classList.remove("compactEntry");
+            searchOptions.classList.remove('searchOptionsExpanded');
 
             category.value="code";
            
@@ -57,8 +56,8 @@ function switchOptions(index){
             singer.classList.add("searchOptionExpanded");
             code.classList.add("searchOptionExpanded");
 
-            searchOptions.style.width='37%';
-            entry.style.width='65%';
+            searchOptions.classList.add('searchOptionsExpanded');
+            entry.classList.add("compactEntry");
             switch (category.value){
                 case 'song':
                     song.classList.add("searchOptionSelected");
