@@ -55,8 +55,10 @@
         }
     }
 
-    function makePlaylist($memberId, $name, $songs) {
-        //addPlaylist
+    function makePlaylist($memberId, $name) {
+        $playlistManager = new PlaylistManager;
+        $playlists = $playlistManager->addPlaylist($memberId, $name);
+        require("view/home.php");
     }
 
     function showAllPlaylists($username) {

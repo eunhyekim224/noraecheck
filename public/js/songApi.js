@@ -75,7 +75,7 @@ function loadFile(entry,category){//function takes inputs from these two variabl
             
         } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status !== 200 & xhr.status === 0){
 
-            alert('there was an error \n\n Code:' + xhr.status + '\nText : ' + xhr.statusText);
+            alert('please enter something to search for \n\n Code:' + xhr.status + '\nText : ' + xhr.statusText);
             
         }
 
@@ -85,12 +85,13 @@ function loadFile(entry,category){//function takes inputs from these two variabl
 
 (function(){
     var submit = document.getElementById('submit');
-    var categories = document.getElementById('categories');
-    let input = document.getElementById('searchedWords');
+    var category = document.getElementById('category');
+    let entry = document.getElementById('entry');
 
     submit.addEventListener('click', function(){
 
-            loadFile(input.value,categories.value);
+            loadFile(entry.value,category.value);
+            
           
             
         });
