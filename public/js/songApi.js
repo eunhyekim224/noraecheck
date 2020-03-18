@@ -115,6 +115,8 @@ function displayResults(array) {
 
     for (let i=0,c=array.length; i<c; i++) {
         let searchResults = document.createElement('div');
+        let songImgDiv = document.createElement('div');
+        let songImg = document.createElement('img');
         let songDiv = document.createElement('div');
         let song = document.createElement('p');
         let songText = document.createTextNode(array[i].song);
@@ -133,11 +135,16 @@ function displayResults(array) {
         let iconImg = document.createElement('img');
 
         searchResults.setAttribute('class','resultOption');
+        song.setAttribute('class','songTitle');
+        songImgDiv.setAttribute('class','songImg');
         brandCodes.setAttribute('class','brandCodes');
         addIcon.setAttribute('class','addIcon');
-        iconImg.setAttribute('src','');
+        songImg.setAttribute('src','public/images/songResult.png');
+        songImg.setAttribute('title','Song icon');
+        iconImg.setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg');
         iconImg.setAttribute('title','Plus icon');
 
+        songImgDiv.appendChild(songImg);
         song.appendChild(songText);
         singer.appendChild(singerText);
         code.appendChild(codeText);
@@ -149,6 +156,7 @@ function displayResults(array) {
         songDiv.appendChild(song);
         songDiv.appendChild(singer);
         songDiv.appendChild(brandCodes);
+        searchResults.appendChild(songImgDiv)
         searchResults.appendChild(songDiv);
         searchResults.appendChild(addIcon);
 

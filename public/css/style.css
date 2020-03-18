@@ -56,13 +56,14 @@ li {
 }
 
 #mainContent,
-#nav {
+#nav,
+#results {
     background-color: rgb(206, 206, 206);
     box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
     border-radius: 20px;
 }
 
-#mainContent {
+#mainContent, #results {
     height: 60%;
 }
 
@@ -374,8 +375,55 @@ li {
     }
 }
 
-/**********landingSignup Style***********/
-
+/**********Search Page Style***********/
+#results {
+    padding: 0 3% 0 3%;
+}
+#searchResults {
+    height: 80%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.resultOption,
+.brandCodes {
+    display: flex;
+    align-items: center;
+}
+.resultOption {
+    width: 100%;
+    padding: 3% 0 3% 0;
+}
+.songImg img, .addIcon img {
+    width: 100%;
+    height: 100%;
+}
+.songImg {
+    background-color: white;
+    width: 10%;
+    height: 10%;
+    border-radius: 10px;
+    margin: 0;
+}
+.resultOption div:nth-child(2) {
+    width: 75%;
+    margin: 0;
+}
+.addIcon {
+    width: 5%;
+    height: 5%;
+    margin: 0;
+}
+.resultOption div {
+    margin-right: 3%;
+}
+.brandCodes p {
+    margin: 0 3% 0 0;
+}
+.songTitle {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 0 17.6px 0;
+}
 
 
 /* Mobile Management */

@@ -21,9 +21,11 @@
     <script src="./public/js/searchBarDisplay.js"></script>
     
     
-    <section id="searchResults">
-    
+    <section id="results">
+        <h1>Results</h1>
+        <div id="searchResults">
         <!-- add divs with the list of songs from js function -->
+        </div>
     </section>   
     <nav id="nav">
         <ul id="menuIcons">
