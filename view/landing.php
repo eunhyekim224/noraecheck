@@ -27,7 +27,8 @@
             }
 
         ?>
-        <div id="signIn" class="neonBlue"><span id="signInText">Sign in</span>
+        <div id="signIn">
+            <span id="signInText" class="btn">Sign in</span>
             <form id="loginForm" method="POST" action="index.php">
                 <p class="loginformP">
                     <label for="username">Username: </label>
@@ -41,7 +42,8 @@
                 <input type="submit" name="submit" id="submit" value="login"/>
             </form>
         </div>
-        <a href="index.php?action=register" id="createAccount" class="neonBlue">Create Account</a>
+        
+        <a href="index.php?action=register" id="createAccount" class="btn">Create Account</a>
     </div>
 </div>
 <script src="./public/js/login.js"></script>
