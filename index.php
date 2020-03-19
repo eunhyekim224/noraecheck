@@ -12,7 +12,7 @@ try {
         if ($action === 'showMyList') {
             $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-            showAllPlaylists($memberId); 
+            showAllPlaylists(1); 
         } else if ($action === 'showMySongs') {
             $playlistName = isset($_GET['playlistName']) ? $_GET['playlistName'] : '';
             $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';

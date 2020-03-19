@@ -36,13 +36,13 @@ li {
 .neonBlue {
     /* background-color: rgb(123, 147, 255); */
     /* box-shadow: inset 50px 0 100px rgb(0, 153, 255), inset -50px 0 100px rgb(251, 255, 0); */
-    background: linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100% );
+    background: linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100%);
 }
 
 .neonYellow {
     /* background-color: rgb(253, 255, 123); */
     /* box-shadow: inset 60px 0 120px rgb(251, 255, 0), inset -60px 0 120px rgb(132, 0, 255); */
-    background: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100% );
+    background: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100%);
 }
 
 
@@ -63,7 +63,8 @@ li {
     border-radius: 20px;
 }
 
-#mainContent, #results {
+#mainContent,
+#results {
     height: 60%;
 }
 
@@ -94,6 +95,7 @@ li {
     font-size: 0.9em;
 }
 
+
 /* #menuIcons li:first-child {
     background-color: rgb(123, 147, 255);
 }
@@ -111,10 +113,12 @@ li {
     text-decoration: none;
     color: black
 }
+
 .displayedPlaylistsModal {
     text-decoration: none;
-    color:black;
+    color: black;
 }
+
 #myListIcon img {
     max-width: 100%;
     max-height: 66%;
@@ -124,7 +128,8 @@ li {
     margin-top: 0;
 }
 
-#playlistImg,#songImg {
+#playlistImg,
+#songImg {
     max-width: 100%;
     max-height: 66%;
 }
@@ -132,6 +137,7 @@ li {
 #mainContent h1 {
     padding-left: 5%;
 }
+
 
 /* LIST VIEW */
 
@@ -157,7 +163,8 @@ li {
     border-radius: 10px;
 }
 
-#playlistInfo,#songInfo {
+#playlistInfo,
+#songInfo {
     margin-top: -2%;
     font-size: 0.9em;
 }
@@ -169,69 +176,77 @@ li {
     margin-right: 3%;
 }
 
-.displayedPlaylists{
+.displayedPlaylists {
     text-decoration: none;
-    color:white;
+    color: white;
 }
+
 
 /* new playlist modal  */
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.4); 
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
-  
+
 .modalContent {
     background-color: #fefefe;
     color: rgb(80, 79, 79);
-    margin: 15% auto; 
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 30%; 
+    width: 30%;
     text-align: center;
     border-radius: 10px;
 }
-  
+
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
-  
-.close:hover, .close:focus {
+
+.close:hover,
+.close:focus {
     color: rgb(151, 47, 47);
     text-decoration: none;
     cursor: pointer;
 }
 
 
-
 /* Scrollbar */
 
+
 /* width */
+
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
     background: rgb(233, 233, 233);
     border-radius: 5px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
     background: rgb(206, 206, 206);
     border-radius: 5px;
-  }
+}
+
 
 /**********BANNER Style***********/
 
@@ -241,7 +256,8 @@ li {
     padding-left: 15%;
 }
 
-#banner,#search {
+#banner,
+#search {
     background-color: rgb(206, 206, 206);
     box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
     border-radius: 20px;
@@ -259,6 +275,8 @@ li {
 #bannerText {
     width: 75%;
 }
+
+
 /* #bannerText span {
     background-image: linear-gradient(to right, rgb(0, 153, 255) 0%, #88c7c7 100% );
     -webkit-background-clip: text;
@@ -272,7 +290,7 @@ li {
     font-family: 'Jua', sans-serif;
     /* text-shadow: 0 0 3px rgba(0, 0, 0, 1); */
     font-size: 5em;
-    background-image: linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100% );
+    background-image: linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -287,7 +305,7 @@ li {
     width: 40%;
     animation: run-text 5s infinite linear;
     /* text-shadow: 0 0 3px rgba(255, 255, 255, 1); */
-    background-image: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100% );
+    background-image: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -295,91 +313,99 @@ li {
 
 /*----------- search page style -----------------*/
 
-#search{
-    padding:1%;
-    display:flex;
-    width:98%;
-}
-.searchOptions{
-    color:black;
-    display:flex;
-    width:10%
+#search {
+    padding: 1%;
+    display: flex;
+    width: 98%;
 }
 
-.searchOptionsExpanded{
-    width:37%;
+.searchOptions {
+    color: black;
+    display: flex;
+    width: 10%
 }
 
-.searchOption{
+.searchOptionsExpanded {
+    width: 37%;
+}
+
+.searchOption {
     background-color: rgb(240, 239, 239);
     font-size: x-large;
     padding-left: 16%;
     padding-right: 16%;
-    height:100%;
-    width:100%;
-    display:flex;
+    height: 100%;
+    width: 100%;
+    display: flex;
     align-items: center;
-    border-top-left-radius : 15px;
-    border-bottom-left-radius : 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
-.hidden{
-    display:none !important;
+
+.hidden {
+    display: none !important;
 }
+
 .searchOptionSelected {
-    background-color : azure !important;
+    background-color: azure !important;
 }
+
 .searchOptionExpanded {
-    display : flex;
-    width : 20%;   
+    display: flex;
+    width: 20%;
     padding-left: 7%;
-    padding-right : 7%;
-    border-top-left-radius : 0px;
-    border-bottom-left-radius : 0px;
-    background-color : rgb(240, 239,239);    
+    padding-right: 7%;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: rgb(240, 239, 239);
 }
 
-
-#song{
+#song {
     border-radius: 15px 0px 0px 15px;
 }
-#searchOptions>div:hover,#submit:hover{
-    background-color:rgb(0, 153, 255);
+
+#searchOptions>div:hover,
+#submit:hover {
+    background-color: rgb(0, 153, 255);
 }
 
-
-#submit,#entry,.searchOptions{
-    height:65%;
-    margin:0%
+#submit,
+#entry,
+.searchOptions {
+    height: 65%;
+    margin: 0%
 }
 
-.entry{
-    width:80%;
+.entry {
+    width: 80%;
     border: none;
-    padding-top:0px;
-    padding-bottom:0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     padding-left: 10px;
     font-size: 8vh;
     /* justify-self: right; */
 }
 
-.compactEntry{
-    width:65%;
-}
-#entry:focus{
-    outline:none;
+.compactEntry {
+    width: 65%;
 }
 
-#submit{
+#entry:focus {
+    outline: none;
+}
+
+#submit {
     background-color: rgb(240, 239, 239);
     border: none;
-    width:10%;
+    width: 10%;
     border-radius: 0px 15px 15px 0px;
 }
-#submit:focus{
-    outline:none !important;
-    background-color: rgb(228, 225, 225);
 
+#submit:focus {
+    outline: none !important;
+    background-color: rgb(228, 225, 225);
 }
+
 #submit img {
     height: 70%;
     width: 70%;
@@ -394,28 +420,36 @@ li {
     }
 }
 
+
 /**********Search Page Style***********/
+
 #results {
     padding: 0 3% 0 3%;
 }
+
 #searchResults {
     height: 80%;
     overflow: scroll;
     overflow-x: hidden;
 }
+
 .resultOption,
 .brandCodes {
     display: flex;
     align-items: center;
 }
+
 .resultOption {
     width: 100%;
     padding: 3% 0 3% 0;
 }
-.songImg img, .addIcon img {
+
+.songImg img,
+.addIcon img {
     width: 100%;
     height: 100%;
 }
+
 .songImg {
     background-color: white;
     width: 10%;
@@ -423,92 +457,94 @@ li {
     border-radius: 10px;
     margin: 0;
 }
+
 .resultOption div:nth-child(2) {
     width: 75%;
     margin: 0;
 }
+
 .addIcon {
     width: 5%;
     height: 5%;
     margin: 0;
 }
+
 .resultOption div {
     margin-right: 3%;
 }
+
 .brandCodes p {
     margin: 0 3% 0 0;
 }
+
 .songTitle {
     font-size: 1.1em;
     font-weight: bold;
     margin: 0 0 17.6px 0;
 }
+
+
 /**********landingSignup Style***********/
 
-.signupPage{
+.signupPage {
     background-color: rgb(206, 206, 206);
-
 }
 
-#registrationContent{
-    padding:5%;
-    display:flex;
+#registrationContent {
+    padding: 5%;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 }
 
-
-#kakaoLogin img{
+#kakaoLogin img {
     height: 10%;
     width: 10%
 }
 
-#registrationContent form{
-    width:50%;
-    
+#registrationContent form {
+    width: 50%;
 }
 
-#registrationContent p,#kakaoLogin{
-    display:flex;
-    justify-content:justify;
+#registrationContent p,
+#kakaoLogin {
+    display: flex;
+    justify-content: justify;
     align-content: center;
     background-color: rgb(228, 225, 225);
-    padding:3%;
+    padding: 3%;
     border-radius: 20px;
-    
-    
 }
 
-#kakaoLogin{
+#kakaoLogin {
     background-color: rgb(251, 255, 0);
     font-family: 'Jua', sans-serif;
     font-size: xx-large;
     justify-content: center;
     align-content: center;
-    margin-bottom: 10%;;
-    padding:1%;
-}
-#kakaoLogin span{
-    margin-right:5%;
+    margin-bottom: 10%;
+    ;
+    padding: 1%;
 }
 
-#registrationContent p label{
-    width:50%
-    
+#kakaoLogin span {
+    margin-right: 5%;
 }
-#registrationContent p input{
+
+#registrationContent p label {
+    width: 50%
+}
+
+#registrationContent p input {
     flex-grow: 1;
-    
 }
 
-#reset,#submitRegister{
+#reset,
+#submitRegister {
     margin-left: 10%;
     margin-right: 10%;
 }
-
-
 
 
 /* Mobile Management */
@@ -527,7 +563,6 @@ li {
         font-family: 'Gotham Pro';
         position: relative;
     }
-
     #banner {
         background-color: rgb(206, 206, 206);
         box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
@@ -543,16 +578,28 @@ li {
     }
     #bannerImage {
         margin: 0;
-        padding: 0 0 0 ;
+        padding: 0 0 0;
     }
     #bannerImage img {
         width: 100%;
         height: 100%;
         padding-left: 150%;
     }
-
+    #mainContent,
+    #results {
+        height: 100%;
+    }
+    .songTitle,
+    p {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0 0 17.6px 0;
+    }
+    #results {
+        font-size: 1.5em;
+    }
     #mainContent {
-        height: 70%;
+        /* height: 70%; */
         position: absolute;
         top: 17.5%;
         width: 100%;
@@ -577,7 +624,6 @@ li {
         margin-top: -2%;
         font-size: 2.5em;
     }
-
     #nav {
         height: 10%;
         width: 100%;
@@ -608,87 +654,68 @@ li {
         height: 100px;
         width: 100px;
     }
-
     /*_____ sign up page media queries_____ */
-
-
-    .signupPage{
+    .signupPage {
         background-color: rgb(206, 206, 206);
-    
     }
-    
-    #registrationContent form{
+    #registrationContent form {
         margin-top: 30%;
-        width:90%;
+        width: 90%;
         font-size: xx-large;
-        
     }
-
-    #firstP{
-        margin-bottom: 10%; 
+    #firstP {
+        margin-bottom: 10%;
     }
-
-    #lastP{
-        margin-top: 10%; 
+    #lastP {
+        margin-top: 10%;
     }
-    #registrationContent p label{
-        width:45%
-        
+    #registrationContent p label {
+        width: 45%
     }
-    #registrationContent p input{
-        height:4vh;
+    #registrationContent p input {
+        height: 4vh;
         font-size: 3vh;
-
-        
     }
-
-    #kakaoLogin{
-        margin-top:5%;
+    #kakaoLogin {
+        margin-top: 5%;
         margin-bottom: 15%;
         font-size: 4vh;
-        
     }
-
-
     /*_____ search page media queries_____ */
-    .searchOptions{
-        width:20%;
+    .searchOptions {
+        width: 20%;
     }
-    .searchOptionsExpanded{
-        width:50%;
+    .searchOptionsExpanded {
+        width: 50%;
     }
-
-    .searchOption{
+    .searchOption {
         font-size: 3vh;
     }
-
     .searchOptionSelected {
-        background-color : azure !important;
+        background-color: azure !important;
     }
     .searchOptionExpanded {
-        width : 30%; 
-        font-size: 3vh;  
+        width: 20%;
+        font-size: 1vh;
         padding-left: 3%;
-        padding-right : 3%;
+        padding-right: 3%;
     }
-
-    #searchOptions>div:hover,#submit:hover{
-        background-color:rgb(240, 239,239);
+    #searchOptions>div:hover,
+    #submit:hover {
+        background-color: rgb(240, 239, 239);
     }
-    #submit{
+    #submit {
         background-color: rgb(240, 239, 239);
         border: none;
-        width:15%;
+        width: 15%;
         border-radius: 0px 15px 15px 0px;
     }
-
-    .entry{
-        width:65%;
+    .entry {
+        width: 65%;
         font-size: 4vh;
     }
-
-    .compactEntry{
-        width:35%;
+    .compactEntry {
+        width: 35%;
         font-size: 3vh;
     }
 }

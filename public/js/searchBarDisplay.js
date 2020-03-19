@@ -6,7 +6,7 @@ let singer = document.getElementById('singer');
 let no = document.getElementById('no');
 
 
-function switchOptions(index){
+function switchOptions(index) {
     let entry = document.getElementById('entry');
     let category = document.getElementById('category');
 
@@ -17,12 +17,12 @@ function switchOptions(index){
     singer.classList.remove("searchOptionSelected");
     no.classList.remove("searchOptionSelected");
 
-    switch(index){
+    switch (index) {
         case 'song':
             singer.classList.add("hidden");
             no.classList.add("hidden");
             searchOptions.classList.remove('searchOptionsExpanded');
-            category.value="song";
+            category.value = "song";
             entry.classList.remove("compactEntry");
             break;
         case 'singer':
@@ -32,19 +32,19 @@ function switchOptions(index){
             entry.classList.remove("compactEntry");
             searchOptions.classList.remove('searchOptionsExpanded');
 
-            category.value="singer";
-           
+            category.value = "singer";
+
             break;
         case 'no':
             song.classList.add("hidden");
             singer.classList.add("hidden");
-            
+
             entry.classList.remove("compactEntry");
             searchOptions.classList.remove('searchOptionsExpanded');
 
-            category.value="no";
-           
-            
+            category.value = "no";
+
+
             break;
         case 'all':
             // everything is displayed
@@ -58,14 +58,14 @@ function switchOptions(index){
 
             searchOptions.classList.add('searchOptionsExpanded');
             entry.classList.add("compactEntry");
-            switch (category.value){
+            switch (category.value) {
                 case 'song':
                     song.classList.add("searchOptionSelected");
                     break;
 
                 case 'singer':
                     singer.classList.add("searchOptionSelected");
-                     break;
+                    break;
                 case 'no':
                     no.classList.add("searchOptionSelected");
                     break;
@@ -77,24 +77,24 @@ function switchOptions(index){
 
 
 
-song.addEventListener('click',function(){
-    if (searchOptionIndex === 'song'){
+song.addEventListener('click', function() {
+    if (searchOptionIndex === 'song') {
         searchOptionIndex = 'all';
     } else {
         searchOptionIndex = 'song';
     }
     switchOptions(searchOptionIndex);
 });
-singer.addEventListener('click',function(){
-    if (searchOptionIndex === 'singer'){
+singer.addEventListener('click', function() {
+    if (searchOptionIndex === 'singer') {
         searchOptionIndex = 'all';
     } else {
         searchOptionIndex = 'singer';
     }
     switchOptions(searchOptionIndex);
 });
-no.addEventListener('click',function(){
-    if (searchOptionIndex === 'no'){
+no.addEventListener('click', function() {
+    if (searchOptionIndex === 'no') {
         searchOptionIndex = 'all';
     } else {
         searchOptionIndex = 'no';

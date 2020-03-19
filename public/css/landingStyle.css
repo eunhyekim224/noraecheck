@@ -114,9 +114,10 @@ body {
     color: white;
 }
 
-#loginForm {
+
+/* #loginForm {
     display: none;
-}
+} */
 
 #eqWrapper {
     width: 60%;
@@ -823,9 +824,9 @@ body {
         position: relative;
         color: white;
     }
-    #loginForm {
+    /* #loginForm {
         display: none;
-    }
+    } */
     #eqWrapper {
         width: 60%;
         height: 30vh;
