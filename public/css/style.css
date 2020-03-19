@@ -62,6 +62,33 @@ li {
     font-family: 'Gotham Pro';
 }
 
+/* new button style */
+
+.btn {
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-position: right center;
+}
+
+.btnBlue {
+    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
+
+.btnOrange {
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
+
 #mainContent,
 #nav {
     background-color: rgb(206, 206, 206);
@@ -237,13 +264,13 @@ li {
     -webkit-transition: opacity 0.2s ease, background 0.2s ease;
     transition: opacity 0.2s ease, background 0.2s ease;
     cursor: pointer;
+    text-transform: lowercase;
 }
 
-/* old buttons */
 
-.modalButtons input:hover, .modalButtons input:focus {
+/* .modalButtons input:hover, .modalButtons input:focus {
     background: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100% );
-}
+} */
 
 /* new modal style */
 
@@ -254,7 +281,8 @@ input:focus {
 /* modal question */
 
 input.question {
-    font-size: 48px;
+    font-size: 39px;
+    color: white;
     font-weight: 300;
     border-radius: 2px;
     margin: 0 auto;
@@ -275,7 +303,7 @@ input.question + label {
   padding: 0;
   margin-left: 10%;
   width: 20%;;
-  border-bottom: 1px solid rgb(0, 153, 255);
+  border-bottom: 2px solid white;
   -webkit-transition: width 0.4s ease;
   transition: width 0.4s ease;
   height: 0px;
@@ -287,12 +315,13 @@ input.question:focus + label {
 
 input.question:focus {
   padding-top: 35px;
+  color: white;
 }
 
 input.question:focus + label > span {
   top: -100px;
   font-size: 22px;
-  color: #333;
+  color: white;
 }
 
 input.question + label > span {
@@ -306,26 +335,6 @@ input.question + label > span {
   -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
   transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
 }
-
-@-webkit-keyframes appear {
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes appear {
-  100% {
-    opacity: 1;
-  }
-}
-
-
-
-
-
-
-
-
 
 /* Scrollbar */
 
@@ -600,6 +609,16 @@ input.question + label > span {
     .modalButtons input {
         width: 32%;
     }
+
+    input.question + label > span {
+        font-size: 0.75em;
+    }
+
+    input.question:focus + label > span {
+        font-size: 0.5em;
+    }
+
+    /* nav */
 
     #nav {
         height: 10%;

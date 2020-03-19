@@ -5,8 +5,8 @@
             <input type="text" name="name" class="question" id="playlistName" autocomplete="off" />
             <label for="playlistName"><span>What's the name of your playlist?</span></label>
             <div class="modalButtons openSans">
-                <input type="submit" name="create" value="Create" class="neonBlue">
-                <input type="button" name="cancel" value="Cancel" class="neonBlue">               
+                <input type="submit" name="create" value="Create" class="btn btnBlue">
+                <input type="button" name="cancel" value="Cancel" class="btn btnBlue">               
             </div>
         </form>
     </div>
