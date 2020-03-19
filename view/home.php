@@ -10,11 +10,11 @@
     <!-- include banner php file instead of header tag -->
     <?php include("homeBanner.php"); ?>
     
-    <section id="mainContent">
+    <section id="mainContent" class="gothamPro">
     <?php include("homeMyList.php");?>
         <!-- add divs with the list of songs from js function -->
     </section>   
-    <nav id="nav">
+    <nav id="nav" class="openSans">
         <ul id="menuIcons">
             <li id="myListIcon" class="neonBlue">
                 <a href="index.php?action=showMyList" title="Go to my list">
