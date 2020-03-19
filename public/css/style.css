@@ -176,7 +176,7 @@ li {
 
 /* new playlist modal  */
 
-.modal {
+.modal,.modalSearch {
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -186,6 +186,10 @@ li {
     height: 100%; 
     overflow: auto; 
     background-color: rgba(0,0,0,0.4); 
+}
+
+.modalOn{
+    display:block;
 }
   
 .modalContent {
@@ -443,6 +447,8 @@ li {
     font-weight: bold;
     margin: 0 0 17.6px 0;
 }
+
+
 /**********landingSignup Style***********/
 
 .signupPage{

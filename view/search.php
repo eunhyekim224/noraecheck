@@ -5,8 +5,10 @@
 <?php if (!$_SESSION['username']){
     header("location:index.php");
 }
+$email = isset($_GET['email']) ? $_GET['email'] : ''
 ?>
 <div class="mainWrapper homePage">
+<input type='hidden' name='modalDisplay' id='modalDisplay' value=<?=$modalDisplay?>>
 <?php include('newSongModal.php'); ?>
     <!-- include banner php file instead of header tag -->
     <div id='search'>
@@ -25,6 +27,7 @@
     <section id="results">
         <h1>Results</h1>
         <div id="searchResults">
+         
         <!-- add divs with the list of songs from js function -->
         </div>
     </section> 
