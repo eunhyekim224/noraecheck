@@ -326,7 +326,7 @@ li {
 }
 
 .searchOptionsExpanded {
-    width: 37%;
+    width: 35%;
 }
 
 .searchOption {
@@ -696,7 +696,7 @@ li {
     }
     .searchOptionExpanded {
         width: 20%;
-        font-size: 1vh;
+        font-size: 1.2vh;
         padding-left: 3%;
         padding-right: 3%;
     }
@@ -707,7 +707,7 @@ li {
     #submit {
         background-color: rgb(240, 239, 239);
         border: none;
-        width: 15%;
+        width: 25%;
         border-radius: 0px 15px 15px 0px;
     }
     .entry {
