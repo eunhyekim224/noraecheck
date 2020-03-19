@@ -10,7 +10,7 @@
     <!-- include banner php file instead of header tag -->
     <?php include("homeBanner.php"); ?>
     
-    <section id="mainContent">
+    <section id="mainContent" class="gothamPro">
     <?php
     if ($displayMode == 'playlists'){
         include("homeMyList.php");

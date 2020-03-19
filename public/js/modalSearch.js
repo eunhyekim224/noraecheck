@@ -1,22 +1,24 @@
-let modals = document.getElementsByClassName("modal");
+let modals2 = document.getElementsByClassName("modalSearch");
 let closeButtons = document.getElementsByClassName("close");
 let cancelButtons = document.getElementsByName("cancel");
 console.log(cancelButtons);
 
-closeModal(modals, closeButtons, cancelButtons);
 
 
-function closeModal(modals, closeButtons, cancelButtons) {
-    for (let i=0; i<modals.length; i++) {
+closeModal(modals2, closeButtons, cancelButtons);
+
+
+function closeModal(modals2, closeButtons, cancelButtons) {
+    for (let i=0; i<modals2.length; i++) {
         closeButtons[i].addEventListener('click', ()=> {
-            modals[i].style.display = "none";
+            modals2[i].classList.add = "modalOn";
         });
         cancelButtons[i].addEventListener('click', ()=> {
-            modals[i].style.display = "none";
+            modals2[i].classList.add = "modalOn";
         });
         window.addEventListener('click', (e)=> {
             if (e.target == modals[i]) {
-                modals[i].style.display = "none";
+                modals2[i].classList.add = "modalOn";
             }
         });           
     } 

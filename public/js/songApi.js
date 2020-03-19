@@ -109,15 +109,32 @@ function loadFile(entry,category){//function takes inputs from these two variabl
 
 })();
 
+(function(){
+    var submit = document.getElementById('submit');
+    var categories = document.getElementById('category');
+    let input = document.getElementById('entry');
+
+    // submit.addEventListener('click', function() {
+    //     loadFile(input.value,categories.value);   
+    // });
+
+    input.addEventListener('keyup', function() {
+        if (input.value) {
+            loadFile(input.value,categories.value);
+        }
+    });
+
+})();
+
 function displayResults(array) {
-    let modals = document.getElementsByClassName("modal");
+    
     
     
     let div_parent = document.querySelector('#searchResults');
     div_parent.innerHTML = "";
 
     for (let i=0,c=array.length; i<c; i++) {
-        let searchResults = document.createElement('div');
+        let searchResults = document.createElement('form');
         let songImgDiv = document.createElement('div');
         let songImg = document.createElement('img');
         let songDiv = document.createElement('div');
@@ -137,6 +154,12 @@ function displayResults(array) {
         let addIcon = document.createElement('div');
         let iconImg = document.createElement('img');
 
+        let hiddenSinger = document.createElement('input');
+        let hiddenSong = document.createElement('input');
+        let hiddenTj = document.createElement('input');
+        let hiddenKumyoung = document.createElement('input');
+        let hiddenAction = document.createElement('input');
+
         searchResults.setAttribute('class','resultOption');
         song.setAttribute('class','songTitle');
         songImgDiv.setAttribute('class','songImg');
@@ -147,11 +170,37 @@ function displayResults(array) {
         iconImg.setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg');
         iconImg.setAttribute('title','Plus icon');
         iconImg.setAttribute('class','addPlaylist');
-        for (let i=0; i<modals.length; i++) {
-            iconImg.addEventListener('click', ()=> {
-                modals[i].style.display = "block";
-            }); 
-        }
+
+        hiddenSong.setAttribute('type','hidden');
+        hiddenSinger.setAttribute('type','hidden');
+        hiddenTj.setAttribute('type','hidden');
+        hiddenKumyoung.setAttribute('type','hidden');
+        hiddenAction.setAttribute('type','hidden');
+        
+
+        hiddenSong.setAttribute('name','hiddenSong');
+        hiddenSinger.setAttribute('name','hiddenSinger');
+        hiddenTj.setAttribute('name','hiddenTj');
+        hiddenKumyoung.setAttribute('name','hiddenKumyoung');
+        hiddenAction.setAttribute('name','action');
+
+        let tjCode = array[i].tj_code ? array[i].tj_code : '';
+        let kumgoungCode = array[i].kumyoung_code ? array[i].kumyoung_code : '';
+
+        hiddenSong.setAttribute('value',array[i].song);
+        hiddenSinger.setAttribute('value',array[i].singer);
+        hiddenTj.setAttribute('value',tjCode);
+        hiddenKumyoung.setAttribute('value',kumgoungCode);
+        hiddenAction.setAttribute('value','searchModal');
+        iconImg.addEventListener('click', ()=> {
+            searchResults.submit();
+        });
+        // for (let i=0; i<modals.length; i++) {
+        //     iconImg.addEventListener('click', ()=> {
+        //         //modals[i].style.display = "block";
+        //         searchResults.submit();
+        //     }); 
+        // }
 
         songImgDiv.appendChild(songImg);
         song.appendChild(songText);
@@ -169,6 +218,12 @@ function displayResults(array) {
         searchResults.appendChild(songDiv);
         searchResults.appendChild(addIcon);
 
+        searchResults.appendChild(hiddenSong);
+        searchResults.appendChild(hiddenSinger);
+        searchResults.appendChild(hiddenTj);
+        searchResults.appendChild(hiddenKumyoung);
+        searchResults.appendChild(hiddenAction);
+
         if (array[i].tj_code && array[i].kumyoung_code) {
             brandCodes.appendChild(tjBrand);
             brandCodes.appendChild(code);
@@ -184,6 +239,14 @@ function displayResults(array) {
 
         div_parent.appendChild(searchResults);
     }
+}
+let modals = document.getElementsByClassName("modalSearch");   
+    
+let modalDisplay = document.getElementById('modalDisplay');
+if(modalDisplay.value === 'on'){
+    for (let i=0; i<modals.length; i++) {
+        modals[i].style.display = "block"; 
+    }   
 }
 
 
