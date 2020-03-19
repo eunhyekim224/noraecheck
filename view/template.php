@@ -13,4 +13,5 @@
     <body>
         <?= $content?>
     </body>
+    <script src="https://kit.fontawesome.com/6254ef993b.js" crossorigin="anonymous"></script>
 </html>
