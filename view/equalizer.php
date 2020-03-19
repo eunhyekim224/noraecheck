@@ -10,4 +10,3 @@
 <div class='eqBar'id="eqBar10"></div>
 <div class='eqBar'id="eqBar11"></div>
 <div class='eqBar'id="eqBar12"></div>
-
