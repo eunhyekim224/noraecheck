@@ -7,6 +7,7 @@
 }
 ?>
 <div class="mainWrapper homePage">
+<?php include('newSongModal.php'); ?>
     <!-- include banner php file instead of header tag -->
     <div id='search'>
         <div id="searchOptions" class="searchOptions">
@@ -26,7 +27,8 @@
         <div id="searchResults">
         <!-- add divs with the list of songs from js function -->
         </div>
-    </section>   
+    </section> 
+    <script src="./public/js/modalSearch.js"></script>  
     <nav id="nav">
         <ul id="menuIcons">
             <li id="myListIcon" class="neonBlue">

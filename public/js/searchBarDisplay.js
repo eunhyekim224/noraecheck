@@ -3,7 +3,7 @@ let searchOptionIndex = 'song';
 
 let song = document.getElementById('song');
 let singer = document.getElementById('singer');
-let code = document.getElementById('code');
+let no = document.getElementById('no');
 
 
 function switchOptions(index){
@@ -12,15 +12,15 @@ function switchOptions(index){
 
     song.classList.remove("searchOptionExpanded");
     singer.classList.remove("searchOptionExpanded");
-    code.classList.remove("searchOptionExpanded");
+    no.classList.remove("searchOptionExpanded");
     song.classList.remove("searchOptionSelected");
     singer.classList.remove("searchOptionSelected");
-    code.classList.remove("searchOptionSelected");
+    no.classList.remove("searchOptionSelected");
 
     switch(index){
         case 'song':
             singer.classList.add("hidden");
-            code.classList.add("hidden");
+            no.classList.add("hidden");
             searchOptions.classList.remove('searchOptionsExpanded');
             category.value="song";
             entry.classList.remove("compactEntry");
@@ -28,33 +28,33 @@ function switchOptions(index){
         case 'singer':
             singer.classList.remove("hidden");
             song.classList.add("hidden");
-            code.classList.add("hidden");
+            no.classList.add("hidden");
             entry.classList.remove("compactEntry");
             searchOptions.classList.remove('searchOptionsExpanded');
 
             category.value="singer";
            
             break;
-        case 'code':
+        case 'no':
             song.classList.add("hidden");
             singer.classList.add("hidden");
             
             entry.classList.remove("compactEntry");
             searchOptions.classList.remove('searchOptionsExpanded');
 
-            category.value="code";
+            category.value="no";
            
             
             break;
         case 'all':
             // everything is displayed
             singer.classList.remove("hidden");
-            code.classList.remove("hidden");
+            no.classList.remove("hidden");
             song.classList.remove("hidden");
             // set the expanded style
             song.classList.add("searchOptionExpanded");
             singer.classList.add("searchOptionExpanded");
-            code.classList.add("searchOptionExpanded");
+            no.classList.add("searchOptionExpanded");
 
             searchOptions.classList.add('searchOptionsExpanded');
             entry.classList.add("compactEntry");
@@ -66,8 +66,8 @@ function switchOptions(index){
                 case 'singer':
                     singer.classList.add("searchOptionSelected");
                      break;
-                case 'code':
-                    code.classList.add("searchOptionSelected");
+                case 'no':
+                    no.classList.add("searchOptionSelected");
                     break;
             }
 
@@ -93,11 +93,11 @@ singer.addEventListener('click',function(){
     }
     switchOptions(searchOptionIndex);
 });
-code.addEventListener('click',function(){
-    if (searchOptionIndex === 'code'){
+no.addEventListener('click',function(){
+    if (searchOptionIndex === 'no'){
         searchOptionIndex = 'all';
     } else {
-        searchOptionIndex = 'code';
+        searchOptionIndex = 'no';
     }
     switchOptions(searchOptionIndex);
 });

@@ -79,9 +79,9 @@
     function showPlaylist($memberId, $name) {
         //getPlaylist
     }
-    function search($username) {
-        $playlistManager = new PlaylistManager;
-        $playlists = $playlistManager->getAllPlaylists($username);
+    function search($memberId) {
+        $playlistAddManager = new PlaylistManager;
+        $playlistsAdd = $playlistAddManager->getAllPlaylists($memberId);
         require("view/search.php");
     }
     

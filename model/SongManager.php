@@ -28,23 +28,6 @@
             } 
         }
 
-        // public function getAllSongs($playlistId) {
-        //     $db = $this->dbConnect();
-        //     $playlists = $db->prepare('SELECT p.playlistId AS playlistId, m.username AS username, p.name AS playlistName, DATE_FORMAT(p.creationDate, "%d/%m/%Y") AS playlistCreationDate,
-        //                                 (SELECT COUNT(s.id) FROM songs s WHERE s.playlistId = p.id) AS songCount
-        //                                 FROM playlists p
-        //                                 JOIN members m
-        //                                 ON p.memberId = m.id
-        //                                 WHERE p.memberId = :memberId ORDER BY creationDate DESC');
-        //     $playlistsResp = $playlists->execute(array(
-        //         'memberId' => $memberId
-        //     ));
-        //     if(!$playlistsResp) {
-        //         throw new PDOException('Unable to retrieve all playlists!');
-        //     }
-        //     return $playlists;
-        // }
-        
         public function getSongs($playlistId) {
             $db = $this->dbConnect();
             $songs = $db->prepare('SELECT s.playlistId AS playlistId, s.song AS songName, s.singer AS singerName, s.tjCode AS tjCode, s.kumyoungCode AS kumyoungCode, s.dateAdded AS dateAdded, p.name AS playlistName, p.id AS id 

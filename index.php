@@ -34,8 +34,8 @@ try {
                 makePlaylist($_SESSION['memberId'], $_POST['playlistName']);
             }
         } else if ($action === 'search') {
-            $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
-            search($username);      
+            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            search($memberId);      
             } else {
                 throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
             }

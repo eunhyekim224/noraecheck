@@ -110,6 +110,9 @@ function loadFile(entry,category){//function takes inputs from these two variabl
 })();
 
 function displayResults(array) {
+    let modals = document.getElementsByClassName("modal");
+    
+    
     let div_parent = document.querySelector('#searchResults');
     div_parent.innerHTML = "";
 
@@ -143,6 +146,12 @@ function displayResults(array) {
         songImg.setAttribute('title','Song icon');
         iconImg.setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg');
         iconImg.setAttribute('title','Plus icon');
+        iconImg.setAttribute('class','addPlaylist');
+        for (let i=0; i<modals.length; i++) {
+            iconImg.addEventListener('click', ()=> {
+                modals[i].style.display = "block";
+            }); 
+        }
 
         songImgDiv.appendChild(songImg);
         song.appendChild(songText);
@@ -176,3 +185,6 @@ function displayResults(array) {
         div_parent.appendChild(searchResults);
     }
 }
+
+
+    // let addPlaylistButton = document.getElementsByClassName('addPlaylist');
