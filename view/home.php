@@ -11,7 +11,13 @@
     <?php include("homeBanner.php"); ?>
     
     <section id="mainContent">
-    <?php include("homeMyList.php");?>
+    <?php
+    if ($displayMode == 'playlists'){
+        include("homeMyList.php");
+    } else {
+        include("playlistSongs.php");
+    }
+     ?>
         <!-- add divs with the list of songs from js function -->
     </section>   
     <nav id="nav">

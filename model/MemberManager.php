@@ -22,7 +22,7 @@
         } 
         public function getMember($username, $password) {
             $db = $this->dbConnect();
-            $members = $db->prepare('SELECT username, password FROM comments WHERE username = :username AND password = :password');
+            $members = $db->prepare("SELECT id, username, password FROM members WHERE username = :username");
             $resp = $members->execute(array(
                 'username' => $username,
                 'password' => $password

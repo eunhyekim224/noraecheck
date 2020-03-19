@@ -9,6 +9,7 @@
 <?php while ($playlist = $playlists->fetch()) { ?>
     <li>
         <img src="public/images/mic.png" id="playListImg">
+        <?= '<a href="index.php?action=showMySongs&playlistName=' .$playlist['playlistName'] .'&playlistId=' .$playlist['playlistId'] .'" class= "displayedPlaylists">';?>
         <div id="playlistInfo">
             <p><?= $playlist['playlistName']; ?></p>
             <p>by <?= $playlist['username']; ?></p>
@@ -19,6 +20,7 @@
                 <?= $playlist['playlistCreationDate']; ?>
             </p>
         </div>
+        <?= "</a>";?>
     </li>
 <?php } ?>
 </ul>
