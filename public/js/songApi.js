@@ -139,7 +139,6 @@ function nameAndTitleCheck(singer,title, brand) {
     return nameAndTitle;
 }
 
-
 function displayResults(array) {
     let div_parent = document.querySelector('#searchResults');
     div_parent.innerHTML = "";
