@@ -4,5 +4,3 @@
     <!-- <p><span data-text="" class="word"></span></p> -->
 </div>
 
-
-

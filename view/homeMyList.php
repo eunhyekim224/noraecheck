@@ -1,14 +1,15 @@
 <h1>my playlists</h1> 
 <!-- $_SESSION['username']-->
 <ul id="myList">
-<li id="createImg">
-    <input type="image" name="newPlaylist" id="newPlaylist" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg">
-    <p>Create a new playlist</p>
+<li id="createPlaylist">
+    <input type="image" name="newPlaylistBtn" id="newPlaylistBtn" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg">
+    <p id="createTxt">Create a new playlist</p>
     <?php include('newPlaylistModal.php'); ?>
 </li>
 <?php while ($playlist = $playlists->fetch()) { ?>
     <li>
-        <img src="public/images/mic.png" class="playListImg">
+        <img src="public/images/mic.png" id="playListImg">
+        <?= '<a href="index.php?action=showMySongs&playlistName=' .$playlist['playlistName'] .'&playlistId=' .$playlist['playlistId'] .'" class= "displayedPlaylists">';?>
         <div id="playlistInfo">
             <p><?= $playlist['playlistName']; ?></p>
             <p>by <?= $playlist['username']; ?></p>
@@ -19,6 +20,7 @@
                 <?= $playlist['playlistCreationDate']; ?>
             </p>
         </div>
+        <?= "</a>";?>
     </li>
 <?php } ?>
 </ul>

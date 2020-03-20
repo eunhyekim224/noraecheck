@@ -18,12 +18,12 @@
             ));
             if (!$status) {
                 throw new PDOException('Unable to create the playlist!');
-            } 
+            }
         }
 
         public function getAllPlaylists($memberId) {
             $db = $this->dbConnect();
-            $playlists = $db->prepare('SELECT p.memberId AS memberId, m.username AS username, p.name AS playlistName, DATE_FORMAT(p.creationDate, "%d/%m/%Y") AS playlistCreationDate,
+            $playlists = $db->prepare('SELECT p.memberId AS memberId, p.id AS playlistId, m.username AS username, p.name AS playlistName, DATE_FORMAT(p.creationDate, "%d/%m/%Y") AS playlistCreationDate,
                                         (SELECT COUNT(s.id) FROM songs s WHERE s.playlistId = p.id) AS songCount
                                         FROM playlists p
                                         JOIN members m

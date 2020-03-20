@@ -9,8 +9,12 @@ try {
     if (isset($_REQUEST['action'])) {
         $action = $_REQUEST['action'];
         if ($action === 'showMyList') {
-            $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
-            showAllPlaylists(1); 
+            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            showAllPlaylists($memberId); 
+        } else if ($action === 'showMySongs') {
+            $playlistName = isset($_GET['playlistName']) ? $_GET['playlistName'] : '';
+            $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';
+            showSongs($playlistName,$playlistId); 
         } else if ($action === 'register') {
             $username = isset($_POST['loginNew']) ? $_POST['loginNew'] : '';
             $pass1 = isset($_POST['pwd']) ? $_POST['pwd'] : '';
@@ -25,12 +29,27 @@ try {
             $status = isset($_GET['success']) ? $_GET['success'] : '';
             logIn($username,$password,$error,$status);
         } else if ($action === 'newPlaylist') {
-            if (isset($_SESSION['username']) && isset($_POST['playlistName']) && $_POST['playlistName'] !== '') {
-                makePlaylist($_SESSION['username'], $_POST['playlistName']);
+            if (isset($_SESSION['memberId']) && isset($_POST['playlistName']) && $_POST['playlistName'] !== '') {
+                makePlaylist($_SESSION['memberId'], $_POST['playlistName']);
             }
+        } else if ($action === 'searchModal') {
+            $song = isset($_REQUEST['hiddenSong']) ? $_REQUEST['hiddenSong'] : '';
+            $singer = isset($_REQUEST['hiddenSinger']) ? $_REQUEST['hiddenSinger'] : '';
+            $tj = isset($_REQUEST['hiddenTj']) ? $_REQUEST['hiddenTj'] : '';
+            $kumyoung = isset($_REQUEST['hiddenKumyoung']) ? $_REQUEST['hiddenKumyoung'] : '';
+            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            searchModal($song,$singer,$tj,$kumyoung,$memberId);
+        } else if ($action === 'addToPlaylist') {
+            $playlistId = isset($_REQUEST['playlistId']) ? $_REQUEST['playlistId'] : '';
+            $song = isset($_REQUEST['song']) ? $_REQUEST['song'] : '';
+            $singer = isset($_REQUEST['singer']) ? $_REQUEST['singer'] : '';
+            $tj = isset($_REQUEST['tj']) ? $_REQUEST['tj'] : '';
+            $kumyoung = isset($_REQUEST['kumyoung']) ? $_REQUEST['kumyoung'] : '';
+            //echo $playlistId .$song .$singer .$tj .$kumyoung;
+            addToPlaylist($playlistId,$singer,$song,$tj,$kumyoung);
         } else if ($action === 'search') {
-            $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
-            search($username);      
+            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            search($memberId);      
             } else {
                 throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
             }

@@ -2,6 +2,7 @@
     
     require_once("./model/MemberManager.php");
     require_once("./model/PlaylistManager.php");
+    require_once("./model/SongManager.php");
 
     function showLandingPage($error,$status) {
         require("view/landing.php");
@@ -33,11 +34,12 @@
     function logIn($username,$password,$error,$status) {
         $loginManager = new MemberManager;
         if($username AND $password){
-            $userInfo = $loginManager->getMember($username,$password);
+            $userInfo = $loginManager->getMember($username);
             //getMember confirms userId, password is checked below
             if($userInfo){
-                if (password_verify($password,$userInfo['password'])){
+                if (password_verify($password, $userInfo['password'])){
                         $_SESSION['username'] = $userInfo['username'];
+                        $_SESSION['memberId'] = $userInfo['id'];
                         header('Location: index.php?action=showMyList');
                 } else {
                     $error = 'passError';
@@ -56,22 +58,43 @@
     function makePlaylist($memberId, $name) {
         $playlistManager = new PlaylistManager;
         $playlists = $playlistManager->addPlaylist($memberId, $name);
-        require("view/home.php");
+        header('Location: index.php?action=showMyList');
     }
 
-    function showAllPlaylists($username) {
+    function showAllPlaylists($memberId) {
         $playlistManager = new PlaylistManager;
-        $playlists = $playlistManager->getAllPlaylists($username);
+        $playlists = $playlistManager->getAllPlaylists($memberId);
+        $displayMode = 'playlists';
+        require("view/home.php");    
+    }
+
+    function showSongs($playlistName,$playlistId) {
+        $songManager = new SongManager;
+        $songDisplay = $songManager->getSongs($playlistId);
+        $displayMode = 'songs';
         require("view/home.php");
     }
 
     function showPlaylist($memberId, $name) {
         //getPlaylist
     }
-    function search($username) {
-        $playlistManager = new PlaylistManager;
-        $playlists = $playlistManager->getAllPlaylists($username);
+    function search($memberId) {
+        $playlistAddManager = new PlaylistManager;
+        $playlistsAdd = $playlistAddManager->getAllPlaylists($memberId);
+        $modalDisplay = 'off';
         require("view/search.php");
+    }
+    function searchModal($song,$singer,$tj,$kumyoung,$memberId) {
+        $playlistAddManager = new PlaylistManager;
+        $playlistsAdd = $playlistAddManager->getAllPlaylists($memberId);
+        $modalDisplay = 'on';
+        require("view/search.php");
+    }
+    function addToPlaylist($playlistId,$singer,$song,$tj,$kumyoung) {
+        $songAddManager = new SongManager;
+        //echo $playlistId .$song .$singer .$tj .$kumyoung;
+        $songAdd = $songAddManager->addSong($playlistId, $singer, $song, $tj, $kumyoung);
+        header('Location: index.php?action=search');
     }
     
 
