@@ -246,8 +246,9 @@ let modalDisplay = document.getElementById('modalDisplay');
 if(modalDisplay.value === 'on'){
     for (let i=0; i<modals.length; i++) {
         modals[i].style.display = "block"; 
-    }   
-}
+    }
+//     entry = document.getElementById("entry");
+// }
 
 
     // let addPlaylistButton = document.getElementsByClassName('addPlaylist');

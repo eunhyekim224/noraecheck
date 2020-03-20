@@ -9,6 +9,7 @@ $email = isset($_GET['email']) ? $_GET['email'] : ''
 ?>
 <div class="mainWrapper homePage">
 <input type='hidden' name='modalDisplay' id='modalDisplay' value=<?=$modalDisplay?>>
+<input type='hidden' name='searchCache' id='searchCache' value=<?=$modalDisplay?>>
 <?php include('newSongModal.php'); ?>
     <!-- include banner php file instead of header tag -->
     <div id='search' class="gothamPro">
