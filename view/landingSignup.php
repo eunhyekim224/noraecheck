@@ -7,7 +7,7 @@
 <div class="mainWrapper signupPage">
     
     <?php 
-    // include("homeBanner.php"); 
+    include("homeBanner.php"); 
     ?>
     <div id='registrationContent'>
         
