@@ -32,17 +32,17 @@ li {
     padding: 35px;
 }
 
-.neonBlue {
-    /* background-color: rgb(123, 147, 255); */
-    /* box-shadow: inset 50px 0 100px rgb(0, 153, 255), inset -50px 0 100px rgb(251, 255, 0); */
+/* .neonBlue {
+    background-color: rgb(123, 147, 255);
+    box-shadow: inset 50px 0 100px rgb(0, 153, 255), inset -50px 0 100px rgb(251, 255, 0);
     background: linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100% );
 }
 
 .neonYellow {
-    /* background-color: rgb(253, 255, 123); */
-    /* box-shadow: inset 60px 0 120px rgb(251, 255, 0), inset -60px 0 120px rgb(132, 0, 255); */
+    background-color: rgb(253, 255, 123);
+    box-shadow: inset 60px 0 120px rgb(251, 255, 0), inset -60px 0 120px rgb(132, 0, 255);
     background: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100% );
-}
+} */
 
 
 /************ Styling for home view ************/
@@ -81,7 +81,7 @@ li {
 }
 
 .btnBlue, #menuIcons li {
-    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 20%, #8fd3f4 71%, #84fab0 100%);
 }
 
 .btnOrange, #menuIcons li:focus {
@@ -381,6 +381,7 @@ input.question + label > span {
     width: 29%;
     padding-right: -18px;
     margin-right: -97px;
+
 }
 
 #banner .word {
@@ -390,7 +391,7 @@ input.question + label > span {
     font-family: 'Jua', sans-serif;
     /* text-shadow: 0 0 3px rgba(0, 0, 0, 1); */
     font-size: 5em;
-    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+    background-image: linear-gradient(to right, #8fd3f4 51%, #8fd3f4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
