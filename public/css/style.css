@@ -435,6 +435,12 @@ li {
     font-weight: bold;
     margin: 0 0 17.6px 0;
 }
+.errorMsg {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+
 /**********landingSignup Style***********/
 
 .signupPage{

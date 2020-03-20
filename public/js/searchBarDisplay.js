@@ -3,7 +3,7 @@ let searchOptionIndex = 'song';
 
 let song = document.getElementById('song');
 let singer = document.getElementById('singer');
-let code = document.getElementById('code');
+let code = document.getElementById('no');
 
 
 function switchOptions(index){
