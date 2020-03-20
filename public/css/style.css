@@ -64,7 +64,7 @@ li {
 
 /* new button style */
 
-.btn {
+.btn, #menuIcons li{
     margin: 10px;
     padding: 30px;
     text-align: center;
@@ -72,20 +72,19 @@ li {
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
-    /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
 }
 
-.btn:hover {
+.btn:hover, #menuIcons li:hover {
     background-position: right center;
 }
 
-.btnBlue {
+.btnBlue, #menuIcons li {
     background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
 }
 
-.btnOrange {
+.btnOrange, #menuIcons li:focus {
     background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
 }
 
@@ -118,14 +117,9 @@ li {
 }
 
 #menuIcons li {
-    align-items: center;
     width: 10%;
-    height: 50%;
-    padding: 3px;
-    border-radius: 10px;
-    background-color: white;
-    text-align: center;
-    font-size: 0.9em;
+    height: 39%;
+    padding: 18px;
 }
 
 /* #menuIcons li:first-child {
@@ -191,14 +185,14 @@ li {
     border-radius: 10px;
 }
 
-#playlistInfo {
+/* #playlistInfo {
     margin-top: -15px;
-}
+} */
 
-/* #playlistInfo,#songInfo {
+#playlistInfo,#songInfo {
     margin-top: -2%;
     font-size: 0.9em;
-} */
+}
 
 #createTxt {
     display: flex;
@@ -280,11 +274,6 @@ li {
     cursor: pointer;
     text-transform: lowercase;
 }
-
-
-/* .modalButtons input:hover, .modalButtons input:focus {
-    background: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100% );
-} */
 
 /* new modal style */
 
@@ -384,22 +373,15 @@ input.question + label > span {
     background-size: 100%;
     height: 15%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
 }
 
 #bannerImage {
-    width: 25%;
+    width: 29%;
+    padding-right: -18px;
+    margin-right: -97px;
 }
-
-#bannerText {
-    width: 75%;
-}
-/* #bannerText span {
-    background-image: linear-gradient(to right, rgb(0, 153, 255) 0%, #88c7c7 100% );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-} */
 
 #banner .word {
     width: 70%;
@@ -408,7 +390,7 @@ input.question + label > span {
     font-family: 'Jua', sans-serif;
     /* text-shadow: 0 0 3px rgba(0, 0, 0, 1); */
     font-size: 5em;
-    background-image: linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100% );
+    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

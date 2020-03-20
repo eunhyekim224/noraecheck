@@ -18,7 +18,7 @@
             ));
             if (!$status) {
                 throw new PDOException('Unable to create the playlist!');
-            } 
+            }
         }
 
         public function getAllPlaylists($memberId) {
