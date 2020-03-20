@@ -264,6 +264,8 @@ function notFound() {
     error.appendChild(errorText);
     div_parent.appendChild(error);
 }
+
+
 let modals = document.getElementsByClassName("modalSearch");   
     
 let modalDisplay = document.getElementById('modalDisplay');
