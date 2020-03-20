@@ -16,34 +16,24 @@ function loadFile(entry,category){//function takes inputs from these two variabl
             
             for (let i = 0,c = obj.length; i < c; i++){
                 if(obj[i].brand === 'tj'){
-                    let nameAndTitle = obj[i].singer + obj[i].title;
-                    nameAndTitle = nameAndTitle.toLowerCase().replace(/ /g,'');
-                    tjCodeMap.set(nameAndTitle,obj[i].no);
-                }else if(obj[i].brand === 'kumyoung'){
-                    let nameAndTitle = obj[i].singer + obj[i].title;
-                    nameAndTitle = nameAndTitle.toLowerCase().replace(/ /g,'');
-                    kumyoungCodeMap.set(nameAndTitle,obj[i].no);
+                    let tjNameAndTitle = nameAndTitleCheck(obj[i].singer, obj[i].title, obj[i].brand);
+
+                    tjNameAndTitle = tjNameAndTitle.toLowerCase().replace(/ /g,'');
+                    tjCodeMap.set(tjNameAndTitle,obj[i].no);
+                } else if(obj[i].brand === 'kumyoung'){
+                    let kumNameAndTitle = nameAndTitleCheck(obj[i].singer, obj[i].title, obj[i].brand);
+
+                    kumNameAndTitle = kumNameAndTitle.toLowerCase().replace(/ /g,'');
+                    kumyoungCodeMap.set(kumNameAndTitle,obj[i].no);
                 }
         
             }
             for (let i = 0,c = obj.length; i < c; i++) {
                 if (obj[i].brand === 'tj' || obj[i].brand === 'kumyoung') {
-                    let songKey = obj[i].singer + obj[i].title;
-                    songKey = songKey.toLowerCase().replace(/ /g,'');
-                    // let titleRegex = obj[i].title.match(/\w+[^\(\w+\)]/gi);
-                    let titleRegex = obj[i].title.match(/\w+(?!\(\w+\))/gi);
-                    console.log(titleRegex);
-                    // console.log(songKey);
-                    // let arrayTj = Array.from(tjCodeMap.keys());
-                    // let arrayKY = Array.from(kumyoungCodeMap.keys());
-                    // let arrayTjItem = arrayTj[0];
-                    // let patt = new RegEx(`${arrayKY[1]}`);
-                    // console.log(arrayTj);
-                    // console.log(arrayKY);
 
-                    // if (patt.test(arrayTjItem)) {
-                    //     console.log('true');
-                    // }
+                    let songKey = nameAndTitleCheck(obj[i].singer, obj[i].title, obj[i].brand);
+                    songKey = songKey.toLowerCase().replace(/ /g,'');
+
                     if(tjCodeMap.has(songKey) && kumyoungCodeMap.has(songKey)){
                         let songEntry = {
                             singer: obj[i].singer,
@@ -74,14 +64,18 @@ function loadFile(entry,category){//function takes inputs from these two variabl
                         kumyoungCodeMap.delete(songKey);
                     }
                 }
-                
 
             }
             arrayToReturnSliced = arrayToReturn.slice(0,10);
             console.log(arrayToReturnSliced);
             // let json = JSON.stringify(arrayToReturn);
             // return arrayToReturn;
-            displayResults(arrayToReturnSliced);
+            if (arrayToReturnSliced.length > 0) {
+                displayResults(arrayToReturnSliced);
+            } else {
+                notFound();
+            }
+            
             
         } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status !== 200 & xhr.status === 0){
 
@@ -96,28 +90,62 @@ function loadFile(entry,category){//function takes inputs from these two variabl
     var submit = document.getElementById('submit');
     var categories = document.getElementById('category');
     let input = document.getElementById('entry');
+    let previousRequest,
+        previousValue = input.value;
 
     // submit.addEventListener('click', function() {
     //     loadFile(input.value,categories.value);   
     // });
 
-    input.addEventListener('keyup', function() {
-        if (input.value) {
-            loadFile(input.value,categories.value);
-        }
+    input.addEventListener('keyup', function(e) {
+        // console.log("e.target.value.length", e.target.value.length>1);
+        let div_parent = document.querySelector('#searchResults');
+        div_parent.innerHTML = "";
+        if (e.target.value) {
+            if(e.target.value.length == 1){ 
+                return;
+            }
+            loadFile(e.target.value,categories.value);
+        } else if (e.target.value != previousValue) {
+            previousValue = e.target.value;
+		
+            if (previousRequest && previousRequest.readyState < XMLHttpRequest.DONE) {
+                previousRequest.abort(); // if we have still a research running, we stop it
+            }
+    
+            previousRequest = loadFile(previousValue); // we store the new request
+        } 
     });
-
 })();
 
+
+function nameAndTitleCheck(singer,title, brand) {
+    let test, regex, nameAndTitle;
+    if (brand === 'tj'){
+        if (test = /\w+\(\w+.\w+ \w+\)/gi.test(singer)) {
+            regex = singer.replace(/\(\w+.\w+ \w+\)/gi,'');
+            nameAndTitle = regex + title;
+        } else {
+            nameAndTitle = singer + title;
+        }
+    }else if (brand === 'kumyoung'){
+        if (test = /\w+ \(\w+.\w+ \w+\)/gi.test(title)) {
+            regex = title.replace(/\(\w+.\w+ \w+\)/gi,'');
+            nameAndTitle = singer + regex;
+        } else {
+            nameAndTitle = singer + title;
+        }
+    }
+    return nameAndTitle;
+}
+
+
 function displayResults(array) {
-    let modals = document.getElementsByClassName("modal");
-    
-    
     let div_parent = document.querySelector('#searchResults');
     div_parent.innerHTML = "";
 
     for (let i=0,c=array.length; i<c; i++) {
-        let searchResults = document.createElement('div');
+        let searchResults = document.createElement('form');
         let songImgDiv = document.createElement('div');
         let songImg = document.createElement('img');
         let songDiv = document.createElement('div');
@@ -137,6 +165,12 @@ function displayResults(array) {
         let addIcon = document.createElement('div');
         let iconImg = document.createElement('img');
 
+        let hiddenSinger = document.createElement('input');
+        let hiddenSong = document.createElement('input');
+        let hiddenTj = document.createElement('input');
+        let hiddenKumyoung = document.createElement('input');
+        let hiddenAction = document.createElement('input');
+
         searchResults.setAttribute('class','resultOption');
         song.setAttribute('class','songTitle');
         songImgDiv.setAttribute('class','songImg');
@@ -147,11 +181,37 @@ function displayResults(array) {
         iconImg.setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg');
         iconImg.setAttribute('title','Plus icon');
         iconImg.setAttribute('class','addPlaylist');
-        for (let i=0; i<modals.length; i++) {
-            iconImg.addEventListener('click', ()=> {
-                modals[i].style.display = "block";
-            }); 
-        }
+
+        hiddenSong.setAttribute('type','hidden');
+        hiddenSinger.setAttribute('type','hidden');
+        hiddenTj.setAttribute('type','hidden');
+        hiddenKumyoung.setAttribute('type','hidden');
+        hiddenAction.setAttribute('type','hidden');
+        
+
+        hiddenSong.setAttribute('name','hiddenSong');
+        hiddenSinger.setAttribute('name','hiddenSinger');
+        hiddenTj.setAttribute('name','hiddenTj');
+        hiddenKumyoung.setAttribute('name','hiddenKumyoung');
+        hiddenAction.setAttribute('name','action');
+
+        let tjCode = array[i].tj_code ? array[i].tj_code : '';
+        let kumgoungCode = array[i].kumyoung_code ? array[i].kumyoung_code : '';
+
+        hiddenSong.setAttribute('value',array[i].song);
+        hiddenSinger.setAttribute('value',array[i].singer);
+        hiddenTj.setAttribute('value',tjCode);
+        hiddenKumyoung.setAttribute('value',kumgoungCode);
+        hiddenAction.setAttribute('value','searchModal');
+        iconImg.addEventListener('click', ()=> {
+            searchResults.submit();
+        });
+        // for (let i=0; i<modals.length; i++) {
+        //     iconImg.addEventListener('click', ()=> {
+        //         //modals[i].style.display = "block";
+        //         searchResults.submit();
+        //     }); 
+        // }
 
         songImgDiv.appendChild(songImg);
         song.appendChild(songText);
@@ -169,6 +229,12 @@ function displayResults(array) {
         searchResults.appendChild(songDiv);
         searchResults.appendChild(addIcon);
 
+        searchResults.appendChild(hiddenSong);
+        searchResults.appendChild(hiddenSinger);
+        searchResults.appendChild(hiddenTj);
+        searchResults.appendChild(hiddenKumyoung);
+        searchResults.appendChild(hiddenAction);
+
         if (array[i].tj_code && array[i].kumyoung_code) {
             brandCodes.appendChild(tjBrand);
             brandCodes.appendChild(code);
@@ -184,6 +250,29 @@ function displayResults(array) {
 
         div_parent.appendChild(searchResults);
     }
+}
+
+function notFound() {
+    let div_parent = document.querySelector('#searchResults');
+    div_parent.innerHTML = "";
+
+    let error = document.createElement('p');
+    let errorText = document.createTextNode('Not Found');
+
+    error.setAttribute('class','errorMsg');
+
+    error.appendChild(errorText);
+    div_parent.appendChild(error);
+}
+
+
+let modals = document.getElementsByClassName("modalSearch");   
+    
+let modalDisplay = document.getElementById('modalDisplay');
+if(modalDisplay.value === 'on'){
+    for (let i=0; i<modals.length; i++) {
+        modals[i].style.display = "block"; 
+    }   
 }
 
 

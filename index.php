@@ -10,7 +10,6 @@ try {
     if (isset($_REQUEST['action'])) {
         $action = $_REQUEST['action'];
         if ($action === 'showMyList') {
-            $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
             showAllPlaylists(1); 
         } else if ($action === 'showMySongs') {
@@ -34,6 +33,20 @@ try {
             if (isset($_SESSION['memberId']) && isset($_POST['playlistName']) && $_POST['playlistName'] !== '') {
                 makePlaylist($_SESSION['memberId'], $_POST['playlistName']);
             }
+        } else if ($action === 'searchModal') {
+            $song = isset($_REQUEST['hiddenSong']) ? $_REQUEST['hiddenSong'] : '';
+            $singer = isset($_REQUEST['hiddenSinger']) ? $_REQUEST['hiddenSinger'] : '';
+            $tj = isset($_REQUEST['hiddenTj']) ? $_REQUEST['hiddenTj'] : '';
+            $kumyoung = isset($_REQUEST['hiddenKumyoung']) ? $_REQUEST['hiddenKumyoung'] : '';
+            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            searchModal($song,$singer,$tj,$kumyoung,$memberId);
+        } else if ($action === 'addToPlaylist') {
+            $playlistId = isset($_REQUEST['playlistId']) ? $_REQUEST['playlistId'] : '';
+            $song = isset($_REQUEST['song']) ? $_REQUEST['song'] : '';
+            $singer = isset($_REQUEST['singer']) ? $_REQUEST['singer'] : '';
+            $tj = isset($_REQUEST['tj']) ? $_REQUEST['tj'] : '';
+            $kumyoung = isset($_REQUEST['kumyoung']) ? $_REQUEST['kumyoung'] : '';
+            addToPlaylist($playlistId,$singer,$song,$tj,$kumyoung);
         } else if ($action === 'search') {
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
             search($memberId);      
