@@ -31,10 +31,11 @@
 
 
 
-            ?>
-        <form method="POST" action="index.php">
+            ?> 
+    <!-- <div id="kakaoLogin"><span>sign up with</span><img src="./public/images/kakaotalk.svg"></div> -->
+       
+    <form method="POST" action="index.php">
 
-        <!-- <div id="kakaoLogin"><span>sign up with</span><img src="./public/images/kakaotalk.svg"></div> -->
         <p id="firstP"> please fill out all of the required fields</p>
 
             <p>
@@ -63,8 +64,11 @@
         </form>
 
 <!-- test form 3 out -->
+<form method="POST" action="index.php">
 
-<!-- <div class="page">
+<p id="firstP"> please fill out all of the required fields</p>
+
+<div class="page">
 
 <label class="field a-field a-field_a1">
 <input class="field__input a-field__input" placeholder="e.g. Stas" required>
@@ -100,7 +104,9 @@
 <input type="reset" name="reset" id="reset" value="Reset"/>
 </p>
 
-</div> -->
+</div>
+
+</form>
 
 <!-- test form 3 end -->
 
