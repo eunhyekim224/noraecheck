@@ -178,11 +178,10 @@ a {
 .myList li {
     display: flex;
     flex-direction: row;
-    padding: 2%;
+    padding: 2% 0;
     height: 20%;
     border-bottom: 0.1px solid;
     width: 53%;
-    padding-left: 0%;
 }
 
 .myList img {
@@ -283,15 +282,11 @@ a {
     justify-content: center;
 }
 .modalContentSearch {
-    height: fit-content;
-    
-    
+    height: fit-content;   
 }
 
-#myListModal{
-    
-    margin-bottom: 0px;
-   
+#myListModal{  
+    margin-bottom: 0px;  
 }
 
 #mylistModal li {
@@ -397,6 +392,40 @@ input.question + label > span {
     margin: 0;
     padding-left: 10%;
 }
+
+#mySongList li {
+    padding: 2% 0 4% 0;
+}
+
+/* meatball menu on playlist options */
+.playlistOptions {
+    display: flex;
+}
+
+.playlistOptions > div {
+    width: 5px;
+    height: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #fff;
+}
+
+.circle {
+    margin: 3px;
+    border-radius: 50%;
+}
+
+.playlistOptions:hover ~ .circle, .playlistOptions:focus ~ .circle {
+    transform: rotate(45deg);
+}
+
+.playlistOptions > div:hover, .playlistOptions > div:focus {
+    outline: none;
+}
+
 
 /* Scrollbar */
 
@@ -608,6 +637,7 @@ input.question + label > span {
 .resultOption {
     width: 100%;
     padding: 3% 0 3% 0;
+    border-bottom: 0.1px solid;
 }
 .songImg img, .addIcon img {
     width: 100%;

@@ -9,9 +9,12 @@
             <i class="far fa-calendar-alt darkGrey" title="creation date"></i>
             <span class="darkGrey"><?= $_GET['playlistCreationDate']; ?></span>
         </p>
+        <div class="playlistOptions">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
     </div>
-    
-    <input type="button" name="addSongsBtn" value="ADD SONGS">
 </div>
 <!-- $_SESSION['username']-->
 <ul id="mySongList" class="myList">
