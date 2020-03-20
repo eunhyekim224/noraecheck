@@ -11,7 +11,7 @@ $email = isset($_GET['email']) ? $_GET['email'] : ''
 <input type='hidden' name='modalDisplay' id='modalDisplay' value=<?=$modalDisplay?>>
 <?php include('newSongModal.php'); ?>
     <!-- include banner php file instead of header tag -->
-    <div id='search'>
+    <div id='search' class="gothamPro">
         <div id="searchOptions" class="searchOptions">
             <div class="searchOption" id="song" ><span>song</span></div>
             <div class="searchOption hidden" id="singer"><span>artist</span></div>
@@ -24,7 +24,7 @@ $email = isset($_GET['email']) ? $_GET['email'] : ''
     <script src="./public/js/searchBarDisplay.js"></script>
     
     
-    <section id="results">
+    <section id="results" class="gothamPro">
         <h1>Results</h1>
         <div id="searchResults">
          
@@ -32,7 +32,7 @@ $email = isset($_GET['email']) ? $_GET['email'] : ''
         </div>
     </section> 
     <script src="./public/js/modalSearch.js"></script>  
-    <nav id="nav">
+    <nav id="nav" class='openSans'>
         <ul id="menuIcons">
             <li id="myListIcon" class="neonBlue">
                 <a href="index.php?action=showMyList" title="Go to my list">

@@ -230,6 +230,9 @@ li {
     overflow: auto; 
     background-color: rgba(0,0,0,0.4); 
 }
+/* .modalSearch{
+    overflow:scroll;
+} */
 
 .cancel {
     color: #aaa;
@@ -245,7 +248,7 @@ li {
     cursor: pointer;
 }
   
-.modalContent {
+.modalContent,.modalContentSearch {
     background-color: rgb(206, 206, 206);
     box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
     color: white;
@@ -259,6 +262,22 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.modalContentSearch {
+    height: fit-content;
+    
+    
+}
+
+#myListModal{
+    
+    margin-bottom: 0px;
+   
+}
+
+#mylistModal li {
+    border-bottom: 1px solid white;
+    text-align: center;
 }
 
 .modalButtons {

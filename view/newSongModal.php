@@ -1,26 +1,24 @@
-<div class="modalSearch">
-    <div class="modalContent">
-        <span class="close">&times;</span>
-        <p>add song to playlist</p>
+<div class="modalSearch gothamPro">
+    <div class="modalContentSearch">
+        <!-- <p>add song to playlist</p> -->
+        <label for="playlistName"><span>add song to playlist</span></label>
         <ul id="myListModal">
-        <?= $song;?>
-        <?= $singer;?>
-        <?= $tj;?>
-        <?= $kumyoung;?>
+            
+        
             <?php while ($playlist = $playlistsAdd->fetch()) { ?>
                 <li>
-                    <!-- <img src="public/images/mic.png" id="playListImg"> -->
-                    <?= '<a href="index.php?action=addToPlaylist&playlistId='.$playlist['playlistId'] .'&song='.$song .'&singer='.$singer .'&tj='.$tj .'&kumyoung='.$kumyoung .'" class= "displayedPlaylistsModal">';?>
+                    <?= '<a href="index.php?action=addToPlaylist&playlistId='.$playlist['playlistId'] .'&song='.urlencode($song) .'&singer='.urlencode($singer) .'&tj='.$tj .'&kumyoung='.$kumyoung .'" class= "displayedPlaylistsModal">';?>
                     <div id="playlistInfo">
                         <p><?= $playlist['playlistName']; ?></p>
-                        
-                        
+                         
                     </div>
                     <?= "</a>";?>
                 </li>
             <?php } ?>
         </ul>
-        <input type="button" name="cancel" value="CANCEL"> 
+        <div class="modalButtons openSans">
+                <input type="button" name="cancel" value="Cancel" class="btn btnBlue">               
+            </div> 
 
     </div>
 </div>
