@@ -88,11 +88,11 @@
         $playlistAddManager = new PlaylistManager();
         $playlistsAdd = $playlistAddManager->getAllPlaylists($memberId);
         $modalDisplay = 'on';
+        echo $song .$singer .$tj .$kumyoung;
         require("view/search.php");
     }
     function addToPlaylist($playlistId,$singer,$song,$tj,$kumyoung) {
         $songAddManager = new SongManager();
-        //echo $playlistId .$song .$singer .$tj .$kumyoung;
         $songAdd = $songAddManager->addSong($playlistId, $singer, $song, $tj, $kumyoung);
         header('Location: index.php?action=search');
     }
