@@ -75,9 +75,12 @@
         require("view/home.php");
     }
 
-    function showPlaylist($memberId, $name) {
-        //getPlaylist
+    function deletePlaylist($playlistId, $memberId) {
+        $playlistManager = new PlaylistManager();
+        $playlistManager->deletePlaylist($playlistId);
+        showAllPlaylists($memberId);
     }
+
     function search($memberId) {
         $playlistAddManager = new PlaylistManager();
         $playlistsAdd = $playlistAddManager->getAllPlaylists($memberId);

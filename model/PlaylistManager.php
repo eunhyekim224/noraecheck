@@ -54,5 +54,24 @@
             }
             return $playlists;
         }
+
+        public function deletePlaylist($playlistId) {
+            $db = $this->dbConnect();
+            $del = $db->prepare("DELETE FROM playlists WHERE id = :playlistId");
+            $del->execute(array(
+                'playlistId' => $playlistId
+            ));
+            $numberOfDeletedRows = $del->rowCount();
+
+            $delSongs = $db->prepare("DELETE FROM songs WHERE playlistId = :playlistId");
+            $delSongs->execute(array(
+                'playlistId' => $playlistId
+            ));
+
+            if ($numberOfDeletedRows < 1) {
+                throw new PDOException('No playlists have been deleted!'); 
+            }
+            return $numberOfDeletedRows;
+        }
     }
 

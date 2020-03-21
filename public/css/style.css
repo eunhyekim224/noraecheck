@@ -397,20 +397,26 @@ input.question + label > span {
     padding: 2% 0 4% 0;
 }
 
-/* meatball menu on playlist options */
-.playlistOptions {
+/* ellipse menu on playlist options */
+
+#playlistOptions {
     display: flex;
+    cursor: pointer;
+    width: 24%;
 }
 
-.playlistOptions > div {
+#playlistOptions > div {
     width: 5px;
-    height: 5px;
+    height: 5px;    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     background: #fff;
+}
+
+#playlistOptions:hover .circle, #playlistOptions:focus .circle {
+    background: rgb(87, 84, 84);
 }
 
 .circle {
@@ -418,14 +424,29 @@ input.question + label > span {
     border-radius: 50%;
 }
 
-.playlistOptions:hover ~ .circle, .playlistOptions:focus ~ .circle {
+#playlistOptions:hover ~ .circle, .playlistOptions:focus ~ .circle {
     transform: rotate(45deg);
 }
 
-.playlistOptions > div:hover, .playlistOptions > div:focus {
+#playlistOptions > div:hover, .playlistOptions > div:focus {
     outline: none;
 }
 
+/* playlist options modal */
+
+#mainPlaylist .modalButtons {
+    flex-direction: column;
+    align-items: center;
+    padding: 7% 0 0 0;
+}
+
+#mainPlaylist .modalButtons input {
+    width: 87%;
+}
+
+#mainPlaylist .modalButtons div {
+    width: 100%;
+}
 
 /* Scrollbar */
 
@@ -853,6 +874,7 @@ input.question + label > span {
     input.question:focus + label > span {
         font-size: 0.5em;
     }
+
 
     /* nav */
 

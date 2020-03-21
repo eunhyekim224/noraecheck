@@ -32,6 +32,10 @@ try {
             if (isset($_SESSION['memberId']) && isset($_POST['playlistName']) && $_POST['playlistName'] !== '') {
                 makePlaylist($_SESSION['memberId'], $_POST['playlistName']);
             }
+        } else if ($action === 'deletePlaylist') {
+            if (isset($_SESSION['memberId']) && isset($_SESSION['playlistId'])) {
+                deletePlaylist(($_SESSION['playlistId']), $_SESSION['memberId']);
+            }
         } else if ($action === 'searchModal') {
             $song = isset($_REQUEST['hiddenSong']) ? $_REQUEST['hiddenSong'] : '';
             $singer = isset($_REQUEST['hiddenSinger']) ? $_REQUEST['hiddenSinger'] : '';
