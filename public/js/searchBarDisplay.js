@@ -4,11 +4,11 @@ let searchOptionIndex = 'song';
 let song = document.getElementById('song');
 let singer = document.getElementById('singer');
 let no = document.getElementById('no');
-
+let entry = document.getElementById('entry');
+let category = document.getElementById('category');
 
 function switchOptions(index){
-    let entry = document.getElementById('entry');
-    let category = document.getElementById('category');
+    
 
     song.classList.remove("searchOptionExpanded");
     singer.classList.remove("searchOptionExpanded");
@@ -101,3 +101,11 @@ no.addEventListener('click',function(){
     }
     switchOptions(searchOptionIndex);
 });
+
+// if(modalDisplay.value === 'on'){
+//     searchCache = document.getElementById('searchCache');
+//     searchCategory = document.getElementById('searchCategory');
+//     switchOptions(searchCategory.value);
+//     entry.value = searchCache.value;
+
+// }

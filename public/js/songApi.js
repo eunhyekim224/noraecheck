@@ -73,6 +73,7 @@ function loadFile(entry,category){//function takes inputs from these two variabl
             if (arrayToReturnSliced.length > 0) {
                 displayResults(arrayToReturnSliced);
             } else {
+                console.log('not found');
                 notFound();
             }
             
@@ -96,6 +97,7 @@ function loadFile(entry,category){//function takes inputs from these two variabl
     // submit.addEventListener('click', function() {
     //     loadFile(input.value,categories.value);   
     // });
+
 
     input.addEventListener('keyup', function(e) {
         // console.log("e.target.value.length", e.target.value.length>1);
@@ -170,6 +172,8 @@ function displayResults(array) {
         let hiddenTj = document.createElement('input');
         let hiddenKumyoung = document.createElement('input');
         let hiddenAction = document.createElement('input');
+        let searchCache = document.createElement('input');
+        let categoryCache = document.createElement('input');
 
         searchResults.setAttribute('class','resultOption');
         song.setAttribute('class','songTitle');
@@ -187,6 +191,8 @@ function displayResults(array) {
         hiddenTj.setAttribute('type','hidden');
         hiddenKumyoung.setAttribute('type','hidden');
         hiddenAction.setAttribute('type','hidden');
+        searchCache.setAttribute('type','hidden');
+        categoryCache.setAttribute('type','hidden');
         
 
         hiddenSong.setAttribute('name','hiddenSong');
@@ -194,6 +200,8 @@ function displayResults(array) {
         hiddenTj.setAttribute('name','hiddenTj');
         hiddenKumyoung.setAttribute('name','hiddenKumyoung');
         hiddenAction.setAttribute('name','action');
+        searchCache.setAttribute('name','searchCache');
+        categoryCache.setAttribute('name','categoryCache');
 
         let tjCode = array[i].tj_code ? array[i].tj_code : '';
         let kumgoungCode = array[i].kumyoung_code ? array[i].kumyoung_code : '';
@@ -203,6 +211,8 @@ function displayResults(array) {
         hiddenTj.setAttribute('value',tjCode);
         hiddenKumyoung.setAttribute('value',kumgoungCode);
         hiddenAction.setAttribute('value','searchModal');
+        searchCache.setAttribute('value',entry.value);
+        categoryCache.setAttribute('value',category.value);
         iconImg.addEventListener('click', ()=> {
             searchResults.submit();
         });
@@ -234,6 +244,8 @@ function displayResults(array) {
         searchResults.appendChild(hiddenTj);
         searchResults.appendChild(hiddenKumyoung);
         searchResults.appendChild(hiddenAction);
+        searchResults.appendChild(searchCache);
+        searchResults.appendChild(categoryCache);
 
         if (array[i].tj_code && array[i].kumyoung_code) {
             brandCodes.appendChild(tjBrand);
@@ -267,14 +279,34 @@ function notFound() {
 
 
 let modals = document.getElementsByClassName("modalSearch");   
-    
+   
+
+function autocorrect(searchedValue,category) {
+    // console.log("e.target.value.length", e.target.value.length>1);
+    let div_parent = document.querySelector('#searchResults');
+    div_parent.innerHTML = "";
+    if (searchedValue) {
+        loadFile(searchedValue,category);
+    } 
+};
+
+
 let modalDisplay = document.getElementById('modalDisplay');
 if(modalDisplay.value === 'on'){
     for (let i=0; i<modals.length; i++) {
         modals[i].style.display = "block"; 
+        searchCache = document.getElementById('searchCache');
+        console.log(searchCache.value);
+        searchCategory = document.getElementById('searchCategory');
+        switchOptions(searchCategory.value);
+        finalSearchCache = searchCache.value.replace(/_/g, " ");
+        entry.value = finalSearchCache;
+        autocorrect(finalSearchCache,searchCategory.value)
+
     }
-//     entry = document.getElementById("entry");
-// }
+}
+
+
 
 
     // let addPlaylistButton = document.getElementsByClassName('addPlaylist');

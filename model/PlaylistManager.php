@@ -39,20 +39,21 @@
         }
         
         public function getPlaylist($memberId, $name) {
+            echo $memberId .$name;
             $db = $this->dbConnect();
-            $playlist = $db->prepare('SELECT p.memberId AS memberId, m.username AS username, p.name AS playlistName, p.creationDate AS playlistCreationDate 
+            $playlist = $db->prepare('SELECT p.memberId AS memberId, m.username AS username, p.name AS playlistName, p.creationDate AS playlistCreationDate, p.id AS playlistId 
                                        FROM playlists p
                                        JOIN members m
                                        ON p.memberId = m.id
                                        WHERE p.memberId = :memberId AND p.name = :name');
-            $resp = $playlists->execute(array(
+            $resp = $playlist->execute(array(
                 'memberId' => $memberId,
                 'name' => $name
             ));
             if(!$resp) {
                 throw new PDOException('Unable to retrieve this playlist!');
             }
-            return $playlists;
+            return $playlist;
         }
     }
 

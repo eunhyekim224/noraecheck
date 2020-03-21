@@ -5,11 +5,13 @@
 <?php if (!$_SESSION['username']){
     header("location:index.php");
 }
+$searchCache = preg_replace('/\s+/', '_', $searchCache);
 $email = isset($_GET['email']) ? $_GET['email'] : ''
 ?>
 <div class="mainWrapper homePage">
 <input type='hidden' name='modalDisplay' id='modalDisplay' value=<?=$modalDisplay?>>
-<input type='hidden' name='searchCache' id='searchCache' value=<?=$modalDisplay?>>
+<input type='hidden' name='searchCache' id='searchCache' value=<?=$searchCache?>>
+<input type='hidden' name='searchCategory' id='searchCategory' value=<?=$categoryCache?>>
 <?php include('newSongModal.php'); ?>
     <!-- include banner php file instead of header tag -->
     <div id='search' class="gothamPro">
