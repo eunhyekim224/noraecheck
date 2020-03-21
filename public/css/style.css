@@ -23,6 +23,10 @@ li {
     list-style-type: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 .mainWrapper {
     /* background-color: rgb(243, 243, 243); */
     border-radius: 20px;
@@ -143,6 +147,7 @@ li {
     text-decoration: none;
     color:black;
 }
+
 #myListIcon img {
     max-width: 100%;
     max-height: 66%;
@@ -163,21 +168,23 @@ li {
 
 /* LIST VIEW */
 
-#myList {
+.myList {
     height: 80%;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
 }
 
-#myList li {
+.myList li {
     display: flex;
     flex-direction: row;
-    padding: 2%;
+    padding: 2% 0;
     height: 20%;
+    border-bottom: 0.1px solid;
+    width: 53%;
 }
 
-#myList img {
+.myList img {
     max-height: 100%;
     background-color: white;
     margin-right: 3%;
@@ -185,13 +192,30 @@ li {
     border-radius: 10px;
 }
 
-/* #playlistInfo {
-    margin-top: -15px;
-} */
+#mySongList img {
+    max-height: 100%;
+    background-color: rgb(206, 206, 206);
+    margin-right: 3%;
+    padding: 0.5%;
+    border-radius: 10px;
+}
 
 #playlistInfo,#songInfo {
-    margin-top: -2%;
-    font-size: 0.9em;
+    margin-top: -11%;
+}
+
+.darkGrey {
+    color: rgb(102, 96, 96);
+}
+
+.playlistNameText, #songNameText {
+    font-size: 1.2em;
+    font-weight: bolder;
+    margin: 1% 0;
+}
+
+#mainPlaylistInfo {
+    padding-left: 2%;
 }
 
 #createTxt {
@@ -200,7 +224,7 @@ li {
 }
 
 #createPlaylist input[type="image"] {
-    width: 10.6%;
+    width: 18.6%;
     background-color: white;
     border-radius: 10px;
     margin-right: 3%;
@@ -258,15 +282,11 @@ li {
     justify-content: center;
 }
 .modalContentSearch {
-    height: fit-content;
-    
-    
+    height: fit-content;   
 }
 
-#myListModal{
-    
-    margin-bottom: 0px;
-   
+#myListModal{  
+    margin-bottom: 0px;  
 }
 
 #mylistModal li {
@@ -358,6 +378,55 @@ input.question + label > span {
   transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
 }
 
+/* playlist songs  */
+
+#songsInOnePlaylist {
+    font-size: 0.9em;
+}
+
+#mySongList {
+    height: 63.5%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    margin: 0;
+    padding-left: 10%;
+}
+
+#mySongList li {
+    padding: 2% 0 4% 0;
+}
+
+/* meatball menu on playlist options */
+.playlistOptions {
+    display: flex;
+}
+
+.playlistOptions > div {
+    width: 5px;
+    height: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #fff;
+}
+
+.circle {
+    margin: 3px;
+    border-radius: 50%;
+}
+
+.playlistOptions:hover ~ .circle, .playlistOptions:focus ~ .circle {
+    transform: rotate(45deg);
+}
+
+.playlistOptions > div:hover, .playlistOptions > div:focus {
+    outline: none;
+}
+
+
 /* Scrollbar */
 
 /* width */
@@ -390,7 +459,6 @@ input.question + label > span {
     box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
     border-radius: 20px;
     background-size: 100%;
-    height: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -532,6 +600,27 @@ input.question + label > span {
 }
 
 /**********Search Page Style***********/
+
+#mainPlaylist {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    padding: 3% 0 2% 4%;
+    font-size: 1.2em;
+}
+
+#mainPlaylistImg {
+    width: 13%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+/* #mainPlaylist p {
+    margin: 1%;
+} */
+
 #results {
     padding: 0 3% 0 3%;
 }
@@ -548,6 +637,7 @@ input.question + label > span {
 .resultOption {
     width: 100%;
     padding: 3% 0 3% 0;
+    border-bottom: 0.1px solid;
 }
 .songImg img{
     width: 5vw;
@@ -557,7 +647,7 @@ input.question + label > span {
     height: 10vh;
 }
 .songImg {
-    background-color: white;
+    /* background-color: white; */
     width: 10%;
     height: 10%;
     border-radius: 10px;
@@ -582,6 +672,7 @@ input.question + label > span {
     font-size: 1.1em;
     font-weight: bold;
     margin: 0 0 17.6px 0;
+    color: rgb(102, 96, 96);
 }
 .errorMsg {
     font-size: 1.1em;
@@ -728,11 +819,7 @@ input.question + label > span {
         margin: 30px 0 30px 0
     }
 
-    #myList li {
-        height: fit-content;
-    }
-
-    #myList img {
+    .myList img {
         height: 90%;
         width: 30%;
         background-color: white;
@@ -740,7 +827,7 @@ input.question + label > span {
         padding: 0.5%;
     }
 
-    #myList #createPlaylist {
+    .myList #createPlaylist {
         padding-bottom: 0;
     }
 
