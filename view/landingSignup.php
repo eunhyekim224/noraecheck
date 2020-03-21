@@ -34,7 +34,7 @@
             ?> 
     <!-- <div id="kakaoLogin"><span>sign up with</span><img src="./public/images/kakaotalk.svg"></div> -->
        
-    <form method="POST" action="index.php">
+    <!-- <form method="POST" action="index.php">
 
         <p id="firstP"> please fill out all of the required fields</p>
 
@@ -61,19 +61,24 @@
                 <input type="reset" name="reset" id="reset" value="Reset"/>
             </p>
 
-        </form>
+        </form> -->
 
 <!-- test form 3 out -->
-<form method="POST" action="index.php">
+
 
 <p id="firstP"> please fill out all of the required fields</p>
 
 <div class="page">
-
+<form method="POST" action="index.php">
+<!--  -->
 <label class="field a-field a-field_a1">
+
 <input class="field__input a-field__input" placeholder="e.g. Stas" required>
+
 <span class="a-field__label-wrap">
+
 <span class="a-field__label">Login</span>
+
 </span>
 </label>
 
@@ -103,10 +108,10 @@
 <input type="submit" name="submitRegister" id="submitRegister" value="Create"/>
 <input type="reset" name="reset" id="reset" value="Reset"/>
 </p>
-
+</form>
 </div>
 
-</form>
+
 
 <!-- test form 3 end -->
 
