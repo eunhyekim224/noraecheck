@@ -2,13 +2,13 @@
 <!-- $_SESSION['username']-->
 <ul id="myList">
 <li id="createPlaylist">
-    <input type="image" name="newPlaylistBtn" id="newPlaylistBtn" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg">
+    <input type="image" name="newPlaylistBtn" id="newPlaylistBtn" src="public/images/plusIcon2.png">
     <p id="createTxt">Create a new playlist</p>
     <?php include('newPlaylistModal.php'); ?>
 </li>
 <?php while ($playlist = $playlists->fetch()) { ?>
     <li>
-        <img src="public/images/mic.png" id="playListImg">
+        <img src="public/images/mic.png" id="playListImg" title="Playlist icon">
         <?= '<a href="index.php?action=showMySongs&playlistName=' .$playlist['playlistName'] .'&playlistId=' .$playlist['playlistId'] .'" class= "displayedPlaylists">';?>
         <div id="playlistInfo">
             <p><?= $playlist['playlistName']; ?></p>
