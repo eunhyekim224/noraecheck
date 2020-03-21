@@ -42,17 +42,31 @@ try {
             $tj = isset($_REQUEST['hiddenTj']) ? $_REQUEST['hiddenTj'] : '';
             $kumyoung = isset($_REQUEST['hiddenKumyoung']) ? $_REQUEST['hiddenKumyoung'] : '';
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-            searchModal($song,$singer,$tj,$kumyoung,$memberId);
+            $searchCache = isset($_REQUEST['searchCache']) ? $_REQUEST['searchCache'] : '';
+            $categoryCache = isset($_REQUEST['categoryCache']) ? $_REQUEST['categoryCache'] : '';
+            searchModal($song,$singer,$tj,$kumyoung,$searchCache,$categoryCache,$memberId);
         } else if ($action === 'addToPlaylist') {
             $playlistId = isset($_REQUEST['playlistId']) ? $_REQUEST['playlistId'] : '';
             $song = isset($_REQUEST['song']) ? $_REQUEST['song'] : '';
             $singer = isset($_REQUEST['singer']) ? $_REQUEST['singer'] : '';
             $tj = isset($_REQUEST['tj']) ? $_REQUEST['tj'] : '';
             $kumyoung = isset($_REQUEST['kumyoung']) ? $_REQUEST['kumyoung'] : '';
-            addToPlaylist($playlistId,$singer,$song,$tj,$kumyoung);
+            addToPlaylist($playlistId,urldecode($singer),urldecode($song),$tj,$kumyoung);
+        } else if ($action === 'addSongToNewPlaylist') {
+            $playlistName = isset($_REQUEST['playlistName']) ? $_REQUEST['playlistName'] : '';
+            $song = isset($_REQUEST['song']) ? $_REQUEST['song'] : '';
+            $singer = isset($_REQUEST['singer']) ? $_REQUEST['singer'] : '';
+            $tj = isset($_REQUEST['tj']) ? $_REQUEST['tj'] : '';
+            $kumyoung = isset($_REQUEST['kumyoung']) ? $_REQUEST['kumyoung'] : '';
+            if (isset($_SESSION['memberId']) && $playlistName) {
+                addSongToNewPlaylist($_SESSION['memberId'], $playlistName,urldecode($singer),urldecode($song),$tj,$kumyoung);
+            }
+            addToPlaylist($playlistId,urldecode($singer),urldecode($song),$tj,$kumyoung);
         } else if ($action === 'search') {
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-            search($memberId);      
+            $searchCache = isset($_REQUEST['searchCache']) ? $_REQUEST['searchCache'] : '';
+            $categoryCache = isset($_REQUEST['categoryCache']) ? $_REQUEST['categoryCache'] : '';
+            search($memberId,$searchCache,$categoryCache);      
             } else {
                 throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
             }

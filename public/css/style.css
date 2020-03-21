@@ -660,9 +660,12 @@ input.question + label > span {
     padding: 3% 0 3% 0;
     border-bottom: 0.1px solid;
 }
-.songImg img, .addIcon img {
-    width: 100%;
-    height: 100%;
+.songImg img{
+    width: 5vw;
+    height: 13vh;
+}
+.addIcon img{
+    height: 10vh;
 }
 .songImg {
     /* background-color: white; */
@@ -697,6 +700,19 @@ input.question + label > span {
     font-weight: bold;
 }
 
+#searchNewPlaylist{
+    display:none;
+}
+#searchNewPlaylistSubmit{
+    height:10%;
+    width:10%;
+}
+.visibleSearchNewPlaylist{
+    display:flex !important;
+}
+.invisibleSearchNewPlaylistBtn{
+    display:none;
+}
 
 /**********landingSignup Style***********/
 
