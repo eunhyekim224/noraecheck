@@ -29,7 +29,9 @@
                 header('Location: index.php?action=register&error=logOld');
             }
         } else {
-            require("view/landingSignup.php");
+            // require("view/landingSignup.php");
+            require("view/landing.php");
+            // require("view/homeMyList.php");
         }  
     }
 

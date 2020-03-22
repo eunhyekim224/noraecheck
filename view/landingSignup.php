@@ -1,30 +1,36 @@
-<?php $title = 'noraecheck - Create account';?>
-<?php $style = 'style.css';?>
+<?php 
+// $title = 'noraecheck - Create account';
+?>
+<?php 
+// $style = 'style.css';
+?>
 
-<?php ob_start();?>
+<?php 
+// ob_start();
+?>
 
 
-<div class="mainWrapper signupPage">
+<!-- <div class="mainWrapper signupPage"> -->
     
     <?php 
     // include("homeBanner.php"); 
     ?>
-    <div id='registrationContent'>
+    <!-- <div id='registrationContent'> -->
         
         <?php
 
-        if ($error == 'logError'){
-            echo '<p class="error">please make sure that your login fields are the same</p> ';
-        }
-        if ($error == 'passError'){
-            echo '<p class="error">please make sure that your passwords are the same</p> ';
-        }
-        if ($error == 'logOld'){
-            echo '<p class="error">that id has already been taken </p> ';
-        }
-        if ($error == 'mailError'){
-            echo '<p class="error">please enter a valid email address</p> ';
-        }
+        // if ($error == 'logError'){
+        //     echo '<p class="error">please make sure that your login fields are the same</p> ';
+        // }
+        // if ($error == 'passError'){
+        //     echo '<p class="error">please make sure that your passwords are the same</p> ';
+        // }
+        // if ($error == 'logOld'){
+        //     echo '<p class="error">that id has already been taken </p> ';
+        // }
+        // if ($error == 'mailError'){
+        //     echo '<p class="error">please enter a valid email address</p> ';
+        // }
 
             ?> 
 
@@ -111,7 +117,11 @@
 
 <!-- test form 3 end -->
 
-    </div>
-</div>
-<?php $content = ob_get_clean();?>
-<?php require('template.php');?>
+    <!-- </div>
+</div> -->
+<?php 
+// $content = ob_get_clean();
+?>
+<?php 
+// require('template.php');
+?>

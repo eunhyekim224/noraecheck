@@ -18,16 +18,10 @@
 <!-- Sign In Modal-->
 <button id="signInText" class="btn" onclick="document.getElementById('id02').style.display='block'">Sign in</button>
     <div id="id02" class="modal">
-        <form id="loginForm" class="modal-content animate" action="index.php" method="post">
-        <div class="imgcontainer">
-        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
-
-<div class="container">
-       <?php 
-        if ($status == '1'){
-        echo '<p class="good">account successfully created</p> ';
-        }
+        <?php 
+        // if ($status == '1'){
+        // echo '<p class="good">account successfully created</p> ';
+        // }
         if ($error == 'logError'){
         echo '<p class="error">there are no accounts with that ID</p> ';
         }
@@ -38,7 +32,14 @@
         echo '<p class="error">please enter both fields</p> ';
         }
         ?>
-<form method="POST" action="index.php">
+        <form id="loginForm" class="modal-content animate" action="index.php?action=login" method="POST">
+        <div class="imgcontainer">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+<div class="container">
+
+<!-- <form id="loginForm" method="POST" action="index.php?action=showMyList"> -->
 
     <p id="firstP"> please fill out all of the required fields</p>
         <p class="loginformP">
@@ -67,20 +68,15 @@
 </div>
 </div>
 </form>
+    <!-- </form> -->
 <!-- Sign In Modal End -->
 
+<!-- Sign Up Modal Start -->
 <button id="createAccount" class="btn" onclick="document.getElementById('id01').style.display='block'">Create Account</button>
 
 <div id="id01" class="modal">
 
-<form class="modal-content animate" action="index.php" method="post">
-<div class="imgcontainer">
-<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-</div>
-
-<div class="container">
-
-<?php
+<form class="modal-content animate" action="index.php" method="POST"><?php
 if ($error == 'logError'){
 echo '<p class="error">please make sure that your login fields are the same</p> ';
 }
@@ -94,8 +90,14 @@ if ($error == 'mailError'){
 echo '<p class="error">please enter a valid email address</p> ';
 }
 ?>
+<div class="imgcontainer">
+<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+</div>
 
-<form method="POST" action="index.php">
+<div class="container">
+
+<!-- 
+<form method="POST" action="index.php"> -->
 
 <p id="firstP"> please fill out all of the required fields</p>
 
@@ -141,12 +143,12 @@ echo '<p class="error">please enter a valid email address</p> ';
 <input type="reset" name="reset" id="reset" value="Reset"/>
 </p>
 
+<!-- </form> -->
 </form>
 </div>
 </div>
 
-</div>
-</div>
+<!-- Sign Up Modal End -->
 <script src="./public/js/landingModal.js"></script>
 <?php $content = ob_get_clean();?>
 <?php require('template.php');?>
