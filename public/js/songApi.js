@@ -139,7 +139,6 @@ function nameAndTitleCheck(singer,title, brand) {
     return nameAndTitle;
 }
 
-
 function displayResults(array) {
     let div_parent = document.querySelector('#searchResults');
     div_parent.innerHTML = "";
@@ -176,7 +175,7 @@ function displayResults(array) {
         songImgDiv.setAttribute('class','songImg');
         brandCodes.setAttribute('class','brandCodes');
         addIcon.setAttribute('class','addIcon');
-        songImg.setAttribute('src','public/images/songResult.png');
+        songImg.setAttribute('src','public/images/songResult2.png');
         songImg.setAttribute('title','Song icon');
         iconImg.setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg');
         iconImg.setAttribute('title','Plus icon');

@@ -45,7 +45,6 @@ try {
             $singer = isset($_REQUEST['singer']) ? $_REQUEST['singer'] : '';
             $tj = isset($_REQUEST['tj']) ? $_REQUEST['tj'] : '';
             $kumyoung = isset($_REQUEST['kumyoung']) ? $_REQUEST['kumyoung'] : '';
-            //echo $playlistId .$song .$singer .$tj .$kumyoung;
             addToPlaylist($playlistId,$singer,$song,$tj,$kumyoung);
         } else if ($action === 'search') {
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
