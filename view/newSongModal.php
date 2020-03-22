@@ -19,9 +19,12 @@
             <label for="playlistId"><span>add song to playlist</span></label>
             <select name="playlistId" id="playlistId">
             <?php while ($playlist = $playlistsAdd->fetch()) { ?>
-                <?= '<option value="' .$playlist['playlistId'] .'">' .$playlist['playlistName'] .'</option>';?>
-                
-               
+                <?php if ($playlist['playlistId'] === $playlistId) {
+                    echo '<option selected value="' .$playlist['playlistId'] .'">' .$playlist['playlistName'] .'</option>';
+                } else {
+                    echo '<option value="' .$playlist['playlistId'] .'">' .$playlist['playlistName'] .'</option>';
+                }
+                ?> 
             <?php } ?>
             </select>
             

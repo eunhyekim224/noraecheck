@@ -86,7 +86,7 @@
         $modalDisplay = 'off';
         require("view/search.php");
     }
-    function searchModal($song,$singer,$tj,$kumyoung,$searchCache,$categoryCache,$memberId) {
+    function searchModal($song,$singer,$tj,$kumyoung,$searchCache,$categoryCache,$memberId,$playlistId) {
         $playlistAddManager = new PlaylistManager();
         $playlistsAdd = $playlistAddManager->getAllPlaylists($memberId);
         $modalDisplay = 'on';

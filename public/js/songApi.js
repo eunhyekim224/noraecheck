@@ -192,7 +192,6 @@ function displayResults(array) {
         hiddenAction.setAttribute('type','hidden');
         searchCache.setAttribute('type','hidden');
         categoryCache.setAttribute('type','hidden');
-        
 
         hiddenSong.setAttribute('name','hiddenSong');
         hiddenSinger.setAttribute('name','hiddenSinger');
@@ -245,7 +244,7 @@ function displayResults(array) {
         searchResults.appendChild(hiddenAction);
         searchResults.appendChild(searchCache);
         searchResults.appendChild(categoryCache);
-
+        
         if (array[i].tj_code && array[i].kumyoung_code) {
             brandCodes.appendChild(tjBrand);
             brandCodes.appendChild(code);
@@ -289,11 +288,11 @@ function autocorrect(searchedValue,category) {
     } 
 };
 
-
 let modalDisplay = document.getElementById('modalDisplay');
 if(modalDisplay.value === 'on'){
     for (let i=0; i<modals.length; i++) {
         modals[i].style.display = "block"; 
+        playlistId = document.getElementById('playlistId');
         searchCache = document.getElementById('searchCache');
         console.log(searchCache.value);
         searchCategory = document.getElementById('searchCategory');
@@ -301,11 +300,17 @@ if(modalDisplay.value === 'on'){
         finalSearchCache = searchCache.value.replace(/_/g, " ");
         entry.value = finalSearchCache;
         autocorrect(finalSearchCache,searchCategory.value)
-
+        
     }
 }
 
-
-
-
     // let addPlaylistButton = document.getElementsByClassName('addPlaylist');
+
+// function selectPlaylist(playlistId) {
+//     let options = document.getElementsByTagName('option');
+//     for (let i=0, c=options.length; i<c; i++) {
+//         if (options[i].value === playlistId) {
+//             options[i].setAttribute('selected');
+//         }
+//     } 
+// }

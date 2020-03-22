@@ -42,9 +42,10 @@ try {
             $tj = isset($_REQUEST['hiddenTj']) ? $_REQUEST['hiddenTj'] : '';
             $kumyoung = isset($_REQUEST['hiddenKumyoung']) ? $_REQUEST['hiddenKumyoung'] : '';
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            $playlistId = isset($_SESSION['playlistId']) ? $_SESSION['playlistId'] : '';
             $searchCache = isset($_REQUEST['searchCache']) ? $_REQUEST['searchCache'] : '';
             $categoryCache = isset($_REQUEST['categoryCache']) ? $_REQUEST['categoryCache'] : '';
-            searchModal($song,$singer,$tj,$kumyoung,$searchCache,$categoryCache,$memberId);
+            searchModal($song,$singer,$tj,$kumyoung,$searchCache,$categoryCache,$memberId,$playlistId);
         } else if ($action === 'addToPlaylist') {
             $playlistId = isset($_REQUEST['playlistId']) ? $_REQUEST['playlistId'] : '';
             $song = isset($_REQUEST['song']) ? $_REQUEST['song'] : '';

@@ -9,11 +9,11 @@ $searchCache = preg_replace('/\s+/', '_', $searchCache);
 $email = isset($_GET['email']) ? $_GET['email'] : ''
 ?>
 <div class="mainWrapper homePage">
-<input type='hidden' name='modalDisplay' id='modalDisplay' value=<?=$modalDisplay?>>
-<input type='hidden' name='searchCache' id='searchCache' value=<?=$searchCache?>>
-<input type='hidden' name='searchCategory' id='searchCategory' value=<?=$categoryCache?>>
-<?php include('newSongModal.php'); ?>
-    <!-- include banner php file instead of header tag -->
+    <input type='hidden' name='modalDisplay' id='modalDisplay' value=<?=$modalDisplay?>>
+    <input type='hidden' name='searchCache' id='searchCache' value=<?=$searchCache?>>
+    <input type='hidden' name='searchCategory' id='searchCategory' value=<?=$categoryCache?>>
+    <?php include('newSongModal.php'); ?>
+        <!-- include banner php file instead of header tag -->
     <div id='search' class="gothamPro">
         <div id="searchOptions" class="searchOptions">
             <div class="searchOption" id="song" ><span>song</span></div>
@@ -22,10 +22,9 @@ $email = isset($_GET['email']) ? $_GET['email'] : ''
         </div>
         <input type="text" name="entry" class = "entry"id="entry" size="30" maxlength="50" required/>
         <input type="hidden" name="category" id="category" value="song">
-        <button type="button"  id="submit"><img src="public/images/search.png"/></button>
+        <button type="button" id="submit"><img src="public/images/search.png"/></button>
     </div>
     <script src="./public/js/searchBarDisplay.js"></script>
-    
     
     <section id="results" class="gothamPro">
         <h1>Results</h1>
