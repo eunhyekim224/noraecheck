@@ -61,8 +61,8 @@
     </p>
 
     <p id="lastP">
-        <input type="submit" class="btn" name="submit" id="submit" value="login"/>
-        <input type="reset" class="btn" name="reset" id="reset" value="Reset"/>
+        <input type="submit" class="btn" name="submit" id="submit" value="login" />
+        <input type="reset" class="btn" name="reset" id="reset" value="Reset" />
     </p>
 
 </div>
@@ -105,7 +105,7 @@ echo '<p class="error">please enter a valid email address</p> ';
 <label class="field a-field a-field_a1">
 <input type="text" name="loginNew" id="loginNew" maxlength="15" class="field__input a-field__input" placeholder="e.g. Stas" required/>
 <span class="a-field__label-wrap">
-<label for="loginNew" class="a-field__label">Login</label>
+<label id="loginland" for="loginNew" class="a-field__label">Login</label>
 </span>
 </label>
 </p>
@@ -114,7 +114,7 @@ echo '<p class="error">please enter a valid email address</p> ';
 <label class="field a-field a-field_a2">
 <input type="email" name="email" id="email" class="field__input a-field__input" placeholder="e.g. James" required/>
 <span class="a-field__label-wrap">
-<label type="email" class="a-field__label">Email</label>
+<label id="emailland" type="email" class="a-field__label">Email</label>
 </span>
 </label>
 </p>
@@ -123,7 +123,7 @@ echo '<p class="error">please enter a valid email address</p> ';
 <label class="field a-field a-field_a3">
 <input type="password" name="pwd" id="pwd" class="field__input a-field__input" placeholder="e.g. EunHye" required/>
 <span class="a-field__label-wrap">
-<label for="pwd" class="a-field__label">Password</label>
+<label id="pwdland" for="pwd" class="a-field__label">Password</label>
 </span>
 </label>
 </p>
@@ -132,7 +132,7 @@ echo '<p class="error">please enter a valid email address</p> ';
 <label class="field a-field a-field_a3">
 <input type="password" name="pwdConf" id="pwdConf" class="field__input a-field__input" placeholder="e.g. Marie" required/>
 <span class="a-field__label-wrap">
-<label type="pwdConf" class="a-field__label">Confirm Password</label>
+<label id="conpwdland" type="pwdConf" class="a-field__label">Confirm Pwd</label>
 </span>
 </label>
 </p>
@@ -140,7 +140,7 @@ echo '<p class="error">please enter a valid email address</p> ';
 <p id="lastP">
 <input type="hidden" name="action" id="action" value="register">
 <input class="btn" type="submit" name="submitRegister" id="submitRegister" value="Create"/>
-<input class="btn" type="reset" name="reset" id="reset" value="Reset"/>
+<input class="btn" type="reset" name="reset" id="reset"  value="Reset"/>
 </p>
 
 <!-- </form> -->

@@ -968,7 +968,7 @@ span.psw {
     -webkit-appearance: none;
     -moz-appearance: none;
     font-family: inherit;
-    font-size: 1em;
+    font-size: 3em;
 }
 
 .field__input:focus::-webkit-input-placeholder {
@@ -1141,6 +1141,28 @@ span.psw {
 @media (min-width: 481px) {
     .page {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 64% auto 15% auto;
+        border: 1px solid #888;
+        width: 72%;
+        border-radius: 34px;
+    }
+    #firstP,
+    .loginformP,
+    #loginland,
+    #emailland,
+    #pwdland,
+    #conpwdland {
+        font-size: 34px;
+    }
+    #submit,
+    #reset,
+    #submitRegister {
+        font-size: 34px;
+        height: 150px;
+        width: 150px;
     }
 }
 
