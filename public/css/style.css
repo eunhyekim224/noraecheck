@@ -28,7 +28,6 @@ a {
 }
 
 .mainWrapper {
-    /* background-color: rgb(243, 243, 243); */
     border-radius: 20px;
     height: 99.9vh;
     margin: auto;
@@ -36,17 +35,6 @@ a {
     padding: 35px;
 }
 
-.neonBlue {
-    /* background-color: rgb(123, 147, 255); */
-    /* box-shadow: inset 50px 0 100px rgb(0, 153, 255), inset -50px 0 100px rgb(251, 255, 0); */
-    background: linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100% );
-}
-
-.neonYellow {
-    /* background-color: rgb(253, 255, 123); */
-    /* box-shadow: inset 60px 0 120px rgb(251, 255, 0), inset -60px 0 120px rgb(132, 0, 255); */
-    background: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100% );
-}
 
 
 /************ Styling for home view ************/
@@ -85,7 +73,7 @@ a {
 }
 
 .btnBlue, #menuIcons li {
-    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 20%, #8fd3f4 71%, #84fab0 100%);
 }
 
 .btnOrange, #menuIcons li:focus {
@@ -124,24 +112,25 @@ a {
     width: 10%;
     height: 39%;
     padding: 18px;
+    display: flex;
+    align-items: center;
 }
-
-/* #menuIcons li:first-child {
-    background-color: rgb(123, 147, 255);
-}
-
-#menuIcons li:nth-child(2) {
-    background-color: rgb(253, 255, 123);
-} */
 
 #menuIcons li img {
-    height: 60%;
-    width: 35%;
+    height: 100%;
+    width: 100%;
+}
+.navIcons {
+    width: 30%;
 }
 
 #menuIcons a {
     text-decoration: none;
-    color: black
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .displayedPlaylistsModal {
     text-decoration: none;
@@ -154,7 +143,7 @@ a {
 }
 
 #menuIcons li p {
-    margin-top: 0;
+    margin: 0;
 }
 
 #playlistImg,#songImg {
@@ -173,23 +162,27 @@ a {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    padding: 0 5%;
 }
 
 .myList li {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
+    align-items: center;
     padding: 2% 0;
-    height: 20%;
+    height: 25%;
     border-bottom: 0.1px solid;
-    width: 53%;
+    width: 100%;
 }
 
 .myList img {
     max-height: 100%;
-    background-color: white;
+    max-width: 100%;
+    background-color: rgb(238, 238, 238);
     margin-right: 3%;
     padding: 0.5%;
     border-radius: 10px;
+    /* border: 1px solid red; */
 }
 
 #mySongList img {
@@ -199,13 +192,25 @@ a {
     padding: 0.5%;
     border-radius: 10px;
 }
-
-#playlistInfo,#songInfo {
-    margin-top: -11%;
+.myListIcons {
+    height: 100%;
+    width: 10%;
 }
 
+#songInfo {
+    margin-top: -11%;
+    width: 100%;
+}
+.playlistInfo {
+    width: 150%;
+    padding: 1% 0;
+    vertical-align: middle;
+}
 .darkGrey {
     color: rgb(102, 96, 96);
+}
+.playlistInfo p {
+    margin: 5% 0 5% 10%;
 }
 
 .playlistNameText, #songNameText {
@@ -219,15 +224,13 @@ a {
 }
 
 #createTxt {
-    display: flex;
-    align-items: center;
+    margin: 0 0 0 3%;
 }
 
 #createPlaylist input[type="image"] {
-    width: 18.6%;
-    background-color: white;
+    width: 100%;
+    background-color: rgb(238, 238, 238);
     border-radius: 10px;
-    margin-right: 3%;
 }
 
 .displayedPlaylists{
@@ -485,7 +488,7 @@ input.question + label > span {
 #bannerImage img {
     width: 45%;
     height: 45%;
-    padding-left: 15%;
+    /* padding-left: 15%; */
 }
 
 #banner,#search {
@@ -499,9 +502,8 @@ input.question + label > span {
 }
 
 #bannerImage {
-    width: 29%;
-    padding-right: -18px;
-    margin-right: -97px;
+    width: 30%;
+    margin-right: -14%;
 }
 
 #banner .word {
@@ -511,7 +513,7 @@ input.question + label > span {
     font-family: 'Jua', sans-serif;
     /* text-shadow: 0 0 3px rgba(0, 0, 0, 1); */
     font-size: 5em;
-    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+    background-image: linear-gradient(to right, #8fd3f4 51%, #8fd3f4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -681,7 +683,7 @@ input.question + label > span {
     height: 10vh;
 }
 .songImg {
-    /* background-color: white; */
+    background-color: rgb(238, 238, 238);
     width: 10%;
     height: 10%;
     border-radius: 10px;
@@ -795,7 +797,13 @@ input.question + label > span {
 
 
 
-/* Mobile Management */
+/**********************************/
+
+
+/*********Mobile Managment*********/
+
+
+/**********************************/
 
 @media all and (max-device-width: 480px) {
     body {
@@ -829,14 +837,15 @@ input.question + label > span {
     }
 
     #bannerImage {
+        width: 25%;
         margin: 0;
-        padding: 0 0 0 ;
+        padding: 0 0 0 0;
     }
 
     #bannerImage img {
         width: 100%;
         height: 100%;
-        padding-left: 150%;
+        padding-left: 0%;
     }
 
     #mainContent {
@@ -853,34 +862,41 @@ input.question + label > span {
         margin: 30px 0 30px 0
     }
 
+    .myList li {
+        height: 25%;
+    }
+
     .myList img {
-        height: 90%;
-        width: 30%;
-        background-color: white;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(238, 238, 238);
         margin-right: 3%;
         padding: 0.5%;
     }
-
-    .myList #createPlaylist {
-        padding-bottom: 0;
+    .myListIcons {
+        width: 20%;
     }
+
+    /* .myList #createPlaylist {
+        padding-bottom: 0;
+    } */
 
     #createPlaylist input[type="image"] {  
-        height: 82%;
-        width: 30%;
+        width: 100%;
     }
 
-    #playlistInfo, #createTxt {
-        margin-top: -2%;
-        font-size: 2.5em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 6%;
+    .playlistInfo {
+        padding-left: 10%;
+    }
+    #createTxt {
+        padding-left: 3%;
+        margin: 0;
+        font-size: 2em;
     }
 
-    #playlistInfo p {
-        margin-top: 0;
+    .playlistInfo p {
+        margin: 0 0 5% 0;
+        font-size: 2em;
     }
 
     /* create playlist MODAL */
@@ -904,7 +920,6 @@ input.question + label > span {
         font-size: 0.5em;
     }
 
-
     /* nav */
 
     #nav {
@@ -918,8 +933,8 @@ input.question + label > span {
     }
     #menuIcons li {
         vertical-align: middle;
-        height: fit-content;
-        width: fit-content;
+        height: 50%;
+        width: 15%;
     }
     #menuIcons li:first-child {
         padding: 10px;
@@ -934,8 +949,11 @@ input.question + label > span {
         padding: 10px;
     }
     #menuIcons li img {
-        height: 100px;
-        width: 100px;
+        height: 100%;
+        width: 100%;
+    }
+    .navIcons {
+        width: 40%;
     }
 
     /*_____ sign up page media queries_____ */
@@ -1021,3 +1039,271 @@ input.question + label > span {
         font-size: 3vh;
     }
 }
+
+/**********************************/
+
+
+/*********Tablet Managment*********/
+
+
+/**********************************/
+
+@media all and (min-device-width: 480px) and (max-device-width: 600px){
+    body {
+        background-color: rgb(206, 206, 206);
+    }
+
+    .mainWrapper {
+        border-radius: 0;
+        height: 100vh;
+        margin: auto;
+        width: auto;
+        padding: 0px;
+        font-family: 'Gotham Pro';
+        position: relative;
+    }
+
+    #banner {
+        background-color: rgb(206, 206, 206);
+        box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
+        /* box-shadow: -60px 0 120px rgb(206, 206, 206) inset; */
+        border-radius: 20px;
+        height: 15%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    #banner .word {
+        display: none;
+    }
+
+    #bannerImage {
+        width: 20%;
+        margin: 0;
+        padding: 0 0 0 0;
+    }
+
+    #bannerImage img {
+        width: 100%;
+        height: 100%;
+        padding-left: 0%;
+    }
+
+    #mainContent {
+        height: 70%;
+        position: absolute;
+        top: 17.5%;
+        width: 100%;
+        /* box-shadow: -60px 0 120px rgb(240, 240, 240) inset; */
+        box-shadow: -60px 0 120px rgb(206, 206, 206) inset;
+    }
+
+    #mainContent h1 {
+        font-size: 6em;
+        margin: 30px 0 30px 0
+    }
+
+    .myList li {
+        height: 25%;
+    }
+
+    .myList img {
+        height: 90%;
+        width: 100%;
+        background-color: rgb(238, 238, 238);
+        margin-right: 3%;
+        padding: 0.5%;
+    }
+    .myListIcons {
+        width: 18%;
+    }
+
+    /* .myList #createPlaylist {
+        padding-bottom: 0;
+    } */
+
+    #createPlaylist input[type="image"] {  
+        width: 100%;
+    }
+
+    .playlistInfo {
+        padding-left: 10%;
+    }
+    #createTxt {
+        padding-left: 3%;
+        margin: 0;
+        font-size: 2em;
+    }
+
+    .playlistInfo p {
+        margin: 0 0 5% 0;
+        font-size: 2em;
+    }
+
+    /* create playlist MODAL */
+
+    .modalContent {
+        width: 84%;
+        display: flex;
+        margin-top: 75%;
+        font-size: 3.5em;
+    }
+
+    .modalButtons input {
+        width: 32%;
+    }
+
+    input.question + label > span {
+        font-size: 0.75em;
+    }
+
+    input.question:focus + label > span {
+        font-size: 0.5em;
+    }
+
+
+    /* nav */
+
+    #nav {
+        height: 10%;
+        width: 100%;
+        position: fixed;
+        top: 89%
+    }
+    #nav li p {
+        display: none;
+    }
+    #menuIcons li {
+        vertical-align: middle;
+        height: 50%;
+        width: 15%;
+    }
+    #menuIcons li:first-child {
+        padding: 10px;
+    }
+    #menuIcons li:nth-child(2) {
+        padding: 10px;
+    }
+    #menuIcons li:nth-child(3) {
+        padding: 10px;
+    }
+    #menuIcons li:last-child {
+        padding: 10px;
+    }
+    #menuIcons li img {
+        height: 100%;
+        width: 100%;
+    }
+    .navIcons {
+        width: 40%;
+    }
+
+    /*_____ sign up page media queries_____ */
+
+
+    .signupPage{
+        background-color: rgb(206, 206, 206);
+    
+    }
+    
+    #registrationContent form{
+        margin-top: 30%;
+        width:90%;
+        font-size: xx-large;
+        
+    }
+
+    #firstP{
+        margin-bottom: 10%; 
+    }
+
+    #lastP{
+        margin-top: 10%; 
+    }
+    #registrationContent p label{
+        width:45%
+        
+    }
+    #registrationContent p input{
+        height:4vh;
+        font-size: 3vh;
+
+        
+    }
+
+    #kakaoLogin{
+        margin-top:5%;
+        margin-bottom: 15%;
+        font-size: 4vh;
+        
+    }
+
+
+    /*_____ search page media queries_____ */
+    .searchOptions{
+        width:20%;
+    }
+    .searchOptionsExpanded{
+        width:50%;
+    }
+
+    .searchOption{
+        font-size: 3vh;
+    }
+
+    .searchOptionSelected {
+        background-color : azure !important;
+    }
+    .searchOptionExpanded {
+        width : 30%; 
+        font-size: 3vh;  
+        padding-left: 3%;
+        padding-right : 3%;
+    }
+
+    #searchOptions>div:hover,#submit:hover{
+        background-color:rgb(240, 239,239);
+    }
+    #submit{
+        background-color: rgb(240, 239, 239);
+        border: none;
+        width:15%;
+        border-radius: 0px 15px 15px 0px;
+    }
+
+    .entry{
+        width:65%;
+        font-size: 4vh;
+    }
+
+    .compactEntry{
+        width:35%;
+        font-size: 3vh;
+    }
+}
+
+/**********************************/
+
+
+/*********Desktop Managment*********/
+
+
+/**********************************/
+@media all and (min-device-width: 600px) and (max-device-width: 950px) {
+    .myListIcons {
+        width: 15%;
+    }
+    #menuIcons li {
+        width: 15%;
+    }
+}
+@media all and (min-device-width: 950px) and (max-device-width: 1200px) {
+    .myListIcons {
+        width: 12%;
+    }
+    #menuIcons li {
+        width: 15%;
+    }
+}
+
