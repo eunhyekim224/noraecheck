@@ -35,21 +35,6 @@ a {
     padding: 35px;
 }
 
-<<<<<<< HEAD
-/* .neonBlue {
-    background-color: rgb(123, 147, 255);
-    box-shadow: inset 50px 0 100px rgb(0, 153, 255), inset -50px 0 100px rgb(251, 255, 0);
-    background: linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100% );
-}
-
-.neonYellow {
-    background-color: rgb(253, 255, 123);
-    box-shadow: inset 60px 0 120px rgb(251, 255, 0), inset -60px 0 120px rgb(132, 0, 255);
-    background: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100% );
-} */
-
-=======
->>>>>>> 548883d6d7f6cdc97c922a5da168dfc2f6bb3e48
 
 /************ Styling for home view ************/
 
@@ -87,11 +72,7 @@ a {
 }
 
 .btnBlue, #menuIcons li {
-<<<<<<< HEAD
     background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 20%, #8fd3f4 71%, #84fab0 100%);
-=======
-    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 20%, #8fd3f4 80%, #84fab0 100%);
->>>>>>> 548883d6d7f6cdc97c922a5da168dfc2f6bb3e48
 }
 
 .btnOrange, #menuIcons li:focus {
@@ -486,15 +467,8 @@ input.question + label > span {
 }
 
 #bannerImage {
-<<<<<<< HEAD
-    width: 29%;
-    padding-right: -18px;
-    margin-right: -97px;
-
-=======
     width: 30%;
     margin-right: -14%;
->>>>>>> 548883d6d7f6cdc97c922a5da168dfc2f6bb3e48
 }
 
 #banner .word {
