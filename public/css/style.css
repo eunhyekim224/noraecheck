@@ -1564,7 +1564,7 @@
                                                 padding-top: 0px;
                                                 padding-bottom: 0px;
                                                 padding-left: 10px;
-                                                font-size: 8vh;
+                                                font-size: 3vh;
                                                 /* justify-self: right; */
                                             }
                                             
@@ -1896,7 +1896,7 @@
                                                 }
                                                 .searchOptionExpanded {
                                                     width: 30%;
-                                                    font-size: 3vh;
+                                                    font-size: 2vh;
                                                     padding-left: 3%;
                                                     padding-right: 3%;
                                                 }
@@ -1916,6 +1916,6 @@
                                                 }
                                                 .compactEntry {
                                                     width: 35%;
-                                                    font-size: 3vh;
+                                                    font-size: 2vh;
                                                 }
                                             }
