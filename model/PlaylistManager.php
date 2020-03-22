@@ -39,20 +39,40 @@
         }
         
         public function getPlaylist($memberId, $name) {
+            echo $memberId .$name;
             $db = $this->dbConnect();
-            $playlist = $db->prepare('SELECT p.memberId AS memberId, m.username AS username, p.name AS playlistName, p.creationDate AS playlistCreationDate 
+            $playlist = $db->prepare('SELECT p.memberId AS memberId, m.username AS username, p.name AS playlistName, p.creationDate AS playlistCreationDate, p.id AS playlistId 
                                        FROM playlists p
                                        JOIN members m
                                        ON p.memberId = m.id
                                        WHERE p.memberId = :memberId AND p.name = :name');
-            $resp = $playlists->execute(array(
+            $resp = $playlist->execute(array(
                 'memberId' => $memberId,
                 'name' => $name
             ));
             if(!$resp) {
                 throw new PDOException('Unable to retrieve this playlist!');
             }
-            return $playlists;
+            return $playlist;
+        }
+
+        public function deletePlaylist($playlistId) {
+            $db = $this->dbConnect();
+            $del = $db->prepare("DELETE FROM playlists WHERE id = :playlistId");
+            $del->execute(array(
+                'playlistId' => $playlistId
+            ));
+            $numberOfDeletedRows = $del->rowCount();
+
+            $delSongs = $db->prepare("DELETE FROM songs WHERE playlistId = :playlistId");
+            $delSongs->execute(array(
+                'playlistId' => $playlistId
+            ));
+
+            if ($numberOfDeletedRows < 1) {
+                throw new PDOException('No playlists have been deleted!'); 
+            }
+            return $numberOfDeletedRows;
         }
     }
 

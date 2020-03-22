@@ -78,25 +78,39 @@
         require("view/home.php");
     }
 
-    function showPlaylist($memberId, $name) {
-        //getPlaylist
+    function deletePlaylist($playlistId, $memberId) {
+        $playlistManager = new PlaylistManager();
+        $playlistManager->deletePlaylist($playlistId);
+        showAllPlaylists($memberId);
     }
-    function search($memberId) {
+    function search($memberId,$searchCache,$categoryCache) {
         $playlistAddManager = new PlaylistManager();
         $playlistsAdd = $playlistAddManager->getAllPlaylists($memberId);
         $modalDisplay = 'off';
         require("view/search.php");
     }
-    function searchModal($song,$singer,$tj,$kumyoung,$memberId) {
+    function searchModal($song,$singer,$tj,$kumyoung,$searchCache,$categoryCache,$memberId,$playlistId) {
         $playlistAddManager = new PlaylistManager();
         $playlistsAdd = $playlistAddManager->getAllPlaylists($memberId);
         $modalDisplay = 'on';
-        echo $song .$singer .$tj .$kumyoung;
         require("view/search.php");
     }
     function addToPlaylist($playlistId,$singer,$song,$tj,$kumyoung) {
         $songAddManager = new SongManager();
+        echo $playlistId .$singer .$song .$tj .$kumyoung;
         $songAdd = $songAddManager->addSong($playlistId, $singer, $song, $tj, $kumyoung);
+        header('Location: index.php?action=search');
+    }
+
+    function addSongToNewPlaylist($memberId,$playlistName,$singer,$song,$tj,$kumyoung) {
+        $playlistAddManager = new PlaylistManager();
+        $newAddPlaylist = $playlistAddManager->addPlaylist($memberId, $playlistName);
+        $getPlaylist = $playlistAddManager->getPlaylist($memberId, $playlistName);
+        $gotPlaylist = $getPlaylist->fetch();
+        $newPlaylistId = $gotPlaylist['playlistId'];
+        $songAddManager = new SongManager();
+        echo $playlistName .$singer .$song .$tj .$kumyoung;
+        $songAdd = $songAddManager->addSong($newPlaylistId, $singer, $song, $tj, $kumyoung);
         header('Location: index.php?action=search');
     }
     

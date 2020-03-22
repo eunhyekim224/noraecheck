@@ -1,11 +1,9 @@
-let modals = document.getElementsByClassName("modal");
-let cancelButtons = document.getElementsByName("cancel");
+let newPlaylistModal = document.getElementsByClassName("modal")[0];
+let newPlaylistCancelButton = document.getElementsByName("cancel")[0];
 let newPlaylistName = document.getElementById("playlistName");
-
 let newPlaylistButton = document.getElementById('newPlaylistBtn');
-showModal(modals, newPlaylistButton);
-closeModal(modals, cancelButtons);
 
+<<<<<<< HEAD
 function showModal(modals, button) {
     for (let i = 0; i < modals.length; i++) {
         button.addEventListener('click', () => {
@@ -26,5 +24,31 @@ function closeModal(modals, cancelButtons) {
                 newPlaylistName.value = "";
             }
         });
+=======
+showAndCloseModal(newPlaylistModal, newPlaylistButton, newPlaylistCancelButton);
+
+function showAndCloseModal(modals, buttons, cancelButtons) {
+    showModal(modals, buttons);
+    closeModal(modals, cancelButtons)
+}
+
+function showModal(modal, button) {
+    button.addEventListener('click', ()=> {
+        modal.style.display = "block";
+    }); 
+}
+
+function closeModal(modal, cancelButton) {
+    cancelButton.addEventListener('click', ()=> {
+        modal.style.display = "none";
+    });
+    window.addEventListener('click', (e)=> {
+        if (e.target == modal) {
+            modal.style.display = "none";
+        }
+    });        
+    if (newPlaylistName.value) {
+        newPlaylistName.value = "";
+>>>>>>> ad57cd00c64030893c621aea86422da45ec60e74
     }
 }

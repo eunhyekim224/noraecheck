@@ -22,3 +22,13 @@ function closeModal(modals, cancelButtons) {
         });
     }
 }
+searchNewPlaylist = document.getElementById("searchNewPlaylist");
+searchNewPlaylistSubmit = document.getElementById("searchNewPlaylistSubmit");
+searchNewPlaylistSubmit.addEventListener('click', ()=> {
+    searchNewPlaylist.submit();
+});
+newPlaylistBtn = document.getElementsByName('newPlaylist')[0];
+newPlaylistBtn.addEventListener('click', ()=> {
+    searchNewPlaylist.classList.add('visibleSearchNewPlaylist');
+    newPlaylistBtn.classList.add('invisibleSearchNewPlaylistBtn');
+});
