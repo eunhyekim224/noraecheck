@@ -29,4 +29,4 @@
     </li>
 <?php } ?>
 </ul>
-<script src="./public/js/modal.js"></script>
+<script src="./public/js/modalNewPlaylist.js"></script>

@@ -448,6 +448,19 @@ input.question + label > span {
     width: 100%;
 }
 
+#areYouSure {
+    padding-top: 11%;
+}
+
+#areYouSure #areYouSureBtns input {
+    height: 63px;
+    border: none;
+    padding: 4% 5%;
+    font-size: 0.6em;
+    width: 38%;
+    cursor: pointer;
+}
+
 /* Scrollbar */
 
 /* width */
