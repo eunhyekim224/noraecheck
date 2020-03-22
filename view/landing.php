@@ -139,8 +139,8 @@ echo '<p class="error">please enter a valid email address</p> ';
 
 <p id="lastP">
 <input type="hidden" name="action" id="action" value="register">
-<input type="submit" name="submitRegister" id="submitRegister" value="Create"/>
-<input type="reset" name="reset" id="reset" value="Reset"/>
+<input class="btn" type="submit" name="submitRegister" id="submitRegister" value="Create"/>
+<input class="btn" type="reset" name="reset" id="reset" value="Reset"/>
 </p>
 
 <!-- </form> -->
