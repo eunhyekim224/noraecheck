@@ -33,6 +33,11 @@ body {
     background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
 }
 
+input.submit {
+    width: 20em;
+    height: 2em;
+}
+
 .btn:hover {
     background-position: right center;
     /* change the direction of the change here */
@@ -895,9 +900,10 @@ span.psw {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto;
+    margin: 17% auto 15% auto;
     border: 1px solid #888;
-    width: 80%;
+    width: 48%;
+    border-radius: 25px;
 }
 
 .close {

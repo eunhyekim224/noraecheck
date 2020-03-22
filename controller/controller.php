@@ -31,7 +31,6 @@
         } else {
             // require("view/landingSignup.php");
             require("view/landing.php");
-            // require("view/homeMyList.php");
         }  
     }
 

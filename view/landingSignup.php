@@ -9,7 +9,6 @@
 // ob_start();
 ?>
 
-
 <!-- <div class="mainWrapper signupPage"> -->
     
     <?php 

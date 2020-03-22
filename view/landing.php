@@ -19,9 +19,9 @@
 <button id="signInText" class="btn" onclick="document.getElementById('id02').style.display='block'">Sign in</button>
     <div id="id02" class="modal">
         <?php 
-        // if ($status == '1'){
-        // echo '<p class="good">account successfully created</p> ';
-        // }
+        if ($status == '1'){
+        echo '<p class="good">account successfully created</p> ';
+        }
         if ($error == 'logError'){
         echo '<p class="error">there are no accounts with that ID</p> ';
         }
@@ -53,7 +53,7 @@
 
     <p class="loginformP">
         <label class="field a-field a-field_a3">
-            <input type="password" name="password" id="passwordd" class="field__input a-field__input" placeholder="e.g. EunHye" required/>
+            <input type="password" name="password" id="password" class="field__input a-field__input" placeholder="e.g. EunHye" required/>
                 <span class="a-field__label-wrap">
                 <label for="password" class="a-field__label">Password</label>
                 </span>
@@ -61,8 +61,8 @@
     </p>
 
     <p id="lastP">
-        <input type="submit" name="submit" id="submit" value="login"/>
-        <input type="reset" name="reset" id="reset" value="Reset"/>
+        <input type="submit" class="btn" name="submit" id="submit" value="login"/>
+        <input type="reset" class="btn" name="reset" id="reset" value="Reset"/>
     </p>
 
 </div>
