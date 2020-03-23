@@ -11,4 +11,7 @@
             </div>
     </div>
 </div>
-<script src="./public/js/editOrDeletePlaylist.js"></script>
+<script src="./public/js/deletePlaylistAreYouSure.js"></script>
+
+
+
