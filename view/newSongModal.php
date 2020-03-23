@@ -9,7 +9,7 @@
             <input type="hidden" name="singer" value=<?=urlencode($singer); ?>>
             <input type="hidden" name="tj" value=<?=$tj; ?>>
             <input type="hidden" name="kumyoung" value=<?=$kumyoung; ?>>
-            <img src="./public/images/plusWhite.png" id="searchNewPlaylistSubmit"/>
+            <img src="public/images/plusWhite.png" id="searchNewPlaylistSubmit"/>
         </form>
         
         <form method="post" action="index.php">

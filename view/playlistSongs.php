@@ -2,7 +2,7 @@
     $_SESSION['playlistId'] = $_GET['playlistId'];
 ?>
 <div id="mainPlaylist">
-    <img src="public/images/mic.png" id="mainPlaylistImg">
+    <img src="public/images/album2.png" id="mainPlaylistImg">
     <div id="mainPlaylistInfo">
         <p class="darkGrey playlistNameText"><?= $_GET['playlistName']; ?></p>
         <p>by <?=  $_GET['username']; ?></p>
@@ -24,7 +24,7 @@
 <ul id="mySongList" class="myList">
 <?php while ($song = $songDisplay->fetch()) { ?>
     <li>
-        <img src="public/images/songResult.png" id="songImgInPlaylistSongs">
+        <img src="public/images/songResult3.png" id="songImgInPlaylistSongs">
         <div id="songsInOnePlaylist">
             <p id="songNameText" class="darkGrey"><?= $song['songName']; ?></p>
             <p>by <?= $song['singerName']; ?></p>
