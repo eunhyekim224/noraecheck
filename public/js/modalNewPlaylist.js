@@ -29,4 +29,3 @@ function closeModal(modal, cancelButton) {
         newPlaylistName.value = "";
     }
 }
-
