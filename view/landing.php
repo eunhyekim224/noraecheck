@@ -16,8 +16,8 @@
 <div id="accountBtns">
 
 <!-- Sign In Modal-->
-<button id="signInText" class="btn" onclick="document.getElementById('id02').style.display='block'">Sign in</button>
-    <div id="id02" class="modal">
+<button id="signInText" class="btn" onclick="document.getElementById('id01').style.display='block'">Sign in</button>
+    <div id="id01" class="modal">
         <?php 
         if ($status == '1'){
         echo '<p class="good">account successfully created</p> ';
@@ -34,12 +34,10 @@
         ?>
         <form id="loginForm" class="modal-content animate" action="index.php?action=login" method="POST">
         <div class="imgcontainer">
-        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
 <div class="container">
-
-<!-- <form id="loginForm" method="POST" action="index.php?action=showMyList"> -->
 
     <p id="firstP"> please fill out all of the required fields</p>
         <p class="loginformP">
@@ -68,13 +66,13 @@
 </div>
 </div>
 </form>
-    <!-- </form> -->
+
 <!-- Sign In Modal End -->
 
 <!-- Sign Up Modal Start -->
-<button id="createAccount" class="btn" onclick="document.getElementById('id01').style.display='block'">Create Account</button>
+<button id="createAccount" class="btn" onclick="document.getElementById('id02').style.display='block'">Create Account</button>
 
-<div id="id01" class="modal">
+<div id="id02" class="modal2">
 
 <form class="modal-content animate" action="index.php" method="POST"><?php
 if ($error == 'logError'){
@@ -91,13 +89,10 @@ echo '<p class="error">please enter a valid email address</p> ';
 }
 ?>
 <div class="imgcontainer">
-<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
 </div>
 
 <div class="container">
-
-<!-- 
-<form method="POST" action="index.php"> -->
 
 <p id="firstP"> please fill out all of the required fields</p>
 
@@ -143,7 +138,6 @@ echo '<p class="error">please enter a valid email address</p> ';
 <input class="btn" type="reset" name="reset" id="reset"  value="Reset"/>
 </p>
 
-<!-- </form> -->
 </form>
 </div>
 </div>

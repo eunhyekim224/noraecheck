@@ -884,7 +884,8 @@ span.psw {
     padding-top: 16px;
 }
 
-.modal {
+.modal,
+.modal2 {
     display: none;
     position: fixed;
     z-index: 1;
