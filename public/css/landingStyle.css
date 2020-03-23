@@ -900,10 +900,10 @@ span.psw {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 17% auto 15% auto;
+    margin: 0% auto 15% auto;
     border: 1px solid #888;
-    width: 48%;
-    border-radius: 25px;
+    width: 68%;
+    border-radius: 15px;
 }
 
 .close {
@@ -1138,7 +1138,7 @@ span.psw {
     order: 1;
 }
 
-@media (min-width: 481px) {
+@media all and (max-device-width: 480px) {
     .page {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
