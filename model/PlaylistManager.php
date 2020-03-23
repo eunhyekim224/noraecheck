@@ -9,6 +9,14 @@
      */
 
     class PlaylistManager extends Manager {
+                
+        /**
+         * addPlaylist
+         *
+         * @param  mixed $memberId
+         * @param  mixed $name
+         * @return void
+         */
         public function addPlaylist($memberId, $name) {
             $db = $this->dbConnect();          
             $addMember = $db->prepare("INSERT INTO playlists(memberId, name) VALUES(:memberId, :name)");
@@ -20,7 +28,13 @@
                 throw new PDOException('Unable to create the playlist!');
             }
         }
-
+                
+        /**
+         * getAllPlaylists
+         *
+         * @param  mixed $memberId
+         * @return void
+         */
         public function getAllPlaylists($memberId) {
             $db = $this->dbConnect();
             $playlists = $db->prepare('SELECT p.memberId AS memberId, p.id AS playlistId, m.username AS username, p.name AS playlistName, DATE_FORMAT(p.creationDate, "%d/%m/%Y") AS playlistCreationDate,
@@ -37,7 +51,14 @@
             }
             return $playlists;
         }
-        
+                
+        /**
+         * getPlaylist
+         *
+         * @param  mixed $memberId
+         * @param  mixed $name
+         * @return void
+         */
         public function getPlaylist($memberId, $name) {
             echo $memberId .$name;
             $db = $this->dbConnect();
@@ -55,7 +76,13 @@
             }
             return $playlist;
         }
-
+        
+        /**
+         * deletePlaylist
+         *
+         * @param  mixed $playlistId
+         * @return void
+         */
         public function deletePlaylist($playlistId) {
             $db = $this->dbConnect();
             $del = $db->prepare("DELETE FROM playlists WHERE id = :playlistId");
@@ -64,14 +91,16 @@
             ));
             $numberOfDeletedRows = $del->rowCount();
 
+            if ($numberOfDeletedRows < 1) {
+                throw new PDOException('No playlists have been deleted!'); 
+            }
+
             $delSongs = $db->prepare("DELETE FROM songs WHERE playlistId = :playlistId");
             $delSongs->execute(array(
                 'playlistId' => $playlistId
             ));
 
-            if ($numberOfDeletedRows < 1) {
-                throw new PDOException('No playlists have been deleted!'); 
-            }
+            
             return $numberOfDeletedRows;
         }
     }
