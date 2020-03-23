@@ -1,3 +1,4 @@
+  
 <?php
 session_start();
 require("./controller/controller.php");
@@ -91,7 +92,6 @@ try {
         $file = $e->getFile();
         require('./view/error.php');
     }
-
 
 
 

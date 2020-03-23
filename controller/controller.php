@@ -1,8 +1,10 @@
 <?php
-    
     require_once("./model/MemberManager.php");
     require_once("./model/PlaylistManager.php");
     require_once("./model/SongManager.php");
+
+    // use \Wcoding\Noraecheck\Model\MemberManager;
+    // use \Wcoding\Noraecheck\Model\PlaylistManager;
 
     function showLandingPage($error,$status) {
         require("view/landing.php");
@@ -27,7 +29,8 @@
                 header('Location: index.php?action=register&error=logOld');
             }
         } else {
-            require("view/landingSignup.php");
+            // require("view/landingSignup.php");
+            require("view/landing.php");
         }  
     }
 
