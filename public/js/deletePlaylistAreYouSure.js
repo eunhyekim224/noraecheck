@@ -20,9 +20,7 @@ function getModalContent(buttonID, parent) {
     xhr.send(null);
 }
 
-addModalButtonEvents('editPlaylist', 'modalContent');
 addModalButtonEvents('deletePlaylist', 'modalContent');
-// addModalButtonEvents('backToMainMenu', 'modalContent');
 
 function addModalButtonEvents(elementId, parent) {
     let button = document.getElementById(elementId);
@@ -30,5 +28,8 @@ function addModalButtonEvents(elementId, parent) {
         getModalContent(e.target.id, parent);
     }); 
 }
+
+
+
 
 
