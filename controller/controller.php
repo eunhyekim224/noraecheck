@@ -99,7 +99,7 @@
         $songAddManager = new SongManager();
         echo $playlistId .$singer .$song .$tj .$kumyoung;
         $songAdd = $songAddManager->addSong($playlistId, $singer, $song, $tj, $kumyoung);
-        header('Location: index.php?action=search');
+        // header('Location: index.php?action=search');
     }
 
     function addSongToNewPlaylist($memberId,$playlistName,$singer,$song,$tj,$kumyoung) {

@@ -29,8 +29,7 @@
             if(!$resp) {
                 throw new PDOException('Invalid username or password!');
             }
-            $memFetch = $members->fetch();
-            return $memFetch;
+            return $members->fetch();
         }
 
 
