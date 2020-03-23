@@ -24,11 +24,15 @@ function closeModal(modals, cancelButtons) {
 }
 searchNewPlaylist = document.getElementById("searchNewPlaylist");
 searchNewPlaylistSubmit = document.getElementById("searchNewPlaylistSubmit");
+superBox = document.getElementsByClassName('superBox')[0];
 searchNewPlaylistSubmit.addEventListener('click', ()=> {
     searchNewPlaylist.submit();
 });
+superBox = document.getElementsByClassName('superBox')[0];
 newPlaylistBtn = document.getElementsByName('newPlaylist')[0];
 newPlaylistBtn.addEventListener('click', ()=> {
+    superBox.parentNode.removeChild(superBox);
+    console.log("works");
     searchNewPlaylist.classList.add('visibleSearchNewPlaylist');
-    newPlaylistBtn.classList.add('invisibleSearchNewPlaylistBtn');
+    
 });

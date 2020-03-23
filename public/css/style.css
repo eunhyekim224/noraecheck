@@ -36,6 +36,7 @@ a {
 }
 
 
+
 /************ Styling for home view ************/
 
 .homePage {
@@ -72,7 +73,7 @@ a {
 }
 
 .btnBlue, #menuIcons li {
-    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 20%, #8fd3f4 80%, #84fab0 100%);
+    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 20%, #8fd3f4 71%, #84fab0 100%);
 }
 
 .btnOrange, #menuIcons li:focus {
@@ -250,9 +251,7 @@ a {
     overflow: auto; 
     background-color: rgba(0,0,0,0.4); 
 }
-/* .modalSearch{
-    overflow:scroll;
-} */
+
 
 .cancel {
     color: #aaa;
@@ -280,11 +279,14 @@ a {
     border-radius: 10px;
     font-size: 1.7em;
     display: flex;
+    /* flex-wrap: wrap; */
     flex-direction: column;
     justify-content: center;
 }
 .modalContentSearch {
-    height: fit-content;   
+    height: fit-content;
+    /* background-color:#8fd3f4;
+    box-shadow: none;    */
 }
 
 #myListModal{  
@@ -450,6 +452,19 @@ input.question + label > span {
     width: 100%;
 }
 
+#areYouSure {
+    padding-top: 11%;
+}
+
+#areYouSure #areYouSureBtns input {
+    height: 63px;
+    border: none;
+    padding: 4% 5%;
+    font-size: 0.6em;
+    width: 38%;
+    cursor: pointer;
+}
+
 /* Scrollbar */
 
 /* width */
@@ -585,7 +600,7 @@ input.question + label > span {
     padding-top:0px;
     padding-bottom:0px;
     padding-left: 10px;
-    font-size: 8vh;
+    font-size: 6vh;
     /* justify-self: right; */
 }
 
@@ -710,9 +725,125 @@ input.question + label > span {
 }
 .visibleSearchNewPlaylist{
     display:flex !important;
+    justify-content: center;
 }
+.visibleSearchNewPlaylist .playlistName{
+    border: none;
+}
+.visibleSearchNewPlaylist img{
+    margin-left: 5%;
+}
+
+
 .invisibleSearchNewPlaylistBtn{
     display:none;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* top: 70%; */
+    left: 40%;
+    width:90%;
+    height:50%;
+    padding-top: 25%;
+    transform: translate(-50%, -50%);
+  }
+
+.addPlaylistSearchBtn{
+    /* background-color: #8fd3f4; */
+    /* box-shadow: 0 0 20px #eee; */
+    /* border-radius: 10px; */
+    margin-bottom: 20%;
+    position: relative;
+    align-self: flex-end;
+    display:inline-block;
+    top:52%;
+    left:10%;
+    height:25% !important;
+    width:30% !important;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    /* box-shadow: 0 5px 25px rgba(240, 240, 240,0.5); */
+}
+
+.addSongToNewPlaylistButton{
+    align-self: center;
+    padding:0%;
+    height:15%;
+}
+
+.addPlaylistSearchBtn img{
+    
+    height:100%;
+    width:65%;
+    padding:7%
+}
+
+.superBox{
+    display:flex;
+}
+
+.searchSubmit{
+    position:relative;
+    top:50%;
+}
+
+.box label{
+    margin-bottom: 15%;
+    margin-top: 2%;
+}
+  
+#playlistId {
+    /* margin-left: 3%; */
+    align-self: center;
+    background-color: #8fd3f4;
+    color: white;
+    padding: 1vh;
+    width: 23vw;
+    height:0%;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(240, 240, 240,0.5);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+.box::before {
+    content: "\f13a";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 85%;
+    right: 0%;
+    width: 20%;
+    height: 15%;
+    text-align: center;
+    font-size: 4vh;
+    /* padding-bottom: 7%; */
+    line-height: 150%;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+
+.box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#playlistId option {
+    padding: 30px;
+  }
+
+.modalContentSearch form{
+    height:40%;
 }
 
 /**********landingSignup Style***********/
