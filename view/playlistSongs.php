@@ -1,3 +1,6 @@
+<?php 
+    $_SESSION['playlistId'] = $_GET['playlistId'];
+?>
 <div id="mainPlaylist">
     <img src="public/images/mic.png" id="mainPlaylistImg">
     <div id="mainPlaylistInfo">
@@ -9,11 +12,12 @@
             <i class="far fa-calendar-alt darkGrey" title="creation date"></i>
             <span class="darkGrey"><?= $_GET['playlistCreationDate']; ?></span>
         </p>
-        <div class="playlistOptions">
+        <div id="playlistOptions">
             <div class="circle"></div>
             <div class="circle"></div>
             <div class="circle"></div>
         </div>
+        <?php include('playlistOptionsModal.php'); ?>
     </div>
 </div>
 <!-- $_SESSION['username']-->
@@ -34,3 +38,4 @@
     </li>
 <?php } ?>
 </ul>
+<script src="./public/js/modalPlaylistOptions.js"></script>
