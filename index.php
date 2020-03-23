@@ -11,7 +11,7 @@ try {
         $action = $_REQUEST['action'];
         if ($action === 'showMyList') {
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-            showAllPlaylists(1); 
+            showAllPlaylists($memberId); 
         } else if ($action === 'showMySongs') {
             $playlistName = isset($_GET['playlistName']) ? $_GET['playlistName'] : '';
             $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';

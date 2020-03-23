@@ -852,9 +852,9 @@ input.submit {
 
 input[type=text],
 input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    width: 97%;
+    padding: 38px 38px;
+    margin: -7px 0;
     display: inline-block;
     box-sizing: border-box;
 }
@@ -968,7 +968,7 @@ span.psw {
     -webkit-appearance: none;
     -moz-appearance: none;
     font-family: inherit;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .field__input:focus::-webkit-input-placeholder {
@@ -1161,8 +1161,8 @@ span.psw {
     #reset,
     #submitRegister {
         font-size: 34px;
-        height: 150px;
-        width: 150px;
+        height: 101px;
+        width: 215px;
     }
 }
 

@@ -10,6 +10,7 @@
             echo $playlistId .$singer .$song .$tjCode .$kumyoungCode;
             $db = $this->dbConnect();
             if ($tjCode AND $kumyoungCode){
+                echo "hi";
                 $addSong = $db->prepare("INSERT INTO songs(playlistId, singer, song, tjCode, kumyoungCode) VALUES(:playlistId, :singer, :song, :tjCode, :kumyoungCode)");
                 $status = $addSong->execute(array(
                     'playlistId' => $playlistId,
@@ -19,6 +20,7 @@
                     'kumyoungCode' => $kumyoungCode,
                 ));
             } else if ($tjCode) {
+                echo "hi again!";
                 $addSong = $db->prepare("INSERT INTO songs(playlistId, singer, song, tjCode) VALUES(:playlistId, :singer, :song, :tjCode)");
                 $status = $addSong->execute(array(
                     'playlistId' => $playlistId,
@@ -27,6 +29,7 @@
                     'tjCode' => $tjCode,
                 ));
             } else if ($kumyoungCode){
+                echo "hi one more";
                 $addSong = $db->prepare("INSERT INTO songs(playlistId, singer, song, kumyoungCode) VALUES(:playlistId, :singer, :song, :kumyoungCode)");
                 $status = $addSong->execute(array(
                     'playlistId' => $playlistId,

@@ -80,7 +80,7 @@ CREATE TABLE `songs` (
   `singer` varchar(255) NOT NULL,
   `song` varchar(255) NOT NULL,
   `tjCode` int(11) NOT NULL,
-  `kumyangCode` int(11) NOT NULL,
+  `kumyoungCode` int(11) NOT NULL,
   `releaseDate` date NOT NULL,
   `dateAdded` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -89,7 +89,7 @@ CREATE TABLE `songs` (
 -- Dumping data for table `songs`
 --
 
-INSERT INTO `songs` (`id`, `playlistId`, `singer`, `song`, `tjCode`, `kumyangCode`, `releaseDate`, `dateAdded`) VALUES
+INSERT INTO `songs` (`id`, `playlistId`, `singer`, `song`, `tjCode`, `kumyoungCode`, `releaseDate`, `dateAdded`) VALUES
 (1, 1, 'Beyonce', 'Drunk In Love', 0, 0, '2014-09-01', '2020-03-12 20:01:36'),
 (2, 1, 'Beyonce', 'Single Ladies', 0, 0, '2018-07-04', '2020-03-12 20:01:36');
 
