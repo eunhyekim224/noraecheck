@@ -7,34 +7,21 @@
     class SongManager extends Manager {
 
         public function addSong($playlistId, $singer, $song, $tjCode, $kumyoungCode) {
-            echo $playlistId .$singer .$song .$tjCode .$kumyoungCode;
+            echo "playlist : ".$playlistId ."singer : ". $singer ."song : ". $song ."tjC : ". $tjCode ."kumyoungCode : ". $kumyoungCode;
             $db = $this->dbConnect();
-            if ($tjCode AND $kumyoungCode){
-                $addSong = $db->prepare("INSERT INTO songs(playlistId, singer, song, tjCode, kumyoungCode) VALUES(:playlistId, :singer, :song, :tjCode, :kumyoungCode)");
-                $status = $addSong->execute(array(
-                    'playlistId' => $playlistId,
-                    'singer' => htmlspecialchars($singer),
-                    'song' => htmlspecialchars($song),
-                    'tjCode' => $tjCode,
-                    'kumyoungCode' => $kumyoungCode,
-                ));
-            } else if ($tjCode) {
-                $addSong = $db->prepare("INSERT INTO songs(playlistId, singer, song, tjCode) VALUES(:playlistId, :singer, :song, :tjCode)");
-                $status = $addSong->execute(array(
-                    'playlistId' => $playlistId,
-                    'singer' => htmlspecialchars($singer),
-                    'song' => htmlspecialchars($song),
-                    'tjCode' => $tjCode,
-                ));
-            } else if ($kumyoungCode){
-                $addSong = $db->prepare("INSERT INTO songs(playlistId, singer, song, kumyoungCode) VALUES(:playlistId, :singer, :song, :kumyoungCode)");
-                $status = $addSong->execute(array(
-                    'playlistId' => $playlistId,
-                    'singer' => htmlspecialchars($singer),
-                    'song' => htmlspecialchars($song),
-                    'kumyoungCode' => $kumyoungCode,
-                ));
-            }       
+           
+            $tjCode = ($tjCode) ? $tjCode : null;
+            $kumyoungCode = ($kumyoungCode) ? $kumyoungCode : null;
+           
+            $addSong = $db->prepare("INSERT INTO songs(playlistId, singer, song, tjCode, kumyoungCode) VALUES(:playlistId, :singer, :song, :tjCode, :kumyoungCode)");
+            $status = $addSong->execute(array(
+                'playlistId' => $playlistId,
+                'singer' => htmlspecialchars($singer),
+                'song' => htmlspecialchars($song),
+                'tjCode' => $tjCode,
+                'kumyoungCode' => $kumyoungCode,
+            ));
+                   
             if (!$status) {
                 throw new PDOException('Unable to add song!');
             } 

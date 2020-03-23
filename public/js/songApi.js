@@ -1,40 +1,40 @@
-function loadFile(entry,category){//function takes inputs from these two variables
+function loadFile(entry, category) { //function takes inputs from these two variables
     var xhr = new XMLHttpRequest();
 
     xhr.open('GET', `https://api.manana.kr/karaoke/${category}/${entry}.json`);
 
-    xhr.addEventListener('readystatechange', function(){ //manage an asynchronous request in this function
+    xhr.addEventListener('readystatechange', function() { //manage an asynchronous request in this function
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) { //if the file is loaded without error
-            
+
             obj = JSON.parse(xhr.response);
-            
+
             //make maps for the song+artist and code
             let tjCodeMap = new Map();
             let kumyoungCodeMap = new Map();
             //the array we'll return
             let arrayToReturn = [];
-            
-            for (let i = 0,c = obj.length; i < c; i++){
-                if(obj[i].brand === 'tj'){
+
+            for (let i = 0, c = obj.length; i < c; i++) {
+                if (obj[i].brand === 'tj') {
                     let tjNameAndTitle = nameAndTitleCheck(obj[i].singer, obj[i].title, obj[i].brand);
 
-                    tjNameAndTitle = tjNameAndTitle.toLowerCase().replace(/ /g,'');
-                    tjCodeMap.set(tjNameAndTitle,obj[i].no);
-                } else if(obj[i].brand === 'kumyoung'){
+                    tjNameAndTitle = tjNameAndTitle.toLowerCase().replace(/ /g, '');
+                    tjCodeMap.set(tjNameAndTitle, obj[i].no);
+                } else if (obj[i].brand === 'kumyoung') {
                     let kumNameAndTitle = nameAndTitleCheck(obj[i].singer, obj[i].title, obj[i].brand);
 
-                    kumNameAndTitle = kumNameAndTitle.toLowerCase().replace(/ /g,'');
-                    kumyoungCodeMap.set(kumNameAndTitle,obj[i].no);
+                    kumNameAndTitle = kumNameAndTitle.toLowerCase().replace(/ /g, '');
+                    kumyoungCodeMap.set(kumNameAndTitle, obj[i].no);
                 }
-        
+
             }
-            for (let i = 0,c = obj.length; i < c; i++) {
+            for (let i = 0, c = obj.length; i < c; i++) {
                 if (obj[i].brand === 'tj' || obj[i].brand === 'kumyoung') {
 
                     let songKey = nameAndTitleCheck(obj[i].singer, obj[i].title, obj[i].brand);
-                    songKey = songKey.toLowerCase().replace(/ /g,'');
+                    songKey = songKey.toLowerCase().replace(/ /g, '');
 
-                    if(tjCodeMap.has(songKey) && kumyoungCodeMap.has(songKey)){
+                    if (tjCodeMap.has(songKey) && kumyoungCodeMap.has(songKey)) {
                         let songEntry = {
                             singer: obj[i].singer,
                             song: obj[i].title,
@@ -44,8 +44,8 @@ function loadFile(entry,category){//function takes inputs from these two variabl
                         arrayToReturn.push(songEntry);
                         tjCodeMap.delete(songKey);
                         kumyoungCodeMap.delete(songKey);
-                        
-                    } else if(tjCodeMap.has(songKey)){
+
+                    } else if (tjCodeMap.has(songKey)) {
                         let songEntry = {
                             singer: obj[i].singer,
                             song: obj[i].title,
@@ -53,8 +53,8 @@ function loadFile(entry,category){//function takes inputs from these two variabl
                         };
                         arrayToReturn.push(songEntry);
                         tjCodeMap.delete(songKey);
-                        
-                    } else if(kumyoungCodeMap.has(songKey)){
+
+                    } else if (kumyoungCodeMap.has(songKey)) {
                         let songEntry = {
                             singer: obj[i].singer,
                             song: obj[i].title,
@@ -66,7 +66,7 @@ function loadFile(entry,category){//function takes inputs from these two variabl
                 }
 
             }
-            arrayToReturnSliced = arrayToReturn.slice(0,10);
+            arrayToReturnSliced = arrayToReturn.slice(0, 10);
             console.log(arrayToReturnSliced);
             // let json = JSON.stringify(arrayToReturn);
             // return arrayToReturn;
@@ -76,18 +76,18 @@ function loadFile(entry,category){//function takes inputs from these two variabl
                 console.log('not found');
                 notFound();
             }
-            
-            
-        } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status !== 200 & xhr.status === 0){
+
+
+        } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status !== 200 & xhr.status === 0) {
 
             alert('there was an error \n\n Code:' + xhr.status + '\nText : ' + xhr.statusText);
-            
+
         }
     });
     xhr.send(null);
 }
 
-(function(){
+(function() {
     var submit = document.getElementById('submit');
     var categories = document.getElementById('category');
     let input = document.getElementById('entry');
@@ -104,35 +104,35 @@ function loadFile(entry,category){//function takes inputs from these two variabl
         let div_parent = document.querySelector('#searchResults');
         div_parent.innerHTML = "";
         if (e.target.value) {
-            if(e.target.value.length == 1){ 
+            if (e.target.value.length == 1) {
                 return;
             }
-            loadFile(e.target.value,categories.value);
+            loadFile(e.target.value, categories.value);
         } else if (e.target.value != previousValue) {
             previousValue = e.target.value;
-		
+
             if (previousRequest && previousRequest.readyState < XMLHttpRequest.DONE) {
                 previousRequest.abort(); // if we have still a research running, we stop it
             }
-    
+
             previousRequest = loadFile(previousValue); // we store the new request
-        } 
+        }
     });
 })();
 
 
-function nameAndTitleCheck(singer,title, brand) {
+function nameAndTitleCheck(singer, title, brand) {
     let test, regex, nameAndTitle;
-    if (brand === 'tj'){
+    if (brand === 'tj') {
         if (test = /\w+\(\w+.\w+ \w+\)/gi.test(singer)) {
-            regex = singer.replace(/\(\w+.\w+ \w+\)/gi,'');
+            regex = singer.replace(/\(\w+.\w+ \w+\)/gi, '');
             nameAndTitle = regex + title;
         } else {
             nameAndTitle = singer + title;
         }
-    }else if (brand === 'kumyoung'){
+    } else if (brand === 'kumyoung') {
         if (test = /\w+ \(\w+.\w+ \w+\)/gi.test(title)) {
-            regex = title.replace(/\(\w+.\w+ \w+\)/gi,'');
+            regex = title.replace(/\(\w+.\w+ \w+\)/gi, '');
             nameAndTitle = singer + regex;
         } else {
             nameAndTitle = singer + title;
@@ -145,7 +145,7 @@ function displayResults(array) {
     let div_parent = document.querySelector('#searchResults');
     div_parent.innerHTML = "";
 
-    for (let i=0,c=array.length; i<c; i++) {
+    for (let i = 0, c = array.length; i < c; i++) {
         let searchResults = document.createElement('form');
         let songImgDiv = document.createElement('div');
         let songImg = document.createElement('img');
@@ -153,7 +153,7 @@ function displayResults(array) {
         let song = document.createElement('p');
         let songText = document.createTextNode(array[i].song);
         let singer = document.createElement('p');
-        let singerText = document.createTextNode('by '+ array[i].singer);
+        let singerText = document.createTextNode('by ' + array[i].singer);
         let brandCodes = document.createElement('div');
         let tjBrand = document.createElement('p');
         let tjText = document.createTextNode('TJ');
@@ -174,44 +174,44 @@ function displayResults(array) {
         let searchCache = document.createElement('input');
         let categoryCache = document.createElement('input');
 
-        searchResults.setAttribute('class','resultOption');
-        song.setAttribute('class','songTitle');
-        songImgDiv.setAttribute('class','songImg');
-        brandCodes.setAttribute('class','brandCodes');
-        addIcon.setAttribute('class','addIcon');
-        songImg.setAttribute('src','public/images/songResult2.png');
-        songImg.setAttribute('title','Song icon');
-        iconImg.setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg');
-        iconImg.setAttribute('title','Plus icon');
-        iconImg.setAttribute('class','addPlaylist');
+        searchResults.setAttribute('class', 'resultOption');
+        song.setAttribute('class', 'songTitle');
+        songImgDiv.setAttribute('class', 'songImg');
+        brandCodes.setAttribute('class', 'brandCodes');
+        addIcon.setAttribute('class', 'addIcon');
+        songImg.setAttribute('src', 'public/images/songResult3.png');
+        songImg.setAttribute('title', 'Song icon');
+        iconImg.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg');
+        iconImg.setAttribute('title', 'Plus icon');
+        iconImg.setAttribute('class', 'addPlaylist');
 
-        hiddenSong.setAttribute('type','hidden');
-        hiddenSinger.setAttribute('type','hidden');
-        hiddenTj.setAttribute('type','hidden');
-        hiddenKumyoung.setAttribute('type','hidden');
-        hiddenAction.setAttribute('type','hidden');
-        searchCache.setAttribute('type','hidden');
-        categoryCache.setAttribute('type','hidden');
+        hiddenSong.setAttribute('type', 'hidden');
+        hiddenSinger.setAttribute('type', 'hidden');
+        hiddenTj.setAttribute('type', 'hidden');
+        hiddenKumyoung.setAttribute('type', 'hidden');
+        hiddenAction.setAttribute('type', 'hidden');
+        searchCache.setAttribute('type', 'hidden');
+        categoryCache.setAttribute('type', 'hidden');
 
-        hiddenSong.setAttribute('name','hiddenSong');
-        hiddenSinger.setAttribute('name','hiddenSinger');
-        hiddenTj.setAttribute('name','hiddenTj');
-        hiddenKumyoung.setAttribute('name','hiddenKumyoung');
-        hiddenAction.setAttribute('name','action');
-        searchCache.setAttribute('name','searchCache');
-        categoryCache.setAttribute('name','categoryCache');
+        hiddenSong.setAttribute('name', 'hiddenSong');
+        hiddenSinger.setAttribute('name', 'hiddenSinger');
+        hiddenTj.setAttribute('name', 'hiddenTj');
+        hiddenKumyoung.setAttribute('name', 'hiddenKumyoung');
+        hiddenAction.setAttribute('name', 'action');
+        searchCache.setAttribute('name', 'searchCache');
+        categoryCache.setAttribute('name', 'categoryCache');
 
         let tjCode = array[i].tj_code ? array[i].tj_code : '';
         let kumgoungCode = array[i].kumyoung_code ? array[i].kumyoung_code : '';
 
-        hiddenSong.setAttribute('value',array[i].song);
-        hiddenSinger.setAttribute('value',array[i].singer);
-        hiddenTj.setAttribute('value',tjCode);
-        hiddenKumyoung.setAttribute('value',kumgoungCode);
-        hiddenAction.setAttribute('value','searchModal');
-        searchCache.setAttribute('value',entry.value);
-        categoryCache.setAttribute('value',category.value);
-        iconImg.addEventListener('click', ()=> {
+        hiddenSong.setAttribute('value', array[i].song);
+        hiddenSinger.setAttribute('value', array[i].singer);
+        hiddenTj.setAttribute('value', tjCode);
+        hiddenKumyoung.setAttribute('value', kumgoungCode);
+        hiddenAction.setAttribute('value', 'searchModal');
+        searchCache.setAttribute('value', entry.value);
+        categoryCache.setAttribute('value', category.value);
+        iconImg.addEventListener('click', () => {
             searchResults.submit();
         });
         // for (let i=0; i<modals.length; i++) {
@@ -244,7 +244,7 @@ function displayResults(array) {
         searchResults.appendChild(hiddenAction);
         searchResults.appendChild(searchCache);
         searchResults.appendChild(categoryCache);
-        
+
         if (array[i].tj_code && array[i].kumyoung_code) {
             brandCodes.appendChild(tjBrand);
             brandCodes.appendChild(code);
@@ -269,29 +269,29 @@ function notFound() {
     let error = document.createElement('p');
     let errorText = document.createTextNode('Not Found');
 
-    error.setAttribute('class','errorMsg');
+    error.setAttribute('class', 'errorMsg');
 
     error.appendChild(errorText);
     div_parent.appendChild(error);
 }
 
 
-let modals = document.getElementsByClassName("modalSearch");   
-   
+let modals = document.getElementsByClassName("modalSearch");
 
-function autocorrect(searchedValue,category) {
+
+function autocorrect(searchedValue, category) {
     // console.log("e.target.value.length", e.target.value.length>1);
     let div_parent = document.querySelector('#searchResults');
     div_parent.innerHTML = "";
     if (searchedValue) {
-        loadFile(searchedValue,category);
-    } 
+        loadFile(searchedValue, category);
+    }
 };
 
 let modalDisplay = document.getElementById('modalDisplay');
-if(modalDisplay.value === 'on'){
-    for (let i=0; i<modals.length; i++) {
-        modals[i].style.display = "block"; 
+if (modalDisplay.value === 'on') {
+    for (let i = 0; i < modals.length; i++) {
+        modals[i].style.display = "block";
         playlistId = document.getElementById('playlistId');
         searchCache = document.getElementById('searchCache');
         console.log(searchCache.value);
@@ -299,12 +299,12 @@ if(modalDisplay.value === 'on'){
         switchOptions(searchCategory.value);
         finalSearchCache = searchCache.value.replace(/_/g, " ");
         entry.value = finalSearchCache;
-        autocorrect(finalSearchCache,searchCategory.value)
-        
+        autocorrect(finalSearchCache, searchCategory.value)
+
     }
 }
 
-    // let addPlaylistButton = document.getElementsByClassName('addPlaylist');
+// let addPlaylistButton = document.getElementsByClassName('addPlaylist');
 
 // function selectPlaylist(playlistId) {
 //     let options = document.getElementsByTagName('option');
