@@ -5,7 +5,7 @@
     <div id="landingWrapper">
 
         <div id="brandBlock">
-            <!-- <div class="brandName en">noraecheck</div> -->
+            <div class="brandName en">noraecheck</div>
             <div class="brandName kr">노래책</div>
         </div>
 
