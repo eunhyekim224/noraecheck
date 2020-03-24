@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gamja+Flower&display=swap"/> -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua&display=swap"/> 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="mobileScreen.css">
+        <link rel="stylesheet" type="text/css" href="tabletScreen.css">
+        <link rel="stylesheet" type="text/css" href="desktopScreen.css">
     </head> 
     <body>
         <?= $content?>
