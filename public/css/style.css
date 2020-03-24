@@ -1183,7 +1183,7 @@ padding-bottom: 0;
 
 /**********************************/
 
-@media all and (min-device-width: 480px) and (max-device-width: 600px) {
+@media all and (min-device-width: 400px) and (max-device-width: 600px) {
     body {
         background-color: rgb(206, 206, 206);
     }
@@ -1402,5 +1402,23 @@ padding-bottom: 0;
     }
     #menuIcons li {
         width: 15%;
+    }
+}
+
+
+/* search page tablet media query */
+
+@media all and (max-device-width: 480px) {
+    #mainContent,
+    #results {
+        height: 95%;
+    }
+    .songTitle,
+    p,
+    h1 {
+        font-size: 2em;
+    }
+    .songImg {
+        width: 10%;
     }
 }
