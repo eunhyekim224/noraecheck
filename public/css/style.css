@@ -309,6 +309,8 @@ a {
 
 .modalContentSearch {
     height: fit-content;
+    margin: 3% auto;
+    padding: 1% 0px 1% 0px;
     /* background-color:#8fd3f4;
     box-shadow: none;    */
 }
@@ -788,10 +790,6 @@ margin: 1%;
     display: none;
 }
 
-#searchNewPlaylistSubmit {
-    height: 10%;
-    width: 10%;
-}
 
 .visibleSearchNewPlaylist {
     display: flex !important;
@@ -810,31 +808,21 @@ margin: 1%;
     display: none;
 }
 
-.box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    /* top: 70%; */
-    left: 40%;
-    width: 90%;
-    height: 50%;
-    padding-top: 25%;
-    transform: translate(-50%, -50%);
-}
 
 .addPlaylistSearchBtn {
-    /* background-color: #8fd3f4; */
+    background-color: #84fab0;
     /* box-shadow: 0 0 20px #eee; */
-    /* border-radius: 10px; */
+    border-radius: 10px;
     margin-bottom: 20%;
-    position: relative;
-    align-self: flex-end;
-    display: inline-block;
-    top: 52%;
-    left: 10%;
+    /* position: relative; */
+    /* align-self: flex-end; */
+    /* display: inline-block; */
+    /* top: 52%;
+    left: 10%; */
+    margin:auto;
+    margin-top: 5%;
     height: 25% !important;
-    width: 30% !important;
+    width: 60% !important;
     padding-top: .5%;
     padding-bottom: .5%;
     /* box-shadow: 0 5px 25px rgba(240, 240, 240,0.5); */
@@ -852,27 +840,28 @@ margin: 1%;
     padding: 7%
 }
 
-.superBox {
-    display: flex;
-}
 
 .searchSubmit {
     position: relative;
     top: 50%;
 }
-
-.box label {
-    margin-bottom: 15%;
-    margin-top: 2%;
+label[for=playlistId]{
+    padding-bottom: 5px;
 }
 
 #playlistId {
+    border-radius: 10px;
     /* margin-left: 3%; */
     align-self: center;
     background-color: #8fd3f4;
     color: white;
     padding: 1vh;
-    width: 23vw;
+    width: 80%;
+    max-height:40vh !important;
+    overflow-y: scroll;
+    margin:auto;
+    display:flex;
+    flex-direction: column;
     height: 0%;
     border: none;
     font-size: 20px;
@@ -884,29 +873,33 @@ margin: 1%;
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
+    margin-top:3%;
+    
+
 }
 
-.box::before {
-    content: "\f13a";
-    font-family: FontAwesome;
-    position: absolute;
-    top: 85%;
-    right: 0%;
-    width: 20%;
-    height: 15%;
-    text-align: center;
-    font-size: 4vh;
-    /* padding-bottom: 7%; */
-    line-height: 150%;
-    color: rgba(255, 255, 255, 0.5);
-    background-color: rgba(255, 255, 255, 0.1);
-    pointer-events: none;
+
+.playlists{
+    cursor: pointer;
+    padding:3%;
+}
+#playlistId input[type=radio] {
+    display: none;
 }
 
-.box:hover::before {
-    color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(255, 255, 255, 0.2);
+#playlistId input[type=radio]:checked + .playlists {
+    background-color: #84fab0;
+    
 }
+
+.playlistName{
+    height:1.5em;
+    margin:5% auto;
+    font-size:4vh;
+}
+
+
+
 
 #playlistId option {
     padding: 30px;
