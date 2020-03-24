@@ -1539,16 +1539,9 @@ padding-bottom: 0;
 
 
 /**********************************/
-<<<<<<< HEAD
 @media all and (min-width: 640px) and (max-width: 700px) {
     body {
         background-color: rgb(206, 206, 206);
-=======
-
-@media all and (max-device-width: 600px) and (max-device-width: 950px) {
-    .myListIcons {
-        width: 15%;
->>>>>>> ebecbb17c71076e6128e66b07900e4f8ce4734e0
     }
     .mainWrapper {
         border-radius: 0;
