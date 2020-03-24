@@ -88,15 +88,18 @@ function loadFile(entry, category) { //function takes inputs from these two vari
 }
 
 (function() {
-    var submit = document.getElementById('submit');
+    var reset = document.getElementById('resetSearch');
     var categories = document.getElementById('category');
     let input = document.getElementById('entry');
     let previousRequest,
         previousValue = input.value;
 
-    // submit.addEventListener('click', function() {
-    //     loadFile(input.value,categories.value);   
-    // });
+
+    reset.addEventListener('click', function() {
+        let div_parent = document.querySelector('#searchResults');
+        div_parent.innerHTML = "";
+        entry.value="";   
+    });
 
 
     input.addEventListener('keyup', function(e) {
@@ -299,7 +302,7 @@ if (modalDisplay.value === 'on') {
         switchOptions(searchCategory.value);
         finalSearchCache = searchCache.value.replace(/_/g, " ");
         entry.value = finalSearchCache;
-        autocorrect(finalSearchCache, searchCategory.value)
+        autocorrect(finalSearchCache, searchCategory.value);
 
     }
 }
