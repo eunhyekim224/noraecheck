@@ -30,7 +30,11 @@ try {
             $status = isset($_GET['success']) ? $_GET['success'] : '';
             logIn($username,$password,$error,$status);
         } else if ($action === 'newPlaylist') {
-            if (isset($_SESSION['memberId']) && isset($_POST['playlistName']) && $_POST['playlistName'] !== '') {
+            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            $playlistName = isset($_POST['playlistName']) ? $_POST['playlistName'] : '';
+            if (isset($memberId) &&  strlen(trim($playlistName)) === 0) {
+                showAllPlaylists($memberId);
+            } else if (isset($memberId) && isset($playlistName) && strlen(trim($playlistName)) > 0) {
                 makePlaylist($_SESSION['memberId'], $_POST['playlistName']);
             }
         } else if ($action === 'deletePlaylist') {
