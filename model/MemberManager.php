@@ -1,6 +1,4 @@
-<?php
-//    namespace Wcoding\Noraecheck\Model;
-   
+<?php   
     require_once('model/Manager.php');
 
     /**
@@ -19,7 +17,9 @@
             if (!$status) {
                 throw new PDOException('Impossible to add the member!');
             }
+            $addMember->closeCursor();  
         } 
+
         public function getMember($username) {
             $db = $this->dbConnect();
             $members = $db->prepare("SELECT id, username, password FROM members WHERE username = :username");
@@ -31,7 +31,5 @@
             }
             return $members->fetch();
         }
-
-
     }
 
