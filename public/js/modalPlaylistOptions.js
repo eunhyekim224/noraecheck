@@ -1,12 +1,12 @@
 let playlistOptionsModal = document.getElementById("playlistOptionsModal");
 let playlistOptionsButton = document.getElementById("playlistOptions");
-let cancelDelButton = document.getElementById("cancelDel");
+let cancelDelButton = playlistOptionsModal.querySelector(".cancelDel");
 
 showAndCloseModal(playlistOptionsModal, playlistOptionsButton, cancelDelButton);
 
-function showAndCloseModal(modals, buttons, cancelButtons) {
+function showAndCloseModal(modals, buttons, cancelButton) {
     showModal(modals, buttons);
-    closeModal(modals, cancelButtons);
+    closeModal(modals, cancelButton);
 }
 
 function showModal(modal, button) {

@@ -24,7 +24,7 @@
 <ul id="mySongList" class="myList">
 <?php while ($song = $songDisplay->fetch()) { ?>
     <li>
-        <img src="public/images/songResult3.png" id="songImgInPlaylistSongs">
+        <img src="public/images/songResult3.png" class="songImgInPlaylistSongs">
         <div id="songsInOnePlaylist">
             <p id="songNameText" class="darkGrey"><?= $song['songName']; ?></p>
             <p>by <?= $song['singerName']; ?></p>
@@ -35,7 +35,18 @@
                 <?= $song['kumyoungCode']; ?>
             </p>
         </div>
+        <img src="./public/images/minusIcon3.png" title="minus icon" alt="minus icon" class="minusIcon">
     </li>
 <?php } ?>
+<div class="modal" id="deleteSongModal">
+    <div class="modalContent">
+        <form action="index.php" method="post">
+            <input type="hidden" name="action" value="deleteSong">
+            <?php include('areYouSureModal.php'); ?>
+        </form>
+    </div>
+</div>
 </ul>
 <script src="./public/js/modalPlaylistOptions.js"></script>
+<script src="./public/js/modalDeleteSong.js"></script>
+

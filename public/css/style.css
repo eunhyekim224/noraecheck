@@ -201,7 +201,7 @@ a {
     /* border: 1px solid red; */
 }
 
-#mySongList img {
+#mySongList .songImgInPlaylistSongs {
     max-height: 100%;
     background-color: rgb(238, 238, 238);
     margin-right: 3%;
@@ -258,7 +258,6 @@ a {
     text-decoration: none;
     color: white;
 }
-
 
 /* new playlist modal  */
 
@@ -415,6 +414,7 @@ input.question+label>span {
 
 #songsInOnePlaylist {
     font-size: 0.9em;
+    width: 72%;
 }
 
 #mySongList {
@@ -430,6 +430,17 @@ input.question+label>span {
     padding: 2% 0 4% 0;
 }
 
+/* minus icon for songs and delete song modal*/
+
+img.minusIcon {
+    background-color: transparent;
+    height: 63%;
+}
+
+#deleteSongModal .modalContent {
+    height: 21%;
+    font-size: 1.8em;
+}
 
 /* ellipse menu on playlist options */
 
@@ -491,7 +502,7 @@ input.question+label>span {
     padding-top: 11%;
 }
 
-#areYouSure #areYouSureBtns input {
+#areYouSure .areYouSureBtns input, .areYouSureBtns input{
     height: 63px;
     border: none;
     padding: 4% 5%;
@@ -499,6 +510,7 @@ input.question+label>span {
     width: 38%;
     cursor: pointer;
 }
+
 
 
 
