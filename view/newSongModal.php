@@ -16,23 +16,22 @@
             
         
             <input type="hidden" name="action" value="addToPlaylist">
-            <div class="superBox">
-                <div class="box">
+            <label for="playlistId"><span>add song to playlist</span></label>
+            <div id="playlistId">
+            
                 
-                    <label for="playlistId"><span>add song to playlist</span></label>
-                    <select name="playlistId" id="playlistId">
-                    <?php while ($playlist = $playlistsAdd->fetch()) { ?>
-                        <?= '<option value="' .$playlist['playlistId'] .'">' .$playlist['playlistName'] .'</option>';?>
-                        
+                <?php while ($playlist = $playlistsAdd->fetch()) { ?>
+                    <?= '<option value="' .$playlist['playlistId'] .'">' .$playlist['playlistName'] .'</option>';?>
                     
-                    <?php } ?>
-                    </select>
-                </div>
-                <div class="modalButtons openSans addSongToNewPlaylistButton">
-                    <div name="newPlaylist" class="addPlaylistSearchBtn"><img src="./public/images/plusWhite.png"/></div>             
-                </div>
+                
+                <?php } ?>
+                
+
             </div>
             
+            <div class="modalButtons openSans addSongToNewPlaylistButton">
+                <div name="newPlaylist" class="addPlaylistSearchBtn"><img src="./public/images/plusWhite.png"/></div>             
+            </div>
             <input type="hidden" name="song" value=<?=urlencode($song); ?>>
             <input type="hidden" name="singer" value=<?=urlencode($singer); ?>>
             <input type="hidden" name="tj" value=<?=$tj; ?>>
