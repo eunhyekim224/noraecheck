@@ -290,7 +290,7 @@ a {
     margin: 15% auto;
     padding: 1% 0px 3.5% 0px;
     width: 35%;
-    height: 20%;
+    height: 25%;
     text-align: center;
     border-radius: 10px;
     font-size: 1.7em;
@@ -977,7 +977,7 @@ margin: 1%;
 
 /**********************************/
 
-@media all and (max-device-width: 480px) {
+@media all and (max-width: 480px) {
     body {
         /* background-color: rgb(243, 243, 243); */
         background-color: rgb(206, 206, 206);
@@ -1107,33 +1107,7 @@ padding-bottom: 0;
     .navIcons {
         width: 40%;
     }
-    /*_____ sign up page media queries_____ */
-    .signupPage {
-        background-color: rgb(206, 206, 206);
-    }
-    #registrationContent form {
-        margin-top: 30%;
-        width: 90%;
-        font-size: xx-large;
-    }
-    #firstP {
-        margin-bottom: 10%;
-    }
-    #lastP {
-        margin-top: 10%;
-    }
-    #registrationContent p label {
-        width: 45%
-    }
-    #registrationContent p input {
-        height: 4vh;
-        font-size: 3vh;
-    }
-    #kakaoLogin {
-        margin-top: 5%;
-        margin-bottom: 15%;
-        font-size: 4vh;
-    }
+    
     /*_____ search page media queries_____ */
     .searchOptions {
         width: 20%;
@@ -1182,7 +1156,7 @@ padding-bottom: 0;
 
 /**********************************/
 
-@media all and (min-device-width: 480px) and (max-device-width: 600px) {
+@media all and (min-width: 480px) and (max-width: 600px) {
     body {
         background-color: rgb(206, 206, 206);
     }
@@ -1282,7 +1256,7 @@ padding-bottom: 0;
         height: 10%;
         width: 100%;
         position: fixed;
-        top: 89%
+        top: 90%
     }
     #nav li p {
         display: none;
@@ -1311,33 +1285,7 @@ padding-bottom: 0;
     .navIcons {
         width: 40%;
     }
-    /*_____ sign up page media queries_____ */
-    .signupPage {
-        background-color: rgb(206, 206, 206);
-    }
-    #registrationContent form {
-        margin-top: 30%;
-        width: 90%;
-        font-size: xx-large;
-    }
-    #firstP {
-        margin-bottom: 10%;
-    }
-    #lastP {
-        margin-top: 10%;
-    }
-    #registrationContent p label {
-        width: 45%
-    }
-    #registrationContent p input {
-        height: 4vh;
-        font-size: 3vh;
-    }
-    #kakaoLogin {
-        margin-top: 5%;
-        margin-bottom: 15%;
-        font-size: 4vh;
-    }
+    
     /*_____ search page media queries_____ */
     .searchOptions {
         width: 20%;
@@ -1386,7 +1334,7 @@ padding-bottom: 0;
 
 /**********************************/
 
-@media all and (min-device-width: 600px) and (max-device-width: 950px) {
+@media all and (min-width: 600px) and (max-width: 950px) {
     .myListIcons {
         width: 15%;
     }
@@ -1395,7 +1343,7 @@ padding-bottom: 0;
     }
 }
 
-@media all and (min-device-width: 950px) and (max-device-width: 1200px) {
+@media all and (min-width: 950px) and (max-width: 1200px) {
     .myListIcons {
         width: 12%;
     }

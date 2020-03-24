@@ -275,6 +275,21 @@ function notFound() {
     div_parent.appendChild(error);
 }
 
+function createNode(element, attributes, content) {
+    let createEl = document.createElement(element);
+    
+    for (var attr in attributes) {
+        createEl.setAttribute(attr,attributes[attr]);
+    }
+    
+    if (content) {
+        text = document.createTextNode(content);
+        createEl.appendChild(text);
+    }
+
+    return createEl;
+}
+
 
 let modals = document.getElementsByClassName("modalSearch");
 
