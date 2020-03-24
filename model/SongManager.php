@@ -25,6 +25,9 @@
             if (!$status) {
                 throw new PDOException('Unable to add song!');
             } 
+
+            $addSong->closeCursor();  
+
         }
 
         public function getSongs($playlistId) {

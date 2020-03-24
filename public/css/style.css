@@ -35,6 +35,13 @@ a {
     padding: 35px;
 }
 
+.shown {
+    display: block !important;
+}
+
+.hidden {
+    display: none !important;
+}
 
 /************ Styling for home view ************/
 
@@ -494,6 +501,7 @@ input.question+label>span {
 }
 
 
+
 /* Scrollbar */
 
 
@@ -601,10 +609,6 @@ input.question+label>span {
     align-items: center;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-}
-
-.hidden {
-    display: none !important;
 }
 
 .searchOptionSelected {

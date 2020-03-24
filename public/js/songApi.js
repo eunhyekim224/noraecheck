@@ -67,13 +67,11 @@ function loadFile(entry, category) { //function takes inputs from these two vari
 
             }
             arrayToReturnSliced = arrayToReturn.slice(0, 10);
-            console.log(arrayToReturnSliced);
             // let json = JSON.stringify(arrayToReturn);
             // return arrayToReturn;
             if (arrayToReturnSliced.length > 0) {
                 displayResults(arrayToReturnSliced);
             } else {
-                console.log('not found');
                 notFound();
             }
 
