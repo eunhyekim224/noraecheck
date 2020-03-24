@@ -35,6 +35,13 @@ a {
     padding: 35px;
 }
 
+.shown {
+    display: block !important;
+}
+
+.hidden {
+    display: none !important;
+}
 
 /************ Styling for home view ************/
 
@@ -480,6 +487,7 @@ input.question+label>span {
 }
 
 #areYouSure {
+    display: none;
     padding-top: 11%;
 }
 
@@ -491,6 +499,7 @@ input.question+label>span {
     width: 38%;
     cursor: pointer;
 }
+
 
 
 /* Scrollbar */
@@ -575,7 +584,9 @@ input.question+label>span {
 
 #search {
     padding: 1%;
+    height:10%;
     display: flex;
+    /* flex-direction: column; */
     width: 98%;
 }
 
@@ -585,9 +596,7 @@ input.question+label>span {
     width: 10%
 }
 
-.searchOptionsExpanded {
-    width: 37%;
-}
+
 
 .searchOption {
     background-color: rgb(240, 239, 239);
@@ -602,14 +611,14 @@ input.question+label>span {
     border-bottom-left-radius: 15px;
 }
 
-.hidden {
-    display: none !important;
-}
-
 .searchOptionSelected {
-    background-color: azure !important;
+    background-color: #84fab0 !important;
 }
 
+
+.searchOptionsExpanded {
+    width: 37%;
+}
 .searchOptionExpanded {
     display: flex;
     width: 20%;
@@ -620,16 +629,18 @@ input.question+label>span {
     background-color: rgb(240, 239, 239);
 }
 
+
+
 #song {
     border-radius: 15px 0px 0px 15px;
 }
 
 #searchOptions>div:hover,
-#submit:hover {
-    background-color: rgb(0, 153, 255);
+#resetSearch:hover {
+    background-color:#8fd3f4;
 }
 
-#submit,
+#resetSearch,
 #entry,
 .searchOptions {
     height: 65%;
@@ -650,26 +661,25 @@ input.question+label>span {
     width: 65%;
 }
 
-#entry:focus {
+#resetSearch:focus {
     outline: none;
 }
 
-#submit {
+#resetSearch {
     background-color: rgb(240, 239, 239);
     border: none;
     width: 10%;
+    font-size: 1.3em;
+    line-height: 50%;
     border-radius: 0px 15px 15px 0px;
 }
 
-#submit:focus {
+#resetSearch:focus {
     outline: none !important;
     background-color: rgb(228, 225, 225);
 }
 
-#submit img {
-    height: 70%;
-    width: 70%;
-}
+
 
 @keyframes run-text {
     from {
@@ -725,9 +735,10 @@ margin: 1%;
     padding: 3% 0 3% 0;
     border-bottom: 0.1px solid;
 }
-.songImg img{
-    width: 6vw;
-    height: 13vh;
+
+.songImg img {
+    width: 100%;
+    height: 100%;
 }
 
 .addIcon img {
@@ -1139,7 +1150,7 @@ padding-bottom: 0;
     #submit:hover {
         background-color: rgb(240, 239, 239);
     }
-    #submit {
+    #resetSearch {
         background-color: rgb(240, 239, 239);
         border: none;
         width: 15%;
@@ -1153,6 +1164,8 @@ padding-bottom: 0;
         width: 35%;
         font-size: 3vh;
     }
+
+    
 }
 
 
@@ -1499,10 +1512,10 @@ padding-bottom: 0;
         padding-right: 3%;
     }
     #searchOptions>div:hover,
-    #submit:hover {
+    #resetSearch:hover {
         background-color: rgb(240, 239, 239);
     }
-    #submit {
+    #resetSearch {
         background-color: rgb(240, 239, 239);
         border: none;
         width: 15%;
@@ -1526,9 +1539,16 @@ padding-bottom: 0;
 
 
 /**********************************/
+<<<<<<< HEAD
 @media all and (min-width: 640px) and (max-width: 700px) {
     body {
         background-color: rgb(206, 206, 206);
+=======
+
+@media all and (max-device-width: 600px) and (max-device-width: 950px) {
+    .myListIcons {
+        width: 15%;
+>>>>>>> ebecbb17c71076e6128e66b07900e4f8ce4734e0
     }
     .mainWrapper {
         border-radius: 0;
@@ -1938,5 +1958,16 @@ padding-bottom: 0;
     /* nav */
     #menuIcons li {
         width: 15%;
+    }
+}
+
+@media all and (min-device-width: 1504px) {
+    .songImg {
+        background-color: rgb(238, 238, 238);
+        width: 10%;
+        height: 10%;
+        border-radius: 10px;
+        margin: 0;
+        padding: 0 1% 0 0;
     }
 }

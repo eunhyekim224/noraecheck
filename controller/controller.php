@@ -81,7 +81,7 @@
     function deletePlaylist($playlistId, $memberId) {
         $playlistManager = new PlaylistManager();
         $playlistManager->deletePlaylist($playlistId);
-        showAllPlaylists($memberId);
+        header('Location: index.php?action=showMyList');
     }
     function search($memberId,$searchCache,$categoryCache) {
         $playlistAddManager = new PlaylistManager();
@@ -97,7 +97,6 @@
     }
     function addToPlaylist($playlistId,$singer,$song,$tj,$kumyoung) {
         $songAddManager = new SongManager();
-        echo $playlistId .$singer .$song .$tj .$kumyoung;
         $songAdd = $songAddManager->addSong($playlistId, $singer, $song, $tj, $kumyoung);
         header('Location: index.php?action=search');
     }

@@ -2,10 +2,7 @@
     require_once('model/Manager.php');
 
     /**
-     * TODO: decide on how the songs are stored in the table
-     * TODO: join playlist and member tables 
-     * TODO: function to deletePlaylist
-     * TODO: function to deleteAllPlaylists
+     * TODO: do comments for all functions
      */
 
     class PlaylistManager extends Manager {
@@ -27,6 +24,9 @@
             if (!$status) {
                 throw new PDOException('Unable to create the playlist!');
             }
+
+            $addMember->closeCursor();  
+
         }
                 
         /**
@@ -85,23 +85,35 @@
          */
         public function deletePlaylist($playlistId) {
             $db = $this->dbConnect();
-            $del = $db->prepare("DELETE FROM playlists WHERE id = :playlistId");
-            $del->execute(array(
+            $params = array(
                 'playlistId' => $playlistId
-            ));
-            $numberOfDeletedRows = $del->rowCount();
+            );
+            $playlist = $db->prepare("SELECT id FROM playlists WHERE id = :playlistId");
+            $playlist->execute($params);
+            $existingPlaylistId = $playlist->fetch();
+            if($existingPlaylistId != "") {
+                $del = $db->prepare("DELETE FROM playlists WHERE id = :playlistId");
+                $del->execute($params);
 
-            if ($numberOfDeletedRows < 1) {
-                throw new PDOException('No playlists have been deleted!'); 
+                $numberOfDeletedRows = $del->rowCount();
+            
+                if ($numberOfDeletedRows < 1) {
+                    throw new PDOException('No playlists have been deleted!'); 
+                }
+                $this->deleteSongsFromAPlaylist($playlistId);
+                $del->closeCursor();
             }
+            $playlist->closeCursor();
+        }
 
+        public function deleteSongsFromAPlaylist($playlistId) {
+            $db = $this->dbConnect();
             $delSongs = $db->prepare("DELETE FROM songs WHERE playlistId = :playlistId");
             $delSongs->execute(array(
                 'playlistId' => $playlistId
             ));
 
-            
-            return $numberOfDeletedRows;
+            $delSongs->closeCursor();
         }
     }
 
