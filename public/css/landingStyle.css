@@ -851,12 +851,14 @@ input.submit {
 /* login + sign up modal css */
 
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=email] {
     width: 97%;
     padding: 38px 38px;
     margin: -7px 0;
     display: inline-block;
     box-sizing: border-box;
+    font-size: 37px;
 }
 
 button:hover {
@@ -959,7 +961,7 @@ span.psw {
 /* form 3 test */
 
 .field {
-    --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #fda085);
+    --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #666060);
 }
 
 .field__input {
@@ -996,10 +998,10 @@ span.psw {
 }
 
 .a-field {
-    --uiFieldHeight: var(--fieldHeight, 40px);
-    --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+    --uiFieldHeight: var(--fieldHeight, 79px);
+    --uiFieldBorderWidth: var(--fieldBorderWidth, 5px);
     --uiFieldBorderColor: var(--fieldBorderColor);
-    --uiFieldFontSize: var(--fieldFontSize, 1em);
+    --uiFieldFontSize: var(--fieldFontSize, 2em);
     --uiFieldHintFontSize: var(--fieldHintFontSize, 1em);
     --uiFieldPaddingRight: var(--fieldPaddingRight, 15px);
     --uiFieldPaddingBottom: var(--fieldPaddingBottom, 15px);
@@ -1013,7 +1015,7 @@ span.psw {
 .a-field__input {
     height: var(--uiFieldHeight);
     padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
-    border-bottom: var(--uiFieldBorderWidth) solid rgb(136, 199, 199);
+    border-bottom: var(--uiFieldBorderWidth) solid rgb(102, 96, 96);
     /* border-bottom:linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100%); */
 }
 
@@ -1123,8 +1125,8 @@ span.psw {
 }
 
 .field {
-    --fieldBorderColor: #fda085;
-    --fieldBorderColorActive: #fd6d365;
+    /* --fieldBorderColor: #fda085; */
+    /* --fieldBorderColorActive: #fd6d365; */
 }
 
 .page {

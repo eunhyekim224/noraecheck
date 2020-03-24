@@ -11,3 +11,8 @@ window.onclick = function(event) {
         modal2.style.display = "none";
     }
 }
+
+// give new name
+// clean up the js file
+// make the function readable by others
+// change the name

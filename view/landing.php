@@ -131,7 +131,7 @@
     <label class="field a-field a-field_a3">
         <input type="password" name="pwdConf" id="pwdConf" class="field__input a-field__input" placeholder="e.g. Marie" required/>
             <span class="a-field__label-wrap">
-                <label id="conpwdland" type="pwdConf" class="a-field__label">Confirm Pwd</label>
+                <label id="conpwdland" type="pwdConf" class="a-field__label">Confirm Password</label>
             </span>
     </label>
 </p>

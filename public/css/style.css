@@ -910,6 +910,8 @@ margin: 1%;
 
 /**********landingSignup Style***********/
 
+
+/* 
 .signupPage {
     background-color: rgb(206, 206, 206);
 }
@@ -968,7 +970,7 @@ margin: 1%;
 #submitRegister {
     margin-left: 10%;
     margin-right: 10%;
-}
+} */
 
 
 /**********************************/
@@ -1406,12 +1408,11 @@ padding-bottom: 0;
     }
 }
 
-<<<<<<< HEAD
 
 /* search page tablet media query */
 
 @media all and (max-device-width: 480px) {
-    #mainContent,
+    /* #mainContent, */
     #results {
         height: 95%;
     }
@@ -1420,11 +1421,11 @@ padding-bottom: 0;
     h1 {
         font-size: 2em;
     }
-    .songImg {
+    /* .songImg {
         width: 10%;
-    }
+    } */
 }
-=======
+
 @media all and (min-device-width: 1504px) {
     .songImg {
         background-color: rgb(238, 238, 238);
@@ -1435,4 +1436,3 @@ padding-bottom: 0;
         padding: 0 1% 0 0;
     }
 }
->>>>>>> 1f174d6f90f8ac10dff10992d6fc3e16ebbe43b3
