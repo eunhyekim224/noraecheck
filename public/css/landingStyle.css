@@ -1013,7 +1013,7 @@ span.psw {
 }
 
 .a-field__input {
-    height: var(--uiFieldHeight);
+    height: auto;
     padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
     border-bottom: var(--uiFieldBorderWidth) solid rgb(102, 96, 96);
     /* border-bottom:linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100%); */

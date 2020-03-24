@@ -5,7 +5,7 @@
     <div id="landingWrapper">
 
         <div id="brandBlock">
-            <div class="brandName en">noraecheck</div>
+            <!-- <div class="brandName en">noraecheck</div> -->
             <div class="brandName kr">노래책</div>
         </div>
 
@@ -45,7 +45,7 @@
     <p id="firstP"> please fill out all of the required fields</p>
         <p class="loginformP">
             <label class="field a-field a-field_a1">
-                <input type="text" name="username" id="username" maxlength="15" class="field__input a-field__input" placeholder="e.g. Stas" required/>
+                <input type="text" name="username" id="username" maxlength="15" class="field__input a-field__input" placeholder="e.g. username please" required/>
                 <span class="a-field__label-wrap">
                     <label for="username" class="a-field__label">Username</label>
                 </span>
@@ -54,7 +54,7 @@
 
     <p class="loginformP">
         <label class="field a-field a-field_a3">
-            <input type="password" name="password" id="password" class="field__input a-field__input" placeholder="e.g. EunHye" required/>
+            <input type="password" name="password" id="password" class="field__input a-field__input" placeholder="e.g. password please" required/>
                 <span class="a-field__label-wrap">
                 <label for="password" class="a-field__label">Password</label>
                 </span>
@@ -102,7 +102,7 @@
 
 <p>
     <label class="field a-field a-field_a1">
-        <input type="text" name="loginNew" id="loginNew" maxlength="15" class="field__input a-field__input" placeholder="e.g. Stas" required/>
+        <input type="text" name="loginNew" id="loginNew" maxlength="15" class="field__input a-field__input" placeholder="e.g. login please" required/>
             <span class="a-field__label-wrap">
                 <label id="loginland" for="loginNew" class="a-field__label">Login</label>
             </span>
@@ -111,7 +111,7 @@
 
 <p>
     <label class="field a-field a-field_a2">
-        <input type="email" name="email" id="email" class="field__input a-field__input" placeholder="e.g. James" required/>
+        <input type="email" name="email" id="email" class="field__input a-field__input" placeholder="e.g. email please" required/>
             <span class="a-field__label-wrap">
                 <label id="emailland" type="email" class="a-field__label">Email</label>
             </span>
@@ -120,7 +120,7 @@
 
 <p>
     <label class="field a-field a-field_a3">
-        <input type="password" name="pwd" id="pwd" class="field__input a-field__input" placeholder="e.g. EunHye" required/>
+        <input type="password" name="pwd" id="pwd" class="field__input a-field__input" placeholder="e.g. password please" required/>
             <span class="a-field__label-wrap">
                 <label id="pwdland" for="pwd" class="a-field__label">Password</label>
             </span>
@@ -129,7 +129,7 @@
 
 <p>
     <label class="field a-field a-field_a3">
-        <input type="password" name="pwdConf" id="pwdConf" class="field__input a-field__input" placeholder="e.g. Marie" required/>
+        <input type="password" name="pwdConf" id="pwdConf" class="field__input a-field__input" placeholder="e.g. confirm password please" required/>
             <span class="a-field__label-wrap">
                 <label id="conpwdland" type="pwdConf" class="a-field__label">Confirm Password</label>
             </span>
