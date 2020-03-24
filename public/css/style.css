@@ -297,7 +297,7 @@ a {
     margin: 15% auto;
     padding: 1% 0px 3.5% 0px;
     width: 35%;
-    height: 20%;
+    height: 25%;
     text-align: center;
     border-radius: 10px;
     font-size: 1.7em;
@@ -584,7 +584,9 @@ input.question+label>span {
 
 #search {
     padding: 1%;
+    height:10%;
     display: flex;
+    /* flex-direction: column; */
     width: 98%;
 }
 
@@ -594,9 +596,7 @@ input.question+label>span {
     width: 10%
 }
 
-.searchOptionsExpanded {
-    width: 37%;
-}
+
 
 .searchOption {
     background-color: rgb(240, 239, 239);
@@ -612,9 +612,13 @@ input.question+label>span {
 }
 
 .searchOptionSelected {
-    background-color: azure !important;
+    background-color: #84fab0 !important;
 }
 
+
+.searchOptionsExpanded {
+    width: 37%;
+}
 .searchOptionExpanded {
     display: flex;
     width: 20%;
@@ -625,16 +629,18 @@ input.question+label>span {
     background-color: rgb(240, 239, 239);
 }
 
+
+
 #song {
     border-radius: 15px 0px 0px 15px;
 }
 
 #searchOptions>div:hover,
-#submit:hover {
-    background-color: rgb(0, 153, 255);
+#resetSearch:hover {
+    background-color:#8fd3f4;
 }
 
-#submit,
+#resetSearch,
 #entry,
 .searchOptions {
     height: 65%;
@@ -655,26 +661,25 @@ input.question+label>span {
     width: 65%;
 }
 
-#entry:focus {
+#resetSearch:focus {
     outline: none;
 }
 
-#submit {
+#resetSearch {
     background-color: rgb(240, 239, 239);
     border: none;
     width: 10%;
+    font-size: 1.3em;
+    line-height: 50%;
     border-radius: 0px 15px 15px 0px;
 }
 
-#submit:focus {
+#resetSearch:focus {
     outline: none !important;
     background-color: rgb(228, 225, 225);
 }
 
-#submit img {
-    height: 70%;
-    width: 70%;
-}
+
 
 @keyframes run-text {
     from {
@@ -1163,7 +1168,7 @@ padding-bottom: 0;
     #submit:hover {
         background-color: rgb(240, 239, 239);
     }
-    #submit {
+    #resetSearch {
         background-color: rgb(240, 239, 239);
         border: none;
         width: 15%;
@@ -1177,6 +1182,8 @@ padding-bottom: 0;
         width: 35%;
         font-size: 3vh;
     }
+
+    
 }
 
 
@@ -1364,10 +1371,10 @@ padding-bottom: 0;
         padding-right: 3%;
     }
     #searchOptions>div:hover,
-    #submit:hover {
+    #resetSearch:hover {
         background-color: rgb(240, 239, 239);
     }
-    #submit {
+    #resetSearch {
         background-color: rgb(240, 239, 239);
         border: none;
         width: 15%;
