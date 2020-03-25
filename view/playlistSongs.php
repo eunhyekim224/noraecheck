@@ -1,6 +1,6 @@
 <?php 
     $_SESSION['playlistId'] = $_GET['playlistId'];
-    $_SESSION['playlistName'] = $_GET['playlistName'];
+    echo $_GET['playlistId'];
 ?>
 <div id="mainPlaylist">
     <img src="public/images/album2.png" id="mainPlaylistImg">
@@ -43,6 +43,10 @@
         <form action="index.php" method="post">
             <input type="hidden" name="action" value="deleteSong">
             <input type="hidden" name="songId" value=<?= $song['songId']; ?>>
+            <input type="hidden" name="playlistId" value=<?= $_GET['playlistId']; ?>>
+            <input type="hidden" name="playlistName" value=<?= $_GET['playlistId']; ?>>
+            <input type="hidden" name="songCount" value=<?= $_GET['songCount']; ?>>
+            <input type="hidden" name="playlistCreationDate" value=<?= $_GET['playlistCreationDate']; ?>>
             <?php include('areYouSureModal.php'); ?>
         </form>
     </div>

@@ -46,14 +46,27 @@
             return $songs;
         }
 
+        private function countSongsFromPlaylist($playlistId) {
+            $db = $this->dbConnect();
+            $count = $db->prepare('SELECT count(*) AS songCount FROM songs s WHERE playlistId = :id');
+            $resp = $count->execute(array(
+                'id' => $playlistId
+            ));
+            $songCount = $count->fetch()['songCount'];
+            $count->closeCursor();
+            return $songCount;
+        }
+
         public function deleteSong($songId) {
             $db = $this->dbConnect();
             $params = array(
                 'songId' => $songId
             );
-            $song = $db->prepare("SELECT id FROM songs WHERE id = :songId");
+            $song = $db->prepare("SELECT id, playlistId FROM songs WHERE id = :songId");
             $song->execute($params);
-            $existingSongId = $song->fetch();
+            $selectedSong = $song->fetch();
+            $existingSongId = $selectedSong['id'];
+            $playlistId = $selectedSong['playlistId'];
             if($existingSongId != "") {
                 $delSong = $db->prepare("DELETE FROM songs WHERE id = :songId");
                 $delSong->execute($params);
@@ -65,5 +78,9 @@
                 $delSong->closeCursor();
             }
             $song->closeCursor();
+            return array(
+                "playlistId" => $playlistId,
+                "songCount" => $this->countSongsFromPlaylist($playlistId)
+            );
         }
     }

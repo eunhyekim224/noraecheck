@@ -1,5 +1,6 @@
 addNewModalContent('deletePlaylist', 'mainOptions', 'areYouSure');
 
+
 function addNewModalContent(buttonId, previousModalId, newModalId) {
     let button = document.getElementById(buttonId);
     let previousModalContent = document.getElementById(previousModalId);
