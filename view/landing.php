@@ -22,9 +22,9 @@
         <form id="loginForm" class="modal-content animate" action="index.php?action=login" method="POST">
         
         <?php 
-        // if ($status == '1'){
-        // echo '<p class="good">account successfully created</p> ';
-        // }
+        if ($status == '1'){
+        echo '<p class="good">account successfully created</p> ';
+        }
         if ($error == 'logError'){
         echo '<p class="error">there are no accounts with that ID</p> ';
         }
