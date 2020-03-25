@@ -14,7 +14,7 @@
             <input type="hidden" name="playlistId" value="<?=$playlist['playlistId']; ?>" />
             <div class="albumIcon">
                 <img src="public/images/album2.png" id="mainPlaylistImg" title="Album icon">
-                <div>Edit</div>
+                <div>Edit icon</div>
             </div>
             <div id="editPlaylistInfo">
                 <input type="text" name="newPlaylistName" id="newPlaylistName" value="<?= $playlist['playlistName']; ?>" />
