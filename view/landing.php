@@ -83,9 +83,9 @@
     <span onclick="document.getElementById('SignUp').style.display='none'" class="close" title="Close Modal">&times;</span>
     <br>    
     <?php
-        if ($error == 'logError'){
-        echo '<p class="error">please make sure that your login fields are the same</p> ';
-        }
+        // if ($error == 'logError'){
+        // echo '<p class="error">please make sure that your login fields are the same</p> ';
+        // }
         if ($error == 'passError'){
         echo '<p class="error">please make sure that your passwords are the same</p> ';
         }

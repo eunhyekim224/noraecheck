@@ -5,7 +5,6 @@ window.onclick = function(event) {
         SignInMod.style.display = "none";
         SignUpMod.style.display = "none";
     }
-
 }
 
 // give new name
