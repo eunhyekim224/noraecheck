@@ -75,7 +75,7 @@
 <!-- Sign Up Modal Start -->
 <button id="createAccount" class="btn" onclick="document.getElementById('id02').style.display='block'">Create Account</button>
 
-<div id="id02" class="modal2">
+<div id="id02" class="modal">
 
 <form class="modal-content animate" action="index.php" method="POST">
 
