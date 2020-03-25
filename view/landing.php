@@ -21,8 +21,6 @@
 
         <form id="loginForm" class="modal-content animate" action="index.php?action=login" method="POST">
         
- 
-
         <div class="imgcontainer">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         <br>

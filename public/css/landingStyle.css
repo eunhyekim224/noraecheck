@@ -18,6 +18,11 @@
     color: red;
 }
 
+
+/* .loginformP {
+    width: 10px;
+} */
+
 .good {
     color: green;
 }
@@ -873,11 +878,11 @@ input[type=text],
 input[type=password],
 input[type=email] {
     width: 97%;
-    padding: 38px 38px;
-    margin: -7px 0;
+    padding: 28px 38px;
+    margin: -6px 0;
     display: inline-block;
     box-sizing: border-box;
-    font-size: 37px;
+    font-size: 36px;
 }
 
 button:hover {
@@ -897,7 +902,7 @@ button:hover {
 }
 
 .container {
-    padding: 16px;
+    padding: 0px;
 }
 
 span.psw {
@@ -924,7 +929,7 @@ span.psw {
     background-color: #fefefe;
     margin: 0% auto 15% auto;
     border: -13px solid #888;
-    width: 68%;
+    width: 30%;
     border-radius: 15px;
 }
 
@@ -1017,24 +1022,25 @@ span.psw {
 }
 
 .a-field {
-    --uiFieldHeight: var(--fieldHeight, 79px);
-    --uiFieldBorderWidth: var(--fieldBorderWidth, 5px);
+    --uiFieldHeight: var(--fieldHeight, 45px);
+    --uiFieldBorderWidth: var(--fieldBorderWidth, 4px);
     --uiFieldBorderColor: var(--fieldBorderColor);
-    --uiFieldFontSize: var(--fieldFontSize, 2em);
+    --uiFieldFontSize: var(--fieldFontSize, 1em);
     --uiFieldHintFontSize: var(--fieldHintFontSize, 1em);
-    --uiFieldPaddingRight: var(--fieldPaddingRight, 15px);
+    --uiFieldPaddingRight: var(--fieldPaddingRight, 8px);
     --uiFieldPaddingBottom: var(--fieldPaddingBottom, 15px);
     --uiFieldPaddingLeft: var(--fieldPaddingLeft, 15px);
     position: relative;
     box-sizing: border-box;
     font-size: var(--uiFieldFontSize);
-    padding-top: 1em;
+    padding-top: 0em;
 }
 
 .a-field__input {
     height: auto;
     padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
     border-bottom: var(--uiFieldBorderWidth) solid rgb(102, 96, 96);
+    font-size: 13px !important;
     /* border-bottom:linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100%); */
 }
 
@@ -1117,7 +1123,7 @@ span.psw {
 }
 
 .a-field_a3 {
-    padding-top: 1.5em;
+    padding-top: 1em;
 }
 
 .a-field_a3 .a-field__label-wrap::after {
