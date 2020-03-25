@@ -147,6 +147,6 @@
 </div>
 
 <!-- Sign Up Modal End -->
-<script src="./public/js/landingModal.js"></script>
+<script src="./public/js/modalLanding.js"></script>
 <?php $content = ob_get_clean();?>
 <?php require('template.php');?>
