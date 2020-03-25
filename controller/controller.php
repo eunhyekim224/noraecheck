@@ -88,8 +88,8 @@
 
     function deleteSong($songId) {
         $songManager = new SongManager();
-        $song = $songManager->deleteSong($songId);
-        header('Location: index.php?action=showMySongs&playlistId='.$song['playlistId']);
+        $playlistId = $songManager->deleteSong($songId);
+        header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
     }
 
     function search($memberId,$searchCache,$categoryCache) {
