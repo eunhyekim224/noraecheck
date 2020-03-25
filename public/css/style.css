@@ -533,8 +533,9 @@ input.question+label>span {
 /**********BANNER Style***********/
 
 #bannerImage img {
-    width: 45%;
-    height: 45%;
+    width: 35%;
+    height: 35%;
+    padding:5%;
     /* padding-left: 15%; */
 }
 
@@ -825,6 +826,7 @@ margin: 1%;
     width: 60% !important;
     padding-top: .5%;
     padding-bottom: .5%;
+    cursor: pointer;
     /* box-shadow: 0 5px 25px rgba(240, 240, 240,0.5); */
 }
 

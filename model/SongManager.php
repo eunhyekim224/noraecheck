@@ -12,15 +12,15 @@
            
             $tjCode = ($tjCode) ? $tjCode : null;
             $kumyoungCode = ($kumyoungCode) ? $kumyoungCode : null;
-           
+            $singer = htmlspecialchars($singer);
+            $song = htmlspecialchars($song);
             $addSong = $db->prepare("INSERT INTO songs(playlistId, singer, song, tjCode, kumyoungCode) VALUES(:playlistId, :singer, :song, :tjCode, :kumyoungCode)");
-            $status = $addSong->execute(array(
-                'playlistId' => $playlistId,
-                'singer' => htmlspecialchars($singer),
-                'song' => htmlspecialchars($song),
-                'tjCode' => $tjCode,
-                'kumyoungCode' => $kumyoungCode,
-            ));
+            $addSong->bindParam(':playlistId',$playlistId,PDO::PARAM_INT);
+            $addSong->bindParam(':singer',$singer,PDO::PARAM_STR);
+            $addSong->bindParam(':song',$song,PDO::PARAM_STR);
+            $addSong->bindParam(':tjCode',$tjCode,PDO::PARAM_INT);
+            $addSong->bindParam(':kumyoungCode',$kumyoungCode,PDO::PARAM_INT);
+            $status = $addSong->execute();
                    
             if (!$status) {
                 throw new PDOException('Unable to add song!');
@@ -37,9 +37,8 @@
                                        JOIN playlists p
                                        ON s.playlistId = p.id
                                        WHERE p.id = :id');
-            $resp = $songs->execute(array(
-                'id' => $playlistId
-            ));
+            $songs->bindParam(':id',$playlistId,PDO::PARAM_INT);
+            $resp = $songs->execute();
             if(!$resp) {
                 throw new PDOException('Unable to display this playlist!');
             }

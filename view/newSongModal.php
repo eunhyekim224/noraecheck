@@ -2,7 +2,7 @@
     <div class="modalContentSearch">
         <form method="post" action="index.php">
             <div id= 'searchNewPlaylist'>
-                <input type="text" name="playlistName" class = "playlistName"id="playlistName" size="30" maxlength="50" required/>
+                <input type="text" name="playlistName" class = "playlistName"id="playlistName" size="30" maxlength="50"/>
             </div>
             <input type="hidden" name="action"id="modalFormAction" value="addToPlaylist">
             <label for="playlistId"><span>add song to playlist</span></label>
