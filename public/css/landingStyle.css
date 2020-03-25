@@ -14,6 +14,14 @@
     font-style: normal;
 }
 
+.error {
+    color: red;
+}
+
+.good {
+    color: green;
+}
+
 body {
     margin: 0;
     background-color: rgb(206, 206, 206);
@@ -27,6 +35,7 @@ body {
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
+    outline: none;
     /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
@@ -1146,7 +1155,7 @@ span.psw {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
     .container {
-        padding: 16px;
+        padding: 0px;
     }
     .modal-content {
         background-color: #fefefe;
@@ -1172,7 +1181,7 @@ span.psw {
     }
     .imgcontainer {
         text-align: center;
-        margin: 24px 0 12px 0;
+        margin: 0px 0 2px 0;
         position: relative;
     }
     input[type=text],
@@ -1214,6 +1223,7 @@ span.psw {
         transition: 0.5s;
         background-size: 257% auto;
         color: white;
+        outline: none;
         /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
         box-shadow: 0 0 20px #eee;
         border-radius: 2px;

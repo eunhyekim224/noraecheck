@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-<<<<<<< HEAD
-        <meta charset="utf-8"/>
-=======
         <meta charset="utf-8" />
->>>>>>> 08a5e64a3f209d8687c5a9f2523390a62456b35c
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?= $title?></title>
         <link rel="stylesheet" href="public/css/<?= $style?>"/>

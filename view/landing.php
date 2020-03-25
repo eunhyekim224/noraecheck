@@ -21,31 +21,33 @@
 
         <form id="loginForm" class="modal-content animate" action="index.php?action=login" method="POST">
         
+ 
+
+        <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <br>
         <?php 
-        if ($status == '1'){
-        echo '<p class="good">account successfully created</p> ';
-        }
+        // if ($status == '1'){
+        // echo '<p class="good">account successfully created</p> ';
+        // }
         if ($error == 'logError'){
         echo '<p class="error">there are no accounts with that ID</p> ';
         }
         if ($error == 'passError'){
-        echo '<p class="error">that password you\'ve entered is incorrect</p> ';
+        echo '<p class="error">incorrect password</p> ';
         }
         if ($error == 'missingField'){
         echo '<p class="error">please enter both fields</p> ';
         }
         ?>
-
-        <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
+        </div>
 
 <div class="container">
 
-    <p id="firstP"> please fill out all of the required fields</p>
+    <p id="firstP"></p>
         <p class="loginformP">
             <label class="field a-field a-field_a1">
-                <input type="text" name="username" id="username" maxlength="15" class="field__input a-field__input" placeholder="e.g. username please" required/>
+                <input type="text" name="username" id="username" maxlength="15" class="field__input a-field__input" placeholder="e.g. mr.trot101" required/>
                 <span class="a-field__label-wrap">
                     <label for="username" class="a-field__label">Username</label>
                 </span>
@@ -54,7 +56,7 @@
 
     <p class="loginformP">
         <label class="field a-field a-field_a3">
-            <input type="password" name="password" id="password" class="field__input a-field__input" placeholder="e.g. password please" required/>
+            <input type="password" name="password" id="password" class="field__input a-field__input" placeholder="at least 8 characters" required/>
                 <span class="a-field__label-wrap">
                 <label for="password" class="a-field__label">Password</label>
                 </span>
@@ -62,7 +64,7 @@
     </p>
 
     <p id="lastP">
-        <input type="submit" class="btn" name="submit" id="submit" value="login" />
+        <input type="submit" class="btn" name="submit" id="submitRegister" value="login" />
         <input type="reset" class="btn" name="reset" id="reset" value="Reset" />
     </p>
 
@@ -78,7 +80,11 @@
 <div id="id02" class="modal2">
 
 <form class="modal-content animate" action="index.php" method="POST">
-        <?php
+
+<div class="imgcontainer">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <br>    
+    <?php
         if ($error == 'logError'){
         echo '<p class="error">please make sure that your login fields are the same</p> ';
         }
@@ -92,17 +98,15 @@
         echo '<p class="error">please enter a valid email address</p> ';
         }
         ?>
-<div class="imgcontainer">
-    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
 </div>
 
 <div class="container">
 
-<p id="firstP"> please fill out all of the required fields</p>
+<p id="firstP"></p>
 
 <p>
     <label class="field a-field a-field_a1">
-        <input type="text" name="loginNew" id="loginNew" maxlength="15" class="field__input a-field__input" placeholder="e.g. login please" required/>
+        <input type="text" name="loginNew" id="loginNew" maxlength="15" class="field__input a-field__input" placeholder="e.g. mrs.trot102" required/>
             <span class="a-field__label-wrap">
                 <label id="loginland" for="loginNew" class="a-field__label">Login</label>
             </span>
@@ -111,7 +115,7 @@
 
 <p>
     <label class="field a-field a-field_a2">
-        <input type="email" name="email" id="email" class="field__input a-field__input" placeholder="e.g. email please" required/>
+        <input type="text" name="email" id="email" class="field__input a-field__input" placeholder="e.g. karaokelife@mail" required/>
             <span class="a-field__label-wrap">
                 <label id="emailland" type="email" class="a-field__label">Email</label>
             </span>
@@ -120,7 +124,7 @@
 
 <p>
     <label class="field a-field a-field_a3">
-        <input type="password" name="pwd" id="pwd" class="field__input a-field__input" placeholder="e.g. password please" required/>
+        <input type="password" name="pwd" id="pwd" class="field__input a-field__input" placeholder="at lease 8 characters" required/>
             <span class="a-field__label-wrap">
                 <label id="pwdland" for="pwd" class="a-field__label">Password</label>
             </span>
@@ -129,7 +133,7 @@
 
 <p>
     <label class="field a-field a-field_a3">
-        <input type="password" name="pwdConf" id="pwdConf" class="field__input a-field__input" placeholder="e.g. confirm password please" required/>
+        <input type="password" name="pwdConf" id="pwdConf" class="field__input a-field__input" placeholder="same password" required/>
             <span class="a-field__label-wrap">
                 <label id="conpwdland" type="pwdConf" class="a-field__label">Confirm Password</label>
             </span>
