@@ -1,0 +1,50 @@
+/**********************************/
+
+
+/*********Desktop Managment*********/
+
+
+/**********************************/
+
+@media all and (min-width: 950px) and (max-width: 1200px) {
+    .myListIcons {
+        width: 12%;
+    }
+    /* create playlist MODAL */
+    .modalContent {
+        width: 84%;
+        height: 30%;
+        display: flex;
+        margin-top: 35%;
+        font-size: 2.5em;
+    }
+    .modalButtons {
+        padding: 3% 0 3% 0;
+        display: flex;
+        justify-content: center;
+    }
+    .modalButtons input {
+        width: 25%;
+        font-size: 0.75em;
+    }
+    input.question {
+        font-size: 1em;
+    }
+    input.question:focus {
+        padding-top: 25px;
+    }
+    input.question+label>span {
+        font-size: 0.65em;
+        top: -65px;
+        left: -12px;
+    }
+    input.question:focus+label>span {
+        font-size: 0.7em;
+        top: -90px;
+        left: -15px;
+    }
+    /* nav */
+    #menuIcons li {
+        width: 15%;
+    }
+}
