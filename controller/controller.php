@@ -72,7 +72,9 @@
     }
 
     function showSongs($playlistId) {
+        $playlistManager = new PlaylistManager();
         $songManager = new SongManager();
+        $mainPlaylist = $playlistManager->getMainPlaylist($playlistId);
         $songDisplay = $songManager->getSongs($playlistId);
         $displayMode = 'songs';
         require("view/home.php");
@@ -86,8 +88,8 @@
 
     function deleteSong($songId) {
         $songManager = new SongManager();
-        $data = $songManager->deleteSong($songId);
-        header('Location: index.php?action=showMySongs&playlistId='.$data['playlistId'].'&songCount='.$data['songCount']);
+        $song = $songManager->deleteSong($songId);
+        header('Location: index.php?action=showMySongs&playlistId='.$song['playlistId']);
     }
 
     function search($memberId,$searchCache,$categoryCache) {

@@ -13,11 +13,7 @@
         <div class="myListIcons">
             <img src="public/images/album2.png" id="playListImg">
         </div>
-        <?= '<a href="index.php?action=showMySongs&playlistName=' .$playlist['playlistName']
-                .'&playlistId=' .$playlist['playlistId'] 
-                .'&username=' .$playlist['username']
-                .'&songCount=' .$playlist['songCount']
-                .'&playlistCreationDate=' .$playlist['playlistCreationDate']
+        <?= '<a href="index.php?action=showMySongs&playlistId=' .$playlist['playlistId'] 
                 .'" class= "displayedPlaylists">';?>
             <div class="playlistInfo">
                 <p class="darkGrey" class="playlistNameText"><?= $playlist['playlistName']; ?></p>

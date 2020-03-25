@@ -51,6 +51,24 @@
             }
             return $playlists;
         }
+
+        public function getMainPlaylist($playlistId) {
+            $db = $this->dbConnect();
+            $playlist = $db->prepare('SELECT p.id AS playlistId, m.username AS username, p.name AS playlistName, DATE_FORMAT(p.creationDate, "%d/%m/%Y") AS playlistCreationDate,
+                                        (SELECT COUNT(s.id) FROM songs s WHERE s.playlistId = p.id) AS songCount
+                                        FROM playlists p
+                                        JOIN members m
+                                        ON p.memberId = m.id
+                                        WHERE p.id = :playlistId');
+            $playlistResp = $playlist->execute(array(
+                'playlistId' => $playlistId
+            ));
+            if(!$playlistResp) {
+                throw new PDOException('Unable to retrieve the selected playlist!');
+            }
+            return $playlist;
+        }
+
                 
         /**
          * getPlaylist

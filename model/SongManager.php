@@ -67,7 +67,8 @@
             $selectedSong = $song->fetch();
             $existingSongId = $selectedSong['id'];
             $playlistId = $selectedSong['playlistId'];
-            if($existingSongId != "") {
+
+            if ($existingSongId != "") {
                 $delSong = $db->prepare("DELETE FROM songs WHERE id = :songId");
                 $delSong->execute($params);
     
@@ -78,9 +79,6 @@
                 $delSong->closeCursor();
             }
             $song->closeCursor();
-            return array(
-                "playlistId" => $playlistId,
-                "songCount" => $this->countSongsFromPlaylist($playlistId)
-            );
+            return $playlistId;
         }
     }

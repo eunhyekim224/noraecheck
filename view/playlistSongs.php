@@ -1,17 +1,14 @@
-<?php 
-    $_SESSION['playlistId'] = $_GET['playlistId'];
-    echo $_GET['playlistId'];
-?>
 <div id="mainPlaylist">
+<?php while ($playlist = $mainPlaylist->fetch()) { ?>
     <img src="public/images/album2.png" id="mainPlaylistImg">
     <div id="mainPlaylistInfo">
-        <p class="darkGrey playlistNameText"><?= $_GET['playlistName']; ?></p>
-        <p>by <?=  $_GET['username']; ?></p>
+        <p class="darkGrey playlistNameText"><?= $playlist['playlistName']; ?></p>
+        <p>by <?=  $playlist['username']; ?></p>
         <p>
             <i class="fas fa-music darkGrey" title="number of songs"></i>
-            <span class="darkGrey"><?= $_GET['songCount'];?></span>
+            <span class="darkGrey"><?= $playlist['songCount'];?></span>
             <i class="far fa-calendar-alt darkGrey" title="creation date"></i>
-            <span class="darkGrey"><?= $_GET['playlistCreationDate']; ?></span>
+            <span class="darkGrey"><?= $playlist['playlistCreationDate']; ?></span>
         </p>
         <div id="playlistOptions">
             <div class="circle"></div>
@@ -21,6 +18,7 @@
         <?php include('playlistOptionsModal.php'); ?>
     </div>
 </div>
+<?php } ?>
 <!-- $_SESSION['username']-->
 <ul id="mySongList" class="myList">
 <?php while ($song = $songDisplay->fetch()) { ?>
@@ -43,10 +41,6 @@
         <form action="index.php" method="post">
             <input type="hidden" name="action" value="deleteSong">
             <input type="hidden" name="songId" value=<?= $song['songId']; ?>>
-            <input type="hidden" name="playlistId" value=<?= $_GET['playlistId']; ?>>
-            <input type="hidden" name="playlistName" value=<?= $_GET['playlistId']; ?>>
-            <input type="hidden" name="songCount" value=<?= $_GET['songCount']; ?>>
-            <input type="hidden" name="playlistCreationDate" value=<?= $_GET['playlistCreationDate']; ?>>
             <?php include('areYouSureModal.php'); ?>
         </form>
     </div>
