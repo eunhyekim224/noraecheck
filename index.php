@@ -13,9 +13,8 @@ try {
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
             showAllPlaylists($memberId); 
         } else if ($action === 'showMySongs') {
-            $playlistName = isset($_GET['playlistName']) ? $_GET['playlistName'] : '';
             $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';
-            showSongs($playlistName,$playlistId); 
+            showSongs($playlistId); 
         } else if ($action === 'register') {
             $username = isset($_POST['loginNew']) ? $_POST['loginNew'] : '';
             $pass1 = isset($_POST['pwd']) ? $_POST['pwd'] : '';
@@ -40,6 +39,11 @@ try {
         } else if ($action === 'deletePlaylist') {
             if (isset($_SESSION['memberId']) && isset($_SESSION['playlistId'])) {
                 deletePlaylist(($_SESSION['playlistId']), $_SESSION['memberId']);
+            }
+        } else if ($action === 'deleteSong') {
+            $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
+            if ($songId) {
+                deleteSong($songId);
             }
         } else if ($action === 'searchModal') {
             $song = isset($_REQUEST['hiddenSong']) ? $_REQUEST['hiddenSong'] : '';

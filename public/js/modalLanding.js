@@ -1,15 +1,11 @@
-// const modal = document.getElementById('id01');
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-
-// }
-var modal2 = document.getElementById('id02');
+const SignInMod = document.getElementById('SignIn');
+const SignUpMod = document.getElementById('SignUp');
 window.onclick = function(event) {
-    if (event.target == modal2) {
-        modal2.style.display = "none";
+    if (event.target == SignInMod || event.target == SignUpMod) {
+        SignInMod.style.display = "none";
+        SignUpMod.style.display = "none";
     }
+
 }
 
 // give new name
