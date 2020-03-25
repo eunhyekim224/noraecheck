@@ -25,7 +25,8 @@
                 throw new PDOException('Unable to create the playlist!');
             }
 
-            $addMember->closeCursor();  
+            $addMember->closeCursor(); 
+            return $db->lastInsertId(); 
 
         }
                 
@@ -51,30 +52,6 @@
             return $playlists;
         }
                 
-        /**
-         * getPlaylist
-         *
-         * @param  mixed $memberId
-         * @param  mixed $name
-         * @return void
-         */
-        public function getPlaylist($memberId, $name) {
-            echo $memberId .$name;
-            $db = $this->dbConnect();
-            $playlist = $db->prepare('SELECT p.memberId AS memberId, m.username AS username, p.name AS playlistName, p.creationDate AS playlistCreationDate, p.id AS playlistId 
-                                       FROM playlists p
-                                       JOIN members m
-                                       ON p.memberId = m.id
-                                       WHERE p.memberId = :memberId AND p.name = :name');
-            $playlist->bindParam(':memberId',$memberId,PDO::PARAM_INT);
-            $playlist->bindParam(':name',$name,PDO::PARAM_STR);
-            $resp = $playlist->execute();
-            if(!$resp) {
-                throw new PDOException('Unable to retrieve this playlist!');
-            }
-            return $playlist;
-        }
-        
         /**
          * deletePlaylist
          *

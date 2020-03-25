@@ -19,7 +19,7 @@
             <input type="hidden" name="tj" value=<?=$tj; ?>>
             <input type="hidden" name="kumyoung" value=<?=$kumyoung; ?>>
             <div class="modalButtons openSans">
-                <input type="submit" name="addToPlaylist" value="add to playlist" class="btn btnBlue">
+                <input type="submit" name="addToPlaylist" value="add" class="btn btnBlue">
                 <input type="button" name="cancel" value="Cancel" class="btn btnBlue">               
             </div>
             
