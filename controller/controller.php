@@ -108,7 +108,6 @@
         $gotPlaylist = $getPlaylist->fetch();
         $newPlaylistId = $gotPlaylist['playlistId'];
         $songAddManager = new SongManager();
-        echo $newPlaylistId .$singer .$song .$tj .$kumyoung;
         $songAdd = $songAddManager->addSong($newPlaylistId, $singer, $song, $tj, $kumyoung);
         header('Location: index.php?action=search');
     }
