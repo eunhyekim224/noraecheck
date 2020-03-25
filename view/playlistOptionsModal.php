@@ -12,24 +12,28 @@
         <form method="post" action="index.php" id="editPlaylistForm">
             <input type="hidden" name="action" value="editPlaylist"/>
             <input type="hidden" name="playlistId" value="<?=$playlist['playlistId']; ?>" />
-            <div class="albumIcon">
-                <img src="public/images/album2.png" id="mainPlaylistImg" title="Album icon">
-                <div>Edit icon</div>
-            </div>
-            <div id="editPlaylistInfo">
-                <input type="text" name="newPlaylistName" id="newPlaylistName" value="<?= $playlist['playlistName']; ?>" />
-                <p>by <?=  $playlist['username']; ?></p>
-                <p>
-                    <i class="fas fa-music darkGrey" title="number of songs"></i>
-                    <span class="darkGrey"><?= $playlist['songCount'];?></span>
-                    <i class="far fa-calendar-alt darkGrey" title="creation date"></i>
-                    <span class="darkGrey"><?= $playlist['playlistCreationDate']; ?></span>
-                </p>
-            </div>
-            <div id="editBtns">
-                <input type="button" name="cancelEdit" id="cancelEdit" value="Cancel" class="btn btnBlue">      
-                <input type="submit" name="edit" value="Edit" class="btn btnOrange">
-            </div>       
+            <div class="editPlaylistBlock">
+                <div class="editPlaylistContent">
+                    <div class="albumIcon">
+                        <img src="public/images/album2.png" id="editPlaylistImg" title="Album icon">
+                        <div>Edit icon</div>
+                    </div>
+                    <div id="editPlaylistInfo">
+                        <input type="text" name="newPlaylistName" id="newPlaylistName" value="<?= $playlist['playlistName']; ?>" autocomplete="off"/>
+                        <p>by <?=  $playlist['username']; ?></p>
+                        <p>
+                            <i class="fas fa-music darkGrey" title="number of songs"></i>
+                            <span class="darkGrey"><?= $playlist['songCount'];?></span>
+                            <i class="far fa-calendar-alt darkGrey" title="creation date"></i>
+                            <span class="darkGrey"><?= $playlist['playlistCreationDate']; ?></span>
+                        </p>
+                    </div>
+                </div>
+                <div id="editBtns">
+                    <input type="button" name="cancelEdit" id="cancelEdit" value="Cancel" class="btn btnBlue">      
+                    <input type="submit" name="edit" value="Edit" class="btn btnOrange">
+                </div>
+            </div>      
         </form>
         <form method="post" action="index.php" id="areYouSure">
             <input type="hidden" name="action" value="deletePlaylist">
