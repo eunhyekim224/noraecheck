@@ -10,23 +10,20 @@ function showAndCloseModal(modals, buttons, cancelButton) {
 }
 
 function showModal(modal, button) {
-    button.addEventListener('click', ()=> {
+    button.addEventListener('click', () => {
         modal.style.display = "block";
-    }); 
+    });
 }
 
-function closeModal (modal, cancelButton) {
-    cancelButton.addEventListener('click', ()=> {
+function closeModal(modal, cancelButton) {
+    cancelButton.addEventListener('click', () => {
         modal.style.display = "none";
-        location.reload();  
+        location.reload();
     });
-    window.addEventListener('click', (e)=> {
+    window.addEventListener('click', (e) => {
         if (e.target == modal) {
             modal.style.display = "none";
-            location.reload();  
+            location.reload();
         }
-    });      
+    });
 }
-
-
-
