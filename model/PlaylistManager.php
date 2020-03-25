@@ -15,12 +15,12 @@
          * @return void
          */
         public function addPlaylist($memberId, $name) {
-            $db = $this->dbConnect();          
+            $db = $this->dbConnect(); 
+            $name = htmlspecialchars($name);      
             $addMember = $db->prepare("INSERT INTO playlists(memberId, name) VALUES(:memberId, :name)");
-            $status = $addMember->execute(array(
-                'memberId' => $memberId,
-                'name' => htmlspecialchars($name),
-            ));
+            $addMember->bindParam(':memberId',$memberId,PDO::PARAM_INT);
+            $addMember->bindParam(':name',$name,PDO::PARAM_STR);
+            $status = $addMember->execute();
             if (!$status) {
                 throw new PDOException('Unable to create the playlist!');
             }
