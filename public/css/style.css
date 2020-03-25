@@ -931,6 +931,8 @@ margin: 1%;
 
 /**********landingSignup Style***********/
 
+
+/* 
 .signupPage {
     background-color: rgb(206, 206, 206);
 }
@@ -989,8 +991,9 @@ margin: 1%;
 #submitRegister {
     margin-left: 10%;
     margin-right: 10%;
-}
+} */
 
+<<<<<<< HEAD
 
 /**********************************/
 
@@ -1180,7 +1183,7 @@ padding-bottom: 0;
     #submit:hover {
         background-color: rgb(240, 239, 239);
     }
-    #resetSearch {
+    #submit {
         background-color: rgb(240, 239, 239);
         border: none;
         width: 15%;
@@ -1194,8 +1197,6 @@ padding-bottom: 0;
         width: 35%;
         font-size: 3vh;
     }
-
-    
 }
 
 
@@ -1207,7 +1208,7 @@ padding-bottom: 0;
 
 /**********************************/
 
-@media all and (min-device-width: 480px) and (max-device-width: 600px) {
+@media all and (min-device-width: 400px) and (max-device-width: 600px) {
     body {
         background-color: rgb(206, 206, 206);
     }
@@ -1383,10 +1384,10 @@ padding-bottom: 0;
         padding-right: 3%;
     }
     #searchOptions>div:hover,
-    #resetSearch:hover {
+    #submit:hover {
         background-color: rgb(240, 239, 239);
     }
-    #resetSearch {
+    #submit {
         background-color: rgb(240, 239, 239);
         border: none;
         width: 15%;
@@ -1429,6 +1430,24 @@ padding-bottom: 0;
     }
 }
 
+
+/* search page tablet media query */
+
+@media all and (max-device-width: 480px) {
+    /* #mainContent, */
+    #results {
+        height: 95%;
+    }
+    .songTitle,
+    p,
+    h1 {
+        font-size: 2em;
+    }
+    /* .songImg {
+        width: 10%;
+    } */
+}
+
 @media all and (min-device-width: 1504px) {
     .songImg {
         background-color: rgb(238, 238, 238);
@@ -1439,3 +1458,5 @@ padding-bottom: 0;
         padding: 0 1% 0 0;
     }
 }
+=======
+>>>>>>> 08a5e64a3f209d8687c5a9f2523390a62456b35c

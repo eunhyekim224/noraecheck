@@ -769,40 +769,40 @@ input.submit {
         background-color: rgb(206, 206, 206);
     }
     #landingWrapper {
-        height: 124vh;
+        height: 165vh;
         margin: auto;
-        width: 65%;
-        padding: 35px;
+        width: 62%;
+        padding: 15px;
         text-align: center;
         font-family: 'Gotham Pro';
     }
     #brandBlock {
         position: relative;
         color: white;
-        height: 20%;
+        height: 14%;
     }
     .en {
         position: absolute;
-        top: 20%;
-        left: 2%;
+        top: 2%;
+        left: -15%;
         animation: fade1 10s ease-in-out;
         animation-iteration-count: infinite;
-        font-size: 8em;
+        font-size: 4em;
         font-family: "Jua";
     }
     .kr {
         position: absolute;
-        top: 20%;
-        left: 19%;
+        top: -1%;
+        left: -4%;
         opacity: 0;
         animation: fade2 10s ease-in-out;
         animation-iteration-count: infinite;
-        font-size: 10em;
+        font-size: 6em;
         font-family: "Jua";
     }
     #equalizer {
-        height: 24%;
-        width: 94%;
+        height: 20%;
+        width: 103%;
         margin-left: AUTO;
         margin-RIGHT: AUTO;
         margin-bottom: 56%;
@@ -820,10 +820,10 @@ input.submit {
     #signInText,
     #createAccount {
         display: block;
-        width: 30vh;
-        padding: 45px 0;
-        margin: 40px 0 10px 0;
-        font-size: 3em;
+        width: 41vh;
+        padding: -6px 0 !important;
+        margin: 9px 0 10px 0;
+        font-size: 2em;
     }
     #brandBlock {
         position: relative;
@@ -851,12 +851,14 @@ input.submit {
 /* login + sign up modal css */
 
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=email] {
     width: 97%;
     padding: 38px 38px;
     margin: -7px 0;
     display: inline-block;
     box-sizing: border-box;
+    font-size: 37px;
 }
 
 button:hover {
@@ -884,7 +886,8 @@ span.psw {
     padding-top: 16px;
 }
 
-.modal {
+.modal,
+.modal2 {
     display: none;
     position: fixed;
     z-index: 1;
@@ -900,10 +903,10 @@ span.psw {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 17% auto 15% auto;
-    border: 1px solid #888;
-    width: 48%;
-    border-radius: 25px;
+    margin: 0% auto 15% auto;
+    border: -13px solid #888;
+    width: 68%;
+    border-radius: 15px;
 }
 
 .close {
@@ -958,7 +961,7 @@ span.psw {
 /* form 3 test */
 
 .field {
-    --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #fda085);
+    --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #666060);
 }
 
 .field__input {
@@ -995,10 +998,10 @@ span.psw {
 }
 
 .a-field {
-    --uiFieldHeight: var(--fieldHeight, 40px);
-    --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+    --uiFieldHeight: var(--fieldHeight, 79px);
+    --uiFieldBorderWidth: var(--fieldBorderWidth, 5px);
     --uiFieldBorderColor: var(--fieldBorderColor);
-    --uiFieldFontSize: var(--fieldFontSize, 1em);
+    --uiFieldFontSize: var(--fieldFontSize, 2em);
     --uiFieldHintFontSize: var(--fieldHintFontSize, 1em);
     --uiFieldPaddingRight: var(--fieldPaddingRight, 15px);
     --uiFieldPaddingBottom: var(--fieldPaddingBottom, 15px);
@@ -1010,9 +1013,9 @@ span.psw {
 }
 
 .a-field__input {
-    height: var(--uiFieldHeight);
+    height: auto;
     padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
-    border-bottom: var(--uiFieldBorderWidth) solid rgb(136, 199, 199);
+    border-bottom: var(--uiFieldBorderWidth) solid rgb(102, 96, 96);
     /* border-bottom:linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100%); */
 }
 
@@ -1122,8 +1125,8 @@ span.psw {
 }
 
 .field {
-    --fieldBorderColor: #fda085;
-    --fieldBorderColorActive: #fd6d365;
+    /* --fieldBorderColor: #fda085; */
+    /* --fieldBorderColorActive: #fd6d365; */
 }
 
 .page {
@@ -1138,13 +1141,16 @@ span.psw {
     order: 1;
 }
 
-@media (min-width: 481px) {
+@media all and (max-device-width: 480px) {
     .page {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
+    .container {
+        padding: 16px;
+    }
     .modal-content {
         background-color: #fefefe;
-        margin: 64% auto 15% auto;
+        margin: 37% auto 15% auto;
         border: 1px solid #888;
         width: 72%;
         border-radius: 34px;
@@ -1155,14 +1161,77 @@ span.psw {
     #emailland,
     #pwdland,
     #conpwdland {
-        font-size: 34px;
+        font-size: 12px !important;
     }
     #submit,
     #reset,
     #submitRegister {
-        font-size: 34px;
-        height: 101px;
-        width: 215px;
+        font-size: 17px;
+        height: 50px;
+        width: 95px;
+    }
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+    }
+    input[type=text],
+    input[type=password],
+    input[type=email] {
+        width: 97%;
+        padding: 0px 38px;
+        margin: -7px 0;
+        display: inline-block;
+        box-sizing: border-box;
+        font-size: 37px;
+    }
+    .a-field {
+        --uiFieldHeight: var(--fieldHeight, 25px);
+        --uiFieldBorderWidth: var(--fieldBorderWidth, 3px);
+        --uiFieldBorderColor: var(--fieldBorderColor);
+        --uiFieldFontSize: var(--fieldFontSize, 1em);
+        --uiFieldHintFontSize: var(--fieldHintFontSize, 1em);
+        --uiFieldPaddingRight: var(--fieldPaddingRight, -31px);
+        --uiFieldPaddingBottom: var(--fieldPaddingBottom, -26px);
+        --uiFieldPaddingLeft: var(--fieldPaddingLeft, 6px);
+        position: relative;
+        box-sizing: border-box;
+        font-size: var(--uiFieldFontSize);
+        padding-top: 2em;
+    }
+    .a-field__input {
+        height: auto;
+        padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
+        border-bottom: var(--uiFieldBorderWidth) solid rgb(102, 96, 96);
+        font-size: 12px !important;
+        /* border-bottom:linear-gradient(to right, rgb(0, 153, 255) 0%, rgb(136, 199, 199) 100%); */
+    }
+    .btn {
+        margin: 3px;
+        padding: 2px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 257% auto;
+        color: white;
+        /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+        box-shadow: 0 0 20px #eee;
+        border-radius: 2px;
+        background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+    }
+    .modal,
+    .modal2 {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: -61px;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 60px;
     }
 }
 
