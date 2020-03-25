@@ -1,5 +1,6 @@
 <div id="mainPlaylist">
-<?php while ($playlist = $mainPlaylist->fetch()) { ?>
+<?php while ($playlist = $mainPlaylist->fetch()) { $_SESSION['playlistId'] = $playlist['playlistId']?>
+
     <img src="public/images/album2.png" id="mainPlaylistImg">
     <div id="mainPlaylistInfo">
         <p class="darkGrey playlistNameText"><?= $playlist['playlistName']; ?></p>
