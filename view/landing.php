@@ -16,13 +16,13 @@
 <div id="accountBtns">
 
 <!-- Sign In Modal-->
-<button id="signInText" class="btn" onclick="document.getElementById('id01').style.display='block'">Sign in</button>
-    <div id="id01" class="modal">
+<button id="signInText" class="btn" onclick="document.getElementById('SignIn').style.display='block'">Sign in</button>
+    <div id="SignIn" class="modal">
 
         <form id="loginForm" class="modal-content animate" action="index.php?action=login" method="POST">
         
         <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('SignIn').style.display='none'" class="close" title="Close Modal">&times;</span>
         <br>
         <?php 
         // if ($status == '1'){
@@ -73,14 +73,14 @@
 <!-- Sign In Modal End -->
 
 <!-- Sign Up Modal Start -->
-<button id="createAccount" class="btn" onclick="document.getElementById('id02').style.display='block'">Create Account</button>
+<button id="createAccount" class="btn" onclick="document.getElementById('SignUp').style.display='block'">Create Account</button>
 
-<div id="id02" class="modal">
+<div id="SignUp" class="modal">
 
 <form class="modal-content animate" action="index.php" method="POST">
 
 <div class="imgcontainer">
-    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <span onclick="document.getElementById('SignUp').style.display='none'" class="close" title="Close Modal">&times;</span>
     <br>    
     <?php
         if ($error == 'logError'){
