@@ -41,6 +41,12 @@ try {
             if (isset($_SESSION['memberId']) && isset($_SESSION['playlistId'])) {
                 deletePlaylist(($_SESSION['playlistId']), $_SESSION['memberId']);
             }
+        } else if ($action === 'deleteSong') {
+            $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
+            $playlistId = isset( $_SESSION['playlistId']) ?  $_SESSION['playlistId'] : '';
+            if ($songId && $playlistId) {
+                deleteSong($songId, $playlistId);
+            }
         } else if ($action === 'searchModal') {
             $song = isset($_REQUEST['hiddenSong']) ? $_REQUEST['hiddenSong'] : '';
             $singer = isset($_REQUEST['hiddenSinger']) ? $_REQUEST['hiddenSinger'] : '';

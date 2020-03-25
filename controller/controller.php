@@ -83,6 +83,16 @@
         $playlistManager->deletePlaylist($playlistId);
         header('Location: index.php?action=showMyList');
     }
+
+    function deleteSong($songId, $playlistId) {
+        $songManager = new SongManager();
+        $playlistManager = new PlaylistManager();
+        $songManager->deleteSong($songId);
+        $playlistId = $_SESSION['playlistId'];
+        echo $playlistId;
+        header("Location: index.php?action=showMySongs&playlistId=".$playlistId);
+    }
+
     function search($memberId,$searchCache,$categoryCache) {
         $playlistAddManager = new PlaylistManager();
         $playlistsAdd = $playlistAddManager->getAllPlaylists($memberId);

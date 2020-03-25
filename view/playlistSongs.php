@@ -1,5 +1,6 @@
 <?php 
     $_SESSION['playlistId'] = $_GET['playlistId'];
+    $_SESSION['playlistName'] = $_GET['playlistName'];
 ?>
 <div id="mainPlaylist">
     <img src="public/images/album2.png" id="mainPlaylistImg">
@@ -37,15 +38,16 @@
         </div>
         <img src="./public/images/minusIcon3.png" title="minus icon" alt="minus icon" class="minusIcon">
     </li>
-<?php } ?>
-<div class="modal" id="deleteSongModal">
+    <div class="modal" id="deleteSongModal">
     <div class="modalContent">
         <form action="index.php" method="post">
             <input type="hidden" name="action" value="deleteSong">
+            <input type="hidden" name="songId" value=<?= $song['songId']; ?>>
             <?php include('areYouSureModal.php'); ?>
         </form>
     </div>
 </div>
+<?php } ?>
 </ul>
 <script src="./public/js/modalPlaylistOptions.js"></script>
 <script src="./public/js/modalDeleteSong.js"></script>

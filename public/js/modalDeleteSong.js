@@ -1,6 +1,6 @@
 let deleteSongModal = document.getElementById('deleteSongModal');
-let cancelDelSongButton = deleteSongModal.querySelector('.cancelDel');
 let deleteSongButtons = document.getElementsByClassName('minusIcon');
+let cancelDelSongButton = deleteSongModal.querySelector('.cancelDel');
 
 showAndCloseModal(deleteSongModal, deleteSongButtons, cancelDelSongButton);
 console.log(cancelDelSongButton);
