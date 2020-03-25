@@ -7,7 +7,7 @@ let no = document.getElementById('no');
 let entry = document.getElementById('entry');
 let category = document.getElementById('category');
 
-function switchOptions(index) {
+function switchOptionsDisplay(index) {
 
 
     song.classList.remove("searchOptionExpanded");
@@ -31,17 +31,14 @@ function switchOptions(index) {
             no.classList.add("hidden");
             entry.classList.remove("compactEntry");
             searchOptions.classList.remove('searchOptionsExpanded');
-
             category.value = "singer";
 
             break;
         case 'no':
             song.classList.add("hidden");
             singer.classList.add("hidden");
-
             entry.classList.remove("compactEntry");
             searchOptions.classList.remove('searchOptionsExpanded');
-
             category.value = "no";
 
 
@@ -74,7 +71,21 @@ function switchOptions(index) {
             break;
     }
 }
+function switchOptions(index) {
 
+    switch (index) {
+        case 'song':
+            category.value = "song";
+            break;
+        case 'singer':
+            category.value = "singer";
+            break;
+        case 'no':
+            category.value = "no";
+            break;
+    }
+        
+}
 
 
 song.addEventListener('click', function() {
@@ -82,30 +93,41 @@ song.addEventListener('click', function() {
         searchOptionIndex = 'all';
     } else {
         searchOptionIndex = 'song';
+        entry.focus();
     }
     switchOptions(searchOptionIndex);
+    switchOptionsDisplay(searchOptionIndex);
 });
 singer.addEventListener('click', function() {
     if (searchOptionIndex === 'singer') {
         searchOptionIndex = 'all';
     } else {
         searchOptionIndex = 'singer';
+        entry.focus();
     }
     switchOptions(searchOptionIndex);
+    switchOptionsDisplay(searchOptionIndex);
+    autocorrect(entry.value, category.value);
 });
 no.addEventListener('click', function() {
     if (searchOptionIndex === 'no') {
         searchOptionIndex = 'all';
     } else {
         searchOptionIndex = 'no';
+        entry.focus();
     }
     switchOptions(searchOptionIndex);
+    switchOptionsDisplay(searchOptionIndex);
+    autocorrect(entry.value, category.value);
+    
 });
+entry.addEventListener('click',function(){
+    if(searchOptionIndex === 'all'){
+        searchOptionIndex = category.value;
+        switchOptionsDisplay(searchOptionIndex);
+        autocorrect(entry.value, category.value);
+        
+    }
+})
 
-// if(modalDisplay.value === 'on'){
-//     searchCache = document.getElementById('searchCache');
-//     searchCategory = document.getElementById('searchCategory');
-//     switchOptions(searchCategory.value);
-//     entry.value = searchCache.value;
 
-// }

@@ -5,8 +5,9 @@ function addNewModalContent(buttonId, previousModalId, newModalId) {
     let previousModalContent = document.getElementById(previousModalId);
     let newModalContent = document.getElementById(newModalId);
     button.addEventListener('click', (e) => {
-        previousModalContent.style.display = 'none';
-        newModalContent.style.display = 'block';
+        previousModalContent.classList.add('hidden');
+        newModalContent.classList.add('shown');
     });
 }
 
+// add class 
