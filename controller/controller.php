@@ -78,6 +78,12 @@
         require("view/home.php");
     }
 
+    function editPlaylist($newPlaylistName,$playlistId) {
+        $playlistManager = new PlaylistManager();
+        $editPlaylist = $playlistManager->editPlaylistName($newPlaylistName,$playlistId);
+        header('Location: index.php?action=showMyList');
+    }
+
     function deletePlaylist($playlistId, $memberId) {
         $playlistManager = new PlaylistManager();
         $playlistManager->deletePlaylist($playlistId);

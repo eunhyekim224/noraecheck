@@ -1,4 +1,7 @@
+// Deleting playlist
 addNewModalContent('deletePlaylist', 'mainOptions', 'areYouSure');
+// Editing playlist
+addNewModalContent('editPlaylist', 'mainOptions', 'editPlaylistForm');
 
 function addNewModalContent(buttonId, previousModalId, newModalId) {
     let button = document.getElementById(buttonId);

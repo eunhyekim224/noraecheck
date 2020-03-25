@@ -485,6 +485,9 @@ input.question+label>span {
 #mainPlaylist .modalButtons div {
     width: 100%;
 }
+#editPlaylistForm {
+    display: none;
+}
 
 #areYouSure {
     display: none;
@@ -742,7 +745,8 @@ margin: 1%;
 }
 
 .addIcon img {
-    height: 10vh;
+    height: 100%;
+    width: 100%;
 }
 
 .songImg {

@@ -39,3 +39,4 @@
 <?php } ?>
 </ul>
 <script src="./public/js/modalPlaylistOptions.js"></script>
+<script src="./public/js/modalEditPlaylist.js"></script>

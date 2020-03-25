@@ -115,5 +115,19 @@
 
             $delSongs->closeCursor();
         }
+
+        public function editPlaylistName($playlistName,$playlistId) {
+            $db = $this->dbConnect();
+            $editPlaylistName = $db->prepare("UPDATE playlists SET name = :playlistName WHERE id = :playlistId");
+            $editPlaylistName->execute(array(
+                'playlistName' => $playlistName,
+                'playlistId' => $playlistId
+            ));
+            if(!$editPlaylistName) {
+                throw new PDOException('Unable to edit this playlist!');
+            }
+
+            $editPlaylistName->closeCursor();
+        }
     }
 
