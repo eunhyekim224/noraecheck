@@ -43,6 +43,7 @@ a {
     display: none !important;
 }
 
+
 /************ Styling for home view ************/
 
 .homePage {
@@ -501,7 +502,6 @@ input.question+label>span {
 }
 
 
-
 /* Scrollbar */
 
 
@@ -584,7 +584,7 @@ input.question+label>span {
 
 #search {
     padding: 1%;
-    height:10%;
+    height: 10%;
     display: flex;
     /* flex-direction: column; */
     width: 98%;
@@ -595,8 +595,6 @@ input.question+label>span {
     display: flex;
     width: 10%
 }
-
-
 
 .searchOption {
     background-color: rgb(240, 239, 239);
@@ -615,10 +613,10 @@ input.question+label>span {
     background-color: #84fab0 !important;
 }
 
-
 .searchOptionsExpanded {
     width: 37%;
 }
+
 .searchOptionExpanded {
     display: flex;
     width: 20%;
@@ -629,15 +627,13 @@ input.question+label>span {
     background-color: rgb(240, 239, 239);
 }
 
-
-
 #song {
     border-radius: 15px 0px 0px 15px;
 }
 
 #searchOptions>div:hover,
 #resetSearch:hover {
-    background-color:#8fd3f4;
+    background-color: #8fd3f4;
 }
 
 #resetSearch,
@@ -678,8 +674,6 @@ input.question+label>span {
     outline: none !important;
     background-color: rgb(228, 225, 225);
 }
-
-
 
 @keyframes run-text {
     from {
@@ -981,7 +975,6 @@ margin: 1%;
     margin-right: 10%;
 } */
 
-<<<<<<< HEAD
 
 /**********************************/
 
@@ -1446,5 +1439,3 @@ padding-bottom: 0;
         padding: 0 1% 0 0;
     }
 }
-=======
->>>>>>> 08a5e64a3f209d8687c5a9f2523390a62456b35c
