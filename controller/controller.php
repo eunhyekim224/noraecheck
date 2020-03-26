@@ -83,7 +83,7 @@
     function editPlaylist($newPlaylistName,$playlistId) {
         $playlistManager = new PlaylistManager();
         $editPlaylist = $playlistManager->editPlaylistName($newPlaylistName,$playlistId);
-        header('Location: index.php?action=showMyList');
+        header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
     }
 
     function deletePlaylist($playlistId, $memberId) {

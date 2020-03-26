@@ -16,10 +16,10 @@
                 <div class="editPlaylistContent">
                     <div class="albumIcon">
                         <img src="public/images/album2.png" id="editPlaylistImg" title="Album icon">
-                        <div>Edit icon</div>
+                        <div>Edit</div>
                     </div>
                     <div id="editPlaylistInfo">
-                        <input type="text" name="newPlaylistName" id="newPlaylistName" value="<?= $playlist['playlistName']; ?>" autocomplete="off"/>
+                        <input type="text" name="newPlaylistName" id="newPlaylistName" autofocus value="<?= $playlist['playlistName']; ?>" autocomplete="off"/>
                         <p>by <?=  $playlist['username']; ?></p>
                         <p>
                             <i class="fas fa-music darkGrey" title="number of songs"></i>
