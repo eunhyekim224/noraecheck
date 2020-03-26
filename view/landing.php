@@ -16,7 +16,7 @@
 <div id="accountBtns">
 
 <!-- Sign In Modal-->
-<button id="signInText" class="btn" onclick="document.getElementById('SignIn').style.display='block'">Sign in</button>
+<button type="button" id="signInText" class="btn" onclick="document.getElementById('SignIn').style.display='block'">Sign in</button>
     <div id="SignIn" class="modal">
 
         <form id="loginForm" class="modal-content animate" action="index.php?action=login" method="POST">
@@ -28,12 +28,12 @@
         // if ($status == '1'){
         // echo '<p class="good">account successfully created</p> ';
         // }
-        if ($error == 'logError'){
-        echo '<p class="error">there are no accounts with that ID</p> ';
-        }
-        if ($error == 'passError'){
-        echo '<p class="error">incorrect password</p> ';
-        }
+        // if ($error == 'logError'){
+        // echo '<p class="error">there are no accounts with that ID</p> ';
+        // }
+        // if ($error == 'passError'){
+        // echo '<p class="error">incorrect password</p> ';
+        // }
         if ($error == 'missingField'){
         echo '<p class="error">please enter both fields</p> ';
         }
@@ -48,6 +48,9 @@
                 <input type="text" name="username" id="username" maxlength="15" class="field__input a-field__input" placeholder="e.g. mr.trot101" required/>
                 <span class="a-field__label-wrap">
                     <label for="username" class="a-field__label">Username</label>
+                    <?php if ($error == 'logError'){
+                    echo '<p class="error">there are no accounts with that ID</p> ';
+                    } ?>
                 </span>
             </label>
         </p>
@@ -57,6 +60,9 @@
             <input type="password" name="password" id="password" class="field__input a-field__input" placeholder="at least 8 characters" required/>
                 <span class="a-field__label-wrap">
                 <label for="password" class="a-field__label">Password</label>
+                <?php if ($error == 'passError'){
+        echo '<p class="error">incorrect password</p> ';
+        } ?>
                 </span>
         </label>
     </p>
@@ -89,12 +95,12 @@
         if ($error == 'passError'){
         echo '<p class="error">please make sure that your passwords are the same</p> ';
         }
-        if ($error == 'logOld'){
-        echo '<p class="error">that id has already been taken </p> ';
-        }
-        if ($error == 'mailError'){
-        echo '<p class="error">please enter a valid email address</p> ';
-        }
+        // if ($error == 'logOld'){
+        // echo '<p class="error">that id has already been taken </p> ';
+        // }
+        // if ($error == 'mailError'){
+        // echo '<p class="error">please enter a valid email address</p> ';
+        // }
         ?>
 </div>
 
@@ -107,6 +113,9 @@
         <input type="text" name="loginNew" id="loginNew" maxlength="15" class="field__input a-field__input" placeholder="e.g. mrs.trot102" required/>
             <span class="a-field__label-wrap">
                 <label id="loginland" for="loginNew" class="a-field__label">Login</label>
+                <?php if ($error == 'logOld'){
+                echo '<p class="error">that id has already been taken </p> ';
+                }?>
             </span>
     </label>
 </p>
@@ -116,6 +125,9 @@
         <input type="text" name="email" id="email" class="field__input a-field__input" placeholder="e.g. karaokelife@mail" required/>
             <span class="a-field__label-wrap">
                 <label id="emailland" type="email" class="a-field__label">Email</label>
+                <?php if ($error == 'mailError'){
+                echo '<p class="error">please enter a valid email address</p> ';
+                }?>
             </span>
     </label>
 </p>
@@ -134,6 +146,9 @@
         <input type="password" name="pwdConf" id="pwdConf" class="field__input a-field__input" placeholder="same password" required/>
             <span class="a-field__label-wrap">
                 <label id="conpwdland" type="pwdConf" class="a-field__label">Confirm Password</label>
+                <?php if ($error == 'passError'){
+                echo '<p class="error">please make sure that your passwords are the same</p> ';
+                }?>
             </span>
     </label>
 </p>
