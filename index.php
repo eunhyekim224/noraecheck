@@ -37,10 +37,6 @@ try {
                 makePlaylist($_SESSION['memberId'], $_POST['playlistName']);
             }
         } else if ($action === 'editPlaylist') {
-            // $newPlaylistName = isset($_POST['newPlaylistName']) ? $_POST['newPlaylistName'] : '';
-            // $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';
-            // editPlaylist($newPlaylistName, $playlistId);
-            echo $_POST['newPlaylistName'].'----'.$_POST['playlistId'];
             if (isset($_POST['newPlaylistName']) && isset($_POST['playlistId'])) {
                 editPlaylist(($_POST['newPlaylistName']), $_POST['playlistId']);
             }

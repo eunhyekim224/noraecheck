@@ -110,7 +110,6 @@ a {
 }
 
 #menuIcons {
-    /* border: 1px solid red; */
     margin: 0;
     padding: 0;
     height: 100%;
@@ -200,7 +199,6 @@ a {
     margin-right: 3%;
     padding: 0.5%;
     border-radius: 10px;
-    /* border: 1px solid red; */
 }
 
 #mySongList .songImgInPlaylistSongs {
@@ -976,9 +974,6 @@ label[for=playlistId]{
     margin:5% auto;
     font-size:4vh;
 }
-
-
-
 
 #playlistId option {
     padding: 30px;
