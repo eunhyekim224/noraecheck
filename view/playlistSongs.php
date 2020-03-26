@@ -37,7 +37,7 @@
         </div>
         <img src="./public/images/minusIcon3.png" title="minus icon" alt="minus icon" class="minusIcon">
     </li>
-    <div class="modal" id="deleteSongModal">
+    <div class="modal deleteSongModal">
     <div class="modalContent">
         <form action="index.php" method="post">
             <input type="hidden" name="action" value="deleteSong">

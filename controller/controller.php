@@ -113,9 +113,12 @@
     function addSongToNewPlaylist($memberId,$playlistName,$singer,$song,$tj,$kumyoung) {
         $playlistAddManager = new PlaylistManager();
         $newAddPlaylist = $playlistAddManager->addPlaylist($memberId, $playlistName);
-        echo $newAddPlaylist;
+        $getPlaylist = $playlistAddManager->getPlaylist($memberId, $playlistName);
+        $gotPlaylist = $getPlaylist->fetch();
+        $newPlaylistId = $gotPlaylist['playlistId'];
         $songAddManager = new SongManager();
-        $songAdd = $songAddManager->addSong($newAddPlaylist, $singer, $song, $tj, $kumyoung);
+        echo $playlistName .$singer .$song .$tj .$kumyoung;
+        $songAdd = $songAddManager->addSong($newPlaylistId, $singer, $song, $tj, $kumyoung);
         header('Location: index.php?action=search');
     }
     

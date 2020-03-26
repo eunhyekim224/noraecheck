@@ -1450,4 +1450,8 @@ padding-bottom: 0;
         margin: 0;
         padding: 0 1% 0 0;
     }
+
+   .playlistName {
+        width: 68%;
+    }
 }
