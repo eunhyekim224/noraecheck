@@ -8,6 +8,14 @@
     class PlaylistManager extends Manager {
                 
         /**
+         * __construct
+         *
+         * @return void
+         */
+        function __construct() {
+            parent::__construct();
+        }       
+        /**
          * addPlaylist
          *
          * @param  mixed $memberId
@@ -15,18 +23,16 @@
          * @return void
          */
         public function addPlaylist($memberId, $name) {
-            $db = $this->dbConnect(); 
             $name = htmlspecialchars($name);      
-            $addMember = $db->prepare("INSERT INTO playlists(memberId, name) VALUES(:memberId, :name)");
+            $addMember = $this->_db->prepare("INSERT INTO playlists(memberId, name) VALUES(:memberId, :name)");
             $addMember->bindParam(':memberId',$memberId,PDO::PARAM_INT);
             $addMember->bindParam(':name',$name,PDO::PARAM_STR);
             $status = $addMember->execute();
             if (!$status) {
                 throw new PDOException('Unable to create the playlist!');
             }
-
             $addMember->closeCursor(); 
-            return $db->lastInsertId(); 
+            return $this->_db->lastInsertId(); 
 
         }
                 
@@ -37,8 +43,7 @@
          * @return void
          */
         public function getAllPlaylists($memberId) {
-            $db = $this->dbConnect();
-            $playlists = $db->prepare('SELECT p.memberId AS memberId, p.id AS playlistId, m.username AS username, p.name AS playlistName, DATE_FORMAT(p.creationDate, "%d/%m/%Y") AS playlistCreationDate,
+            $playlists = $this->_db->prepare('SELECT p.memberId AS memberId, p.id AS playlistId, m.username AS username, p.name AS playlistName, DATE_FORMAT(p.creationDate, "%d/%m/%Y") AS playlistCreationDate,
                                         (SELECT COUNT(s.id) FROM songs s WHERE s.playlistId = p.id) AS songCount
                                         FROM playlists p
                                         JOIN members m
@@ -53,8 +58,7 @@
         }
 
         public function getMainPlaylist($playlistId) {
-            $db = $this->dbConnect();
-            $playlist = $db->prepare('SELECT p.id AS playlistId, m.username AS username, p.name AS playlistName, DATE_FORMAT(p.creationDate, "%d/%m/%Y") AS playlistCreationDate,
+            $playlist = $this->_db->prepare('SELECT p.id AS playlistId, m.username AS username, p.name AS playlistName, DATE_FORMAT(p.creationDate, "%d/%m/%Y") AS playlistCreationDate,
                                         (SELECT COUNT(s.id) FROM songs s WHERE s.playlistId = p.id) AS songCount
                                         FROM playlists p
                                         JOIN members m
@@ -77,19 +81,16 @@
          * @return void
          */
         public function deletePlaylist($playlistId) {
-            $db = $this->dbConnect();
-
-            $playlist = $db->prepare("SELECT id FROM playlists WHERE id = :playlistId");
+            $playlist = $this->_db->prepare("SELECT id FROM playlists WHERE id = :playlistId");
             $playlist->bindParam(':playlistId',$playlistId,PDO::PARAM_INT);
             $playlist->execute();
             $existingPlaylistId = $playlist->fetch();
             if($existingPlaylistId != "") {
-                $del = $db->prepare("DELETE FROM playlists WHERE id = :playlistId");
+                $del = $this->_db->prepare("DELETE FROM playlists WHERE id = :playlistId");
                 $del->bindParam(':playlistId',$playlistId,PDO::PARAM_INT);
                 $del->execute($params);
-
+                
                 $numberOfDeletedRows = $del->rowCount();
-            
                 if ($numberOfDeletedRows < 1) {
                     throw new PDOException('No playlists have been deleted!'); 
                 }
@@ -100,8 +101,7 @@
         }
 
         public function deleteSongsFromAPlaylist($playlistId) {
-            $db = $this->dbConnect();
-            $delSongs = $db->prepare("DELETE FROM songs WHERE playlistId = :playlistId");
+            $delSongs = $this->_db->prepare("DELETE FROM songs WHERE playlistId = :playlistId");
             $delSongs->bindParam(':playlistId',$playlistId,PDO::PARAM_INT);
             $delSongs->execute();
             $delSongs->closeCursor();
