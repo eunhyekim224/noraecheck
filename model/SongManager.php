@@ -6,15 +6,21 @@
      //I changed Kumyang code to Kumyoung code as that's what the api calls it
     class SongManager extends Manager {
 
+        /**
+         * __construct
+         *
+         * @return void
+         */
+        function __construct() {
+            parent::__construct();
+        }       
+
         public function addSong($playlistId, $singer, $song, $tjCode, $kumyoungCode) {
-            echo "playlist : ".$playlistId ."singer : ". $singer ."song : ". $song ."tjC : ". $tjCode ."kumyoungCode : ". $kumyoungCode;
-            $db = $this->dbConnect();
-           
             $tjCode = ($tjCode) ? $tjCode : null;
             $kumyoungCode = ($kumyoungCode) ? $kumyoungCode : null;
             $singer = htmlspecialchars($singer);
             $song = htmlspecialchars($song);
-            $addSong = $db->prepare("INSERT INTO songs(playlistId, singer, song, tjCode, kumyoungCode) VALUES(:playlistId, :singer, :song, :tjCode, :kumyoungCode)");
+            $addSong = $this->_db->prepare("INSERT INTO songs(playlistId, singer, song, tjCode, kumyoungCode) VALUES(:playlistId, :singer, :song, :tjCode, :kumyoungCode)");
             $addSong->bindParam(':playlistId',$playlistId,PDO::PARAM_INT);
             $addSong->bindParam(':singer',$singer,PDO::PARAM_STR);
             $addSong->bindParam(':song',$song,PDO::PARAM_STR);
@@ -31,8 +37,7 @@
         }
 
         public function getSongs($playlistId) {
-            $db = $this->dbConnect();
-            $songs = $db->prepare('SELECT s.id as songId, s.playlistId AS playlistId, s.song AS songName, s.singer AS singerName, s.tjCode AS tjCode, s.kumyoungCode AS kumyoungCode, s.dateAdded AS dateAdded, p.name AS playlistName, p.id AS id 
+            $songs = $this->_db->prepare('SELECT s.id as songId, s.playlistId AS playlistId, s.song AS songName, s.singer AS singerName, s.tjCode AS tjCode, s.kumyoungCode AS kumyoungCode, s.dateAdded AS dateAdded, p.name AS playlistName, p.id AS id 
                                        FROM songs s
                                        JOIN playlists p
                                        ON s.playlistId = p.id
@@ -46,8 +51,7 @@
         }
 
         private function countSongsFromPlaylist($playlistId) {
-            $db = $this->dbConnect();
-            $count = $db->prepare('SELECT count(*) AS songCount FROM songs s WHERE playlistId = :id');
+            $count = $this->_db->prepare('SELECT count(*) AS songCount FROM songs s WHERE playlistId = :id');
             $resp = $count->execute(array(
                 'id' => $playlistId
             ));
@@ -57,18 +61,17 @@
         }
 
         public function deleteSong($songId) {
-            $db = $this->dbConnect();
             $params = array(
                 'songId' => $songId
             );
-            $song = $db->prepare("SELECT id, playlistId FROM songs WHERE id = :songId");
+            $song = $this->_db->prepare("SELECT id, playlistId FROM songs WHERE id = :songId");
             $song->execute($params);
             $selectedSong = $song->fetch();
             $existingSongId = $selectedSong['id'];
             $playlistId = $selectedSong['playlistId'];
 
             if ($existingSongId != "") {
-                $delSong = $db->prepare("DELETE FROM songs WHERE id = :songId");
+                $delSong = $this->_db->prepare("DELETE FROM songs WHERE id = :songId");
                 $delSong->execute($params);
     
                 $numberOfDeletedSongs = $delSong->rowCount();

@@ -16,12 +16,17 @@
             $usernameInUse = $memberManager->getMember($username);
             if(!$usernameInUse){
                 if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
-                    if ($username AND $password == $passwordConf){
-                        $status = $memberManager->addMember($email,$username,$password);
-                        header("location:index.php?action=login&success=1");
-                    } else if ($password != $passwordCheck){
+                    if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$password)){
+                        if ($username AND $password == $passwordConf){
+                            $status = $memberManager->addMember($email,$username,$password);
+                            header("location:index.php?action=login&success=1");
+                        } else if ($password != $passwordCheck){
+                            header('Location: index.php?action=register&error=passConfError');
+                        }
+                    } else {
                         header('Location: index.php?action=register&error=passError');
                     }
+                    
                 } else {
                     header('Location: index.php?action=register&error=mailError');
                 }
@@ -113,7 +118,6 @@
     function addSongToNewPlaylist($memberId,$playlistName,$singer,$song,$tj,$kumyoung) {
         $playlistAddManager = new PlaylistManager();
         $newAddPlaylist = $playlistAddManager->addPlaylist($memberId, $playlistName);
-        echo $newAddPlaylist;
         $songAddManager = new SongManager();
         $songAdd = $songAddManager->addSong($newAddPlaylist, $singer, $song, $tj, $kumyoung);
         header('Location: index.php?action=search');

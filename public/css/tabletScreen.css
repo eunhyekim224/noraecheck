@@ -167,10 +167,10 @@ padding-bottom: 0;
         padding-right: 3%;
     }
     #searchOptions>div:hover,
-    #submit:hover {
+    #resetSearch:hover {
         background-color: rgb(240, 239, 239);
     }
-    #submit {
+    #resetSearch {
         background-color: rgb(240, 239, 239);
         border: none;
         width: 15%;
@@ -184,9 +184,23 @@ padding-bottom: 0;
         width: 35%;
         font-size: 3vh;
     }
+    .modalContentSearch{
+        margin-top: 30%;
+        width: 80%;
+    }
+
+    #playlistName{
+        width:70%;
+    }
+    .modalButtons .btn{
+        font-size:4vh;
+        padding:1%;
+    }
+
+    
 }
 
-@media all and (min-width: 700px) and (max-width: 950px) {
+@media all and (min-width: 700px) and (max-width: 1050px) {
     body {
         background-color: rgb(206, 206, 206);
     }
@@ -364,5 +378,21 @@ padding-bottom: 0;
     .compactEntry {
         width: 35%;
         font-size: 3vh;
+    }
+
+    #results{
+        height:90%;
+    }
+    .modalContentSearch{
+        margin-top: 30%;
+        width: 80%;
+    }
+
+    #playlistName{
+        width:70%;
+    }
+    .modalButtons .btn{
+        font-size:4vh;
+        padding:1%;
     }
 }

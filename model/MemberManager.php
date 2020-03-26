@@ -7,11 +7,10 @@
 
     class MemberManager extends Manager {
         public function addMember($email, $username, $password) {
-            $db = $this->dbConnect();
             $email = htmlspecialchars($email);
             $username = htmlspecialchars($username);
             $password = password_hash(htmlspecialchars($password), PASSWORD_DEFAULT);       
-            $addMember = $db->prepare("INSERT INTO members(email, username, password) VALUES(:email, :username, :password)");
+            $addMember = $this->_db->prepare("INSERT INTO members(email, username, password) VALUES(:email, :username, :password)");
             $addMember->bindParam(':email',$email,PDO::PARAM_STR);
             $addMember->bindParam(':username',$username,PDO::PARAM_STR);
             $addMember->bindParam(':password',$password,PDO::PARAM_STR);
@@ -23,8 +22,7 @@
         } 
 
         public function getMember($username) {
-            $db = $this->dbConnect();
-            $members = $db->prepare("SELECT id, username, password FROM members WHERE username = :username");
+            $members = $this->_db->prepare("SELECT id, username, password FROM members WHERE username = :username");
             $members->bindParam(':username',$username,PDO::PARAM_STR);
             $resp = $members->execute();
             if(!$resp) {
