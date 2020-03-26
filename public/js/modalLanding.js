@@ -18,23 +18,23 @@ const CreateActBtn = document.getElementById('createAccount');
 //     }
 // }
 
-// function show_popup() {
-//     SignInMod.style.display = 'block';
-//     SignUpMod.style.display = 'block';
-// }
-
-function show_popup_login() {
+function show_popup() {
     SignInMod.style.display = 'block';
-}
-
-function show_popup_create() {
     SignUpMod.style.display = 'block';
 }
+
+// function show_popup_login() {
+//     SignInMod.style.display = 'block';
+// }
+
+// function show_popup_create() {
+//     SignUpMod.style.display = 'block';
+// }
 
 SubmitRegBtn.addEventListener('click', show_popup_create);
 SignInBtn.addEventListener('click', show_popup_login);
 
-// window.onload = show_popup;
+window.onload = show_popup;
 
 // CreateActBtn.addEventListener('click', show_popup);
 
