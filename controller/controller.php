@@ -34,28 +34,26 @@
         }  
     }
 
-    function logIn($username,$password,$error,$status) {
+    function signIn($username,$password) {
         $loginManager = new MemberManager();
-        if($username AND $password){
-            $userInfo = $loginManager->getMember($username);
-            //getMember confirms userId, password is checked below
-            if($userInfo){
-                if (password_verify($password, $userInfo['password'])){
-                        $_SESSION['username'] = $userInfo['username'];
-                        $_SESSION['memberId'] = $userInfo['id'];
-                        header('Location: index.php?action=showMyList');
-                } else {
-                    $error = 'passError';
-                    require("view/landing.php");
-                }
+        $errors = array(
+            "context" => "signIn"
+        );
+       
+        $userInfo = $loginManager->getMember($username);
+        //getMember confirms userId, password is checked below
+        if($userInfo){
+            if (password_verify($password, $userInfo['password'])){
+                    $_SESSION['username'] = $userInfo['username'];
+                    $_SESSION['memberId'] = $userInfo['id'];
+                    header('Location: index.php?action=showMyList');
             } else {
-                $error = 'logError';
-                require("view/landing.php");
+                $errors['password'] = 'incorrect password';
             }
-        }else{
-            $error = 'missingField';
-            require("view/landing.php");
+        } else {
+            $errors['username'] = 'there are no accounts with that ID';
         }
+        require("view/landing.php");
     }
 
     function makePlaylist($memberId, $name) {

@@ -96,7 +96,7 @@ function loadFile(entry, category) { //function takes inputs from these two vari
     reset.addEventListener('click', function() {
         let div_parent = document.querySelector('#searchResults');
         div_parent.innerHTML = "";
-        entry.value="";   
+        entry.value = "";
     });
 
 
@@ -175,32 +175,32 @@ function displayResults(array) {
         let searchCache = document.createElement('input');
         let categoryCache = document.createElement('input');
 
-        searchResults.setAttribute('class','resultOption');
-        song.setAttribute('class','songTitle');
-        songImgDiv.setAttribute('class','songImg');
-        brandCodes.setAttribute('class','brandCodes');
-        addIcon.setAttribute('class','addIcon');
-        songImg.setAttribute('src','public/images/songResult3.png');
-        songImg.setAttribute('title','Song icon');
-        iconImg.setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg');
-        iconImg.setAttribute('title','Plus icon');
-        iconImg.setAttribute('class','addPlaylist');
+        searchResults.setAttribute('class', 'resultOption');
+        song.setAttribute('class', 'songTitle');
+        songImgDiv.setAttribute('class', 'songImg');
+        brandCodes.setAttribute('class', 'brandCodes');
+        addIcon.setAttribute('class', 'addIcon');
+        songImg.setAttribute('src', 'public/images/songResult3.png');
+        songImg.setAttribute('title', 'Song icon');
+        iconImg.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg');
+        iconImg.setAttribute('title', 'Plus icon');
+        iconImg.setAttribute('class', 'addPlaylist');
 
-        hiddenSong.setAttribute('type','hidden');
-        hiddenSinger.setAttribute('type','hidden');
-        hiddenTj.setAttribute('type','hidden');
-        hiddenKumyoung.setAttribute('type','hidden');
-        hiddenAction.setAttribute('type','hidden');
-        searchCache.setAttribute('type','hidden');
-        categoryCache.setAttribute('type','hidden');
+        hiddenSong.setAttribute('type', 'hidden');
+        hiddenSinger.setAttribute('type', 'hidden');
+        hiddenTj.setAttribute('type', 'hidden');
+        hiddenKumyoung.setAttribute('type', 'hidden');
+        hiddenAction.setAttribute('type', 'hidden');
+        searchCache.setAttribute('type', 'hidden');
+        categoryCache.setAttribute('type', 'hidden');
 
-        hiddenSong.setAttribute('name','hiddenSong');
-        hiddenSinger.setAttribute('name','hiddenSinger');
-        hiddenTj.setAttribute('name','hiddenTj');
-        hiddenKumyoung.setAttribute('name','hiddenKumyoung');
-        hiddenAction.setAttribute('name','action');
-        searchCache.setAttribute('name','searchCache');
-        categoryCache.setAttribute('name','categoryCache');
+        hiddenSong.setAttribute('name', 'hiddenSong');
+        hiddenSinger.setAttribute('name', 'hiddenSinger');
+        hiddenTj.setAttribute('name', 'hiddenTj');
+        hiddenKumyoung.setAttribute('name', 'hiddenKumyoung');
+        hiddenAction.setAttribute('name', 'action');
+        searchCache.setAttribute('name', 'searchCache');
+        categoryCache.setAttribute('name', 'categoryCache');
 
         let tjCode = array[i].tj_code ? array[i].tj_code : '';
         let kumgoungCode = array[i].kumyoung_code ? array[i].kumyoung_code : '';
@@ -278,11 +278,11 @@ function notFound() {
 
 function createNode(element, attributes, content) {
     let createEl = document.createElement(element);
-    
+
     for (var attr in attributes) {
-        createEl.setAttribute(attr,attributes[attr]);
+        createEl.setAttribute(attr, attributes[attr]);
     }
-    
+
     if (content) {
         text = document.createTextNode(content);
         createEl.appendChild(text);

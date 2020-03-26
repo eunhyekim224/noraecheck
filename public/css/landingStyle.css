@@ -29,7 +29,8 @@
 
 #submit,
 #reset,
-#submitRegister {
+#submitRegister,
+#submitSignUp {
     font-size: 23px;
     width: 119px;
     padding: 10px;
@@ -1190,7 +1191,8 @@ span.psw {
     }
     #submit,
     #reset,
-    #submitRegister {
+    #submitRegister,
+    #submitSignUp {
         font-size: 17px;
         height: 50px;
         width: 95px;
