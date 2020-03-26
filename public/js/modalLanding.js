@@ -1,23 +1,9 @@
 // gets the buttons and gives the user a pop up if there are errors on the modal
 const SubmitRegBtn = document.getElementById('submitRegister');
 const CreateActBtn = document.getElementById('createAccount');
+
 // const SignInBtn = document.getElementById('signInText');
 // const Login = document.getElementById('loginForm');
-
-// function show_popup_login() {
-//     const form = document.forms["form"]
-//         ["username"].value;
-//     if (form == "") {
-//         SignInMod.style.display = 'block';
-//         return false;
-//     }
-// }
-
-// const error = 'false';
-// if (error == 'true') {
-//     SignInMod.style.display = 'block';
-//     SignUpMod.style.display = 'block';
-// }
 
 // test if pop up shows automatically
 
@@ -26,35 +12,6 @@ const CreateActBtn = document.getElementById('createAccount');
 //     SignUpMod.style.display = 'block';
 // }
 // window.onload = show_popup;
-
-// literal array of error msg 
-// two separate for login and sign up
-function validate_sign_in() {
-    const SignInError = ['missingField', 'logError', 'passError'];
-    const username = document.getElementById('username');
-    const pwd = document.getElementById('password');
-    // const error =
-    // if (username.value && pwd.value == "") {
-
-    // }
-}
-
-const SignUpError = ['logOld', 'mailError', 'passError'];
-
-
-// function show_popup_login() {
-//     SignInMod.style.display = 'block';
-// }
-
-// function show_popup_create() {
-//     SignUpMod.style.display = 'block';
-// }
-
-// SubmitRegBtn.addEventListener('click', show_popup_create);
-// SignInBtn.addEventListener('click', show_popup_login);
-
-// CreateActBtn.addEventListener('click', show_popup);
-
 // SignInMod.addEventListener('click', show_popup);
 // SignUpMod.addEventListener('click', show_popup);
 
