@@ -44,12 +44,20 @@ try {
             if (isset($_SESSION['memberId']) && isset($_SESSION['playlistId'])) {
                 deletePlaylist(($_SESSION['playlistId']), $_SESSION['memberId']);
             }
+        } else if ($action === 'editBrandCode') {
+            $playlistId = isset($_POST['playlistId']) ? $_POST['playlistId'] : '';
+            $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
+            $tjCode = isset($_POST['tjCode']) ? $_POST['tjCode'] : '';
+            $kumyoungCode = isset($_POST['kumyoungCode']) ? $_POST['kumyoungCode'] : '';
+            if ($playlistId && $songId) {
+                editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode);
+            }  
         } else if ($action === 'deleteSong') {
             $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
             echo $songId;
             if ($songId) {
                 deleteSong($songId);
-            }
+            }  
         } else if ($action === 'searchModal') {
             $song = isset($_REQUEST['hiddenSong']) ? $_REQUEST['hiddenSong'] : '';
             $singer = isset($_REQUEST['hiddenSinger']) ? $_REQUEST['hiddenSinger'] : '';
