@@ -173,9 +173,7 @@ a {
 
 
 /* LIST VIEW */
-#mySongList{
-    height:40%;
-}
+
 
 .myList {
     height: 80%;
@@ -545,6 +543,70 @@ img.minusIcon {
     cursor: pointer;
 }
 
+/* edit playlist */
+
+.editPlaylistBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.editPlaylistContent, #editBtns{
+    display: flex;
+}
+.editPlaylistContent {
+    justify-content: center;
+    align-items: center;
+    margin: 10% 0 1% 0;
+}
+.albumIcon {
+    width: 25%;
+    position: relative;
+}
+.albumIcon div {
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+    font-size: 0.5em;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.40);
+    border-radius: 0 0 10px 10px;
+}
+#editPlaylistImg {
+    width: 100%;
+    background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+}
+#editPlaylistInfo {
+    text-align: left;
+    width: 30%;
+    margin: 0 0 0 5%;
+}
+#newPlaylistName {
+    width: 100%;
+    border-radius: 3px;
+    border: none;
+    background-color: rgb(238, 238, 238);
+    font-size: 0.7em;
+    color: rgb(206, 206, 206);
+    padding: 0 0 0 3%;
+}
+#editPlaylistInfo p {
+    font-size: 0.5em;
+    margin: 10% 0;
+}
+#editBtns {
+    justify-content: center;
+    width: 60%;
+}
+#editBtns input {
+    height: 63px;
+    border: none;
+    padding: 4% 5%;
+    font-size: 0.6em;
+    width: 38%;
+    cursor: pointer;
+}
+
 /* Scrollbar */
 
 
@@ -603,7 +665,7 @@ img.minusIcon {
     font-family: 'Jua', sans-serif;
     /* text-shadow: 0 0 3px rgba(0, 0, 0, 1); */
     font-size: 5em;
-    background-image: linear-gradient(to right, #8fd3f4 51%, #8fd3f4 100%);
+    background-color:  rgb(240, 239, 239);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -618,7 +680,7 @@ img.minusIcon {
     width: 40%;
     animation: run-text 5s infinite linear;
     /* text-shadow: 0 0 3px rgba(255, 255, 255, 1); */
-    background-image: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100%);
+    background-color: #f460faff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -1011,472 +1073,3 @@ label[for=playlistId]{
     margin-left: 10%;
     margin-right: 10%;
 } */
-
-
-/**********************************/
-
-
-/*********Mobile Managment*********/
-
-
-/**********************************/
-
-@media all and (max-device-width: 480px) {
-    body {
-        /* background-color: rgb(243, 243, 243); */
-        background-color: rgb(206, 206, 206);
-    }
-    .mainWrapper {
-        border-radius: 0;
-        height: 100vh;
-        margin: auto;
-        width: auto;
-        padding: 0px;
-        font-family: 'Gotham Pro';
-        position: relative;
-    }
-    #banner {
-        background-color: rgb(206, 206, 206);
-        box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
-        /* box-shadow: -60px 0 120px rgb(206, 206, 206) inset; */
-        border-radius: 20px;
-        height: 15%;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
-    #banner .word {
-        display: none;
-    }
-    #bannerImage {
-        width: 25%;
-        margin: 0;
-        padding: 0 0 0 0;
-    }
-    #bannerImage img {
-        width: 100%;
-        height: 100%;
-        padding-left: 0%;
-    }
-    #mainContent {
-        height: 70%;
-        position: absolute;
-        top: 17.5%;
-        width: 100%;
-        /* box-shadow: -60px 0 120px rgb(240, 240, 240) inset; */
-        box-shadow: -60px 0 120px rgb(206, 206, 206) inset;
-    }
-    #mainContent h1 {
-        font-size: 6em;
-        margin: 30px 0 30px 0
-    }
-    .myList li {
-        height: 25%;
-    }
-    .myList img {
-        height: 100%;
-        width: 100%;
-        background-color: rgb(238, 238, 238);
-        margin-right: 3%;
-        padding: 0.5%;
-    }
-    .myListIcons {
-        width: 20%;
-    }
-    /* .myList #createPlaylist {
-padding-bottom: 0;
-} */
-    #createPlaylist input[type="image"] {
-        width: 100%;
-    }
-    .playlistInfo {
-        padding-left: 10%;
-    }
-    #createTxt {
-        padding-left: 3%;
-        margin: 0;
-        font-size: 2em;
-    }
-    .playlistInfo p {
-        margin: 0 0 5% 0;
-        font-size: 2em;
-    }
-    /* create playlist MODAL */
-    .modalContent {
-        width: 84%;
-        display: flex;
-        margin-top: 75%;
-        font-size: 3.5em;
-    }
-    .modalButtons input {
-        width: 32%;
-    }
-    input.question+label>span {
-        font-size: 0.75em;
-    }
-    input.question:focus+label>span {
-        font-size: 0.5em;
-    }
-    /* nav */
-    #nav {
-        height: 10%;
-        width: 100%;
-        position: fixed;
-        top: 89%
-    }
-    #nav li p {
-        display: none;
-    }
-    #menuIcons li {
-        vertical-align: middle;
-        height: 50%;
-        width: 15%;
-    }
-    #menuIcons li:first-child {
-        padding: 10px;
-    }
-    #menuIcons li:nth-child(2) {
-        padding: 10px;
-    }
-    #menuIcons li:nth-child(3) {
-        padding: 10px;
-    }
-    #menuIcons li:last-child {
-        padding: 10px;
-    }
-    #menuIcons li img {
-        height: 100%;
-        width: 100%;
-    }
-    .navIcons {
-        width: 40%;
-    }
-    /*_____ sign up page media queries_____ */
-    .signupPage {
-        background-color: rgb(206, 206, 206);
-    }
-    #registrationContent form {
-        margin-top: 30%;
-        width: 90%;
-        font-size: xx-large;
-    }
-    #firstP {
-        margin-bottom: 10%;
-    }
-    #lastP {
-        margin-top: 10%;
-    }
-    #registrationContent p label {
-        width: 45%
-    }
-    #registrationContent p input {
-        height: 4vh;
-        font-size: 3vh;
-    }
-    #kakaoLogin {
-        margin-top: 5%;
-        margin-bottom: 15%;
-        font-size: 4vh;
-    }
-    /*_____ search page media queries_____ */
-    .searchOptions {
-        width: 20%;
-    }
-    .searchOptionsExpanded {
-        width: 50%;
-    }
-    .searchOption {
-        font-size: 3vh;
-    }
-    .searchOptionSelected {
-        background-color: azure !important;
-    }
-    .searchOptionExpanded {
-        width: 30%;
-        font-size: 3vh;
-        padding-left: 3%;
-        padding-right: 3%;
-    }
-    #searchOptions>div:hover,
-    #submit:hover {
-        background-color: rgb(240, 239, 239);
-    }
-    #submit {
-        background-color: rgb(240, 239, 239);
-        border: none;
-        width: 15%;
-        border-radius: 0px 15px 15px 0px;
-    }
-    .entry {
-        width: 65%;
-        font-size: 4vh;
-    }
-    .compactEntry {
-        width: 35%;
-        font-size: 3vh;
-    }
-}
-
-
-/**********************************/
-
-
-/*********Tablet Managment*********/
-
-
-/**********************************/
-
-@media all and (min-device-width: 400px) and (max-device-width: 600px) {
-    body {
-        background-color: rgb(206, 206, 206);
-    }
-    .mainWrapper {
-        border-radius: 0;
-        height: 100vh;
-        margin: auto;
-        width: auto;
-        padding: 0px;
-        font-family: 'Gotham Pro';
-        position: relative;
-    }
-    #banner {
-        background-color: rgb(206, 206, 206);
-        box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
-        /* box-shadow: -60px 0 120px rgb(206, 206, 206) inset; */
-        border-radius: 20px;
-        height: 15%;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
-    #banner .word {
-        display: none;
-    }
-    #bannerImage {
-        width: 20%;
-        margin: 0;
-        padding: 0 0 0 0;
-    }
-    #bannerImage img {
-        width: 100%;
-        height: 100%;
-        padding-left: 0%;
-    }
-    #mainContent {
-        height: 70%;
-        position: absolute;
-        top: 17.5%;
-        width: 100%;
-        /* box-shadow: -60px 0 120px rgb(240, 240, 240) inset; */
-        box-shadow: -60px 0 120px rgb(206, 206, 206) inset;
-    }
-    #mainContent h1 {
-        font-size: 6em;
-        margin: 30px 0 30px 0
-    }
-    .myList li {
-        height: 25%;
-    }
-    .myList img {
-        height: 90%;
-        width: 100%;
-        background-color: rgb(238, 238, 238);
-        margin-right: 3%;
-        padding: 0.5%;
-    }
-    .myListIcons {
-        width: 18%;
-    }
-    /* .myList #createPlaylist {
-padding-bottom: 0;
-} */
-    #createPlaylist input[type="image"] {
-        width: 100%;
-    }
-    .playlistInfo {
-        padding-left: 10%;
-    }
-    #createTxt {
-        padding-left: 3%;
-        margin: 0;
-        font-size: 2em;
-    }
-    .playlistInfo p {
-        margin: 0 0 5% 0;
-        font-size: 2em;
-    }
-    /* create playlist MODAL */
-    .modalContent {
-        width: 84%;
-        display: flex;
-        margin-top: 75%;
-        font-size: 3.5em;
-    }
-    .modalButtons input {
-        width: 32%;
-    }
-    input.question+label>span {
-        font-size: 0.75em;
-    }
-    input.question:focus+label>span {
-        font-size: 0.5em;
-    }
-    /* nav */
-    #nav {
-        height: 10%;
-        width: 100%;
-        position: fixed;
-        top: 89%
-    }
-    #nav li p {
-        display: none;
-    }
-    #menuIcons li {
-        vertical-align: middle;
-        height: 50%;
-        width: 15%;
-    }
-    #menuIcons li:first-child {
-        padding: 10px;
-    }
-    #menuIcons li:nth-child(2) {
-        padding: 10px;
-    }
-    #menuIcons li:nth-child(3) {
-        padding: 10px;
-    }
-    #menuIcons li:last-child {
-        padding: 10px;
-    }
-    #menuIcons li img {
-        height: 100%;
-        width: 100%;
-    }
-    .navIcons {
-        width: 40%;
-    }
-    /*_____ sign up page media queries_____ */
-    .signupPage {
-        background-color: rgb(206, 206, 206);
-    }
-    #registrationContent form {
-        margin-top: 30%;
-        width: 90%;
-        font-size: xx-large;
-    }
-    #firstP {
-        margin-bottom: 10%;
-    }
-    #lastP {
-        margin-top: 10%;
-    }
-    #registrationContent p label {
-        width: 45%
-    }
-    #registrationContent p input {
-        height: 4vh;
-        font-size: 3vh;
-    }
-    #kakaoLogin {
-        margin-top: 5%;
-        margin-bottom: 15%;
-        font-size: 4vh;
-    }
-    /*_____ search page media queries_____ */
-    .searchOptions {
-        width: 20%;
-    }
-    .searchOptionsExpanded {
-        width: 50%;
-    }
-    .searchOption {
-        font-size: 3vh;
-    }
-    .searchOptionSelected {
-        background-color: azure !important;
-    }
-    .searchOptionExpanded {
-        width: 30%;
-        font-size: 3vh;
-        padding-left: 3%;
-        padding-right: 3%;
-    }
-    #searchOptions>div:hover,
-    #submit:hover {
-        background-color: rgb(240, 239, 239);
-    }
-    #submit {
-        background-color: rgb(240, 239, 239);
-        border: none;
-        width: 15%;
-        border-radius: 0px 15px 15px 0px;
-    }
-    .entry {
-        width: 65%;
-        font-size: 4vh;
-    }
-    .compactEntry {
-        width: 35%;
-        font-size: 3vh;
-    }
-}
-
-
-/**********************************/
-
-
-/*********Desktop Managment*********/
-
-
-/**********************************/
-
-@media all and (max-device-width: 600px) and (max-device-width: 950px) {
-    .myListIcons {
-        width: 15%;
-    }
-    #menuIcons li {
-        width: 15%;
-    }
-}
-
-@media all and (min-device-width: 950px) and (max-device-width: 1200px) {
-    .myListIcons {
-        width: 12%;
-    }
-    #menuIcons li {
-        width: 15%;
-    }
-}
-
-
-/* search page tablet media query */
-
-@media all and (max-device-width: 480px) {
-    /* #mainContent, */
-    #results {
-        height: 95%;
-    }
-    .songTitle,
-    p,
-    h1 {
-        font-size: 2em;
-    }
-    /* .songImg {
-        width: 10%;
-    } */
-}
-
-@media all and (min-device-width: 1504px) {
-    .songImg {
-        background-color: rgb(238, 238, 238);
-        width: 10%;
-        height: 10%;
-        border-radius: 10px;
-        margin: 0;
-        padding: 0 1% 0 0;
-    }
-
-   .playlistName {
-        width: 68%;
-    }
-}
