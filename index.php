@@ -36,6 +36,14 @@ try {
             } else if (isset($memberId) && isset($playlistName) && strlen(trim($playlistName)) > 0) {
                 makePlaylist($_SESSION['memberId'], $_POST['playlistName']);
             }
+        } else if ($action === 'editPlaylist') {
+            // $newPlaylistName = isset($_POST['newPlaylistName']) ? $_POST['newPlaylistName'] : '';
+            // $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';
+            // editPlaylist($newPlaylistName, $playlistId);
+            echo $_POST['newPlaylistName'].'----'.$_POST['playlistId'];
+            if (isset($_POST['newPlaylistName']) && isset($_POST['playlistId'])) {
+                editPlaylist(($_POST['newPlaylistName']), $_POST['playlistId']);
+            }
         } else if ($action === 'deletePlaylist') {
             if (isset($_SESSION['memberId']) && isset($_SESSION['playlistId'])) {
                 deletePlaylist(($_SESSION['playlistId']), $_SESSION['memberId']);
