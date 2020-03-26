@@ -303,14 +303,3 @@ if (modalDisplay.value === 'on') {
 
     }
 }
-
-// let addPlaylistButton = document.getElementsByClassName('addPlaylist');
-
-// function selectPlaylist(playlistId) {
-//     let options = document.getElementsByTagName('option');
-//     for (let i=0, c=options.length; i<c; i++) {
-//         if (options[i].value === playlistId) {
-//             options[i].setAttribute('selected');
-//         }
-//     } 
-// }

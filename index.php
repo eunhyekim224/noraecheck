@@ -50,6 +50,7 @@ try {
             }
         } else if ($action === 'deleteSong') {
             $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
+            echo $songId;
             if ($songId) {
                 deleteSong($songId);
             }
@@ -93,6 +94,7 @@ try {
             $status = isset($_GET['success']) ? $_GET['success'] : '';
             showLandingPage($error,$status);
         }
+    
     }
     catch(PDOException $e) {
         $msg = $e->getMessage();

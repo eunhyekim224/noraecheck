@@ -87,6 +87,9 @@
         echo '<p class="error">please make sure that your login fields are the same</p> ';
         }
         if ($error == 'passError'){
+            echo '<p class="error">password must have at least 8 characters including numbers, uppercase and lowercase letters</p> ';
+            }
+        if ($error == 'passConfError'){
         echo '<p class="error">please make sure that your passwords are the same</p> ';
         }
         if ($error == 'logOld'){

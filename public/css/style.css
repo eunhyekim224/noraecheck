@@ -173,9 +173,7 @@ a {
 
 
 /* LIST VIEW */
-#mySongList{
-    height:40%;
-}
+
 
 .myList {
     height: 80%;
@@ -646,7 +644,7 @@ img.minusIcon {
     font-family: 'Jua', sans-serif;
     /* text-shadow: 0 0 3px rgba(0, 0, 0, 1); */
     font-size: 5em;
-    background-image: linear-gradient(to right, #8fd3f4 51%, #8fd3f4 100%);
+    background-color:  rgb(240, 239, 239);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -661,7 +659,7 @@ img.minusIcon {
     width: 40%;
     animation: run-text 5s infinite linear;
     /* text-shadow: 0 0 3px rgba(255, 255, 255, 1); */
-    background-image: linear-gradient(to right, rgb(251, 255, 0) 0%, rgb(253, 179, 67) 100%);
+    background-color: #f460faff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -1054,5 +1052,3 @@ label[for=playlistId]{
     margin-left: 10%;
     margin-right: 10%;
 } */
-
-

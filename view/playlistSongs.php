@@ -1,5 +1,6 @@
 <div id="mainPlaylist">
-<?php while ($playlist = $mainPlaylist->fetch()) { ?>
+<?php while ($playlist = $mainPlaylist->fetch()) { $_SESSION['playlistId'] = $playlist['playlistId']?>
+
     <img src="public/images/album2.png" id="mainPlaylistImg">
     <div id="mainPlaylistInfo">
         <p class="darkGrey playlistNameText"><?= $playlist['playlistName']; ?></p>
@@ -36,7 +37,7 @@
         </div>
         <img src="./public/images/minusIcon3.png" title="minus icon" alt="minus icon" class="minusIcon">
     </li>
-    <div class="modal" id="deleteSongModal">
+    <div class="modal deleteSongModal">
     <div class="modalContent">
         <form action="index.php" method="post">
             <input type="hidden" name="action" value="deleteSong">
