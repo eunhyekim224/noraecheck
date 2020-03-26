@@ -28,14 +28,14 @@
         <div id="songsInOnePlaylist">
             <p id="songNameText" class="darkGrey"><?= $song['songName']; ?></p>
             <p>by <?= $song['singerName']; ?></p>
-            <form method="post" action="index.php" class="songListBrands">
+            <form method="post" action="index.php" class="songListBrands darkGrey">
                 <div class="songListBrandCodes">
-                    <label>TJ</label>
-                    <input type="text" name=tjCode value=<?= $song['tjCode'];?>>
+                    <label for="tjCode">TJ</label>
+                    <input type="text" name=tjCode maxlength=10 value=<?= $song['tjCode'];?>>
                 </div>
                 <div class="songListBrandCodes">
-                    <label>KY</label>
-                    <input type="text" name=kumyoungCode value=<?= $song['kumyoungCode'];?>>
+                    <label for="kumyoungCode">KY</label>
+                    <input type="text" name=kumyoungCode maxlength=10 value=<?= $song['kumyoungCode'];?>>
                 </div>
             </form>
         </div>

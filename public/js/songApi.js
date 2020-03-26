@@ -154,14 +154,15 @@ function displayResults(array) {
         let songDiv = createNode('div');
         let song = createNode('p', {'class':'songTitle'}, array[i].song);
         let singer = createNode('p', {}, 'by ' + array[i].singer);
-        let brandCodes = createNode('div', {'class':'brandCodes'});
+        let brandCodes = createNode('div', {'class':'brandCodes songBrandCodes'});
+        let tjBrandWrapper = createNode('p', {'class':'songListBrandCodes'});
+        let kyBrandWrapper = createNode('p', {'class':'songListBrandCodes'});
         let tjBrand = createNode('p', {}, 'TJ');
-        let kumyoungBrand = createNode('p', {}, 'Kumyoung');
+        let kumyoungBrand = createNode('p', {}, 'KY');
         let code = createNode('p', {}, array[i].tj_code);
         let code2 = createNode('p', {}, array[i].kumyoung_code);
         let addIcon = createNode('div', {'class':'addIcon'});
         let iconImg = createNode('img', {'src':'public/images/plusIcon4.png', 'title':'Plus icon', 'class':'addPlaylist'});
-
 
         // let hiddenSong = document.createElement('input');
         // let hiddenSinger = document.createElement('input');
@@ -236,16 +237,20 @@ function displayResults(array) {
         searchResults.appendChild(categoryCache);
 
         if (array[i].tj_code && array[i].kumyoung_code) {
-            brandCodes.appendChild(tjBrand);
-            brandCodes.appendChild(code);
-            brandCodes.appendChild(kumyoungBrand);
-            brandCodes.appendChild(code2);
+            tjBrandWrapper.appendChild(tjBrand);
+            tjBrandWrapper.appendChild(code);
+            kyBrandWrapper.appendChild(kumyoungBrand);
+            kyBrandWrapper.appendChild(code2);       
+            brandCodes.appendChild(tjBrandWrapper);
+            brandCodes.appendChild(kyBrandWrapper);
         } else if (array[i].tj_code) {
-            brandCodes.appendChild(tjBrand);
-            brandCodes.appendChild(code);
+            tjBrandWrapper.appendChild(tjBrand);
+            tjBrandWrapper.appendChild(code);
+            brandCodes.appendChild(tjBrandWrapper);
         } else if (array[i].kumyoung_code) {
-            brandCodes.appendChild(kumyoungBrand);
-            brandCodes.appendChild(code2);
+            kyBrandWrapper.appendChild(kumyoungBrand);
+            kyBrandWrapper.appendChild(code2);
+            brandCodes.appendChild(kyBrandWrapper);
         }
 
         div_parent.appendChild(searchResults);
