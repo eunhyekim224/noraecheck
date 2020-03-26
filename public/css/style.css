@@ -263,6 +263,7 @@ a {
 
 .songListBrands {
     display: flex;
+     color: rgb(102, 96, 96);
 }
 
 .songListBrandCodes {
@@ -276,11 +277,15 @@ a {
     text-align: center;
     margin-left: 6%;
     margin-right: 8%;
+
+    border-radius: 3px;
+    border: none;
+    background-color:transparent;
+    color: rgb(102, 96, 96);
+
 }
 
-.songListBrandCodes label {
-    margin-top: 4%;
-}
+
 
 /* new playlist modal  */
 
