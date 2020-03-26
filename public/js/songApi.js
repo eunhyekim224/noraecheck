@@ -147,71 +147,66 @@ function displayResults(array) {
     div_parent.innerHTML = "";
 
     for (let i = 0, c = array.length; i < c; i++) {
-        let searchResults = document.createElement('form');
-        let songImgDiv = document.createElement('div');
-        let songImg = document.createElement('img');
-        let songDiv = document.createElement('div');
-        let song = document.createElement('p');
-        let songText = document.createTextNode(array[i].song);
-        let singer = document.createElement('p');
-        let singerText = document.createTextNode('by ' + array[i].singer);
-        let brandCodes = document.createElement('div');
-        let tjBrand = document.createElement('p');
-        let tjText = document.createTextNode('TJ');
-        let kumyoungBrand = document.createElement('p');
-        let kumyoungText = document.createTextNode('Kumyoung');
-        let code = document.createElement('p');
-        let codeText = document.createTextNode(array[i].tj_code);
-        let code2 = document.createElement('p');
-        let code2Text = document.createTextNode(array[i].kumyoung_code);
-        let addIcon = document.createElement('div');
-        let iconImg = document.createElement('img');
 
-        let hiddenSinger = document.createElement('input');
-        let hiddenSong = document.createElement('input');
-        let hiddenTj = document.createElement('input');
-        let hiddenKumyoung = document.createElement('input');
-        let hiddenAction = document.createElement('input');
-        let searchCache = document.createElement('input');
-        let categoryCache = document.createElement('input');
+        let searchResults = createNode('form', {'class':'resultOption'});
+        let songImgDiv = createNode('div', {'class':'songImg'});
+        let songImg = createNode('img', {'src':'public/images/songResult3.png', 'title':'Song icon'});
+        let songDiv = createNode('div');
+        let song = createNode('p', {'class':'songTitle'}, array[i].song);
+        let singer = createNode('p', {}, 'by ' + array[i].singer);
+        let brandCodes = createNode('div', {'class':'brandCodes'});
+        let tjBrand = createNode('p', {}, 'TJ');
+        let kumyoungBrand = createNode('p', {}, 'Kumyoung');
+        let code = createNode('p', {}, array[i].tj_code);
+        let code2 = createNode('p', {}, array[i].kumyoung_code);
+        let addIcon = createNode('div', {'class':'addIcon'});
+        let iconImg = createNode('img', {'src':'public/images/plusIcon4.png', 'title':'Plus icon', 'class':'addPlaylist'});
 
-        searchResults.setAttribute('class','resultOption');
-        song.setAttribute('class','songTitle');
-        songImgDiv.setAttribute('class','songImg');
-        brandCodes.setAttribute('class','brandCodes');
-        addIcon.setAttribute('class','addIcon');
-        songImg.setAttribute('src','public/images/songResult3.png');
-        songImg.setAttribute('title','Song icon');
-        iconImg.setAttribute('src','https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg');
-        iconImg.setAttribute('title','Plus icon');
-        iconImg.setAttribute('class','addPlaylist');
 
-        hiddenSong.setAttribute('type','hidden');
-        hiddenSinger.setAttribute('type','hidden');
-        hiddenTj.setAttribute('type','hidden');
-        hiddenKumyoung.setAttribute('type','hidden');
-        hiddenAction.setAttribute('type','hidden');
-        searchCache.setAttribute('type','hidden');
-        categoryCache.setAttribute('type','hidden');
+        // let hiddenSong = document.createElement('input');
+        // let hiddenSinger = document.createElement('input');
+        // let hiddenTj = document.createElement('input');
+        // let hiddenKumyoung = document.createElement('input');
+        // let hiddenAction = document.createElement('input');
+        // let searchCache = document.createElement('input');
+        // let categoryCache = document.createElement('input');
 
-        hiddenSong.setAttribute('name','hiddenSong');
-        hiddenSinger.setAttribute('name','hiddenSinger');
-        hiddenTj.setAttribute('name','hiddenTj');
-        hiddenKumyoung.setAttribute('name','hiddenKumyoung');
-        hiddenAction.setAttribute('name','action');
-        searchCache.setAttribute('name','searchCache');
-        categoryCache.setAttribute('name','categoryCache');
+        // hiddenSong.setAttribute('type','hidden');
+        // hiddenSinger.setAttribute('type','hidden');
+        // hiddenTj.setAttribute('type','hidden');
+        // hiddenKumyoung.setAttribute('type','hidden');
+        // hiddenAction.setAttribute('type','hidden');
+        // searchCache.setAttribute('type','hidden');
+        // categoryCache.setAttribute('type','hidden');
+
+        // hiddenSong.setAttribute('name','hiddenSong');
+        // hiddenSinger.setAttribute('name','hiddenSinger');
+        // hiddenTj.setAttribute('name','hiddenTj');
+        // hiddenKumyoung.setAttribute('name','hiddenKumyoung');
+        // hiddenAction.setAttribute('name','action');
+        // searchCache.setAttribute('name','searchCache');
+        // categoryCache.setAttribute('name','categoryCache');
+
 
         let tjCode = array[i].tj_code ? array[i].tj_code : '';
         let kumgoungCode = array[i].kumyoung_code ? array[i].kumyoung_code : '';
 
-        hiddenSong.setAttribute('value', array[i].song);
-        hiddenSinger.setAttribute('value', array[i].singer);
-        hiddenTj.setAttribute('value', tjCode);
-        hiddenKumyoung.setAttribute('value', kumgoungCode);
-        hiddenAction.setAttribute('value', 'searchModal');
-        searchCache.setAttribute('value', entry.value);
-        categoryCache.setAttribute('value', category.value);
+        let hiddenSong = createNode('input', {'type':'hidden','name':'hiddenSong','value':array[i].song});
+        let hiddenSinger = createNode('input', {'type':'hidden','name':'hiddenSinger','value':array[i].singer});
+        let hiddenTj = createNode('input', {'type':'hidden','name':'hiddenTj','value':tjCode});
+        let hiddenKumyoung = createNode('input', {'type':'hidden','name':'hiddenKumyoung','value':kumgoungCode});
+        let hiddenAction = createNode('input', {'type':'hidden','name':'action','value':'searchModal'});
+        let searchCache = createNode('input', {'type':'hidden','name':'searchCache','value':entry.value});
+        let categoryCache = createNode('input', {'type':'hidden','name':'categoryCache','value':category.value});
+
+        // hiddenSong.setAttribute('value', array[i].song);
+        // hiddenSinger.setAttribute('value', array[i].singer);
+        // hiddenTj.setAttribute('value', tjCode);
+        // hiddenKumyoung.setAttribute('value', kumgoungCode);
+        // hiddenAction.setAttribute('value', 'searchModal');
+        // searchCache.setAttribute('value', entry.value);
+        // categoryCache.setAttribute('value', category.value);
+
         iconImg.addEventListener('click', () => {
             searchResults.submit();
         });
@@ -223,12 +218,6 @@ function displayResults(array) {
         // }
 
         songImgDiv.appendChild(songImg);
-        song.appendChild(songText);
-        singer.appendChild(singerText);
-        code.appendChild(codeText);
-        code2.appendChild(code2Text);
-        tjBrand.appendChild(tjText);
-        kumyoungBrand.appendChild(kumyoungText);
         addIcon.appendChild(iconImg);
 
         songDiv.appendChild(song);
@@ -267,12 +256,7 @@ function notFound() {
     let div_parent = document.querySelector('#searchResults');
     div_parent.innerHTML = "";
 
-    let error = document.createElement('p');
-    let errorText = document.createTextNode('Not Found');
-
-    error.setAttribute('class', 'errorMsg');
-
-    error.appendChild(errorText);
+    let error = createNode('p', {'class':'errorMsg'}, 'Not Found');
     div_parent.appendChild(error);
 }
 
@@ -319,14 +303,3 @@ if (modalDisplay.value === 'on') {
 
     }
 }
-
-// let addPlaylistButton = document.getElementsByClassName('addPlaylist');
-
-// function selectPlaylist(playlistId) {
-//     let options = document.getElementsByTagName('option');
-//     for (let i=0, c=options.length; i<c; i++) {
-//         if (options[i].value === playlistId) {
-//             options[i].setAttribute('selected');
-//         }
-//     } 
-// }

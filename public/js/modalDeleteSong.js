@@ -1,33 +1,35 @@
-let deleteSongModal = document.getElementById('deleteSongModal');
+let deleteSongModals = document.getElementsByClassName('deleteSongModal');
 let deleteSongButtons = document.getElementsByClassName('minusIcon');
-let cancelDelSongButton = deleteSongModal.querySelector('.cancelDel');
 
-showAndCloseModal(deleteSongModal, deleteSongButtons, cancelDelSongButton);
-console.log(cancelDelSongButton);
+console.log(deleteSongModals);
 
-function showAndCloseModals(modal, buttons, cancelButton) {
-    showModal(modal, buttons);
-    closeModal(modal, cancelButton)
+showAndCloseModals(deleteSongModals, deleteSongButtons);
+
+function showAndCloseModals(modals, buttons) {
+    showModals(modals, buttons);
+    closeModals(modals);
 }
 
-function showModal(modal, showButtons) {
+function showModals(modals, showButtons) {
     for (let i = 0, c = showButtons.length; i < c; i++) {
         showButtons[i].addEventListener('click', () => {
-            modal.style.display = "block";
-            console.log(modal);
+            modals[i].style.display = "block";
         });
     }
 }
 
-function closeModal(modal, cancelButton) {
-    cancelButton.addEventListener('click', () => {
-        console.log(cancelButton);
-        modal.style.display = "none";
-        console.log(modal);
-    });
-    window.addEventListener('click', (e) => {
-        if (e.target == modal) {
-            modal.style.display = "none";
-        }
-    });
+function closeModals(modals) {
+    for (let i = 0, c = modals.length; i < c; i++) {
+        cancelButton = modals[i].querySelector('.cancelDel');
+        console.log(modals[i] + cancelButton);
+        cancelButton.addEventListener('click', () => {
+        modals[i].style.display = "none";
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target == modals[i]) {
+                modals[i].style.display = "none";
+            }
+        });
+    }
 }
