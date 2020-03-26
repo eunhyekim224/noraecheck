@@ -259,6 +259,32 @@ a {
     color: white;
 }
 
+.songListBrands {
+    display: flex;
+     color: rgb(102, 96, 96);
+}
+
+.songListBrandCodes {
+    display: flex;
+    width: 14%;
+}
+
+.songListBrandCodes input {
+    padding: 2%;
+    width: 64%;
+    text-align: center;
+    margin-left: 6%;
+    margin-right: 8%;
+
+    border-radius: 3px;
+    border: none;
+    background-color:transparent;
+    color: rgb(102, 96, 96);
+
+}
+
+
+
 /* new playlist modal  */
 
 .modal,
