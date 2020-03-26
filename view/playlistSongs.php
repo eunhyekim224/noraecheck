@@ -28,12 +28,16 @@
         <div id="songsInOnePlaylist">
             <p id="songNameText" class="darkGrey"><?= $song['songName']; ?></p>
             <p>by <?= $song['singerName']; ?></p>
-            <p>
-                <label> tj code </label>
-                <?= $song['tjCode'];?>
-                <label> kumyoung code </label>
-                <?= $song['kumyoungCode']; ?>
-            </p>
+            <form method="post" action="index.php" class="songListBrands">
+                <div class="songListBrandCodes">
+                    <label>TJ</label>
+                    <input type="text" name=tjCode value=<?= $song['tjCode'];?>>
+                </div>
+                <div class="songListBrandCodes">
+                    <label>KY</label>
+                    <input type="text" name=kumyoungCode value=<?= $song['kumyoungCode'];?>>
+                </div>
+            </form>
         </div>
         <img src="./public/images/minusIcon3.png" title="minus icon" alt="minus icon" class="minusIcon">
     </li>

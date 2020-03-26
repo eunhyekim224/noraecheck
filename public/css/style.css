@@ -263,6 +263,27 @@ a {
     color: white;
 }
 
+.songListBrands {
+    display: flex;
+}
+
+.songListBrandCodes {
+    display: flex;
+    width: 14%;
+}
+
+.songListBrandCodes input {
+    padding: 2%;
+    width: 64%;
+    text-align: center;
+    margin-left: 6%;
+    margin-right: 8%;
+}
+
+.songListBrandCodes label {
+    margin-top: 4%;
+}
+
 /* new playlist modal  */
 
 .modal,
