@@ -33,14 +33,13 @@
                 <input type="hidden" name="songId" value=<?= $song['songId']; ?>>
                 <input type="hidden" name="playlistId" value=<?= $_SESSION['playlistId']; ?>>
                 <div class="songListBrandCodes">
-                    <label for="tjCode">TJ</label>
-                    <input type="text" name="tjCode" id="tjCode" autocomplete="off" value=<?= $song['tjCode'];?> >
+                    <label for="tjCode<?= $song['songId']; ?>">TJ</label>
+                    <input type="text" name="tjCode" id="tjCode<?= $song['songId']; ?>" autocomplete="off" value=<?= $song['tjCode'];?> >
                 </div>
                 <div class="songListBrandCodes">
-                    <label for="kumyoungCode">KY</label>
-                    <input type="text" name="kumyoungCode" id="kumyoungCode" autocomplete="off" value=<?= $song['kumyoungCode'];?> >
+                    <label for="kumyoungCode<?= $song['songId']; ?>">KY</label>
+                    <input type="text" name="kumyoungCode" id="kumyoungCode<?= $song['songId']; ?>" autocomplete="off" value=<?= $song['kumyoungCode'];?> >
                 </div>
-                <input type="submit" hidden>
             </form>
         </div>
         <img src="./public/images/minusIcon3.png" title="minus icon" alt="minus icon" class="minusIcon">

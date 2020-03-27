@@ -1,24 +1,34 @@
 let brandCodeInput = document.querySelectorAll('.songListBrandCodes input');
 let editBrandCodesForm = document.querySelector('.songListBrands');
+let brandCodeBtn = document.querySelectorAll('.songListBrandCodes');
 
 for (let i = 0, c = brandCodeInput.length; i < c; i++) {
+    let brandCodeCur = brandCodeInput[i].value;
 
     brandCodeInput[i].addEventListener('keyup', (e) => {
         if (e.keyCode === 13) {
-            editBrandCodesForm.submit();
+            e.preventDefault();
+            if (!isNaN(e.target.value)) {
+                editBrandCodesForm.submit();
+            } else {
+                e.target.value = brandCodeCur;
+            }
         }
     });
 
-    brandCodeInput[i].addEventListener('blur', () => {
-        editBrandCodesForm.submit();   
+    brandCodeInput[i].addEventListener('blur', (e) => {
+        e.preventDefault();
+        if (!isNaN(e.target.value)) {
+            editBrandCodesForm.submit();
+        } else {
+            e.target.value = brandCodeCur;
+        }
     });
+
+    // brandCodeBtn[i].addEventListener('click', () => {
+    //     console.log(brandCodeBtn);
+    //     console.log(brandCodeInput);
+    //     brandCodeInput[i].focus();
+    // });
 }
 
-let brandCode = document.querySelectorAll('.songListBrandCodes label');
-
-for (let i = 0, c = brandCode.length; i < c; i++) {
-
-    brandCode[i].addEventListener('click', () => {
-        brandCodeInput.focus();   
-    });
-}
