@@ -45,21 +45,25 @@ function signInVerify(signInForm, e) {
 }
 
 function signUpVerify(signUpForm, e) {
-    const emregex = /(.+)@(.+){2,}\.(.+){2,}/;
-    const pwregex = /^[a-zA-Z0-9]{8,}/g;
-    const logregex = /^[a-zA-Z0-9]{4,}/g;
+    // const emregex = /(.+)@(.+){2,}\.(.+){2,}/;
+    // const pwregex = /^[a-zA-Z0-9]{8,}/g;
+    // const logregex = /^[a-zA-Z0-9]{4,}/g;
 
-    const pwd = document.getElementById('pwd');
-    const pwdConf = document.getElementById('pwdConf');
-    const em = document.getElementById('email');
-    const lg = document.getElementById('loginland');
+    // const pwd = document.getElementById('pwd');
+    // const pwdConf = document.getElementById('pwdConf');
+    // const em = document.getElementById('email');
+    // const lg = document.getElementById('loginNew');
 
     if (signUpForm.querySelector('#loginNew').value && signUpForm.querySelector('#email').value && signUpForm.querySelector('#pwd').value && signUpForm.querySelector('#pwdConf').value) {
-        pwd.value.match(pwregex);
-        em.value.match(emregex);
-        lg.value.match(logregex);
-        pwd.value == pwdConf;
+
+        // pwd.value.match(pwregex);
+        // em.value.match(emregex);
+        // lg.value.match(logregex);
+
+        // pwd.value == pwdConf.value;
+
         //other tests like regex etc....
+
         signUpForm.submit();
     } else {
         e.preventDefault();
@@ -69,7 +73,8 @@ function signUpVerify(signUpForm, e) {
     }
 }
 
-/* *******EXECUTION******* */
+/********EXECUTION******* */
+
 {
     function init() {
         setDisplayModals(window);
@@ -85,10 +90,10 @@ function signUpVerify(signUpForm, e) {
 
         const submitSignUp = document.getElementById('submitSignUp');
         submitSignUp.addEventListener("click", function(e) {
+            console.log('stuff');
             signUpVerify(document.getElementById('signUpForm'), e);
         });
         // for the button to the creation
-
     }
     init();
 }

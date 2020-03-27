@@ -13,35 +13,39 @@
     function signUp($email, $username, $password, $passwordConf) {
         $memberManager = new MemberManager();
         $errors = array(
-            "contextup" => "signUp"
+            "contextUp" => "signUp"
         );
-
+        
         $usernameInUse = $memberManager->getMember($username);
 
         if($username AND $password AND $passwordConf AND $email){
             // $usernameInUse = $memberManager->getMember($username);
             if(!$usernameInUse){
                 if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
-                    if ($username AND $password == $passwordConf){
-                        $status = $memberManager->addMember($email,$username,$password);
-                        header("location:index.php?action=login&success=1");
-                    } else if ($password != $passwordCheck){
-                        $errors['pwdConf'] = 'password does not match';
-                        header('Location: index.php?action=register&error=passError');
+                    if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$password)) {
+                        if ($username AND $password == $passwordConf){
+                            $status = $memberManager->addMember($email,$username,$password);
+                            header("location:index.php?action=login&success=1");
+                        } else if ($password != $passwordCheck){
+                            $errors['pwdConf'] = 'password does not match';
+                        } 
+                    } else {
+                        $errors['pwd'] = 'please include 8 characters, upper/lower case letters, and digits';
                     }
                 } else {
                     $errors['email'] = 'incorrect email';
-                    header('Location: index.php?action=register&error=mailError');
+                    
                 }
             } else{
                 $errors['loginNew'] = 'username taken';
-                header('Location: index.php?action=register&error=logOld');
+                
             }
         } else {
             // require("view/landingSignup.php");
             // require("view/landingSignIn.php"); 
             require("view/landing.php");
-        }  
+        }
+        require("view/landing.php");  
     }
 
     function signIn($username,$password) {
