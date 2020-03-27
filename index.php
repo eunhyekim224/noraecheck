@@ -7,10 +7,7 @@ require("./controller/controller.php");
  */
 
 try {
-    if (isset($_SESSION['memberId'])){
-        $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-        showAllPlaylists($memberId);
-    }else if (isset($_REQUEST['action'])) {
+    if (isset($_REQUEST['action'])) {
         $action = $_REQUEST['action'];
         if ($action === 'showMyList') {
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
