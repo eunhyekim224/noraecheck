@@ -10,57 +10,65 @@
         require("view/landing.php");
     }
     
-    function signUp($email, $username, $password, $passwordConf,$error) {
+    function signUp($email, $username, $password, $passwordConf) {
         $memberManager = new MemberManager();
+        $errors = array(
+            "contextUp" => "signUp"
+        );
+        
+        $usernameInUse = $memberManager->getMember($username);
+
         if($username AND $password AND $passwordConf AND $email){
-            $usernameInUse = $memberManager->getMember($username);
+            // $usernameInUse = $memberManager->getMember($username);
             if(!$usernameInUse){
                 if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
-                    if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$password)){
+                    if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$password)) {
                         if ($username AND $password == $passwordConf){
                             $status = $memberManager->addMember($email,$username,$password);
                             header("location:index.php?action=login&success=1");
                         } else if ($password != $passwordCheck){
-                            header('Location: index.php?action=register&error=passConfError');
-                        }
+                            $errors['pwdConf'] = 'password does not match';
+                        } 
                     } else {
-                        header('Location: index.php?action=register&error=passError');
+                        $errors['pwd'] = 'please include 8 characters, upper/lower case letters, and digits';
                     }
                     
                 } else {
-                    header('Location: index.php?action=register&error=mailError');
+                    $errors['email'] = 'incorrect email';
+                    
                 }
             } else{
-                header('Location: index.php?action=register&error=logOld');
+                $errors['loginNew'] = 'username taken';
+                
             }
         } else {
             // require("view/landingSignup.php");
-            require("view/landing.php");
-        }  
-    }
-
-    function logIn($username,$password,$error,$status) {
-        $loginManager = new MemberManager();
-        if($username AND $password){
-            $userInfo = $loginManager->getMember($username);
-            //getMember confirms userId, password is checked below
-            if($userInfo){
-                if (password_verify($password, $userInfo['password'])){
-                        $_SESSION['username'] = $userInfo['username'];
-                        $_SESSION['memberId'] = $userInfo['id'];
-                        header('Location: index.php?action=showMyList');
-                } else {
-                    $error = 'passError';
-                    require("view/landing.php");
-                }
-            } else {
-                $error = 'logError';
-                require("view/landing.php");
-            }
-        }else{
-            $error = 'missingField';
+            // require("view/landingSignIn.php"); 
             require("view/landing.php");
         }
+        require("view/landing.php");  
+    }
+
+    function signIn($username,$password) {
+        $loginManager = new MemberManager();
+        $errors = array(
+            "context" => "signIn"
+        );
+       
+        $userInfo = $loginManager->getMember($username);
+        //getMember confirms userId, password is checked below
+        if($userInfo){
+            if (password_verify($password, $userInfo['password'])){
+                    $_SESSION['username'] = $userInfo['username'];
+                    $_SESSION['memberId'] = $userInfo['id'];
+                    header('Location: index.php?action=showMyList');
+            } else {
+                $errors['password'] = 'incorrect password';
+            }
+        } else {
+            $errors['username'] = 'there are no accounts with that ID';
+        }
+        require("view/landing.php");
     }
 
     function makePlaylist($memberId, $name) {
@@ -133,6 +141,11 @@
         $songAddManager = new SongManager();
         $songAdd = $songAddManager->addSong($newAddPlaylist, $singer, $song, $tj, $kumyoung);
         header('Location: index.php?action=search');
+    }
+
+    function showChallenge($memberId) {
+        $displayMode = 'challenge';
+        require("view/home.php");
     }
 
     function logout(){

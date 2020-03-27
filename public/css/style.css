@@ -300,29 +300,47 @@ a {
 
 .songListBrands {
     display: flex;
-     color: rgb(102, 96, 96);
+    color: white;
 }
 
 .songListBrandCodes {
     display: flex;
-    width: 14%;
+    width: 12%;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    box-shadow: 3px 5px rgb(187, 186, 186);
+    margin-right: 11px;
+    padding: 3px;
+    background-color: #8fd3f4;
+    font-weight: bolder;
+}
+
+.songListBrandCodes:hover {
+    background-color: #5fbbe9;
+}
+
+.songListBrandCodes:active {
+  background-color: #5fbbe9;
+  box-shadow: 3px 5px rgb(143, 142, 142);
+  transform: translateY(4px);
+}
+
+.songListBrandCodes label {
+    cursor: pointer;
+    margin-right: 7%;
 }
 
 .songListBrandCodes input {
     padding: 2%;
     width: 64%;
     text-align: center;
-    margin-left: 6%;
     margin-right: 8%;
-
     border-radius: 3px;
     border: none;
     background-color:transparent;
-    color: rgb(102, 96, 96);
-
+    color: white;
 }
-
-
 
 /* new playlist modal  */
 
@@ -870,6 +888,11 @@ margin: 1%;
 .brandCodes {
     display: flex;
     align-items: center;
+}
+
+.brandCodes .songListBrandCodes p {
+    padding: 1% 1%;
+    font-weight: lighter;
 }
 
 .resultOption {
