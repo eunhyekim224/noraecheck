@@ -26,10 +26,6 @@
                 <input type="submit" name="addToPlaylist" value="add" class="btn btnBlue">
                 <input type="button" name="cancel" value="Cancel" class="btn btnBlue">               
             </div>
-            
         </form>
-        
-        
-
     </div>
 </div>

@@ -21,7 +21,7 @@ include("topMenu.php");
     } else if ($displayMode == 'challenge') {
         include("challengeSetUp.php");
     }
-     ?>
+    ?>
         <!-- add divs with the list of songs from js function -->
     </section>   
     <?php include('nav.php'); ?>

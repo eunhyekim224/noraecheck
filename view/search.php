@@ -2,10 +2,11 @@
 <?php $style = 'style.css';?>
 
 <?php ob_start();?>
-<?php if (!$_SESSION['username']){
-    header("location:index.php");
-}
-$email = isset($_GET['email']) ? $_GET['email'] : ''
+<?php 
+    if (!$_SESSION['username']) {
+        header("location:index.php");
+    }
+    $email = isset($_GET['email']) ? $_GET['email'] : ''
 ?>
 <div class="mainWrapper homePage gothamPro">
     <input type='hidden' name='modalDisplay' id='modalDisplay' value=<?=$modalDisplay?>>

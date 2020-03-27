@@ -18,11 +18,9 @@
                            echo "<p class='error'>".$errors['loginNew']."</p>";
                         }        
                         ?>    
-                        <!-- <p class="error">that id has already been taken </p>  -->
                     </span>
                 </label>
             </p>
-
             <p class="signformP">
                 <label class="field a-field a-field_a2">
                     <input type="text" name="email" id="email" class="field__input a-field__input" placeholder="e.g. karaokelife@mail" required/>
@@ -33,7 +31,6 @@
                                 echo "<p class='error'>".$errors['email']."</p>";
                             }        
                             ?>   
-                            <!-- <p class="error">please enter a valid email address</p>  -->
                         </span>
                 </label>
             </p>
@@ -48,7 +45,6 @@
                                 echo "<p class='error'>".$errors['pwd']."</p>";
                             }        
                             ?>  
-                            <!-- <p class="error">@TODO : add verification</p>  -->
                         </span>
                 </label>
             </p>
@@ -63,7 +59,6 @@
                                 echo "<p class='error'>".$errors['pwdConf']."</p>";
                             }        
                             ?>  
-                            <!-- <p class="error">please make sure that your passwords are the same</p>  -->
                         </span>
                 </label>
             </p>
