@@ -134,6 +134,11 @@
         $songAdd = $songAddManager->addSong($newAddPlaylist, $singer, $song, $tj, $kumyoung);
         header('Location: index.php?action=search');
     }
+
+    function logout(){
+        session_destroy();
+        header("Location:index.php");
+    }
     
 
 

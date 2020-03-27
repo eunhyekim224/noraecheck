@@ -5,7 +5,9 @@
 <?php if (!$_SESSION['username']){
     header("location:index.php");
 }
+include("topMenu.php");
 ?>
+
 <div class="mainWrapper homePage">
     <!-- include banner php file instead of header tag -->
     <?php include("homeBanner.php"); ?>
