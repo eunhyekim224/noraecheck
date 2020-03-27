@@ -263,7 +263,7 @@ a {
 
 .songListBrands {
     display: flex;
-    color: rgb(238, 238, 238);
+    color: white;
 }
 
 .songListBrandCodes {
@@ -275,16 +275,16 @@ a {
     box-shadow: 3px 5px rgb(187, 186, 186);
     margin-right: 11px;
     padding: 3px;
-    background-color: rgb(102, 96, 96);
+    background-color: #8fd3f4;
     font-weight: bolder;
 }
 
 .songListBrandCodes:hover {
-    /* background-color: #a31a7a; */
+    background-color: #5fbbe9;
 }
 
 .songListBrandCodes:active {
-  /* background-color: #641f4f; */
+  background-color: #5fbbe9;
   box-shadow: 3px 5px rgb(143, 142, 142);
   transform: translateY(4px);
 }
@@ -302,7 +302,7 @@ a {
     border-radius: 3px;
     border: none;
     background-color:transparent;
-    color: rgb(238, 238, 238);
+    color: white;
 }
 
 /* new playlist modal  */
