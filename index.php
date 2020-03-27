@@ -61,6 +61,9 @@ try {
             if ($songId) {
                 deleteSong($songId);
             }  
+        } else if ($action === 'showChallenge') {
+            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            showChallenge($memberId);
         } else if ($action === 'searchModal') {
             $song = isset($_REQUEST['hiddenSong']) ? $_REQUEST['hiddenSong'] : '';
             $singer = isset($_REQUEST['hiddenSinger']) ? $_REQUEST['hiddenSinger'] : '';
@@ -96,9 +99,6 @@ try {
             } else {
                 throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
             } 
-        } else if ($action === 'showChallenge') {
-            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-            showChallenge($memberId);
         } else {
             $error = isset($_GET['error']) ? $_GET['error'] : '';
             $status = isset($_GET['success']) ? $_GET['success'] : '';

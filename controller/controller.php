@@ -136,6 +136,8 @@
     }
 
     function showChallenge($memberId) {
+        $playlistManager = new PlaylistManager();
+        $playlists = $playlistManager->getAllPlaylists($memberId);
         $displayMode = 'challenge';
         require("view/home.php");
     }
