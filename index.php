@@ -7,7 +7,10 @@ require("./controller/controller.php");
  */
 
 try {
-    if (isset($_REQUEST['action'])) {
+    if (isset($_SESSION['memberId'])){
+        $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+        showAllPlaylists($memberId);
+    }else if (isset($_REQUEST['action'])) {
         $action = $_REQUEST['action'];
         if ($action === 'showMyList') {
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
@@ -15,7 +18,10 @@ try {
         } else if ($action === 'showMySongs') {
             $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';
             showSongs($playlistId); 
-        } else if ($action === 'register') {
+        }
+        else if ($action === 'logout') {
+            logout(); 
+        }  else if ($action === 'register') {
             $username = isset($_POST['loginNew']) ? $_POST['loginNew'] : '';
             $pass1 = isset($_POST['pwd']) ? $_POST['pwd'] : '';
             $pass2 = isset($_POST['pwdConf']) ? $_POST['pwdConf'] : '';
