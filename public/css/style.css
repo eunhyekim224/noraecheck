@@ -121,6 +121,10 @@ a {
     background-position: right center;
 }
 
+.btn:focus {
+    outline: none;
+}
+
 .btnBlue,
 #menuIcons li {
     background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 20%, #8fd3f4 71%, #84fab0 100%);
@@ -1070,6 +1074,81 @@ label[for=playlistId]{
 .modalContentSearch form {
     height: 40%;
 }
+
+/* challenge page style */
+
+#challengeWrapper {
+    height: 100%;
+}
+
+#challengeWrapper form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#challengeWrapper h1 {
+    padding-left: 0;
+}
+
+#challengeSingers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 45%;
+}
+
+#listOfSingers {
+    border: 1px solid;
+    height: 43%;
+    width: 30%;
+    margin-top: 2%;
+}
+
+#challengeSingers form {
+    display: flex;
+    flex-direction: column;
+}
+
+#challengeSingers input {
+    height: 30px;
+    font-size: 1.5em;
+}
+
+#challengeSingers label {
+    padding: 25px;
+    font-size: 2em;
+}
+
+#challengeSongs {
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#scoreOptionWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#chalPlaylistOptionsBtns {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2%;
+}
+
+#chalPlaylistOptionsBtns button {
+    padding: 1.5%;
+    border: none;
+}
+
+#selectPlaylist, #selectAllSongs {
+    display: none;
+}
+
 
 
 /**********landingSignup Style***********/
