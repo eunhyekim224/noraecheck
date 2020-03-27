@@ -95,7 +95,10 @@ try {
             search($memberId,$searchCache,$categoryCache);      
             } else {
                 throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
-            }
+            } 
+        } else if ($action === 'showChallenge') {
+            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            showChallenge($memberId);
         } else {
             $error = isset($_GET['error']) ? $_GET['error'] : '';
             $status = isset($_GET['success']) ? $_GET['success'] : '';

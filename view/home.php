@@ -16,8 +16,10 @@ include("topMenu.php");
     <?php
     if ($displayMode == 'playlists'){
         include("homeMyList.php");
-    } else {
+    } else if ($displayMode == 'songs') {
         include("playlistSongs.php");
+    } else if ($displayMode == 'challenge') {
+        include("challengeSetUp.php");
     }
      ?>
         <!-- add divs with the list of songs from js function -->
