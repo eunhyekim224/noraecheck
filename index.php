@@ -8,7 +8,7 @@ require("./controller/controller.php");
 
 try {
     $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
-    if (isset($_SESSION['memberId'])){
+    if(isset($_SESSION['memberId'])){
         if (isset($_REQUEST['action'])) {
             if ($action === 'showMyList') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
@@ -24,14 +24,11 @@ try {
                 $pass1 = isset($_POST['pwd']) ? $_POST['pwd'] : '';
                 $pass2 = isset($_POST['pwdConf']) ? $_POST['pwdConf'] : '';
                 $email = isset($_POST['email']) ? $_POST['email'] : '';
-                $error = isset($_GET['error']) ? $_GET['error'] : '';
-                signUp($email,$username,$pass1,$pass2,$error);
+                signUp($email,$username,$pass1,$pass2);
             } else if ($action === 'login') {
                 $username = isset($_POST['username']) ? $_POST['username'] : '';
                 $password = isset($_POST['password']) ? $_POST['password'] : '';
-                $error = isset($_GET['error']) ? $_GET['error'] : '';
-                $status = isset($_GET['success']) ? $_GET['success'] : '';
-                logIn($username,$password,$error,$status);
+                signIn($username,$password);
             } else if ($action === 'newPlaylist') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 $playlistName = isset($_POST['playlistName']) ? $_POST['playlistName'] : '';
@@ -39,6 +36,8 @@ try {
                     showAllPlaylists($memberId);
                 } else if (isset($memberId) && isset($playlistName) && strlen(trim($playlistName)) > 0) {
                     makePlaylist($_SESSION['memberId'], $_POST['playlistName']);
+                } else {
+                    throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
                 }
             } else if ($action === 'editPlaylist') {
                 if (isset($_POST['newPlaylistName']) && isset($_POST['playlistId'])) {
@@ -93,27 +92,38 @@ try {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 $searchCache = isset($_REQUEST['searchCache']) ? $_REQUEST['searchCache'] : '';
                 $categoryCache = isset($_REQUEST['categoryCache']) ? $_REQUEST['categoryCache'] : '';
-                search($memberId,$searchCache,$categoryCache);      
-                } else {
-                    throw new PDOException("issue with showAllPlaylists(username) - unable to fetch the playlists!");
-                }
+                search($memberId,$searchCache,$categoryCache);     
+            } else if ($action === 'showChallenge') {
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                showChallenge($memberId);
             } else {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 showAllPlaylists($memberId); 
             }
-        } else if ($action === 'login') {
-            $username = isset($_POST['username']) ? $_POST['username'] : '';
-            $password = isset($_POST['password']) ? $_POST['password'] : '';
-            $error = isset($_GET['error']) ? $_GET['error'] : '';
-            $status = isset($_GET['success']) ? $_GET['success'] : '';
-            logIn($username,$password,$error,$status);
         } else {
-            $error = isset($_GET['error']) ? $_GET['error'] : '';
-            $status = isset($_GET['success']) ? $_GET['success'] : '';
-            showLandingPage($error,$status);
-        }
-    
+            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            showAllPlaylists($memberId); 
+        } 
+        
+    } else if ($action === 'register') {
+        $username = isset($_POST['loginNew']) ? $_POST['loginNew'] : '';
+        $pass1 = isset($_POST['pwd']) ? $_POST['pwd'] : '';
+        $pass2 = isset($_POST['pwdConf']) ? $_POST['pwdConf'] : '';
+        $email = isset($_POST['email']) ? $_POST['email'] : '';
+        signUp($email,$username,$pass1,$pass2);
+    } else if ($action === 'login') {
+        $username = isset($_POST['username']) ? $_POST['username'] : '';
+        $password = isset($_POST['password']) ? $_POST['password'] : '';
+        signIn($username,$password);
+    } else {
+        $error = isset($_GET['error']) ? $_GET['error'] : '';
+        $status = isset($_GET['success']) ? $_GET['success'] : '';
+        showLandingPage($error,$status);
     }
+
+
+
+}
     catch(PDOException $e) {
         $msg = $e->getMessage();
         $code = $e->getCode();
