@@ -128,6 +128,11 @@
         $songAdd = $songAddManager->addSong($newAddPlaylist, $singer, $song, $tj, $kumyoung);
         header('Location: index.php?action=search');
     }
+
+    function showChallenge($memberId) {
+        $displayMode = 'challenge';
+        require("view/home.php");
+    }
     
 
 
