@@ -149,7 +149,6 @@ a {
 }
 
 #menuIcons {
-    /* border: 1px solid red; */
     margin: 0;
     padding: 0;
     height: 100%;
@@ -239,7 +238,6 @@ a {
     margin-right: 3%;
     padding: 0.5%;
     border-radius: 10px;
-    /* border: 1px solid red; */
 }
 
 #mySongList .songImgInPlaylistSongs {
@@ -299,6 +297,32 @@ a {
     text-decoration: none;
     color: white;
 }
+
+.songListBrands {
+    display: flex;
+     color: rgb(102, 96, 96);
+}
+
+.songListBrandCodes {
+    display: flex;
+    width: 14%;
+}
+
+.songListBrandCodes input {
+    padding: 2%;
+    width: 64%;
+    text-align: center;
+    margin-left: 6%;
+    margin-right: 8%;
+
+    border-radius: 3px;
+    border: none;
+    background-color:transparent;
+    color: rgb(102, 96, 96);
+
+}
+
+
 
 /* new playlist modal  */
 
@@ -553,6 +577,70 @@ img.minusIcon {
 }
 
 #areYouSure .areYouSureBtns input, .areYouSureBtns input{
+    height: 63px;
+    border: none;
+    padding: 4% 5%;
+    font-size: 0.6em;
+    width: 38%;
+    cursor: pointer;
+}
+
+/* edit playlist */
+
+.editPlaylistBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.editPlaylistContent, #editBtns{
+    display: flex;
+}
+.editPlaylistContent {
+    justify-content: center;
+    align-items: center;
+    margin: 10% 0 1% 0;
+}
+.albumIcon {
+    width: 25%;
+    position: relative;
+}
+.albumIcon div {
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+    font-size: 0.5em;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.40);
+    border-radius: 0 0 10px 10px;
+}
+#editPlaylistImg {
+    width: 100%;
+    background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+}
+#editPlaylistInfo {
+    text-align: left;
+    width: 30%;
+    margin: 0 0 0 5%;
+}
+#newPlaylistName {
+    width: 100%;
+    border-radius: 3px;
+    border: none;
+    background-color: rgb(238, 238, 238);
+    font-size: 0.7em;
+    color: rgb(206, 206, 206);
+    padding: 0 0 0 3%;
+}
+#editPlaylistInfo p {
+    font-size: 0.5em;
+    margin: 10% 0;
+}
+#editBtns {
+    justify-content: center;
+    width: 60%;
+}
+#editBtns input {
     height: 63px;
     border: none;
     padding: 4% 5%;
@@ -952,9 +1040,6 @@ label[for=playlistId]{
     font-size:4vh;
 }
 
-
-
-
 #playlistId option {
     padding: 30px;
 }
@@ -1027,5 +1112,3 @@ label[for=playlistId]{
     margin-left: 10%;
     margin-right: 10%;
 } */
-
-

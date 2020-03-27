@@ -43,10 +43,6 @@ try {
                 makePlaylist($_SESSION['memberId'], $_POST['playlistName']);
             }
         } else if ($action === 'editPlaylist') {
-            // $newPlaylistName = isset($_POST['newPlaylistName']) ? $_POST['newPlaylistName'] : '';
-            // $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';
-            // editPlaylist($newPlaylistName, $playlistId);
-            echo $_POST['newPlaylistName'].'----'.$_POST['playlistId'];
             if (isset($_POST['newPlaylistName']) && isset($_POST['playlistId'])) {
                 editPlaylist(($_POST['newPlaylistName']), $_POST['playlistId']);
             }
@@ -54,12 +50,20 @@ try {
             if (isset($_SESSION['memberId']) && isset($_SESSION['playlistId'])) {
                 deletePlaylist(($_SESSION['playlistId']), $_SESSION['memberId']);
             }
+        } else if ($action === 'editBrandCode') {
+            $playlistId = isset($_POST['playlistId']) ? $_POST['playlistId'] : '';
+            $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
+            $tjCode = isset($_POST['tjCode']) ? $_POST['tjCode'] : '';
+            $kumyoungCode = isset($_POST['kumyoungCode']) ? $_POST['kumyoungCode'] : '';
+            if ($playlistId && $songId) {
+                editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode);
+            }  
         } else if ($action === 'deleteSong') {
             $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
             echo $songId;
             if ($songId) {
                 deleteSong($songId);
-            }
+            }  
         } else if ($action === 'searchModal') {
             $song = isset($_REQUEST['hiddenSong']) ? $_REQUEST['hiddenSong'] : '';
             $singer = isset($_REQUEST['hiddenSinger']) ? $_REQUEST['hiddenSinger'] : '';
@@ -100,6 +104,7 @@ try {
             $status = isset($_GET['success']) ? $_GET['success'] : '';
             showLandingPage($error,$status);
         }
+    
     }
     catch(PDOException $e) {
         $msg = $e->getMessage();
