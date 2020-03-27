@@ -146,6 +146,7 @@ padding-bottom: 0;
     }
     
     /*_____ search page media queries_____ */
+   
     .searchOptions {
         width: 20%;
     }
@@ -160,28 +161,45 @@ padding-bottom: 0;
     }
     .searchOptionExpanded {
         width: 30%;
-        font-size: 3vh;
+        font-size: 2.5vh;
         padding-left: 3%;
         padding-right: 3%;
     }
     #searchOptions>div:hover,
-    #submit:hover {
+    #resetSearch:hover {
         background-color: rgb(240, 239, 239);
     }
-    #submit {
+    #resetSearch {
         background-color: rgb(240, 239, 239);
         border: none;
-        width: 15%;
+        width: 20%;
+        font-size: 2.5vh;
         border-radius: 0px 15px 15px 0px;
     }
+    .resultOption p{
+        font-size: 2vh;
+
+    }
     .entry {
-        width: 65%;
+        width: 50%;
         font-size: 4vh;
     }
     .compactEntry {
         width: 35%;
         font-size: 3vh;
     }
+    #results{
+        height:90%;
+    }
+    .modalContentSearch{
+        margin-top: 30%;
+        width: 80%;
+    }
+
+    #playlistName{
+        width:60%;
+    }
+
 }
 
 
@@ -327,6 +345,9 @@ padding-bottom: 0;
     }
     
     /*_____ search page media queries_____ */
+    #resetSearch{
+        width:30%;
+    }
     .searchOptions {
         width: 20%;
     }
@@ -346,10 +367,10 @@ padding-bottom: 0;
         padding-right: 3%;
     }
     #searchOptions>div:hover,
-    #submit:hover {
+    #resetSearch:hover {
         background-color: rgb(240, 239, 239);
     }
-    #submit {
+    #resetSearch {
         background-color: rgb(240, 239, 239);
         border: none;
         width: 15%;

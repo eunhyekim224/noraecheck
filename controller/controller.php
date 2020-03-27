@@ -32,6 +32,7 @@
                     } else {
                         $errors['pwd'] = 'please include 8 characters, upper/lower case letters, and digits';
                     }
+                    
                 } else {
                     $errors['email'] = 'incorrect email';
                     
@@ -83,11 +84,25 @@
         require("view/home.php");    
     }
 
-    function showSongs($playlistName,$playlistId) {
+    function showSongs($playlistId) {
+        $playlistManager = new PlaylistManager();
         $songManager = new SongManager();
+        $mainPlaylist = $playlistManager->getMainPlaylist($playlistId);
         $songDisplay = $songManager->getSongs($playlistId);
         $displayMode = 'songs';
         require("view/home.php");
+    }
+
+    function editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode) {
+        $songManager = new SongManager();
+        $editBrandCodes = $songManager->editBrandCodes($songId,$tjCode,$kumyoungCode);
+        header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
+    }
+
+    function editPlaylist($newPlaylistName,$playlistId) {
+        $playlistManager = new PlaylistManager();
+        $editPlaylist = $playlistManager->editPlaylistName($newPlaylistName,$playlistId);
+        header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
     }
 
     function deletePlaylist($playlistId, $memberId) {
@@ -95,6 +110,13 @@
         $playlistManager->deletePlaylist($playlistId);
         header('Location: index.php?action=showMyList');
     }
+
+    function deleteSong($songId) {
+        $songManager = new SongManager();
+        $playlistId = $songManager->deleteSong($songId);
+        header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
+    }
+
     function search($memberId,$searchCache,$categoryCache) {
         $playlistAddManager = new PlaylistManager();
         $playlistsAdd = $playlistAddManager->getAllPlaylists($memberId);
@@ -116,13 +138,19 @@
     function addSongToNewPlaylist($memberId,$playlistName,$singer,$song,$tj,$kumyoung) {
         $playlistAddManager = new PlaylistManager();
         $newAddPlaylist = $playlistAddManager->addPlaylist($memberId, $playlistName);
-        $getPlaylist = $playlistAddManager->getPlaylist($memberId, $playlistName);
-        $gotPlaylist = $getPlaylist->fetch();
-        $newPlaylistId = $gotPlaylist['playlistId'];
         $songAddManager = new SongManager();
-        echo $playlistName .$singer .$song .$tj .$kumyoung;
-        $songAdd = $songAddManager->addSong($newPlaylistId, $singer, $song, $tj, $kumyoung);
+        $songAdd = $songAddManager->addSong($newAddPlaylist, $singer, $song, $tj, $kumyoung);
         header('Location: index.php?action=search');
+    }
+
+    function showChallenge($memberId) {
+        $displayMode = 'challenge';
+        require("view/home.php");
+    }
+
+    function logout(){
+        session_destroy();
+        header("Location:index.php");
     }
     
 

@@ -9,7 +9,7 @@
             </a>
         </li>
         <li class="neonBlue">
-            <a href="#" title="Go to challenge">
+            <a href="index.php?action=showChallenge" title="Go to challenge">
                 <div class="navIcons">
                     <img src="public/images/challenge.png"/>
                 </div>

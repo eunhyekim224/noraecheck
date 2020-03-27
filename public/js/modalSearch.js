@@ -25,14 +25,22 @@ function closeModal(modals, cancelButtons) {
 searchNewPlaylist = document.getElementById("searchNewPlaylist");
 searchNewPlaylistSubmit = document.getElementById("searchNewPlaylistSubmit");
 superBox = document.getElementsByClassName('superBox')[0];
-searchNewPlaylistSubmit.addEventListener('click', () => {
-    searchNewPlaylist.submit();
-});
-superBox = document.getElementsByClassName('superBox')[0];
-newPlaylistBtn = document.getElementsByName('newPlaylist')[0];
-newPlaylistBtn.addEventListener('click', () => {
-    superBox.parentNode.removeChild(superBox);
-    console.log("works");
-    searchNewPlaylist.classList.add('visibleSearchNewPlaylist');
+// searchNewPlaylistSubmit.addEventListener('click', ()=> {
+//     searchNewPlaylist.submit();
+// });
 
+playlistId = document.getElementById('playlistId');
+playlists = document.getElementById('playlistId').children;
+newPlaylistBtn = document.getElementsByName('newPlaylist')[0];
+label = document.getElementsByTagName('label')[0];
+modalFormAction = document.getElementById('modalFormAction');
+newPlaylistInputText = document.getElementById('playlistName');
+newPlaylistBtn.addEventListener('click', ()=> {
+    playlistId.parentNode.removeChild(playlistId);
+    newPlaylistBtn.parentNode.removeChild(newPlaylistBtn);
+    label.parentNode.removeChild(label);
+    modalFormAction.value = "addSongToNewPlaylist";
+    searchNewPlaylist.classList.add('visibleSearchNewPlaylist');
+    newPlaylistInputText.focus();
+    
 });

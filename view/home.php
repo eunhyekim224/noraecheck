@@ -5,7 +5,9 @@
 <?php if (!$_SESSION['username']){
     header("location:index.php");
 }
+include("topMenu.php");
 ?>
+
 <div class="mainWrapper homePage">
     <!-- include banner php file instead of header tag -->
     <?php include("homeBanner.php"); ?>
@@ -14,8 +16,10 @@
     <?php
     if ($displayMode == 'playlists'){
         include("homeMyList.php");
-    } else {
+    } else if ($displayMode == 'songs') {
         include("playlistSongs.php");
+    } else if ($displayMode == 'challenge') {
+        include("challengeSetUp.php");
     }
      ?>
         <!-- add divs with the list of songs from js function -->
