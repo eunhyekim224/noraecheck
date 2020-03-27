@@ -29,13 +29,16 @@
             <p id="songNameText" class="darkGrey"><?= $song['songName']; ?></p>
             <p>by <?= $song['singerName']; ?></p>
             <form method="post" action="index.php" class="songListBrands darkGrey">
+                <input type="hidden" name="action" value="editBrandCode">
+                <input type="hidden" name="songId" value=<?= $song['songId']; ?>>
+                <input type="hidden" name="playlistId" value=<?= $_SESSION['playlistId']; ?>>
                 <div class="songListBrandCodes">
-                    <label for="tjCode">TJ</label>
-                    <input type="text" name=tjCode maxlength=10 value=<?= $song['tjCode'];?>>
+                    <label for="tjCode<?= $song['songId']; ?>">TJ</label>
+                    <input type="text" name="tjCode" maxlength=10 id="tjCode<?= $song['songId']; ?>" autocomplete="off" value=<?= $song['tjCode'];?> >
                 </div>
                 <div class="songListBrandCodes">
-                    <label for="kumyoungCode">KY</label>
-                    <input type="text" name=kumyoungCode maxlength=10 value=<?= $song['kumyoungCode'];?>>
+                    <label for="kumyoungCode<?= $song['songId']; ?>">KY</label>
+                    <input type="text" name="kumyoungCode" maxlength=10 id="kumyoungCode<?= $song['songId']; ?>" autocomplete="off" value=<?= $song['kumyoungCode'];?> >
                 </div>
             </form>
         </div>
@@ -55,3 +58,4 @@
 <script src="./public/js/modalPlaylistOptions.js"></script>
 <script src="./public/js/modalEditPlaylist.js"></script>
 <script src="./public/js/modalDeleteSong.js"></script>
+<script src="./public/js/editBrandCode.js"></script>

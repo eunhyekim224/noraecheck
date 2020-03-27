@@ -60,6 +60,24 @@
             return $songCount;
         }
 
+        public function editBrandCodes($songId,$tjCode,$kumyoungCode) {
+            $tjCode = ($tjCode) ? $tjCode : null;
+            $kumyoungCode = ($kumyoungCode) ? $kumyoungCode : null;
+            $song = $songId;
+            $editCodes = $this->_db->prepare("UPDATE songs SET tjCode = :tjCode, kumyoungCode = :kumyoungCode WHERE id = :song");
+            $editCodes->bindParam(':song',$song,PDO::PARAM_STR);
+            $editCodes->bindParam(':tjCode',$tjCode,PDO::PARAM_INT);
+            $editCodes->bindParam(':kumyoungCode',$kumyoungCode,PDO::PARAM_INT);
+            $status = $editCodes->execute();
+                   
+            if (!$status) {
+                throw new PDOException('Unable to add song!');
+            } 
+
+            $editCodes->closeCursor();  
+
+        }
+
         public function deleteSong($songId) {
             $params = array(
                 'songId' => $songId

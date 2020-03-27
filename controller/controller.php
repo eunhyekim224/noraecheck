@@ -85,6 +85,12 @@
         require("view/home.php");
     }
 
+    function editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode) {
+        $songManager = new SongManager();
+        $editBrandCodes = $songManager->editBrandCodes($songId,$tjCode,$kumyoungCode);
+        header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
+    }
+
     function editPlaylist($newPlaylistName,$playlistId) {
         $playlistManager = new PlaylistManager();
         $editPlaylist = $playlistManager->editPlaylistName($newPlaylistName,$playlistId);
@@ -132,6 +138,11 @@
     function showChallenge($memberId) {
         $displayMode = 'challenge';
         require("view/home.php");
+    }
+
+    function logout(){
+        session_destroy();
+        header("Location:index.php");
     }
     
 
