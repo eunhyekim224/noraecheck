@@ -21,7 +21,7 @@ try {
             $pass1 = isset($_POST['pwd']) ? $_POST['pwd'] : '';
             $pass2 = isset($_POST['pwdConf']) ? $_POST['pwdConf'] : '';
             $email = isset($_POST['email']) ? $_POST['email'] : '';
-            signUp($email,$username,$pass1,$pass2,$error);
+            signUp($email,$username,$pass1,$pass2);
         } else if ($action === 'login') {
             $username = isset($_POST['username']) ? $_POST['username'] : '';
             $password = isset($_POST['password']) ? $_POST['password'] : '';

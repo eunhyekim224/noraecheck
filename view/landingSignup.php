@@ -1,4 +1,4 @@
-<div id="SignUp" class="modal">
+<div id="SignUp" class="modal" style="display:<?php if(isset($errors) AND isset($errors['contextup']) AND $errors['contextup'] == "signUp")  { echo "block";} ?>">
     <form class="modal-content animate" id="signUpForm" action="index.php" method="POST">
         <input type="hidden" name="action" id="action" value="register"/>
         <div class="imgcontainer">
@@ -13,7 +13,12 @@
                     <input type="text" name="loginNew" id="loginNew" maxlength="15" class="field__input a-field__input" placeholder="e.g. mrs.trot102" required/>
                     <span class="a-field__label-wrap">
                         <label id="loginland" for="loginNew" class="a-field__label">Login</label>
-                        <p class="error">that id has already been taken </p> 
+                        <?php 
+                        if(isset($errors) AND isset($errors['loginNew'])) {
+                           echo "<p class='error'>".$errors['loginNew']."</p>";
+                        }        
+                        ?>    
+                        <!-- <p class="error">that id has already been taken </p>  -->
                     </span>
                 </label>
             </p>
@@ -23,7 +28,12 @@
                     <input type="text" name="email" id="email" class="field__input a-field__input" placeholder="e.g. karaokelife@mail" required/>
                         <span class="a-field__label-wrap">
                             <label id="emailland" type="email" class="a-field__label">Email</label>
-                            <p class="error">please enter a valid email address</p> 
+                            <?php 
+                            if(isset($errors) AND isset($errors['email'])) {
+                                echo "<p class='error'>".$errors['email']."</p>";
+                            }        
+                            ?>   
+                            <!-- <p class="error">please enter a valid email address</p>  -->
                         </span>
                 </label>
             </p>
@@ -33,7 +43,12 @@
                     <input type="password" name="pwd" id="pwd" class="field__input a-field__input" placeholder="at lease 8 characters" required/>
                         <span class="a-field__label-wrap">
                             <label id="pwdland" for="pwd" class="a-field__label">Password</label>
-                            <p class="error">@TODO : add verification</p> 
+                            <?php 
+                            if(isset($errors) AND isset($errors['pwd'])) {
+                                echo "<p class='error'>".$errors['pwd']."</p>";
+                            }        
+                            ?>  
+                            <!-- <p class="error">@TODO : add verification</p>  -->
                         </span>
                 </label>
             </p>
@@ -43,7 +58,12 @@
                     <input type="password" name="pwdConf" id="pwdConf" class="field__input a-field__input" placeholder="same password" required/>
                         <span class="a-field__label-wrap">
                             <label id="conpwdland" type="pwdConf" class="a-field__label">Confirm Password</label>
-                            <p class="error">please make sure that your passwords are the same</p> 
+                            <?php 
+                            if(isset($errors) AND isset($errors['pwdConf'])) {
+                                echo "<p class='error'>".$errors['pwdConf']."</p>";
+                            }        
+                            ?>  
+                            <!-- <p class="error">please make sure that your passwords are the same</p>  -->
                         </span>
                 </label>
             </p>

@@ -14,7 +14,7 @@
     </div>
     <div id="accountBtns">
         <button type="button" id="signInText" class="btn" onclick="document.getElementById('SignIn').style.display='block'">Sign in</button>
-        <button id="createAccount" class="btn" onclick="document.getElementById('SignUp').style.display='block'">Create Account</button>
+        <button type="button" id="createAccount" class="btn" onclick="document.getElementById('SignUp').style.display='block'">Create Account</button>
     </div>
     
     <?php 
