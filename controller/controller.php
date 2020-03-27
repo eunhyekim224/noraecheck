@@ -140,6 +140,11 @@
         require("view/home.php");
     }
 
+    function showProfile($memberId) {
+        $displayMode = 'profile';
+        require("view/home.php");
+    }
+
     function logout(){
         session_destroy();
         header("Location:index.php");
