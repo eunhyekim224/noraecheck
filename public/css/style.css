@@ -1081,10 +1081,23 @@ label[for=playlistId]{
     height: 100%;
 }
 
-#challengeWrapper form {
+#challengeScndWrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+#singerFlex {
+    width: 50%;
+    height: 100%;
+}
+
+#songsAndScoreFlex {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 #challengeWrapper h1 {
@@ -1095,61 +1108,88 @@ label[for=playlistId]{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 45%;
+    height: 100%;
+    justify-content: center;
+}
+
+#singerInput {
+    width: 56%;
 }
 
 #listOfSingers {
     border: 1px solid;
     height: 43%;
-    width: 30%;
-    margin-top: 2%;
-}
-
-#challengeSingers form {
-    display: flex;
-    flex-direction: column;
+    width: 55%;
+    margin-top: 5%;
 }
 
 #challengeSingers input {
-    height: 30px;
+    height: 38px;
     font-size: 1.5em;
+    width: 81%;
+    border: none;
+    border-radius: 10px;
+}
+
+#singerInput button {
+    border: none;
+    border-radius: 10px;
+    height: 103%;
+    padding-top: -11px;
+    vertical-align: top;
+    color: darkgrey;
+}
+
+#singerInput button:focus {
+    outline: 0;
 }
 
 #challengeSingers label {
     padding: 25px;
-    font-size: 2em;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 #challengeSongs {
-    height: 45%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    height: 25%;
 }
 
 #scoreOptionWrapper {
     display: flex;
-    justify-content: center;
+    margin: 10%;
 }
 
 #chalPlaylistOptionsBtns {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom: 2%;
 }
 
-#chalPlaylistOptionsBtns button {
-    padding: 1.5%;
+#chalPlaylistOptionsBtns label {
+    padding: 3.5%;
     border: none;
+    font-weight: bold;
+}
+
+#chalPlaylistOptionsBtns input[type=radio] {
+    display: none;
 }
 
 #selectPlaylist, #selectAllSongs {
     display: none;
 }
 
-
+#startChalBtn {
+    border: none;
+    background-color: #f460faff;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 0;
+    padding: 20px;
+}
 
 /**********landingSignup Style***********/
 

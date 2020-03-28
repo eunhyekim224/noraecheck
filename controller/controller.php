@@ -142,6 +142,18 @@
         require("view/home.php");
     }
 
+    function insertChallengeInfo($memberId) {
+        echo '<strong>List of all singers: </strong>'.$_POST['allSingers'];
+        if ($_POST['chalOptions'] === 'allPlaylists') {
+            echo '<br><strong>Option to choose songs from: </strong>'. $_POST['chalOptions'];
+            echo '<br><strong>Number of songs: </strong>'.$_POST['noOfSongs'];
+        } else if ($_POST['chalOptions'] === 'onePlaylist') {
+            echo '<br><strong>Option to choose songs from: </strong>'. $_POST['chalOptions'];
+            echo '<br><strong>Playlist ID selected: </strong>'.$_POST['playlists'];
+        }
+        echo '<br><strong>Enter score option: </strong>'.$_POST['scoreOption'];
+    }
+
     function logout(){
         session_destroy();
         header("Location:index.php");

@@ -64,6 +64,9 @@ try {
         } else if ($action === 'showChallenge') {
             $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
             showChallenge($memberId);
+        } else if ($action ==='insertChallengeInfo') {
+            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+            insertChallengeInfo($memberId);
         } else if ($action === 'searchModal') {
             $song = isset($_REQUEST['hiddenSong']) ? $_REQUEST['hiddenSong'] : '';
             $singer = isset($_REQUEST['hiddenSinger']) ? $_REQUEST['hiddenSinger'] : '';
