@@ -17,44 +17,38 @@ function showChallengeOptions(btn, option, previousElem) {
 
 // display singer names 
 
-let singersToDisplay = [];
-let allSingerNames = [];
-displaySingersTrigger('singer', 'singerSubmit', 'listOfSingers', '#listOfSingers li');
+displaySingerTrigger('singer', 'singerSubmit', 'listOfSingers', '#listOfSingers li');
 
-function displaySingersTrigger(singerInputId, enterBtnId, listId, singerId) {
+function displaySingerTrigger(singerInputId, enterBtnId, listId) {
     let singer = document.getElementById(singerInputId);
     let enterBtn = document.getElementById(enterBtnId);
-    singer.addEventListener('keyup', (e) => {
-        if (e.keyCode === 13) {
-            addSinger(singer, listId);
-            singer.value = '';
-            singersToDisplay = [];
-        }
-    });
-    enterBtn.addEventListener('click', (e) => {
-        addSinger(singer, listId);
-        singer.value = '';
-        singersToDisplay = [];
-    });
+        singer.addEventListener('keyup', (e) => {
+            if (e.keyCode === 13) {
+                if (singer.value.length > 0) {
+                    displaySinger(singer, listId);
+                    singer.value = '';
+                }    
+            }
+        });
+        enterBtn.addEventListener('click', (e) => {
+            if (singer.value.length > 0) {
+                displaySinger(singer, listId);
+                singer.value = '';
+            }
+        });
 }
 
-function addSinger(singer, listId) {
-    singersToDisplay.push(singer.value);
-    displaySingers(singersToDisplay, listId);
-}
-
-function displaySingers(singers, listId) {
+function displaySinger(singer, listId) {
     let listOfSingers = document.getElementById(listId);
-    for (let i=0, c=singers.length; i<c; i++) {
-            let singerLi = document.createElement('li');
-            let singer = document.createTextNode(singers[i]);
-            singerLi.appendChild(singer);
-            listOfSingers.appendChild(singerLi);
-    }
+    let singerLi = document.createElement('li');
+    let singerName = document.createTextNode(singer.value);
+    singerLi.appendChild(singerName);
+    listOfSingers.appendChild(singerLi);
 }   
 
 // send singer names to backend 
 
+let allSingerNames = [];
 addSingersTrigger('#listOfSingers li','#allSingers', '#songsAndScoreFlex')
 
 function addSingersTrigger(singerId, hiddenInputId, formId) {

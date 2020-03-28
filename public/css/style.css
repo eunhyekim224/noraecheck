@@ -1117,10 +1117,17 @@ label[for=playlistId]{
 }
 
 #listOfSingers {
-    border: 1px solid;
     height: 43%;
     width: 55%;
     margin-top: 5%;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-left: 0;
+}
+
+#listOfSingers li {
+    font-size: 1.5em;
+    padding: 2%;
 }
 
 #challengeSingers input {
@@ -1129,6 +1136,7 @@ label[for=playlistId]{
     width: 81%;
     border: none;
     border-radius: 10px;
+    color: rgb(146, 143, 143);
 }
 
 #singerInput button {
@@ -1137,7 +1145,16 @@ label[for=playlistId]{
     height: 103%;
     padding-top: -11px;
     vertical-align: top;
-    color: darkgrey;
+    color: rgb(146, 143, 143);
+    box-shadow: 3px 5px rgb(187, 186, 186);
+}
+
+#singerInput button:active, 
+#singerInput button:hover {
+    background-color: rgb(156, 156, 156);
+    color: white;
+    box-shadow: 3px 5px rgb(143, 142, 142);
+    transform: translateY(4px);
 }
 
 #singerInput button:focus {
@@ -1172,7 +1189,14 @@ label[for=playlistId]{
     padding: 3.5%;
     border: none;
     font-weight: bold;
+    box-shadow: 3px 5px rgb(143, 142, 142);
 }
+
+#chalPlaylistOptionsBtns label:active,
+#chalPlaylistOptionsBtns label:hover {
+    box-shadow: 3px 5px rgb(143, 142, 142);
+}
+
 
 #chalPlaylistOptionsBtns input[type=radio] {
     display: none;
@@ -1189,7 +1213,15 @@ label[for=playlistId]{
     font-size: 1.3em;
     margin: 0;
     padding: 20px;
+    box-shadow: 3px 5px rgb(187, 186, 186);
 }
+
+#startChalBtn:hover, 
+#startChalBtn:active {
+    box-shadow: 3px 5px rgb(143, 142, 142);
+    transform: translateY(4px);
+}
+
 
 /**********landingSignup Style***********/
 
