@@ -27,34 +27,34 @@ a {
     text-decoration: none;
 }
 
+
 /* top menu css */
 
-#topHeader{
-    width:90%;
-    display:flex;
-    flex-direction:column;
+#topHeader {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
     align-items: flex-end;
-    background-color:rgb(240, 240, 240);
+    background-color: rgb(240, 240, 240);
     /* opacity: 50%; */
-    height:25px;
+    height: 25px;
     padding-top: .5%;
     padding-right: 10%;
-    margin-bottom:1%;
+    margin-bottom: 1%;
 }
 
-#topMenu{
-    display:flex;
+#topMenu {
+    display: flex;
     justify-content: space-between;
-    width:15%;
+    width: 15%;
     font-size: 3vh;
-
-    
 }
-#lang{
+
+#lang {
     margin-right: 20%;
 }
 
-#topMenuDropDown{
+#topMenuDropDown {
     z-index: 1;
     margin-left: 10%;
 }
@@ -64,14 +64,15 @@ a {
     height: 99.9vh;
     margin: auto;
     width: 65%;
-    padding: 0px,35px,35px;
+    padding: 0px, 35px, 35px;
 }
+
 .mainWrapper {
     border-radius: 20px;
     height: 99.9vh;
     margin: auto;
     width: 65%;
-    padding: 0px,35px,35px;
+    padding: 0px, 35px, 35px;
 }
 
 .shown {
@@ -212,7 +213,6 @@ a {
 
 /* LIST VIEW */
 
-
 .myList {
     height: 80%;
     display: flex;
@@ -321,9 +321,9 @@ a {
 }
 
 .songListBrandCodes:active {
-  background-color: #5fbbe9;
-  box-shadow: 3px 5px rgb(143, 142, 142);
-  transform: translateY(4px);
+    background-color: #5fbbe9;
+    box-shadow: 3px 5px rgb(143, 142, 142);
+    transform: translateY(4px);
 }
 
 .songListBrandCodes label {
@@ -338,9 +338,10 @@ a {
     margin-right: 8%;
     border-radius: 3px;
     border: none;
-    background-color:transparent;
+    background-color: transparent;
     color: white;
 }
+
 
 /* new playlist modal  */
 
@@ -514,10 +515,12 @@ input.question+label>span {
 #mySongList li {
     padding: 2% 0 4% 0;
 }
-#songsInOnePlaylist p{
+
+#songsInOnePlaylist p {
     margin-top: .75em;
     margin-bottom: .75em;
 }
+
 
 /* minus icon for songs and delete song modal*/
 
@@ -530,6 +533,7 @@ img.minusIcon {
     height: 21%;
     font-size: 1.8em;
 }
+
 
 /* ellipse menu on playlist options */
 
@@ -585,6 +589,7 @@ img.minusIcon {
 #mainPlaylist .modalButtons div {
     width: 100%;
 }
+
 #editPlaylistForm {
     display: none;
 }
@@ -594,7 +599,8 @@ img.minusIcon {
     padding-top: 11%;
 }
 
-#areYouSure .areYouSureBtns input, .areYouSureBtns input{
+#areYouSure .areYouSureBtns input,
+.areYouSureBtns input {
     height: 63px;
     border: none;
     padding: 4% 5%;
@@ -603,6 +609,7 @@ img.minusIcon {
     cursor: pointer;
 }
 
+
 /* edit playlist */
 
 .editPlaylistBlock {
@@ -610,18 +617,23 @@ img.minusIcon {
     flex-direction: column;
     align-items: center;
 }
-.editPlaylistContent, #editBtns{
+
+.editPlaylistContent,
+#editBtns {
     display: flex;
 }
+
 .editPlaylistContent {
     justify-content: center;
     align-items: center;
     margin: 10% 0 1% 0;
 }
+
 .albumIcon {
     width: 25%;
     position: relative;
 }
+
 .albumIcon div {
     position: absolute;
     bottom: 4%;
@@ -631,16 +643,19 @@ img.minusIcon {
     background-color: rgba(0, 0, 0, 0.40);
     border-radius: 0 0 10px 10px;
 }
+
 #editPlaylistImg {
     width: 100%;
     background-color: rgb(238, 238, 238);
     border-radius: 10px;
 }
+
 #editPlaylistInfo {
     text-align: left;
     width: 30%;
     margin: 0 0 0 5%;
 }
+
 #newPlaylistName {
     width: 100%;
     border-radius: 3px;
@@ -650,14 +665,17 @@ img.minusIcon {
     color: rgb(206, 206, 206);
     padding: 0 0 0 3%;
 }
+
 #editPlaylistInfo p {
     font-size: 0.5em;
     margin: 10% 0;
 }
+
 #editBtns {
     justify-content: center;
     width: 60%;
 }
+
 #editBtns input {
     height: 63px;
     border: none;
@@ -666,6 +684,7 @@ img.minusIcon {
     width: 38%;
     cursor: pointer;
 }
+
 
 /* Scrollbar */
 
@@ -698,7 +717,7 @@ img.minusIcon {
 #bannerImage img {
     width: 35%;
     height: 35%;
-    padding:5%;
+    padding: 5%;
     /* padding-left: 15%; */
 }
 
@@ -725,7 +744,7 @@ img.minusIcon {
     font-family: 'Jua', sans-serif;
     /* text-shadow: 0 0 3px rgba(0, 0, 0, 1); */
     font-size: 5em;
-    background-color:  rgb(240, 239, 239);
+    background-color: rgb(240, 239, 239);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -954,7 +973,6 @@ margin: 1%;
     display: none;
 }
 
-
 .visibleSearchNewPlaylist {
     display: flex !important;
     justify-content: center;
@@ -972,7 +990,6 @@ margin: 1%;
     display: none;
 }
 
-
 .addPlaylistSearchBtn {
     background-color: #84fab0;
     /* box-shadow: 0 0 20px #eee; */
@@ -983,7 +1000,7 @@ margin: 1%;
     /* display: inline-block; */
     /* top: 52%;
     left: 10%; */
-    margin:auto;
+    margin: auto;
     margin-top: 5%;
     height: 25% !important;
     width: 60% !important;
@@ -1005,12 +1022,12 @@ margin: 1%;
     padding: 7%
 }
 
-
 .searchSubmit {
     position: relative;
     top: 50%;
 }
-label[for=playlistId]{
+
+label[for=playlistId] {
     padding-bottom: 5px;
 }
 
@@ -1022,10 +1039,10 @@ label[for=playlistId]{
     color: white;
     padding: 1vh;
     width: 80%;
-    max-height:40vh !important;
+    max-height: 40vh !important;
     overflow-y: scroll;
-    margin:auto;
-    display:flex;
+    margin: auto;
+    display: flex;
     flex-direction: column;
     height: 0%;
     border: none;
@@ -1038,29 +1055,26 @@ label[for=playlistId]{
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
-    margin-top:3%;
-    
-
+    margin-top: 3%;
 }
 
-
-.playlists{
+.playlists {
     cursor: pointer;
-    padding:3%;
+    padding: 3%;
 }
+
 #playlistId input[type=radio] {
     display: none;
 }
 
-#playlistId input[type=radio]:checked + .playlists {
+#playlistId input[type=radio]:checked+.playlists {
     background-color: #84fab0;
-    
 }
 
-.playlistName{
-    height:1.5em;
-    margin:5% auto;
-    font-size:4vh;
+.playlistName {
+    height: 1.5em;
+    margin: 5% auto;
+    font-size: 4vh;
 }
 
 #playlistId option {
