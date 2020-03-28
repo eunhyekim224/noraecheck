@@ -96,7 +96,7 @@ function loadFile(entry, category) { //function takes inputs from these two vari
     reset.addEventListener('click', function() {
         let div_parent = document.querySelector('#searchResults');
         div_parent.innerHTML = "";
-        entry.value="";   
+        entry.value = "";
     });
 
 
@@ -148,21 +148,21 @@ function displayResults(array) {
 
     for (let i = 0, c = array.length; i < c; i++) {
 
-        let searchResults = createNode('form', {'class':'resultOption'});
-        let songImgDiv = createNode('div', {'class':'songImg'});
-        let songImg = createNode('img', {'src':'public/images/songResult3.png', 'title':'Song icon'});
+        let searchResults = createNode('form', { 'class': 'resultOption' });
+        let songImgDiv = createNode('div', { 'class': 'songImg' });
+        let songImg = createNode('img', { 'src': 'public/images/songResult3.png', 'title': 'Song icon' });
         let songDiv = createNode('div');
-        let song = createNode('p', {'class':'songTitle'}, array[i].song);
+        let song = createNode('p', { 'class': 'songTitle' }, array[i].song);
         let singer = createNode('p', {}, 'by ' + array[i].singer);
-        let brandCodes = createNode('div', {'class':'brandCodes songBrandCodes'});
-        let tjBrandWrapper = createNode('p', {'class':'songListBrandCodes'});
-        let kyBrandWrapper = createNode('p', {'class':'songListBrandCodes'});
+        let brandCodes = createNode('div', { 'class': 'brandCodes songBrandCodes' });
+        let tjBrandWrapper = createNode('p', { 'class': 'songListBrandCodes' });
+        let kyBrandWrapper = createNode('p', { 'class': 'songListBrandCodes' });
         let tjBrand = createNode('p', {}, 'TJ');
         let kumyoungBrand = createNode('p', {}, 'KY');
         let code = createNode('p', {}, array[i].tj_code);
         let code2 = createNode('p', {}, array[i].kumyoung_code);
-        let addIcon = createNode('div', {'class':'addIcon'});
-        let iconImg = createNode('img', {'src':'public/images/plusIcon4.png', 'title':'Plus icon', 'class':'addPlaylist'});
+        let addIcon = createNode('div', { 'class': 'addIcon' });
+        let iconImg = createNode('img', { 'src': 'public/images/plusIcon4.png', 'title': 'Plus icon', 'class': 'addPlaylist' });
 
         // let hiddenSong = document.createElement('input');
         // let hiddenSinger = document.createElement('input');
@@ -192,13 +192,13 @@ function displayResults(array) {
         let tjCode = array[i].tj_code ? array[i].tj_code : '';
         let kumgoungCode = array[i].kumyoung_code ? array[i].kumyoung_code : '';
 
-        let hiddenSong = createNode('input', {'type':'hidden','name':'hiddenSong','value':array[i].song});
-        let hiddenSinger = createNode('input', {'type':'hidden','name':'hiddenSinger','value':array[i].singer});
-        let hiddenTj = createNode('input', {'type':'hidden','name':'hiddenTj','value':tjCode});
-        let hiddenKumyoung = createNode('input', {'type':'hidden','name':'hiddenKumyoung','value':kumgoungCode});
-        let hiddenAction = createNode('input', {'type':'hidden','name':'action','value':'searchModal'});
-        let searchCache = createNode('input', {'type':'hidden','name':'searchCache','value':entry.value});
-        let categoryCache = createNode('input', {'type':'hidden','name':'categoryCache','value':category.value});
+        let hiddenSong = createNode('input', { 'type': 'hidden', 'name': 'hiddenSong', 'value': array[i].song });
+        let hiddenSinger = createNode('input', { 'type': 'hidden', 'name': 'hiddenSinger', 'value': array[i].singer });
+        let hiddenTj = createNode('input', { 'type': 'hidden', 'name': 'hiddenTj', 'value': tjCode });
+        let hiddenKumyoung = createNode('input', { 'type': 'hidden', 'name': 'hiddenKumyoung', 'value': kumgoungCode });
+        let hiddenAction = createNode('input', { 'type': 'hidden', 'name': 'action', 'value': 'searchModal' });
+        let searchCache = createNode('input', { 'type': 'hidden', 'name': 'searchCache', 'value': entry.value });
+        let categoryCache = createNode('input', { 'type': 'hidden', 'name': 'categoryCache', 'value': category.value });
 
         // hiddenSong.setAttribute('value', array[i].song);
         // hiddenSinger.setAttribute('value', array[i].singer);
@@ -240,7 +240,7 @@ function displayResults(array) {
             tjBrandWrapper.appendChild(tjBrand);
             tjBrandWrapper.appendChild(code);
             kyBrandWrapper.appendChild(kumyoungBrand);
-            kyBrandWrapper.appendChild(code2);       
+            kyBrandWrapper.appendChild(code2);
             brandCodes.appendChild(tjBrandWrapper);
             brandCodes.appendChild(kyBrandWrapper);
         } else if (array[i].tj_code) {
@@ -261,17 +261,17 @@ function notFound() {
     let div_parent = document.querySelector('#searchResults');
     div_parent.innerHTML = "";
 
-    let error = createNode('p', {'class':'errorMsg'}, 'Not Found');
+    let error = createNode('p', { 'class': 'errorMsg' }, 'Not Found');
     div_parent.appendChild(error);
 }
 
 function createNode(element, attributes, content) {
     let createEl = document.createElement(element);
-    
+
     for (var attr in attributes) {
-        createEl.setAttribute(attr,attributes[attr]);
+        createEl.setAttribute(attr, attributes[attr]);
     }
-    
+
     if (content) {
         text = document.createTextNode(content);
         createEl.appendChild(text);

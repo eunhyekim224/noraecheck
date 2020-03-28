@@ -16,6 +16,7 @@
 
 .error {
     color: red;
+    /* display: none; */
 }
 
 
@@ -29,7 +30,8 @@
 
 #submit,
 #reset,
-#submitRegister {
+#submitRegister,
+#submitSignUp {
     font-size: 23px;
     width: 119px;
     padding: 10px;
@@ -878,8 +880,8 @@ input[type=text],
 input[type=password],
 input[type=email] {
     width: 97%;
-    padding: 28px 38px;
-    margin: -6px 0;
+    padding: 5px 42px;
+    margin: 5px 2px;
     display: inline-block;
     box-sizing: border-box;
     font-size: 36px;
@@ -1033,7 +1035,7 @@ span.psw {
     position: relative;
     box-sizing: border-box;
     font-size: var(--uiFieldFontSize);
-    padding-top: 0em;
+    padding-top: 1em;
 }
 
 .a-field__input {
@@ -1190,7 +1192,8 @@ span.psw {
     }
     #submit,
     #reset,
-    #submitRegister {
+    #submitRegister,
+    #submitSignUp {
         font-size: 17px;
         height: 50px;
         width: 95px;
