@@ -15,36 +15,50 @@ function showChallengeOptions(btn, option, previousElem) {
     });
 }
 
-// display singer names 
+// display/remove singer names 
 
 displaySingerTrigger('singer', 'singerSubmit', 'listOfSingers', '#listOfSingers li');
+removeSingerTrigger('deleteSinger', 'listOfSingers');
 
 function displaySingerTrigger(singerInputId, enterBtnId, listId) {
     let singer = document.getElementById(singerInputId);
     let enterBtn = document.getElementById(enterBtnId);
         singer.addEventListener('keyup', (e) => {
             if (e.keyCode === 13) {
-                if (singer.value.length > 0) {
+                if (singer.value.trim().length > 0) {
                     displaySinger(singer, listId);
                     singer.value = '';
-                }    
+                } else {
+                    singer.placeholder = 'enter a name';
+                } 
             }
         });
         enterBtn.addEventListener('click', (e) => {
-            if (singer.value.length > 0) {
+            if (singer.value.trim().length > 0) {
                 displaySinger(singer, listId);
                 singer.value = '';
-            }
+            } else {
+                singer.placeholder = 'enter a name';
+            } 
         });
 }
 
 function displaySinger(singer, listId) {
     let listOfSingers = document.getElementById(listId);
-    let singerLi = document.createElement('li');
-    let singerName = document.createTextNode(singer.value);
-    singerLi.appendChild(singerName);
+    let singerLi = createNode('li', {}, singer.value);
+    let deleteBtn = createNode('input', {'type' : 'button', 'name' : 'deleteSinger', 'id' : 'deleteSinger'});
+    singerLi.appendChild(deleteBtn);
     listOfSingers.appendChild(singerLi);
 }   
+
+function removeSingerTrigger(deleteBtnId, listId) {
+    let listOfSingers = document.getElementById(listId);
+    document.addEventListener('click', (e) => {
+        if (e.target && e.target.id == deleteBtnId) {
+            listOfSingers.removeChild(e.target.parentNode);
+        }
+    });
+}
 
 // send singer names to backend 
 
@@ -71,6 +85,17 @@ function addSingers(allNames, hiddenInputId) {
     hiddenInput.value = allNames;
 }   
 
+function createNode(element, attributes, content) {
+    let createEl = document.createElement(element);
+    for (var attr in attributes) {
+        createEl.setAttribute(attr, attributes[attr]);
+    }
+    if (content) {
+        text = document.createTextNode(content);
+        createEl.appendChild(text);
+    }
+    return createEl;
+}
 
 
 

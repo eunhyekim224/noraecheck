@@ -1123,6 +1123,7 @@ label[for=playlistId]{
     overflow: scroll;
     overflow-x: hidden;
     padding-left: 0;
+    border-radius: 10px;
 }
 
 #listOfSingers li {
@@ -1130,13 +1131,30 @@ label[for=playlistId]{
     padding: 2%;
 }
 
+#listOfSingers li:nth-child(odd) {
+    background-color: #8fd3f4;
+}
+  
+#listOfSingers li:nth-child(even) {
+    background-color: white;
+    color: rgb(146, 143, 143);
+}
+
+#listOfSingers li input {
+   float: right;
+   width: 10%;
+   height: 25px;
+   background: transparent url('../images/minusIcon3.png') center/cover;
+}
+
 #challengeSingers input {
     height: 38px;
     font-size: 1.5em;
-    width: 81%;
+    width: 76%;
     border: none;
     border-radius: 10px;
     color: rgb(146, 143, 143);
+    padding-left: 5%;
 }
 
 #singerInput button {
@@ -1160,6 +1178,7 @@ label[for=playlistId]{
 #singerInput button:focus {
     outline: 0;
 }
+
 
 #challengeSingers label {
     padding: 25px;
@@ -1192,6 +1211,29 @@ label[for=playlistId]{
     box-shadow: 3px 5px rgb(143, 142, 142);
 }
 
+@keyframes clickMe {
+    0% {
+        transform: translate(0px, 0px);
+        animation-timing-function:ease-in-out
+    }
+    25% {
+        transform: translate(0px, 4px);
+        animation-timing-function:ease-in-out
+    }
+    50% {
+        transform: translate(0px, 0px);
+        animation-timing-function:ease-in-out
+    }
+    75% {
+        transform: translate(0px, 0px);
+        animation-timing-function:ease-in-out
+    }
+    100% {
+        transform: translate(0px, 0px);
+        animation-timing-function:ease-in-out
+    }
+}
+
 #chalPlaylistOptionsBtns label:active,
 #chalPlaylistOptionsBtns label:hover {
     box-shadow: 3px 5px rgb(143, 142, 142);
@@ -1214,6 +1256,7 @@ label[for=playlistId]{
     margin: 0;
     padding: 20px;
     box-shadow: 3px 5px rgb(187, 186, 186);
+    animation: clickMe 2s infinite;
 }
 
 #startChalBtn:hover, 
