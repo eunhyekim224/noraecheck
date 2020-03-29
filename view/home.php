@@ -18,7 +18,7 @@ include("topMenu.php");
         include("homeMyList.php");
     } else if ($displayMode == 'songs') {
         include("playlistSongs.php");
-    } else if ($displayMode == 'challengeSetUp') {
+    } else if ($displayMode == 'challenge') {
         include("challengeSetUp.php");
     } else if ($displayMode == 'profile') {
         include("profile.php");
