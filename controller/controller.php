@@ -144,7 +144,9 @@
     }
 
     function showChallenge($memberId) {
-        $displayMode = 'challenge';
+        $playlistManager = new PlaylistManager();
+        $playlists = $playlistManager->getAllPlaylists($memberId);
+        $displayMode = 'challengeSetUp';
         require("view/home.php");
     }
 
@@ -207,6 +209,18 @@
         $memberManager = new MemberManager();
         $deleteProfile = $memberManager->deleteProfile($memberId);
         header("Location: index.php?success=1");
+    }
+    
+    function insertChallengeInfo($memberId) {
+        echo '<strong>List of all singers: </strong>'.$_POST['allSingers'];
+        if ($_POST['chalOptions'] === 'allPlaylists') {
+            echo '<br><strong>Option to choose songs from: </strong>'. $_POST['chalOptions'];
+            echo '<br><strong>Number of songs: </strong>'.$_POST['noOfSongs'];
+        } else if ($_POST['chalOptions'] === 'onePlaylist') {
+            echo '<br><strong>Option to choose songs from: </strong>'. $_POST['chalOptions'];
+            echo '<br><strong>Playlist ID selected: </strong>'.$_POST['playlists'];
+        }
+        echo '<br><strong>Enter score option: </strong>'.$_POST['scoreOption'];
     }
 
     function logout(){
