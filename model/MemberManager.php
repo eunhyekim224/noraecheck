@@ -1,10 +1,8 @@
 <?php   
     require_once('model/Manager.php');
-
     /**
     * TODO: function to deleteMember (delete account)
     */
-
     class MemberManager extends Manager {
         public function addMember($email, $username, $password) {
             $email = htmlspecialchars($email);

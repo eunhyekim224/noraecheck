@@ -48,81 +48,73 @@
         width: 15%;
     }
 }
+
+
 /* tiny screen */
+
 @media all and (max-height: 600px) {
-
-
     /* #mainOptions{
         height:40%;
     } */
-    #mainOptions div input,#editPlaylist,#deletePlaylist{
-        height:50px;
+    #mainOptions div input,
+    #editPlaylist,
+    #deletePlaylist {
+        height: 50px;
     }
-
-    #mainPlaylist{
-        height:30%;
+    #mainPlaylist {
+        height: 30%;
         padding-top: 5px;
         padding-bottom: 5px;
     }
-    #mainPlaylistInfo p{
-        margin-top:5px;
-        margin-bottom:5px;
+    #mainPlaylistInfo p {
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
     #mainPlaylist img {
-        height:40%;
-        width:5%
+        height: 40%;
+        width: 5%
     }
-    #mySongList{
-        height:60%;
+    #mySongList {
+        height: 60%;
     }
-    #songsInOnePlaylist p{
+    #songsInOnePlaylist p {
         margin-top: .75em;
         margin-bottom: .75em;
     }
-   
-
-
-    
-    
 }
+
 @media all and (max-height: 550px) {
-
     /* create playlist MODAL */
-
     .modalButtons {
         padding: 1% 0 1% 0;
         display: flex;
         justify-content: center;
     }
-    .addSongToNewPlaylistButton{
-        height:5%;
+    .addSongToNewPlaylistButton {
+        height: 5%;
     }
-    #searchResults{
-        height:70%;
+    #searchResults {
+        height: 70%;
     }
-    .myList{
-        height:70%;
+    .myList {
+        height: 70%;
     }
-
-    #mySongList{
-        height:60%;
+    #mySongList {
+        height: 60%;
     }
-
-
-    #newPlaylistBtn{
-        width:70% !important;
+    #newPlaylistBtn {
+        width: 70% !important;
     }
-
-    #menuIcons li{
-        height:30%;
+    #menuIcons li {
+        height: 30%;
     }
-    #mainOptions div input,#editPlaylist,#deletePlaylist{
-        margin:.5%
+    #mainOptions div input,
+    #editPlaylist,
+    #deletePlaylist {
+        margin: .5%
     }
-    #songsInOnePlaylist p{
+    #songsInOnePlaylist p {
         margin-top: 5px;
         margin-bottom: 5px;
     }
-   
-    
 }

@@ -144,9 +144,7 @@ padding-bottom: 0;
     .navIcons {
         width: 40%;
     }
-    
     /*_____ search page media queries_____ */
-   
     .searchOptions {
         width: 20%;
     }
@@ -176,9 +174,8 @@ padding-bottom: 0;
         font-size: 2.5vh;
         border-radius: 0px 15px 15px 0px;
     }
-    .resultOption p{
+    .resultOption p {
         font-size: 2vh;
-
     }
     .entry {
         width: 50%;
@@ -188,20 +185,17 @@ padding-bottom: 0;
         width: 35%;
         font-size: 3vh;
     }
-    #results{
-        height:90%;
+    #results {
+        height: 90%;
     }
-    .modalContentSearch{
+    .modalContentSearch {
         margin-top: 30%;
         width: 80%;
     }
-
-    #playlistName{
-        width:60%;
+    #playlistName {
+        width: 60%;
     }
-
 }
-
 
 @media all and (min-width: 430px) and (max-width: 500px) {
     body {
@@ -343,10 +337,9 @@ padding-bottom: 0;
     .navIcons {
         width: 40%;
     }
-    
     /*_____ search page media queries_____ */
-    #resetSearch{
-        width:30%;
+    #resetSearch {
+        width: 30%;
     }
     .searchOptions {
         width: 20%;
@@ -385,7 +378,6 @@ padding-bottom: 0;
         font-size: 3vh;
     }
 }
-
 
 @media all and (min-width: 500px) and (max-width: 640px) {
     body {
@@ -528,7 +520,6 @@ padding-bottom: 0;
     .navIcons {
         width: 40%;
     }
-    
     /*_____ search page media queries_____ */
     .searchOptions {
         width: 20%;
@@ -567,5 +558,3 @@ padding-bottom: 0;
         font-size: 3vh;
     }
 }
-
-

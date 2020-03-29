@@ -14,10 +14,10 @@
                 <img src="public/images/album2.png" id="playListImg">
             </div>
 
-            <a href="index.php?action=showMySongs&playlistId=<?=$playlist['playlistId']?> class= "displayedPlaylists">
+            <a href="index.php?action=showMySongs&playlistId=<?=$playlist['playlistId']?>" class= "displayedPlaylists" style="text-decoration:none;color:inherit">
                 <div class="playlistInfo">
                     <p class="darkGrey" class="playlistNameText"><?= $playlist['playlistName']; ?></p>
-                    <p>by <?= $playlist['username']; ?></p>
+                    <p> by <?=$playlist['username'];?> </p>
                     <p>
                         <i class="fas fa-music darkGrey" title="number of songs"></i>
                         <span class="darkGrey"><?= $playlist['songCount']; ?></span>

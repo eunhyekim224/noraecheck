@@ -3,7 +3,7 @@
     <img src="public/images/album2.png" id="mainPlaylistImg">
     <div id="mainPlaylistInfo">
         <p class="darkGrey playlistNameText"><?= $playlist['playlistName']; ?></p>
-        <p>by <?=  $playlist['username']; ?></p>
+        <p>by <?=$playlist['username'];?></p>
         <p>
             <i class="fas fa-music darkGrey" title="number of songs"></i>
             <span class="darkGrey"><?= $playlist['songCount'];?></span>
@@ -25,19 +25,19 @@
         <li>
             <img src="public/images/songResult3.png" class="songImgInPlaylistSongs">
             <div id="songsInOnePlaylist">
-                <p id="songNameText" class="darkGrey"><?= $song['songName']; ?></p>
+                <p id="songNameText" class="darkGrey"><?= $song['songName'];?></p>
                 <p>by <?= $song['singerName']; ?></p>
                 <form method="post" action="index.php" class="songListBrands darkGrey">
                     <input type="hidden" name="action" value="editBrandCode">
-                    <input type="hidden" name="songId" value=<?= $song['songId']; ?>>
-                    <input type="hidden" name="playlistId" value=<?= $_SESSION['playlistId']; ?>>
+                    <input type="hidden" name="songId" value=<?= $song['songId'];?>>
+                    <input type="hidden" name="playlistId" value=<?= $_SESSION['playlistId'];?>>
                     <div class="songListBrandCodes">
                         <label for="tjCode<?= $song['songId']; ?>">TJ</label>
-                        <input type="text" name="tjCode" maxlength=10 id="tjCode<?= $song['songId']; ?>" autocomplete="off" value=<?= $song['tjCode'];?> >
+                        <input type="text" name="tjCode" maxlength=10 id="tjCode<?=$song['songId'];?>" autocomplete="off" value=<?=$song['tjCode'];?> >
                     </div>
                     <div class="songListBrandCodes">
-                        <label for="kumyoungCode<?= $song['songId']; ?>">KY</label>
-                        <input type="text" name="kumyoungCode" maxlength=10 id="kumyoungCode<?= $song['songId']; ?>" autocomplete="off" value=<?= $song['kumyoungCode'];?> >
+                        <label for="kumyoungCode<?=$song['songId'];?>">KY</label>
+                        <input type="text" name="kumyoungCode" maxlength=10 id="kumyoungCode<?=$song['songId'];?>" autocomplete="off" value=<?=$song['kumyoungCode'];?> >
                     </div>
                 </form>
             </div>

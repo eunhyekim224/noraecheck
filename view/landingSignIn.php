@@ -1,4 +1,4 @@
-<div id="SignIn" class="modal" style="display:<?php if(isset($errors) AND isset($errors['context']) AND $errors['context'] == "signIn")  { echo "block";} ?>">
+<div id="signIn" class="modal" style="display:<?php if(isset($errors) AND isset($errors['context']) AND $errors['context'] == "signIn")  { echo "block";} ?>">
     <form name="form" id="loginForm" class="modal-content animate" action="index.php?action=login" method="POST">
         <div class="imgcontainer">
             <span class="close" title="Close Modal">&times;</span>

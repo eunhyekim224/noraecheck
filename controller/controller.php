@@ -3,9 +3,6 @@
     require_once("./model/PlaylistManager.php");
     require_once("./model/SongManager.php");
 
-    // use \Wcoding\Noraecheck\Model\MemberManager;
-    // use \Wcoding\Noraecheck\Model\PlaylistManager;
-
     function showLandingPage($error,$status) {
         require("view/landing.php");
     }
@@ -19,16 +16,17 @@
         $usernameInUse = $memberManager->getMember($username);
 
         if($username AND $password AND $passwordConf AND $email){
-            // $usernameInUse = $memberManager->getMember($username);
+           
             if(!$usernameInUse){
                 if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
                     if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$password)) {
                         if ($username AND $password == $passwordConf){
                             $status = $memberManager->addMember($email,$username,$password);
                             header("location:index.php?action=login&success=1");
-                        } else if ($password != $passwordCheck){
+                        } else if ($password != $passwordConf){
                             $errors['pwdConf'] = 'password does not match';
-                        } 
+                        }
+                         
                     } else {
                         $errors['pwd'] = 'please include 8 characters, upper/lower case letters, and digits';
                     }
@@ -41,9 +39,7 @@
                 $errors['loginNew'] = 'username taken';
                 
             }
-        } else {
-            // require("view/landingSignup.php");
-            // require("view/landingSignIn.php"); 
+        } else { 
             require("view/landing.php");
         }
         require("view/landing.php");  

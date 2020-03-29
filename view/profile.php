@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-</head>
+</head> -->
 
-<style>
-/* body{
+<!-- <style>
+body{
 margin: 0;
 padding: 0;
 background-image: linear-gradient(to right,#ac1816,#2980b9);
 font-family: Montserrat;
-} */
+}
 
 .card{
 position: relative;
@@ -150,14 +150,14 @@ cursor: pointer;
 background-color: red;
 }
 
-</style>
+</style> -->
 
-<body>
+<!-- <body>
         <div class="card">
             <div class="blackcard">
   <img src="../public/images/profile_icon.png" class="profile-picture">
-                <!-- <img src="https://cdn.discordapp.com/avatars/320349801164177408/3f6910bec813b20b227477445df8c4e4.png?size=128"
-                class="profile-picture" > -->
+                <img src="https://cdn.discordapp.com/avatars/320349801164177408/3f6910bec813b20b227477445df8c4e4.png?size=128"
+                class="profile-picture" >
                 <div class="form">
                     <input type="text" name="Name" id="name" autocomplete="off" required />
                     <label class="content-input">
@@ -179,4 +179,4 @@ background-color: red;
             </div>
 
             </body>
-</html>
+</html> -->

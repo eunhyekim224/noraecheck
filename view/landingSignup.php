@@ -1,4 +1,4 @@
-<div id="SignUp" class="modal" style="display:<?php if(isset($errors) AND isset($errors['contextUp']) AND $errors['contextUp'] == "signUp")  { echo "block";} ?>">
+<div id="signUp" class="modal" style="display:<?php if(isset($errors) AND isset($errors['contextUp']) AND $errors['contextUp'] == "signUp")  { echo "block";} ?>">
     <form class="modal-content animate" id="signUpForm" action="index.php?action=register" method="POST">
         <input type="hidden" name="action" id="action" value="register"/>
         <div class="imgcontainer">

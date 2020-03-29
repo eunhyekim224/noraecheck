@@ -25,8 +25,7 @@
         <button type="reset"  id="resetSearch">cancel</button>
     </div>
     <script src="./public/js/searchBarDisplay.js"></script>
-    
-    
+
     <section id="results" class="gothamPro">
         <h1>Results</h1>
         <div id="searchResults">     
