@@ -193,11 +193,6 @@
             }
         } else {
             $errors['blanks'] = 'fill in the blanks';
-            // echo $newUsername.'-'.$email.'-'.$oldPwd.'-'.$newPwd.'-'.$newpwdConf;
-            // $displayMode = 'profile';
-            // require("view/home.php");
-            // require("view/profile.php");
-            // header("Location: index.php?action=showProfile");
         }
         $displayMode = 'profile';
         require("view/home.php");

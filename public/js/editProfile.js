@@ -1,13 +1,16 @@
-let showChangePwdBlock = document.querySelector('.changePwdBtn');
-let changePwdBlock = document.querySelector('.changePwd');
+    //Open and close block to change password
+    let showChangePwdBtn = document.querySelector('.changePwdBtn');
+    let changePwdBlock = document.querySelector('.changePwd');
 
-showChangePwdBlock.addEventListener('click', () => {
-    // if (changePwdBlock.style.display === "none") {
-        changePwdBlock.style.display === "block";
-    // } else {
-    //     changePwdBlock.style.display === "none";
-    // }
-});
+    showChangePwdBtn.addEventListener('click', () => {
+        if (changePwdBlock.style.visibility === "hidden") {
+            changePwdBlock.style.visibility = "visible";
+        } else {
+            changePwdBlock.style.visibility = "hidden";
+        }
+    });
+
+//Open and close modal to delete profile
 
 let deleteProfileBtn = document.querySelector('#deleteProfileBtn');
 let deleteProfileModal = document.querySelector('.modal');
