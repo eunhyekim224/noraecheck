@@ -22,7 +22,7 @@
         } 
 
         public function getMember($username) {
-            $members = $this->_db->prepare("SELECT id, username, password FROM members WHERE username = :username");
+            $members = $this->_db->prepare("SELECT id, email, username, password FROM members WHERE username = :username");
             $members->bindParam(':username',$username,PDO::PARAM_STR);
             $resp = $members->execute();
             if(!$resp) {

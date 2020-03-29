@@ -150,7 +150,9 @@
         require("view/home.php");
     }
 
-    function showProfile($memberId) {
+    function showProfile($memberId,$userName) {
+        $profileManager = new MemberManager();
+        $currentProfile = $profileManager->getMember($userName);
         $displayMode = 'profile';
         require("view/home.php");
     }

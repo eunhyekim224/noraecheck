@@ -90,3 +90,4 @@
 </div>
 <?php } ?>
 <script src="./public/js/editProfile.js"></script>
+
