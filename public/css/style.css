@@ -805,7 +805,7 @@ img.minusIcon {
     text-align: center;
 }
 
-/* .changePwdBtn:hover {
+.changePwdBtn:hover {
     background-color: #5fbbe9;
 }
 
@@ -813,7 +813,7 @@ img.minusIcon {
   background-color: #5fbbe9;
   box-shadow: 3px 5px rgb(143, 142, 142);
   transform: translateY(4px);
-} */
+}
 /* .deleteProfileModal {
     display: none;
 } */
