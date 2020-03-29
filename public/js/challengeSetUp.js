@@ -1,19 +1,21 @@
 let onePlaylistBtn = document.querySelector('#onePlaylist');
 let allSongsBtn = document.querySelector('#allPlaylists');
-
-let chalOptionsBtns = document.querySelector('#chalPlaylistOptionsBtns');
 let selectPlaylist = document.querySelector('#selectPlaylist');
 let selectAllSongs = document.querySelector('#selectAllSongs');
 
-showChallengeOptions(onePlaylistBtn, selectPlaylist, selectPlaylist);
-showChallengeOptions(allSongsBtn, selectAllSongs, chalOptionsBtns);
+onePlaylistBtn.addEventListener('click', showOptionForOnePlaylist);
+allSongsBtn.addEventListener('click', showOptionForAllPlaylists);
 
-function showChallengeOptions(btn, option, previousElem) {
-    btn.addEventListener('click', (e) => {
-        previousElem.nextElementSibling.style.display = 'none';
-        option.style.display = 'block';
-    });
+function showOptionForOnePlaylist() {
+    selectAllSongs.style.display = 'none';
+    selectPlaylist.style.display = 'block';
 }
+
+function showOptionForAllPlaylists() {
+    selectAllSongs.style.display = 'block';
+    selectPlaylist.style.display = 'none';
+}
+
 
 // display/remove singer names 
 
