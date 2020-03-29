@@ -1,9 +1,9 @@
 <div id="topHeader" class="gothamPro">
     <div id="topMenu">
-        <select id="lang">
+        <!-- <select id="lang">
             <option value="English">english</option>
-        </select> 
-        <span id="user"><?=$_SESSION['username'];?></span>
+        </select>  -->
+        <span id="user"><?=$_SESSION['username'] ?> </span>
     </div>
     <div id="topMenuDropDown" class="hidden">
         <a href="index.php?action=showProfile" title="Go to profile">

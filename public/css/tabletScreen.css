@@ -393,4 +393,30 @@ padding-bottom: 0;
     #challengeSongs h1 {
         font-size: 1.5em;
     }
+    /* challenge in progress */
+    #mainSongInfo p {
+        font-size: 3vh;
+    }
+    .challengeCode {
+        width: 45% !important;
+    }
+    .challengeCode label {
+        font-size: 3vh;
+    }
+    .challengeCode input {
+        font-size: 3vh;
+    }
+    .enterScore {
+        margin-left: 2%;
+        width: 90%;
+        font-size: 1.5em;
+    }
+    #newScore {
+        font-size: 2em;
+        width: 50%;
+        margin-left: 20%;
+    }
+    #user {
+        font-size: 2vh;
+    }
 }
