@@ -148,9 +148,65 @@
         require("view/home.php");
     }
 
-    function showProfile($memberId) {
+    function showProfile($memberId,$userName) {
+        $profileManager = new MemberManager();
+        $currentProfile = $profileManager->getMember($userName);
         $displayMode = 'profile';
         require("view/home.php");
+    }
+
+    function editProfile($memberId,$oldUsername,$newUsername,$email,$oldPwd,$newPwd,$newpwdConf){
+        $memberManager = new MemberManager();
+        $errors = array(
+            "contextUp" => "editProfile"
+        );
+        
+        $currentProfile = $memberManager->getMember($oldUsername);
+
+        if($newUsername && $email && $oldPwd){
+            if (password_verify($oldPwd, $currentProfile['password'])){
+                if($currentProfile['username'] != $newUsername){
+                    if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
+                        if ($newPwd && $newpwdConf) {
+                            if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$newPwd)) {
+                                if ($newUsername && $newPwd && $newpwdConf && $newPwd == $newpwdConf){
+                                    $status = $memberManager->editMember($memberId,$email,$newUsername,$newPwd);
+                                    header("Location: index.php?success=1");
+                                } else if ($newPwd && $newpwdConf && $newPwd != $newpwdConf){
+                                    $errors['pwdConf'] = 'password does not match';
+                                }
+                            } else {
+                                $errors['pwd'] = 'please include 8 characters, upper/lower case letters, and digits';
+                            }   
+                        } else {
+                            $status = $memberManager->editMember($memberId,$email,$newUsername,$oldPwd);
+                            header("Location: index.php?success=1");
+                        }
+                    } else {
+                        $errors['email'] = 'incorrect email'; 
+                    }
+                } else{
+                    $errors['loginNew'] = 'username taken'; 
+                }
+            } else {
+                $errors['oldPwdConf'] = 'incorrect password';
+            }
+        } else {
+            $errors['blanks'] = 'fill in the blanks';
+            // echo $newUsername.'-'.$email.'-'.$oldPwd.'-'.$newPwd.'-'.$newpwdConf;
+            // $displayMode = 'profile';
+            // require("view/home.php");
+            // require("view/profile.php");
+            // header("Location: index.php?action=showProfile");
+        }
+        $displayMode = 'profile';
+        require("view/home.php");
+    } 
+
+    function deleteProfile($memberId) {
+        $memberManager = new MemberManager();
+        $deleteProfile = $memberManager->deleteProfile($memberId);
+        header("Location: index.php?success=1");
     }
 
     function logout(){
