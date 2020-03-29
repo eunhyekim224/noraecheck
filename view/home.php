@@ -20,6 +20,8 @@ include("topMenu.php");
         include("playlistSongs.php");
     } else if ($displayMode == 'challenge') {
         include("challengeSetUp.php");
+    } else if ($displayMode == 'challengeInProgress') {
+        include("challengeInProgress.php");
     }
      ?>
         <!-- add divs with the list of songs from js function -->

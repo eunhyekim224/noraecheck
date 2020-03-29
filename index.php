@@ -96,6 +96,17 @@ try {
             } else if ($action === 'showChallenge') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 showChallenge($memberId);
+            }else if ($action === 'challengeInProgress') {
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                $round = isset($_REQUEST['round']) ? $_REQUEST['round'] : '0';
+                $score = isset($_REQUEST['score']) ? $_REQUEST['score'] : '';
+                challengeInProgress($memberId,$round,$score);
+            }else if ($action === 'updateScore') {
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                $score = isset($_REQUEST['newScore']) ? $_REQUEST['newScore'] : '';
+                $songId = isset($_REQUEST['songIdToUpdate']) ? $_REQUEST['songIdToUpdate'] : '';
+                $round = isset($_REQUEST['round']) ? $_REQUEST['round'] : '';
+                updateScore($memberId,$score,$songId,$round);
             } else {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 showAllPlaylists($memberId); 

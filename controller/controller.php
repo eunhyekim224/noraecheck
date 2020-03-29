@@ -2,6 +2,7 @@
     require_once("./model/MemberManager.php");
     require_once("./model/PlaylistManager.php");
     require_once("./model/SongManager.php");
+    require_once("./model/challengeManager.php");
 
     // use \Wcoding\Noraecheck\Model\MemberManager;
     // use \Wcoding\Noraecheck\Model\PlaylistManager;
@@ -146,6 +147,19 @@
     function showChallenge($memberId) {
         $displayMode = 'challenge';
         require("view/home.php");
+    }
+    function challengeInProgress($memberId,$round,$score) {
+        $challengeInProgressManager = new ChallengeManager();
+        $getChallenge = $challengeInProgressManager->getChallenge($memberId);
+        $displayMode = 'challengeInProgress';
+        require("view/home.php");
+    }
+
+    function updateScore($memberId,$score,$songId,$round){
+        $updateScore = new ChallengeManager();
+        $updatedScore = $updateScore->updateScore($memberId,$score,$songId);
+        header('Location: index.php?action=challengeInProgress&score='.$updatedScore.'&round='.$round);
+        echo $updatedScore;
     }
 
     function logout(){
