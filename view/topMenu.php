@@ -1,8 +1,8 @@
 <div id="topHeader" class="gothamPro">
     <div id="topMenu">
-        <select id="lang">
+        <!-- <select id="lang">
             <option value="English">english</option>
-        </select> 
+        </select>  -->
         <span id="user"><?=$_SESSION['username'] ?> </span>
     </div>
     <div id="topMenuDropDown" class="hidden">

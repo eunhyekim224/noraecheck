@@ -45,8 +45,9 @@ a {
 #topMenu{
     display:flex;
     justify-content: space-between;
-    width:15%;
-    font-size: 3vh;
+    /* width:15%; */
+    font-size: 4vh;
+    margin-left:50%;
 
     
 }
@@ -56,7 +57,7 @@ a {
 
 #topMenuDropDown{
     z-index: 1;
-    margin-left: 10%;
+    
 }
 
 .mainWrapper {
@@ -1403,7 +1404,7 @@ label[for=playlistId]{
     margin-top: 1%;
 }
 #challengeBtns{
-    margin-top: 2%;
+    margin-top: 1%;
     width:100%;
     display:flex;
     justify-content: space-evenly;
