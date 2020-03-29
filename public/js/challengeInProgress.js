@@ -6,35 +6,35 @@ const action = document.getElementsByName('action')[1];
 const exit = document.getElementById('exit');
 
 //go to next round
-nextButton.addEventListener('click',function(){
-    roundNumber.setAttribute('value',(parseInt(roundNumber.value) + 1));
-    if(parseInt(roundNumber.value) === numOfRounds){
+nextButton.addEventListener('click', function() {
+    roundNumber.setAttribute('value', (parseInt(roundNumber.value) + 1));
+    if (parseInt(roundNumber.value) === numOfRounds) {
         //once the challengeComplete page is made, change the following line to route it there
-        action.setAttribute('value','showMyList');
+        action.setAttribute('value', 'showMyList');
     }
     challengeRoundForm.submit();
-    
+
 })
 
 //click exit and open the modal
 const modal = document.getElementById('exitModal');
 
-exit.addEventListener('click',function(e){
+exit.addEventListener('click', function(e) {
     e.stopPropagation();
     modal.classList.add('shown');
-    
+
 })
 
 
 //click cancel or anywhere outside the modal to remove the modal
 const cancel = document.getElementsByName('cancel')[0];
 
-cancel.addEventListener('click',function(){
+cancel.addEventListener('click', function() {
     modal.classList.remove('shown');
-    
+
 })
 
-document.body.addEventListener('click',function(){
+document.body.addEventListener('click', function() {
     modal.classList.remove('shown');
 })
 
@@ -43,11 +43,11 @@ document.body.addEventListener('click',function(){
 //exit the game
 const finalExit = document.getElementsByName('exit')[0];
 
-finalExit.addEventListener('click',function(){
+finalExit.addEventListener('click', function() {
     //also change this to the final page once it is created
-    action.setAttribute('value','showMyList');
+    action.setAttribute('value', 'showMyList');
     challengeRoundForm.submit();
-    
+
 })
 
 
@@ -70,7 +70,7 @@ const oldScore = document.getElementById('oldScore');
 const reEnter = document.getElementById('reEnter');
 const yourScore = document.getElementById('yourScore');
 
-if(oldScore.innerText){
+if (oldScore.innerText) {
     bigPlus.classList.add('hidden');
     addScoreText.classList.add('hidden');
 
@@ -78,7 +78,7 @@ if(oldScore.innerText){
     oldScore.classList.remove("hidden");
     reEnter.classList.remove("hidden");
 }
-changeScoreDiv.addEventListener('click',function(){
+changeScoreDiv.addEventListener('click', function() {
     bigPlus.classList.add('hidden');
     addScoreText.classList.add('hidden');
 
@@ -87,36 +87,30 @@ changeScoreDiv.addEventListener('click',function(){
     yourScoreInput.classList.remove('hidden');
     scoreEnterButton.classList.remove('hidden');
     yourScoreInput.focus();
-    
 
-    scoreEnterButton.addEventListener('click',function(e){
+
+    scoreEnterButton.addEventListener('click', function(e) {
         e.stopPropagation();
 
         changeScoreDiv.submit();
-        
+
     })
 
 })
 
-changeScoreDiv.addEventListener('click',function(){
+changeScoreDiv.addEventListener('click', function() {
     oldScore.classList.add('hidden');
     reEnter.classList.add('hidden');
 
     yourScoreInput.classList.remove('hidden');
     scoreEnterButton.classList.remove('hidden');
-    
 
-    scoreEnterButton.addEventListener('click',function(e){
+
+    scoreEnterButton.addEventListener('click', function(e) {
         e.stopPropagation();
 
         changeScoreDiv.submit();
-        
+
     })
 
 })
-
-
-
-
-
-
