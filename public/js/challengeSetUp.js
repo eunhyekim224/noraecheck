@@ -1,5 +1,6 @@
 let onePlaylistBtn = document.querySelector('#onePlaylist');
 let allSongsBtn = document.querySelector('#allPlaylists');
+
 let selectPlaylist = document.querySelector('#selectPlaylist');
 let selectAllSongs = document.querySelector('#selectAllSongs');
 
@@ -16,80 +17,32 @@ function showOptionForAllPlaylists() {
     selectPlaylist.style.display = 'none';
 }
 
-
 // display/remove singer names 
 
-displaySingerTrigger('singer', 'singerSubmit', 'listOfSingers', '#listOfSingers li');
-removeSingerTrigger('deleteSinger', 'listOfSingers');
+let singerInput = document.getElementById('singer');
+let enterBtn = document.getElementById('singerSubmit');
+let listOfSingers = document.getElementById('listOfSingers');
 
-function displaySingerTrigger(singerInputId, enterBtnId, listId) {
-    let singer = document.getElementById(singerInputId);
-    let enterBtn = document.getElementById(enterBtnId);
-        singer.addEventListener('keyup', (e) => {
-            if (e.keyCode === 13) {
-                if (singer.value.trim().length > 0) {
-                    displaySinger(singer, listId);
-                    singer.value = '';
-                } else {
-                    singer.placeholder = 'enter a name';
-                } 
-            }
-        });
-        enterBtn.addEventListener('click', (e) => {
-            if (singer.value.trim().length > 0) {
-                displaySinger(singer, listId);
-                singer.value = '';
-            } else {
-                singer.placeholder = 'enter a name';
-            } 
-        });
+singerInput.addEventListener('keyup', (e) => { if (e.keyCode == 13) { displaySinger(e); }});
+enterBtn.addEventListener('click', displaySinger);
+
+removeSingerTrigger('deleteSinger');
+
+function displaySinger() {
+    if (singerInput.value.trim().length > 0) {
+        let singerLi = createNode('li', {}, singerInput.value);
+        let deleteBtn = createNode('input', {'type' : 'button', 'name' : 'deleteSinger', 'id' : 'deleteSinger'});
+        singerLi.appendChild(deleteBtn);
+        listOfSingers.appendChild(singerLi);
+        singerInput.value = '';  
+    } else {
+        singerInput.placeholder = 'enter a name';
+    } 
 }
-
-function displaySinger(singer, listId) {
-    let listOfSingers = document.getElementById(listId);
-    let singerLi = createNode('li', {}, singer.value);
-    let deleteBtn = createNode('input', {'type' : 'button', 'name' : 'deleteSinger', 'id' : 'deleteSinger'});
-    singerLi.appendChild(deleteBtn);
-    listOfSingers.appendChild(singerLi);
-}   
-
-function removeSingerTrigger(deleteBtnId, listId) {
-    let listOfSingers = document.getElementById(listId);
-    document.addEventListener('click', (e) => {
-        if (e.target && e.target.id == deleteBtnId) {
-            listOfSingers.removeChild(e.target.parentNode);
-        }
-    });
-}
-
-// send singer names to backend 
-
-let allSingerNames = [];
-addSingersTrigger('#listOfSingers li','#allSingers', '#songsAndScoreFlex')
-
-function addSingersTrigger(singerId, hiddenInputId, formId) {
-    let form = document.querySelector(formId);
-    form.addEventListener('submit', (e) => {
-        getSingers(singerId);
-        addSingers(allSingerNames, hiddenInputId)
-    });
-}
-
-function getSingers(singerId) {
-    let singerNames = document.querySelectorAll(singerId);
-    for (let i=0, c=singerNames.length; i<c; i++) {
-        allSingerNames.push(singerNames[i].textContent);
-    }
-}
-
-function addSingers(allNames, hiddenInputId) {
-    hiddenInput = document.querySelector(hiddenInputId);
-    hiddenInput.value = allNames;
-}   
 
 function createNode(element, attributes, content) {
     let createEl = document.createElement(element);
-    for (var attr in attributes) {
+    for (let attr in attributes) {
         createEl.setAttribute(attr, attributes[attr]);
     }
     if (content) {
@@ -99,5 +52,31 @@ function createNode(element, attributes, content) {
     return createEl;
 }
 
+function removeSingerTrigger(deleteBtnId) {
+    document.addEventListener('click', (e) => {
+        if (e.target && e.target.id == deleteBtnId) {
+            listOfSingers.removeChild(e.target.parentNode);
+        }
+    });
+}
 
 
+// send singer names to backend 
+
+let allSingerNames = [];
+let challengeSetUpForm = document.querySelector('#songsAndScoreFlex');
+
+challengeSetUpForm.addEventListener('submit', getSingers);
+challengeSetUpForm.addEventListener('submit', addSingers);
+
+function getSingers() {
+    let singerNames = document.querySelectorAll('#listOfSingers li');
+    for (let i=0, c=singerNames.length; i<c; i++) {
+        allSingerNames.push(singerNames[i].textContent);
+    }
+}
+
+function addSingers() {
+    hiddenInput = document.querySelector('#allSingers');
+    hiddenInput.value = allSingerNames;
+}   
