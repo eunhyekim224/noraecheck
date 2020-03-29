@@ -122,7 +122,58 @@
     #songsInOnePlaylist p{
         margin-top: 5px;
         margin-bottom: 5px;
-    }
-   
+    } 
     
+}
+
+@media all and (min-device-width: 1504px) {
+    .songImg {
+        background-color: rgb(238, 238, 238);
+        width: 10%;
+        height: 10%;
+        border-radius: 10px;
+        margin: 0;
+        padding: 0 1% 0 0;
+    }
+
+    #searchNewPlaylist input {
+        width: 77%;
+    }
+
+    #topMenu {
+        font-size: 2vh;
+    }
+}
+
+/* responsive for challengeSetUp */
+
+@media all and (min-width: 1051px) and (max-width: 1355px) {
+    #singerInput input{
+        width: 70%;
+    }
+    #selectAllSongs input {
+        width: 9%;
+        height: 63%;
+    }
+}
+
+
+@media all and (min-width: 429px) and (max-width: 1050px) {
+    #singerInput input{
+        width: 55%;
+    }
+    #challengeSongs h1 {
+        font-size: 1.5em;
+    }
+    #selectAllSongs input {
+        width: 9%;
+        height: 63%;
+    }
+    #challengeSingers label {
+        font-size: 1em;
+    }
+
+    #challengeSongs h1 {
+        font-size: 1em;
+    }
 }

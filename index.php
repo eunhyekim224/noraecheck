@@ -1,4 +1,3 @@
-  
 <?php
 session_start();
 require("./controller/controller.php");
@@ -107,6 +106,9 @@ try {
                 $songId = isset($_REQUEST['songIdToUpdate']) ? $_REQUEST['songIdToUpdate'] : '';
                 $round = isset($_REQUEST['round']) ? $_REQUEST['round'] : '';
                 updateScore($memberId,$score,$songId,$round);
+            } else if ($action ==='insertChallengeInfo') {
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                insertChallengeInfo($memberId);                 
             } else {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 showAllPlaylists($memberId); 
@@ -149,6 +151,3 @@ try {
         $file = $e->getFile();
         require('./view/error.php');
     }
-
-
-
