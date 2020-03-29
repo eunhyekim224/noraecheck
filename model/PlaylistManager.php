@@ -108,6 +108,7 @@
         }
 
         public function editPlaylistName($playlistName,$playlistId) {
+            // $db = $this->dbConnect();
             $editPlaylistName = $this->_db->prepare("UPDATE playlists SET name = :playlistName WHERE id = :playlistId");
             $editPlaylistName->execute(array(
                 'playlistName' => $playlistName,

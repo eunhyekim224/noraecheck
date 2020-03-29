@@ -24,5 +24,11 @@ for (let i = 0, c = brandCodeInput.length; i < c; i++) {
             e.target.value = brandCodeCur;
         }
     });
+
+    // brandCodeBtn[i].addEventListener('click', () => {
+    //     console.log(brandCodeBtn);
+    //     console.log(brandCodeInput);
+    //     brandCodeInput[i].focus();
+    // });
 }
 
