@@ -626,23 +626,17 @@ padding-bottom: 0;
 
 @media all and (min-height: 568px) and (max-height: 736px) {
 
-    #mainContent {
-        height: 100%;
-    }
-
-    #challengeSingers {
-        height: 35%;
-    }
-
-    #songsAndScoreFlex {
-        margin-top: -111%;
-    }
-
-    #chalPlaylistOptionsBtns {
-        font-size: 0.8em;
-    }
-
     #singerInput {
         width: 78%;
     }
+
+    #songsAndScoreFlex {
+        font-size: 0.7em;
+    }
+
+    #listOfSingers {
+        height: 57px;
+    }
+
+
 }
