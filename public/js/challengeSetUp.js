@@ -23,7 +23,7 @@ let singerInput = document.getElementById('singer');
 let enterBtn = document.getElementById('singerSubmit');
 let listOfSingers = document.getElementById('listOfSingers');
 
-singerInput.addEventListener('keyup', (e) => { if (e.keyCode == 13) { displaySinger(e); }});
+singerInput.addEventListener('keyup', (e) => { if (e.keyCode == 13) { displaySinger(); }});
 enterBtn.addEventListener('click', displaySinger);
 
 removeSingerTrigger('deleteSinger');
