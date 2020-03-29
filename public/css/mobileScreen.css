@@ -200,6 +200,60 @@ padding-bottom: 0;
         width:60%;
     }
 
+    /* challengeSetUp page */
+
+    #topHeader {
+        width: 64%;
+    }
+
+    #challengeScndWrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #singerFlex, #songsAndScoreFlex {
+        width: auto;
+    }
+
+    #songsAndScoreFlex {
+        height: 46%;
+    }
+
+    #singerInput {
+        width: 77%;
+    }
+
+    #listOfSingers {
+        width: 280px;
+        height: 139px;
+    }
+
+    #challengeSongs h1 {
+        font-size: 1.5em;
+    }
+
+    #chalPlaylistOptionsBtns {
+        height: 80%;
+    }
+
+    #chalPlaylistOptionsBtns label {
+        height: 40%;
+    }
+
+    #selectAllSongs {
+        margin-top: 6%;
+        font-size: 0.9em;
+    }
+
+    #scoreOptionWrapper {
+        margin-top: 42%;
+        margin-bottom: 5%;
+    }
+
+    #startChalBtn {
+        font-size: 1.2em;
+        padding: 6px;
+    }
 }
 
 
