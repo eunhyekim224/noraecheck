@@ -1,3 +1,4 @@
+  
 <?php
 session_start();
 require("./controller/controller.php");
@@ -119,29 +120,12 @@ try {
                 showAllPlaylists($memberId); 
             }
         } else {
-            $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-            showAllPlaylists($memberId); 
-        } 
-        
-    } else if ($action === 'register') {
-        $username = isset($_POST['loginNew']) ? $_POST['loginNew'] : '';
-        $pass1 = isset($_POST['pwd']) ? $_POST['pwd'] : '';
-        $pass2 = isset($_POST['pwdConf']) ? $_POST['pwdConf'] : '';
-        $email = isset($_POST['email']) ? $_POST['email'] : '';
-        signUp($email,$username,$pass1,$pass2);
-    } else if ($action === 'login') {
-        $username = isset($_POST['username']) ? $_POST['username'] : '';
-        $password = isset($_POST['password']) ? $_POST['password'] : '';
-        signIn($username,$password);
-    } else {
-        $error = isset($_GET['error']) ? $_GET['error'] : '';
-        $status = isset($_GET['success']) ? $_GET['success'] : '';
-        showLandingPage($error,$status);
+            $error = isset($_GET['error']) ? $_GET['error'] : '';
+            $status = isset($_GET['success']) ? $_GET['success'] : '';
+            showLandingPage($error,$status);
+        }
+    
     }
-
-
-
-}
     catch(PDOException $e) {
         $msg = $e->getMessage();
         $code = $e->getCode();
@@ -156,3 +140,6 @@ try {
         $file = $e->getFile();
         require('./view/error.php');
     }
+
+
+
