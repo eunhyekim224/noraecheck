@@ -59,7 +59,23 @@ try {
                 echo $songId;
                 if ($songId) {
                     deleteSong($songId);
-                }  
+                }
+            } else if ($action === 'showProfile') {
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                $userName = isset($_SESSION['username']) ? $_SESSION['username'] : '';
+                showProfile($memberId,$userName);
+            } else if ($action === 'editProfile') {
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                $oldUsername = isset($_SESSION['username']) ? $_SESSION['username'] : '';
+                $newUsername = isset($_POST['newUsername']) ? $_POST['newUsername'] : '';
+                $email = isset($_POST['email']) ? $_POST['email'] : '';
+                $oldPwd = isset($_POST['oldPwd']) ? $_POST['oldPwd'] : '';
+                $newPwd = isset($_POST['newPwd']) ? $_POST['newPwd'] : '';
+                $newpwdConf = isset($_POST['newpwdConf']) ? $_POST['newpwdConf'] : '';
+                editProfile($memberId,$oldUsername,$newUsername,$email,$oldPwd,$newPwd,$newpwdConf);
+            } else if ($action === 'deleteProfile') {
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                deleteProfile($memberId);  
             } else if ($action === 'searchModal') {
                 $song = isset($_REQUEST['hiddenSong']) ? $_REQUEST['hiddenSong'] : '';
                 $singer = isset($_REQUEST['hiddenSinger']) ? $_REQUEST['hiddenSinger'] : '';
