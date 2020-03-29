@@ -6,9 +6,7 @@
         <span id="user"><?=$_SESSION['username'] ?> </span>
     </div>
     <div id="topMenuDropDown" class="hidden">
-        <a href="index.php?action=showProfile" title="Go to profile">
-            <p id="bigUser"><?=$_SESSION['username'] ?> </p>
-        </a>
+        <p id="bigUser"><?=$_SESSION['username'] ?> </p>
         <a href="index.php?action=logout">logout</a>
     </div>
     <script src="./public/js/topMenu.js"></script>
