@@ -224,7 +224,7 @@ padding-bottom: 0;
         display: none;
     }
     #bannerImage {
-        width: 15%;
+        width: 10%;
         margin: 0;
         padding: 0 0 0 0;
     }
@@ -388,5 +388,9 @@ padding-bottom: 0;
     .modalButtons .btn {
         font-size: 4vh;
         padding: 1%;
+    }
+    /* challengeSetUp */
+    #challengeSongs h1 {
+        font-size: 1.5em;
     }
 }

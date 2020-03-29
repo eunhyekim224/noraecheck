@@ -17,7 +17,7 @@
             </a>
         </li>
         <li class="neonBlue">
-            <a href="#" title="Go to profile">
+            <a href="index.php?action=showProfile" title="Go to profile">
                 <div class="navIcons">
                     <img src="public/images/profile.png"/>
                 </div>

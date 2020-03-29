@@ -1,182 +1,93 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-</head> -->
+<?php if ($currentProfile) { ?>
+<div id="profileMainWrappe">
+    <form  id="editProfileForm" action="index.php" method="POST">
+        <?php
+        if(isset($errors) AND isset($errors['blanks'])) {
+            echo "<div class='error'>".$errors['blanks']."</div>";
+        }
+        ?> 
+        <input type="hidden" name="action" id="action" value="editProfile"/>
+        <input type="hidden" name="oldUsername" value="<?=$currentProfile['username']?>"/>
+        <div class="editProfileBlock">
+            <div class="profileImg">
+                <img src="public/images/profile2.png" id="editPlaylistImg" title="Profile icon">
+                <!-- <div>Edit</div> -->
+            </div>
+            <div class="profileContainer">
+                <p id="profilefirstP"></p>
+                <p class="profileformP">
+                    <label id="usernameProfile" for="newUsername">Login</label>
+                    <input type="text" name="newUsername" id="newUsername" maxlength="15" value=<?=$currentProfile['username']?> />
+                    <?php 
+                    if(isset($errors) AND isset($errors['loginNew'])) {
+                        echo "<div class='error'>".$errors['loginNew']."</div>";
+                    }        
+                    ?>    
+                    <!-- <p class="error">that id has already been taken </p>  -->
+                </p>
 
-<!-- <style>
-body{
-margin: 0;
-padding: 0;
-background-image: linear-gradient(to right,#ac1816,#2980b9);
-font-family: Montserrat;
-}
+                <p class="profileformP">
+                    <label id="emailProfile" type="emailProf">Email</label>
+                    <input type="text" name="email" id="emailProf" value=<?=$currentProfile['email']?> />
+                    <?php 
+                    if(isset($errors) AND isset($errors['email'])) {
+                        echo "<div class='error'>".$errors['email']."</div>";
+                    }        
+                    ?>   
+                    <!-- <p class="error">please enter a valid email address</p>  -->
+                </p>
+                
+                <p class="profileformP">
+                    <label id="pwdProfile" for="oldPwd">Password to verify</label>
+                    <input type="password" name="oldPwd" id="oldPwd"/>  
+                    <?php 
+                    if(isset($errors) AND isset($errors['oldPwdConf'])) {
+                        echo "<div class='error'>".$errors['oldPwdConf']."</div>";
+                    }        
+                    ?>  
+                </p>
 
-.card{
-position: relative;
-width: 30%;
-height: 600px;
-background-color: white;
-margin-top: 10%;
-margin-left: 30%;
-border-radius: 5px;
-}
+                <div class="changePwdBtn">Change password</div>
+                <div class="changePwd">
+                    <p class="profileformP">
+                        <label id="pwdProfile" for="newPwd"> New password</label>
+                        <input type="password" name="newPwd" id="newPwd" placeholder="at lease 8 characters"/>  
+                        <?php 
+                        if(isset($errors) AND isset($errors['pwd'])) {
+                            echo "<div class='error'>".$errors['pwd']."</div>";
+                        }        
+                        ?>  
+                        <!-- <p class="error">@TODO : add verification</p>  -->
+                    </p>
 
-.blackcard{
-position: absolute;
-width: 100%;
-height: 200px;
-background-color: rgb(206, 206, 206);
-border-radius: 5px;
-margin-top: -5px;
-}
-
-.profile-picture{
-position: absolute;
-width: 25%;
-border-radius: 100%;
-border: 3px white solid;
-top: 18%;
-margin-left: 3%;
-}
-
-.form{
-position: absolute;
-width: 50%;
-height: 50px;
-margin-left: 40%;
-margin-top: 20px;
-overflow: hidden;
-}
-
-.form input{
-position: absolute;
-width: 100%;
-height: 100%;
-background: none;
-color: white;
-border: none;
-box-sizing: border-box;
-padding-top: 20px;
-outline: none;
-font-family: Montserrat;
-}
-
-.content-input{
-position: absolute;
-color: white;
-width: 100%;
-bottom: 0;
-border-bottom: 1px white solid;
-pointer-events: none;
-}
-
-.content-input::after{
-content: "";
-position: absolute;
-height: 2px;
-width: 100%;
-background-color: #535c68;
-bottom: -1px;
-left: -100%;
-transition: 0.5s;
-}
-
-.content-text{
-position: absolute;
-bottom: 5px;
-transition: 0.5s;
-}
-
-.form input:focus + .content-input span,.form input:valid + .content-input span{
-bottom: 25px;
-font-size: 13px;
-}
-
-.form input:focus + .content-input::after,.form input:valid + .content-input::after{
-left: 0;
-}
-
-.content-input-white{
-position: absolute;
-color: black;
-width: 100%;
-bottom: 0;
-border-bottom: 1px black solid;
-pointer-events: none;
-}
-
-.content-input-white::after{
-content: "";
-position: absolute;
-height: 2px;
-width: 100%;
-background-color: #535c68;
-bottom: -1px;
-left: -100%;
-transition: 0.5s;
-}
-
-.form input:focus + .content-input-white span,.form input:valid + .content-input-white span{
-bottom: 25px;
-font-size: 13px;
-}
-
-.form input:focus + .content-input-white::after,.form input:valid + .content-input-white::after{
-left: 0;
-}
-
-.go{
-position: absolute;
-margin-top: 470px;
-margin-left: 15%;
-width: 70%;
-height: 70px;
-background-color: rgb(131, 0, 0);
-background-size: 200%;
-transition: 0.7s;
-transition-property: background-color;
-outline: none;
-border: none;
-font-family: Montserrat;
-color: white;
-font-size: 20px;
-cursor: pointer;
-}
-
-.go:hover{
-background-color: red;
-}
-
-</style> -->
-
-<!-- <body>
-        <div class="card">
-            <div class="blackcard">
-  <img src="../public/images/profile_icon.png" class="profile-picture">
-                <img src="https://cdn.discordapp.com/avatars/320349801164177408/3f6910bec813b20b227477445df8c4e4.png?size=128"
-                class="profile-picture" >
-                <div class="form">
-                    <input type="text" name="Name" id="name" autocomplete="off" required />
-                    <label class="content-input">
-                        <span class="content-text">Name</span>
-                    </label>
-                </div>
-                <div class="form" id="username" style="margin-top: 70px;">
-                    <input type="text" name="Username" id="username" autocomplete="off" required />
-                    <label class="content-input">
-                        <span class="content-text">email</span>
-                    </label>
-                </div>
-                <div class="form" id="bio" style="margin-top: 120px;">
-                    <input type="text" name="Bio" id="bio" autocomplete="off" required />
-                    <label class="content-input">
-                        <span class="content-text">Bio</span>
-                    </label>
+                    <p class="profileformP">
+                        <label id="conpwdProfile" type="newpwdConf">Confirm Password</label>
+                        <input type="password" name="newpwdConf" id="newpwdConf" placeholder="same password"/>
+                        <?php 
+                        if(isset($errors) AND isset($errors['pwdConf'])) {
+                            echo "<div class='error'>".$errors['pwdConf']."</div>";
+                        }        
+                        ?>  
+                        <!-- <p class="error">please make sure that your passwords are the same</p>  -->
+                    </p>
                 </div>
             </div>
+        </div>
+        <p id="profilelastP">
+            <input class="btn btnBlue" type="submit" name="editProfileBtn" id="editProfileBtn" value="Edit"/>
+            <input class="btn btnOrange" type="button" name="deleteProfileBtn" id="deleteProfileBtn" value="Delete"/>
+        </p>
+    </form>
+    <div class="modal">
+        <div class="modalContent deleteProfileModal">
+            <form action="index.php" method="post">
+                <input type="hidden" name="action" value="deleteProfile">
+                <input type="hidden" name="memberId" value=<?=$_SESSION['memberId']?>>
+                <?php include('areYouSureModal.php'); ?>
+            </form>
+        </div>
+    </div>
+</div>
+<?php } ?>
+<script src="./public/js/editProfile.js"></script>
 
-            </body>
-</html> -->

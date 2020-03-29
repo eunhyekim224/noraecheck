@@ -122,6 +122,10 @@ a {
     background-position: right center;
 }
 
+.btn:focus {
+    outline: none;
+}
+
 .btnBlue,
 #menuIcons li {
     background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 20%, #8fd3f4 71%, #84fab0 100%);
@@ -765,6 +769,94 @@ img.minusIcon {
 }
 
 
+/*----------- profile page style -----------------*/
+
+#editProfileForm,
+.editProfileBlock,
+#profilelastP {
+    display: flex;
+}
+
+#editProfileForm {
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 0 0 0;
+}
+
+.editProfileBlock {
+    width: 80%;
+}
+
+.editProfileBlock {
+    justify-content: center;
+}
+
+.profileImg {
+    width: 20%;
+    margin: 0 3% 0 0;
+}
+
+.error {
+    color: red;
+}
+
+.profileformP label {
+    width: 40%;
+    margin: 0 3% 0 0;
+}
+
+.profileformP input {
+    width: 50%;
+    border-radius: 3px;
+    border: none;
+    background-color: rgb(238, 238, 238);
+    font-size: 1em;
+    color: rgb(102, 96, 96);
+    padding: 0 0 0 3%;
+}
+
+#profilelastP {
+    width: 65%;
+    justify-content: center;
+}
+
+#profilelastP .btn {
+    width: 30%;
+    border: none;
+}
+
+.changePwd {
+    visibility: hidden;
+}
+
+.changePwdBtn {
+    width: 45%;
+    /* cursor: pointer; */
+    border-radius: 3px;
+    border: none;
+    box-shadow: 3px 5px rgb(187, 186, 186);
+    padding: 3px;
+    background-color: #8fd3f4;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.changePwdBtn:hover {
+    background-color: #5fbbe9;
+}
+
+.changePwdBtn:active {
+    background-color: #5fbbe9;
+    box-shadow: 3px 5px rgb(143, 142, 142);
+    transform: translateY(4px);
+}
+
+
+/* .deleteProfileModal {
+    display: none;
+} */
+
+
 /*----------- search page style -----------------*/
 
 #search {
@@ -1084,3 +1176,419 @@ label[for=playlistId] {
 .modalContentSearch form {
     height: 40%;
 }
+
+
+/* challenge page style */
+
+#challengeWrapper {
+    height: 100%;
+}
+
+#challengeScndWrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+#singerFlex {
+    width: 50%;
+    height: 100%;
+}
+
+#songsAndScoreFlex {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#challengeWrapper h1 {
+    padding-left: 0;
+}
+
+#challengeSingers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+#singerInput {
+    width: 56%;
+}
+
+#listOfSingers {
+    height: 43%;
+    width: 55%;
+    margin-top: 5%;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-left: 0;
+    border-radius: 10px;
+    background-color: rgb(238, 238, 238);
+}
+
+#listOfSingers li {
+    font-size: 1.5em;
+    padding: 2%;
+}
+
+#listOfSingers li:nth-child(odd) {
+    background-color: #8fd3f4;
+}
+
+#listOfSingers li:nth-child(even) {
+    background-color: white;
+    color: rgb(146, 143, 143);
+}
+
+#listOfSingers li input {
+    float: right;
+    width: 10%;
+    height: 25px;
+    background: transparent url('../images/minusIcon3.png') center/cover;
+}
+
+#challengeSingers input {
+    height: 38px;
+    font-size: 1.5em;
+    width: 76%;
+    border: none;
+    border-radius: 10px;
+    color: rgb(146, 143, 143);
+    padding-left: 5%;
+}
+
+#singerInput button {
+    border: none;
+    border-radius: 10px;
+    height: 103%;
+    padding-top: -11px;
+    vertical-align: top;
+    color: rgb(146, 143, 143);
+    box-shadow: 3px 5px rgb(187, 186, 186);
+}
+
+#singerInput button:active,
+#singerInput button:hover {
+    background-color: rgb(156, 156, 156);
+    color: white;
+    box-shadow: 3px 5px rgb(143, 142, 142);
+    transform: translateY(4px);
+}
+
+#singerInput button:focus {
+    outline: 0;
+}
+
+#challengeSingers label {
+    padding: 25px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#challengeSongs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 25%;
+}
+
+#scoreOptionWrapper {
+    display: flex;
+    margin: 15%;
+    font-size: 1.2em;
+}
+
+#scoreOptionWrapper input {
+    margin-top: 7px;
+}
+
+#chalPlaylistOptionsBtns {
+    display: flex;
+    height: 55%;
+}
+
+#chalPlaylistOptionsBtns label {
+    padding: 3.5%;
+    border: none;
+    font-weight: bold;
+    box-shadow: 3px 5px rgb(143, 142, 142);
+}
+
+#chalPlaylistOptionsBtns label:active,
+#chalPlaylistOptionsBtns label:hover {
+    box-shadow: 3px 5px rgb(143, 142, 142);
+}
+
+#chalPlaylistOptionsBtns input[type=radio] {
+    display: none;
+}
+
+#selectPlaylist,
+#selectAllSongs {
+    display: none;
+}
+
+#selectPlaylist {
+    width: 89%;
+    margin-top: 7%;
+}
+
+#playlists {
+    width: 100%;
+    height: 145%;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.3em;
+    box-shadow: 3px 5px rgb(143, 142, 142);
+    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 20%, #8fd3f4 71%, #84fab0 100%);
+}
+
+#playlists:focus {
+    outline: 0;
+}
+
+#selectPlaylist option {
+    color: white;
+    background-color: #8fd3f4;
+}
+
+#selectAllSongs {
+    padding-top: 7%;
+    font-size: 1.2em;
+}
+
+#selectAllSongs input {
+    width: 10%;
+    border: none;
+    border-radius: 5px;
+    height: 131%;
+    text-align: center;
+    font-size: 1em;
+}
+
+#startChalBtn {
+    border: none;
+    background-color: #f460faff;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 0;
+    padding: 20px;
+    box-shadow: 3px 5px rgb(187, 186, 186);
+    animation: clickMe 2s infinite;
+}
+
+@keyframes clickMe {
+    0% {
+        transform: translate(0px, 0px);
+        animation-timing-function: ease-in-out
+    }
+    25% {
+        transform: translate(0px, 4px);
+        animation-timing-function: ease-in-out
+    }
+    50% {
+        transform: translate(0px, 0px);
+        animation-timing-function: ease-in-out
+    }
+    75% {
+        transform: translate(0px, 0px);
+        animation-timing-function: ease-in-out
+    }
+    100% {
+        transform: translate(0px, 0px);
+        animation-timing-function: ease-in-out
+    }
+}
+
+#startChalBtn:hover,
+#startChalBtn:active {
+    box-shadow: 3px 5px rgb(143, 142, 142);
+    transform: translateY(4px);
+}
+
+
+/*______________Challenge in progress style________________*/
+
+#challengeSong {
+    display: flex;
+}
+
+#challengeUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: #eee solid 2px;
+    ;
+}
+
+#challengeUser span {
+    font-family: Jua, sans-serif;
+    font-size: 4em;
+    color: #f460faff;
+    border-radius: 20px;
+}
+
+#challengeUser p {
+    font-family: Jua, sans-serif;
+    margin-top: 0%;
+    margin-bottom: 2%;
+    font-size: 2em;
+    color: #f460faff;
+    border-radius: 20px;
+}
+
+#challengeSong img {
+    margin-left: 7%;
+}
+
+#mainSongInfo {
+    padding-left: 5%;
+    width: 70%;
+}
+
+.challengeCode {
+    width: 30% !important;
+}
+
+.songBrandCodeContainer {
+    display: flex;
+}
+
+#scoreEnterDiv {
+    background-color: #84fab0;
+    width: 15%;
+    margin-right: 5%;
+    padding-left: .5%;
+    border-radius: 20px;
+}
+
+.addScoreImg {
+    width: 80%;
+}
+
+.addScoreText {
+    margin-top: 2%;
+    margin-left: 4%;
+    color: rgb(113, 112, 112);
+    font-size: 3vh;
+}
+
+.yourScoreText {
+    margin-left: 10%;
+    color: rgb(113, 112, 112);
+    font-size: 1em;
+}
+
+.enterScore {
+    font-size: 1em;
+    width: 70%;
+    margin-left: 12%;
+    margin-top: 10%;
+    background-color: #8fd3f4;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+#newScore {
+    border: none;
+    height: 20%;
+    font-size: 1em;
+    width: 50%;
+    margin-left: 20%;
+}
+
+#oldScore {
+    font-size: 2em;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 25%;
+}
+
+#challengeSong {
+    margin-top: 1%;
+}
+
+#challengeBtns {
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#challengeBtns input {
+    font-family: sans-serif;
+    font-size: 3vh;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+
+/**********landingSignup Style***********/
+
+
+/* 
+.signupPage {
+    background-color: rgb(206, 206, 206);
+}
+
+#registrationContent {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#kakaoLogin img {
+    height: 10%;
+    width: 10%
+}
+
+#registrationContent form {
+    width: 50%;
+}
+
+#registrationContent p,
+#kakaoLogin {
+    display: flex;
+    justify-content: justify;
+    align-content: center;
+    background-color: rgb(228, 225, 225);
+    padding: 3%;
+    border-radius: 20px;
+}
+
+#kakaoLogin {
+    background-color: rgb(251, 255, 0);
+    font-family: 'Jua', sans-serif;
+    font-size: xx-large;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 10%;
+    ;
+    padding: 1%;
+}
+
+#kakaoLogin span {
+    margin-right: 5%;
+}
+
+#registrationContent p label {
+    width: 50%
+}
+
+#registrationContent p input {
+    flex-grow: 1;
+}
+
+#reset,
+#submitRegister {
+    margin-left: 10%;
+    margin-right: 10%;
+} */
