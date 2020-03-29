@@ -144,3 +144,36 @@
         font-size: 2vh;
     }
 }
+
+/* responsive for challengeSetUp */
+
+@media all and (min-width: 1051px) and (max-width: 1355px) {
+    #singerInput input{
+        width: 70%;
+    }
+    #selectAllSongs input {
+        width: 9%;
+        height: 63%;
+    }
+}
+
+
+@media all and (min-width: 429px) and (max-width: 1050px) {
+    #singerInput input{
+        width: 55%;
+    }
+    #challengeSongs h1 {
+        font-size: 1.5em;
+    }
+    #selectAllSongs input {
+        width: 9%;
+        height: 63%;
+    }
+    #challengeSingers label {
+        font-size: 1em;
+    }
+
+    #challengeSongs h1 {
+        font-size: 1em;
+    }
+}

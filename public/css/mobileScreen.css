@@ -622,4 +622,27 @@ padding-bottom: 0;
     }
 }
 
+/* Galaxy S5 */
 
+@media all and (min-height: 568px) and (max-height: 736px) {
+
+    #mainContent {
+        height: 100%;
+    }
+
+    #challengeSingers {
+        height: 35%;
+    }
+
+    #songsAndScoreFlex {
+        margin-top: -111%;
+    }
+
+    #chalPlaylistOptionsBtns {
+        font-size: 0.8em;
+    }
+
+    #singerInput {
+        width: 78%;
+    }
+}
