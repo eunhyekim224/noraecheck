@@ -1197,6 +1197,11 @@ label[for=playlistId]{
 #scoreOptionWrapper {
     display: flex;
     margin: 15%;
+    font-size: 1.2em;
+}
+
+#scoreOptionWrapper input {
+    margin-top: 7px;
 }
 
 #chalPlaylistOptionsBtns {
@@ -1252,7 +1257,7 @@ label[for=playlistId]{
 
 #selectAllSongs {
     padding-top: 7%;
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 #selectAllSongs input {

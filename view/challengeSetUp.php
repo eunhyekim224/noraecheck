@@ -23,7 +23,7 @@
                 </div>
                 <div id="selectPlaylist">
                     <select name="playlists" id="playlists">
-                        <option>Select a playlist...</option>
+                        <option value="0">Select a playlist...</option>
                         <?php while ($playlist = $playlists->fetch()) {; ?>
                             <option value="<?= $playlist['playlistId']; ?>"><?=$playlist['playlistName']; ?></option>
                         <?php }; ?>
