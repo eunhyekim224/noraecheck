@@ -34,7 +34,6 @@
                         </span>
                 </label>
             </p>
-
             <p class="signformP">
                 <label class="field a-field a-field_a3">
                     <input type="password" name="pwd" id="pwd" class="field__input a-field__input" placeholder="at lease 8 characters" required/>
@@ -48,7 +47,6 @@
                         </span>
                 </label>
             </p>
-
             <p class="signformP">
                 <label class="field a-field a-field_a3">
                     <input type="password" name="pwdConf" id="pwdConf" class="field__input a-field__input" placeholder="same password" required/>
@@ -62,7 +60,6 @@
                         </span>
                 </label>
             </p>
-
             <p id="lastP">
                 <input class="btn" type="submit" name="submitSignUp" id="submitSignUp" value="Create"/>
                 <input class="btn" type="reset" name="reset" id="reset"  value="Reset"/>

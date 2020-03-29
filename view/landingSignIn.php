@@ -19,7 +19,6 @@
                         </span>
                     </label>
                 </p>
-
                 <p class="loginformP">
                     <label class="field a-field a-field_a3">
                         <input type="password" name="password" id="password" class="field__input a-field__input" placeholder="at least 8 characters" required />
@@ -33,7 +32,6 @@
                         </span>
                     </label>
                 </p>
-
                 <p id="lastP">
                     <input type="submit" class="btn" name="submit" id="submitRegister" value="login" />
                     <input type="reset" class="btn" name="reset" id="reset" value="Reset" />

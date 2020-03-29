@@ -2,7 +2,11 @@
     <div class="modalContent" id="modalContent">
         <div class="modalButtons openSans" id="mainOptions">
             <div>
+
                 <?= "<a href=\"index.php?action=search&playlistId=" .$playlist['playlistId']."\">"; ?>
+                <a href="index.php?action=search&playlistId=<?=$playlist['playlistId']?>>
+                
+
                     <input type="button" name="addSong" value="Add songs" class="btn btnBlue"> 
                 </a>        
             </div>
