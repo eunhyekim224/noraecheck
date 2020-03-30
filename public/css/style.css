@@ -1527,3 +1527,83 @@ label[for=playlistId] {
     padding-top: 1%;
     padding-bottom: 1%;
 }
+
+
+/* endChallenge css start */
+
+table,
+th,
+td {
+    border: solid 1px #000;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.singer,
+.music,
+.score {
+    color: #f462fa;
+}
+
+table {
+    width: 176px;
+    border-collapse: collapse;
+    margin: 50px auto;
+    border-collapse: collapse;
+    caption-side: bottom;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+#accountBtns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#signInText,
+#createAccount {
+    display: block;
+    width: 40vh;
+    height: 20%;
+    padding: 14px 0;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 1.1em;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btn {
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    outline: none;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
+
+
+/* endChallenge css end */

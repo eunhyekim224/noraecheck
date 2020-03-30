@@ -33,8 +33,6 @@
             <p name="oldScore" id="oldScore" class="hidden"><?=$score?></p>
             <input type="hidden" name="action" value="updateScore">
             <input type="button" id="reEnter" value="re-enter" class="enterScore hidden">
-            
-            
         </form>
     </div> 
     <form method="post" id="challengeRoundForm" action="index.php">
@@ -45,7 +43,6 @@
                 <input type="button" name="addToPlaylist" id="exit" value="exit" class="btn btnBlue">
                 <input type="button" name="cancel" id="nextRound" value="next" class="btn btnBlue">
             </div>
-            
             
     </form>
     <? include("challengeExitModal.php");?>

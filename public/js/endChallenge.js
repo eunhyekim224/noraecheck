@@ -1,0 +1,1 @@
+// use JS to add new singers and scores

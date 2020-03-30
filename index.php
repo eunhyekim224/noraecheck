@@ -126,7 +126,8 @@ try {
                 insertChallengeInfo($memberId);
             } else if ($action ==='endChallenge') {
                 $score = isset($_REQUEST['score']) ? $_REQUEST['score'] : '';
-                endChallenge($score);                  
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                endChallenge($score,$memberId);                  
             } else {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 showAllPlaylists($memberId); 

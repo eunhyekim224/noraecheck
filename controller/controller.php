@@ -229,8 +229,8 @@
     }
 
     function endChallenge($memberId) {
-        echo '<strong>Scores of Singers: </strong>';
         $displayMode = 'endChallenge';
+        require("view/home.php");
     }
 
     function logout(){
