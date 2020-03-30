@@ -8,7 +8,7 @@
     <div id="createTxt">Create a new playlist</div>
     <?php include('newPlaylistModal.php'); ?>
 </li>
-<?php while ($playlist = $playlists->fetch()) { ?>
+<?php while ($playlist = $playlists->fetch()): ?>
     <li>
         <div class="myListIcons">
             <img src="public/images/album2.png" id="playListImg">
@@ -26,6 +26,6 @@
             </div>
         <?= "</a>";?>
     </li>
-<?php } ?>
+<?php endwhile; ?>
 </ul>
 <script src="./public/js/modalNewPlaylist.js"></script>
