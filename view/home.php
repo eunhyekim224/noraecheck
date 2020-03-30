@@ -20,6 +20,8 @@ include("topMenu.php");
         include("playlistSongs.php");
     } else if ($displayMode == 'challengeSetUp') {
         include("challengeSetUp.php");
+    } else if ($displayMode == 'profile') {
+        include("profile.php");
     } else if ($displayMode == 'challengeInProgress') {
         include("challengeInProgress.php");
     }
