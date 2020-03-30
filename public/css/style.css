@@ -1502,6 +1502,11 @@ label[for=playlistId]{
     padding-bottom: 1%;
 }
 
+#exitModal p{
+    margin-top:2em;
+    margin-bottom: 0em;
+    font-size: 1.5em;
+}
 
 
 
