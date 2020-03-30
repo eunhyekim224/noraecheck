@@ -12,5 +12,4 @@
         <a href="index.php?action=logout">logout</a>
     </div>
     <script src="./public/js/topMenu.js"></script>
-
 </div>

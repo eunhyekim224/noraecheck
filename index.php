@@ -4,7 +4,6 @@ require("./controller/controller.php");
 /**
  * TODO: verify cookies, if cookies set, showAllPlaylists, if not showLandingPage
  */
-
 try {
     $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
     if(isset($_SESSION['memberId'])){
@@ -123,7 +122,11 @@ try {
                 updateScore($memberId,$score,$songId,$round);
             } else if ($action ==='insertChallengeInfo') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-                insertChallengeInfo($memberId);                 
+                insertChallengeInfo($memberId);
+            } else if ($action ==='endChallenge') {
+                $score = isset($_REQUEST['score']) ? $_REQUEST['score'] : '';
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                endChallenge($score,$memberId);                  
             } else {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 showAllPlaylists($memberId); 

@@ -1,3 +1,4 @@
+
 <h1>my playlists</h1> 
 <!-- $_SESSION['username']-->
 <ul class="myList">
@@ -29,3 +30,4 @@
 <?php endwhile; ?>
 </ul>
 <script src="./public/js/modalNewPlaylist.js"></script>
+

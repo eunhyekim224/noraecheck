@@ -18,18 +18,14 @@
             <div class="modalButtons openSans addSongToNewPlaylistButton">
                 <div name="newPlaylist" class="addPlaylistSearchBtn">new playlist</div>             
             </div>
-            <input type="hidden" name="song" value=<?=urlencode($song); ?>>
-            <input type="hidden" name="singer" value=<?=urlencode($singer); ?>>
-            <input type="hidden" name="tj" value=<?=$tj; ?>>
-            <input type="hidden" name="kumyoung" value=<?=$kumyoung; ?>>
+            <input type="hidden" name="song" value=<?=urlencode($song);?>>
+            <input type="hidden" name="singer" value=<?=urlencode($singer);?>>
+            <input type="hidden" name="tj" value=<?=$tj;?>>
+            <input type="hidden" name="kumyoung" value=<?=$kumyoung;?>>
             <div class="modalButtons openSans">
                 <input type="submit" name="addToPlaylist" value="add" class="btn btnBlue">
                 <input type="button" name="cancel" value="Cancel" class="btn btnBlue">               
             </div>
-            
         </form>
-        
-        
-
     </div>
 </div>

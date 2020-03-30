@@ -26,4 +26,3 @@ for (let i = 0, c = brandCodeInput.length; i < c; i++) {
     });
 
 }
-

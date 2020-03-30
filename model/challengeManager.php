@@ -1,7 +1,5 @@
 <?php   
     require_once('model/Manager.php');
-
-
     
     class ChallengeManager extends Manager {
 
@@ -9,7 +7,6 @@
             parent::__construct();
         } 
 
- 
 
         public function getChallenge($memberId) {
             $playlists = $this->_db->prepare('SELECT c.singer AS player, s.singer AS singer , s.song AS song, s.tjCode AS tj, s.kumyoungCode AS kumyoung, c.songId AS songId

@@ -2,7 +2,7 @@
     <div class="modalContent" id="modalContent">
         <div class="modalButtons openSans" id="mainOptions">
             <div>
-                <?= "<a href=\"index.php?action=search&playlistId=" .$playlist['playlistId']."\">"; ?>
+                <a href="index.php?action=search&playlistId=<?=$playlist['playlistId']?>" >
                     <input type="button" name="addSong" value="Add songs" class="btn btnBlue"> 
                 </a>        
             </div>
@@ -19,7 +19,7 @@
                         <div>Edit</div>
                     </div>
                     <div id="editPlaylistInfo">
-                        <input type="text" name="newPlaylistName" id="newPlaylistName" autofocus value="<?= $playlist['playlistName']; ?>" autocomplete="off"/>
+                        <input type="text" name="newPlaylistName" id="newPlaylistName" autofocus value="<?=$playlist['playlistName'];?>" autocomplete="off"/>
                         <p>by <?=  $playlist['username']; ?></p>
                         <p>
                             <i class="fas fa-music darkGrey" title="number of songs"></i>
