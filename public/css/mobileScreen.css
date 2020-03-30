@@ -280,7 +280,7 @@ padding-bottom: 0;
     #topHeader{
         width:25%;
         align-items: center;
-        background-color:none;
+        background-color:transparent !important;
     }
     
     #lang{

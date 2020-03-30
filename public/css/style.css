@@ -301,6 +301,11 @@ a {
 .displayedPlaylists {
     text-decoration: none;
     color: white;
+    width:30%;
+}
+
+.displayedPlaylists:hover p{
+    color:#f460faff;
 }
 
 .songListBrands {
@@ -529,6 +534,15 @@ input.question+label>span {
 img.minusIcon {
     background-color: transparent;
     height: 63%;
+}
+img.minusIcon:hover,.addIcon img:hover{
+    background-color: #84fab0;
+    height: 63%;
+}
+
+.addIcon img{
+    padding:5%;
+    border-radius: 10px;
 }
 
 #deleteSongModal .modalContent {
