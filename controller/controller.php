@@ -228,6 +228,11 @@
         echo '<br><strong>Enter score option: </strong>'.$_POST['scoreOption'];
     }
 
+    function endChallenge($memberId) {
+        echo '<strong>Scores of Singers: </strong>';
+        $displayMode = 'endChallenge';
+    }
+
     function logout(){
         session_destroy();
         header("Location:index.php");
