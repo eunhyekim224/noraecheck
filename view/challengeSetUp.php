@@ -5,9 +5,13 @@
                 <label for="singer">Enter the singers</label>
                 <div id="singerInput">
                     <input type="text" name="singer" id="singer">
-                    <button type="button" id="singerSubmit" value="singerSubmit">enter</button>
+                    <button type="button" id="singerSubmit" value="singerSubmit"></button>
                 </div>
-                <ul id="listOfSingers"></ul>
+                <ul id="listOfSingers">
+                    <li><?= $_SESSION['username']; ?>
+                        <input type="button" id="deleteSinger" name="deleteSinger">
+                    </li>
+                </ul>
             </div>
         </div>
         <form action="index.php" method="post" id="songsAndScoreFlex">
@@ -16,14 +20,13 @@
             <div id="challengeSongs">
                 <h1>Choose songs from...</h1>
                 <div id="chalPlaylistOptionsBtns">
-                    <input type="radio" id="onePlaylist" name="chalOptions" value="onePlaylist">
-                    <label for="onePlaylist" class="btn btnBlue">One Playlist</label>
+                    <input type="radio" checked id="onePlaylist" name="chalOptions" value="onePlaylist">
+                    <label for="onePlaylist" class="btn">One Playlist</label>
                     <input type="radio" id="allPlaylists" name="chalOptions" value="allPlaylists">
-                    <label for="allPlaylists" class="btn btnBlue" >All Playlists</label>
+                    <label for="allPlaylists" class="btn" >All Playlists</label>
                 </div>
                 <div id="selectPlaylist">
                     <select name="playlists" id="playlists">
-                        <option value="0">Select a playlist...</option>
                         <?php while ($playlist = $playlists->fetch()): ?>
                             <option value="<?= $playlist['playlistId']; ?>"><?=$playlist['playlistName']; ?></option>
                         <?php endwhile; ?>
