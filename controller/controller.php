@@ -161,7 +161,6 @@
         $updateScore = new ChallengeManager();
         $updatedScore = $updateScore->updateScore($memberId,$score,$songId);
         header('Location: index.php?action=challengeInProgress&score='.$updatedScore.'&round='.$round);
-        echo $updatedScore;
     }
 
     function showProfile($memberId,$userName) {

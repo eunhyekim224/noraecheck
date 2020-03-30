@@ -197,6 +197,19 @@
     #topMenu {
         font-size: 2vh;
     }
+
+    #challengeUser {
+        height: 177px;
+        justify-content: center;
+    }
+
+    #challengeSong #mainPlaylistImg {
+        width: 16%;
+    }
+
+    #scoreEnterDiv {
+        width: 20%;
+    }
 }
 
 /* responsive for challengeSetUp */

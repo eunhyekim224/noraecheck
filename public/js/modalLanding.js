@@ -68,7 +68,6 @@ function signUpVerify(signUpForm, e) {
     } else {
         e.preventDefault();
         error = signUpForm.querySelector("p.error");
-        console.log(error);
         error.style.display = "block";
     }
 }
@@ -90,7 +89,6 @@ function signUpVerify(signUpForm, e) {
 
         const submitSignUp = document.getElementById('submitSignUp');
         submitSignUp.addEventListener("click", function(e) {
-            console.log('stuff');
             signUpVerify(document.getElementById('signUpForm'), e);
         });
         // for the button to the creation
