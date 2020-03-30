@@ -55,7 +55,6 @@ try {
                 }  
             } else if ($action === 'deleteSong') {
                 $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
-                echo $songId;
                 if ($songId) {
                     deleteSong($songId);
                 }

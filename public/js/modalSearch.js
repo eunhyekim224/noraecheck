@@ -1,7 +1,6 @@
 let modals2 = document.getElementsByClassName("modalSearch");
 // let closeButtons = document.getElementsByClassName("close");
 let cancelButtons = document.getElementsByName("cancel");
-console.log(cancelButtons);
 
 closeModal(modals2, cancelButtons);
 
@@ -39,5 +38,7 @@ newPlaylistBtn.addEventListener('click', () => {
     modalFormAction.value = "addSongToNewPlaylist";
     searchNewPlaylist.classList.add('visibleSearchNewPlaylist');
     newPlaylistInputText.focus();
+    newPlaylistInputText.required = true;
+
 
 });

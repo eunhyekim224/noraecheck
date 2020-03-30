@@ -45,6 +45,6 @@
             </div>
             
     </form>
-    <? include("challengeExitModal.php");?>
+    <?php include("challengeExitModal.php");?>
     <script src="./public/js/challengeInProgress.js"></script>
 </div>

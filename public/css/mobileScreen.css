@@ -90,7 +90,7 @@ padding-bottom: 0;
     .modalContent {
         width: 84%;
         display: flex;
-        margin-top: 60%;
+        margin-top: 20%;
         font-size: 1.5em;
     }
     .modalButtons input {
@@ -224,7 +224,7 @@ padding-bottom: 0;
         height: 80%;
     }
     #chalPlaylistOptionsBtns label {
-        height: 40%;
+        height: 60%;
     }
     #selectAllSongs {
         margin-top: 6%;
@@ -264,7 +264,7 @@ padding-bottom: 0;
     #topHeader{
         width:25%;
         align-items: center;
-        background-color:none;
+        background-color:transparent !important;
     }
     
     #lang{
@@ -282,6 +282,41 @@ padding-bottom: 0;
     }
     #topMenuDropDown{
         margin-top:10%
+    }
+
+    /* playlistSongs page */ 
+
+    #mySongList {
+        height: 69%;
+    }
+
+    #mySongList li {
+        padding-bottom: 30px;
+    }
+
+    .songImgInPlaylistSongs {
+        display: none;
+    }
+
+    #mySongList img {
+        background-color: transparent;
+        height: 40px;
+        width: 40px;
+        margin: 0;
+        padding-left: 40px;
+    }
+
+    .songListBrandCodes {
+        width: 33%;
+    }
+
+    #editBtns input {
+        font-size: 0.5em;
+        height: 53px;
+    }
+
+    #editPlaylistInfo {
+        width: 37%;
     }
 }
 

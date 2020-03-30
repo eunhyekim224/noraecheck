@@ -47,7 +47,7 @@ a {
     display: flex;
     justify-content: space-between;
     /* width:15%; */
-    font-size: 4vh;
+    font-size: 3vh;
     margin-left: 50%;
 }
 
@@ -300,6 +300,11 @@ a {
 .displayedPlaylists {
     text-decoration: none;
     color: white;
+    width: 30%;
+}
+
+.displayedPlaylists:hover p {
+    color: #f460faff;
 }
 
 .songListBrands {
@@ -531,6 +536,17 @@ input.question+label>span {
 img.minusIcon {
     background-color: transparent;
     height: 63%;
+}
+
+img.minusIcon:hover,
+.addIcon img:hover {
+    background-color: #84fab0;
+    height: 63%;
+}
+
+.addIcon img {
+    padding: 5%;
+    border-radius: 10px;
 }
 
 #deleteSongModal .modalContent {
@@ -1526,6 +1542,12 @@ label[for=playlistId] {
     font-size: 3vh;
     padding-top: 1%;
     padding-bottom: 1%;
+}
+
+#exitModal p {
+    margin-top: 2em;
+    margin-bottom: 0em;
+    font-size: 1.5em;
 }
 
 
