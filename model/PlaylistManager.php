@@ -54,7 +54,12 @@
             if(!$playlistsResp) {
                 throw new PDOException('Unable to retrieve all playlists!');
             }
-            return $playlists;
+            
+            $playlistArray =[];
+            while ($playlist = $playlists->fetch()){
+                array_push($playlistArray,$playlist);
+            }
+            return $playlistArray;
         }
 
         public function getMainPlaylist($playlistId) {
@@ -69,7 +74,7 @@
             if(!$playlistResp) {
                 throw new PDOException('Unable to retrieve the selected playlist!');
             }
-            return $playlist;
+            return $playlist-> fetch();
         }
 
                 
