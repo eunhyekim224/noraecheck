@@ -42,5 +42,7 @@ newPlaylistBtn.addEventListener('click', ()=> {
     modalFormAction.value = "addSongToNewPlaylist";
     searchNewPlaylist.classList.add('visibleSearchNewPlaylist');
     newPlaylistInputText.focus();
+    newPlaylistInputText.required = true;
+    
     
 });
