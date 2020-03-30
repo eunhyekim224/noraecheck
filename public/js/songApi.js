@@ -101,7 +101,6 @@ function loadFile(entry, category) { //function takes inputs from these two vari
 
 
     input.addEventListener('keyup', function(e) {
-        // console.log("e.target.value.length", e.target.value.length>1);
         let div_parent = document.querySelector('#searchResults');
         div_parent.innerHTML = "";
         if (e.target.value) {
@@ -163,30 +162,6 @@ function displayResults(array) {
         let code2 = createNode('p', {}, array[i].kumyoung_code);
         let addIcon = createNode('div', { 'class': 'addIcon' });
         let iconImg = createNode('img', { 'src': 'public/images/plusIcon4.png', 'title': 'Plus icon', 'class': 'addPlaylist' });
-
-        // let hiddenSong = document.createElement('input');
-        // let hiddenSinger = document.createElement('input');
-        // let hiddenTj = document.createElement('input');
-        // let hiddenKumyoung = document.createElement('input');
-        // let hiddenAction = document.createElement('input');
-        // let searchCache = document.createElement('input');
-        // let categoryCache = document.createElement('input');
-
-        // hiddenSong.setAttribute('type','hidden');
-        // hiddenSinger.setAttribute('type','hidden');
-        // hiddenTj.setAttribute('type','hidden');
-        // hiddenKumyoung.setAttribute('type','hidden');
-        // hiddenAction.setAttribute('type','hidden');
-        // searchCache.setAttribute('type','hidden');
-        // categoryCache.setAttribute('type','hidden');
-
-        // hiddenSong.setAttribute('name','hiddenSong');
-        // hiddenSinger.setAttribute('name','hiddenSinger');
-        // hiddenTj.setAttribute('name','hiddenTj');
-        // hiddenKumyoung.setAttribute('name','hiddenKumyoung');
-        // hiddenAction.setAttribute('name','action');
-        // searchCache.setAttribute('name','searchCache');
-        // categoryCache.setAttribute('name','categoryCache');
 
 
         let tjCode = array[i].tj_code ? array[i].tj_code : '';
@@ -285,7 +260,6 @@ let modals = document.getElementsByClassName("modalSearch");
 
 
 function autocorrect(searchedValue, category) {
-    // console.log("e.target.value.length", e.target.value.length>1);
     let div_parent = document.querySelector('#searchResults');
     div_parent.innerHTML = "";
     if (searchedValue) {
@@ -299,7 +273,6 @@ if (modalDisplay.value === 'on') {
         modals[i].style.display = "block";
         playlistId = document.getElementById('playlistId');
         searchCache = document.getElementById('searchCache');
-        console.log(searchCache.value);
         searchCategory = document.getElementById('searchCategory');
         switchOptions(searchCategory.value);
         finalSearchCache = searchCache.value.replace(/_/g, " ");

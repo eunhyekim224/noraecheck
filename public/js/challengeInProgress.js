@@ -42,7 +42,6 @@ document.body.addEventListener('click',function(){
 
 //exit the game
 const finalExit = document.getElementsByName('exit')[0];
-console.log(finalExit);
 
 finalExit.addEventListener('click',function(){
     //also change this to the final page once it is created

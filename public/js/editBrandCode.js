@@ -25,10 +25,5 @@ for (let i = 0, c = brandCodeInput.length; i < c; i++) {
         }
     });
 
-    // brandCodeBtn[i].addEventListener('click', () => {
-    //     console.log(brandCodeBtn);
-    //     console.log(brandCodeInput);
-    //     brandCodeInput[i].focus();
-    // });
 }
 

@@ -1,7 +1,6 @@
 let modals2 = document.getElementsByClassName("modalSearch");
 // let closeButtons = document.getElementsByClassName("close");
 let cancelButtons = document.getElementsByName("cancel");
-console.log(cancelButtons);
 
 
 
