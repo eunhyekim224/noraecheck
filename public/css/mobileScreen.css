@@ -90,7 +90,7 @@ padding-bottom: 0;
     .modalContent {
         width: 84%;
         display: flex;
-        margin-top: 60%;
+        margin-top: 20%;
         font-size: 1.5em;
     }
     .modalButtons input {
