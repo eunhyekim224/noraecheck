@@ -1614,18 +1614,5 @@ button:hover {
     text-decoration: none;
 }
 
-.btn {
-    margin: 10px;
-    padding: 30px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;
-    outline: none;
-    border-radius: 10px;
-    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
-}
-
 
 /* endChallenge css end */

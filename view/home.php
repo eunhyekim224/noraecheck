@@ -14,6 +14,7 @@ include("topMenu.php");
     
     <section id="mainContent" class="gothamPro">
     <?php
+    echo $displayMode;
     if ($displayMode == 'playlists'){
         include("homeMyList.php");
     } else if ($displayMode == 'songs') {

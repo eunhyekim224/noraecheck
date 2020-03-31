@@ -159,6 +159,26 @@
         header('Location: index.php?action=challengeInProgress&score='.$updatedScore.'&round='.$round);
     }
 
+    function endChallenge($memberId) {
+        $endChallenge = new ChallengeManager();
+        $trophy = $endChallenge->endChallenge($memberId);
+        $displayMode = 'endChallenge';
+        require("view/home.php");
+    }
+
+    function deleteChallenge($memberId) {
+        $deleteChallenge = new ChallengeManager();
+        $deleteChallenge->deleteChallenge($memberId);
+        header('Location: index.php?action=showMyList');
+    }
+     
+    function newChallenge ($memberId) {
+        $deleteChallenge = new ChallengeManager();
+        $deleteChallenge->deleteChallenge($memberId);
+        $displayMode = 'challengeSetUp';
+        require("view/home.php");
+    }
+
     function showProfile($memberId,$userName) {
         $profileManager = new MemberManager();
         $currentProfile = $profileManager->getMember($userName);
@@ -209,7 +229,7 @@
         require("view/home.php");
     } 
 
-    function deleteProfile($memberId) {
+    function deleteProfile($singer,$score) {
         $memberManager = new MemberManager();
         $deleteProfile = $memberManager->deleteProfile($memberId);
         header("Location: index.php?success=1");
@@ -225,11 +245,6 @@
             echo '<br><strong>Playlist ID selected: </strong>'.$_POST['playlists'];
         }
         echo '<br><strong>Enter score option: </strong>'.$_POST['scoreOption'];
-    }
-
-    function endChallenge($memberId) {
-        $displayMode = 'endChallenge';
-        require("view/home.php");
     }
 
     function logout(){
