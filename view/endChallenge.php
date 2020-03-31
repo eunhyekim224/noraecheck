@@ -7,45 +7,26 @@
 
         <tbody>
             <tr>
+                <td class="singer">Rank</td>
                 <td class="singer">Singer</td>
-                <td class="music">Music</td>
                 <td class="score">Score</td>
             </tr>
-
+            
+            <?php 
+            foreach ($trophy as $rank => $trophy_rank ): ?>
             <tr>
-                <td>Jeremy</td>
-                <td>bad guy</td>
-                <td>22</td>            
+                <td><?=$order=$rank+1?></td>
+                <td><?=$trophy_rank['singer']?></td>
+                <td><?=$trophy_rank['winner_score']?></td>        
             </tr>
-
-            <tr>
-                <td>Marie</td>
-                <td>we will rock you</td>
-                <td>85</td>
-            </tr>
-        
-            <tr>
-                <td>Stas</td>
-                <td>gangnam style</td>
-                <td>55</td>
-            </tr>
-
-            <tr>
-                <td>EunHye</td>
-                <td>likey</td>
-                <td>95</td>
-            </tr>
-
-            <tr>
-                <td>James</td>
-                <td>thriller</td>
-                <td>90</td>
-            </tr>
+            <?php endforeach ?>
     </tbody>
 </table>
 
-    <?php 
-    require("newChallenge.php"); 
-    ?>
+<div id="accountBtns">
+    <!-- <a href="index.php?action=deleteChallenge" id="playAgain" class="btn"> Play again ?</a> -->
+    <button id="challengeAgain" class="btn btnOrange"> Play again ?</button>
+    <a href="index.php?action=deleteChallenge" id="createAccount" class="btn btnOrange">Go back to my playlists</a>
+</div>
 
-<script src="./public/js/endChallenge.js"></script>
+<?php require("newChallenge.php"); ?>

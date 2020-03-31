@@ -126,10 +126,17 @@ try {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 insertChallengeInfo($memberId);
             } else if ($action ==='endChallenge') {
-                $score = isset($_REQUEST['score']) ? $_REQUEST['score'] : '';
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-                endChallenge($score,$memberId);                  
-            } else {
+                endChallenge($memberId);
+            } else if ($action ==='deleteChallenge') {
+                // clear the results
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                deleteChallenge($memberId); 
+            } else if ( $action === "newChallenge"){
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                newChallenge($memberId); 
+            }
+            else {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 showAllPlaylists($memberId); 
             }
@@ -153,9 +160,6 @@ try {
         $status = isset($_GET['success']) ? $_GET['success'] : '';
         showLandingPage($error,$status);
     }
-
-
-
 }
     catch(PDOException $e) {
         $msg = $e->getMessage();
