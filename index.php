@@ -124,7 +124,12 @@ try {
                 updateScore($memberId,$score,$songId,$round);
             } else if ($action ==='insertChallengeInfo') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-                insertChallengeInfo($memberId);                 
+                $allSingers = isset($_POST['allSingers']) ? $_POST['allSingers'] : '';
+                $chalPlaylistOptions = isset($_POST['chalOptions']) ? $_POST['chalOptions'] : '';
+                $chalPlaylistId = isset($_POST['playlists']) ? $_POST['playlists'] : '';
+                $noOfSongs = isset($_POST['noOfSongs']) ? $_POST['noOfSongs'] : '';
+                $scoreOption = isset($_POST['scoreOption']) ? $_POST['scoreOption'] : '';
+                insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption);                 
             } else {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 showAllPlaylists($memberId); 

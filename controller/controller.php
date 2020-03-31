@@ -220,16 +220,82 @@
         header("Location: index.php?success=1");
     }
 
-    function insertChallengeInfo($memberId) {
-        echo '<strong>List of all singers: </strong>'.$_POST['allSingers'];
-        if ($_POST['chalOptions'] === 'allPlaylists') {
-            echo '<br><strong>Option to choose songs from: </strong>'. $_POST['chalOptions'];
-            echo '<br><strong>Number of songs: </strong>'.$_POST['noOfSongs'];
-        } else if ($_POST['chalOptions'] === 'onePlaylist') {
-            echo '<br><strong>Option to choose songs from: </strong>'. $_POST['chalOptions'];
-            echo '<br><strong>Playlist ID selected: </strong>'.$_POST['playlists'];
+    function insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption) {
+        // echo '<strong>List of all singers: </strong>'.$allSingers;
+        $singersArray = explode(',',$allSingers);
+
+        if ($chalPlaylistOptions === 'allPlaylists') {
+            $playlistsArray = array();
+            $playlistManager = new PlaylistManager();
+            $playlistsDb = $playlistManager->getAllPlaylists($memberId);
+            
+            while ($playlists = $playlistsDb->fetch()) {
+                array_push($playlistsArray, $playlists['playlistId']);
+            }
+
+            $songsArray = array();
+            $songManager = new SongManager();
+            for ($i=0, $c=count($playlistsArray); $i<$c; $i++) {
+                $songsDb = $songManager->getSongs($playlistsArray[$i]);
+        
+                while ( $songs = $songsDb->fetch()) {
+                    array_push($songsArray, $songs['songName']);
+                }
+            }
+            // print_r($songsArray);
+            shuffle($songsArray);
+            // print_r($songsArray);
+            
+            if ($noOfSongs >= count($songsArray)) {
+                $songsChal = $songsArray;
+            } else {
+                $songsChal = array_slice($songsArray,0,$noOfSongs);
+            }
+
+            
+            print_r($singersArray);
+            echo '<br>';
+            print_r($songsChal);
+
+            $singerAndSongArray = array();
+
+            if (count($singersArray) < count($songsChal)) {
+                // while ($songsChal) {
+                //     for ($i=0, $c=count($singersArray); $i<$c; $i++) {
+                //         $singerAndSongArray[$singersArray[$i]] = $songsChal[$i];
+                //         // print_r('<br>'.$singersArray[$i]);
+                //         // print_r('<br>'.$songsChal[$i]);
+                //     }
+                //     array_shift($songsChal);
+                //     shuffle($songsChal);
+                // }
+                // for ($i=count($songsChal), $c=0; $i>=$c; $i--) {
+                //     for ($j=0, $k=count($singersArray); $j<$k; $j++) {
+                //         $singerAndSongArray[$singersArray[$j]] = $songsChal[$j];
+                //         // print_r('<br>'.$singersArray[$j]);
+                //         // print_r('<br>'.$songsChal[$j]);
+                //         shuffle($songsChal);
+                //         // $singerAndSongArray = array_combine($singersArray,$songsChal);
+                //     }
+                //     // array_shift($songsChal);  
+                // }
+
+                foreach ($songsChal as $value2) {
+                    foreach ($singersArray as $key => $value) {
+                        echo '<br>'.$value2;
+                        $singerAndSongArray[$value] = $value2;
+                    }
+                }
+            }
+
+            echo '<br>';
+            print_r($singerAndSongArray);
+            print_r('<br><strong>Number of songs: </strong>'.count($songsChal));
+        } else if ($chalPlaylistOptions === 'onePlaylist') {
+            echo '<br><strong>Option to choose songs from: </strong>'.$chalPlaylistOptions;
+            echo '<br><strong>Playlist ID selected: </strong>'.$chalPlaylistId;
         }
-        echo '<br><strong>Enter score option: </strong>'.$_POST['scoreOption'];
+        echo '<br><strong>Enter score option: </strong>'.$scoreOption;
     }
 
     function logout(){

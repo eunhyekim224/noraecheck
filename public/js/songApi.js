@@ -164,30 +164,6 @@ function displayResults(array) {
         let addIcon = createNode('div', { 'class': 'addIcon' });
         let iconImg = createNode('img', { 'src': 'public/images/plusIcon4.png', 'title': 'Plus icon', 'class': 'addPlaylist' });
 
-        // let hiddenSong = document.createElement('input');
-        // let hiddenSinger = document.createElement('input');
-        // let hiddenTj = document.createElement('input');
-        // let hiddenKumyoung = document.createElement('input');
-        // let hiddenAction = document.createElement('input');
-        // let searchCache = document.createElement('input');
-        // let categoryCache = document.createElement('input');
-
-        // hiddenSong.setAttribute('type','hidden');
-        // hiddenSinger.setAttribute('type','hidden');
-        // hiddenTj.setAttribute('type','hidden');
-        // hiddenKumyoung.setAttribute('type','hidden');
-        // hiddenAction.setAttribute('type','hidden');
-        // searchCache.setAttribute('type','hidden');
-        // categoryCache.setAttribute('type','hidden');
-
-        // hiddenSong.setAttribute('name','hiddenSong');
-        // hiddenSinger.setAttribute('name','hiddenSinger');
-        // hiddenTj.setAttribute('name','hiddenTj');
-        // hiddenKumyoung.setAttribute('name','hiddenKumyoung');
-        // hiddenAction.setAttribute('name','action');
-        // searchCache.setAttribute('name','searchCache');
-        // categoryCache.setAttribute('name','categoryCache');
-
 
         let tjCode = array[i].tj_code ? array[i].tj_code : '';
         let kumgoungCode = array[i].kumyoung_code ? array[i].kumyoung_code : '';
@@ -200,14 +176,7 @@ function displayResults(array) {
         let searchCache = createNode('input', { 'type': 'hidden', 'name': 'searchCache', 'value': entry.value });
         let categoryCache = createNode('input', { 'type': 'hidden', 'name': 'categoryCache', 'value': category.value });
 
-        // hiddenSong.setAttribute('value', array[i].song);
-        // hiddenSinger.setAttribute('value', array[i].singer);
-        // hiddenTj.setAttribute('value', tjCode);
-        // hiddenKumyoung.setAttribute('value', kumgoungCode);
-        // hiddenAction.setAttribute('value', 'searchModal');
-        // searchCache.setAttribute('value', entry.value);
-        // categoryCache.setAttribute('value', category.value);
-
+       
         iconImg.addEventListener('click', () => {
             searchResults.submit();
         });
