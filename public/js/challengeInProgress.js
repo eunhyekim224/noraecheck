@@ -2,8 +2,10 @@ let roundNumber = document.getElementById("round");
 const nextButton = document.getElementById("nextRound");
 const numOfRounds = parseInt(document.getElementById("numberOfRounds").value);
 const challengeRoundForm = document.getElementById("challengeRoundForm");
-const action = document.getElementsByName('action')[1];
+const action = document.getElementsByName('action')[2];
 const exit = document.getElementById('exit');
+
+console.log(numOfRounds);
 
 //go to next round
 nextButton.addEventListener('click', function() {

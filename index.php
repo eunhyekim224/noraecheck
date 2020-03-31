@@ -46,12 +46,14 @@ try {
                     deletePlaylist(($_SESSION['playlistId']), $_SESSION['memberId']);
                 }
             } else if ($action === 'editBrandCode') {
+                $page = isset($_POST['page']) ? $_POST['page'] : '';
+                $round = isset($_POST['round']) ? $_POST['round'] : '';
                 $playlistId = isset($_POST['playlistId']) ? $_POST['playlistId'] : '';
                 $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
                 $tjCode = isset($_POST['tjCode']) ? $_POST['tjCode'] : '';
                 $kumyoungCode = isset($_POST['kumyoungCode']) ? $_POST['kumyoungCode'] : '';
                 if ($playlistId && $songId) {
-                    editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode);
+                    editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode,$page,$round);
                 }  
             } else if ($action === 'deleteSong') {
                 $songId = isset($_POST['songId']) ? $_POST['songId'] : '';

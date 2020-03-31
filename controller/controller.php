@@ -90,10 +90,15 @@
         require("view/home.php");
     }
 
-    function editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode) {
+    function editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode,$page,$round) {
         $songManager = new SongManager();
         $editBrandCodes = $songManager->editBrandCodes($songId,$tjCode,$kumyoungCode);
-        header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
+        if($page == 'playlistSongs'){
+            header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
+        } else if($page == 'challengeInProgress'){
+            header('Location: index.php?action=challengeInProgress&round='.$round);
+        }
+        
     }
 
     function editPlaylist($newPlaylistName,$playlistId) {

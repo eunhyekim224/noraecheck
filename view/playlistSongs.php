@@ -29,6 +29,7 @@
                 <p>by <?= $sng['singerName']; ?></p>
                 <form method="post" action="index.php" class="songListBrands darkGrey">
                     <input type="hidden" name="action" value="editBrandCode">
+                    <input type="hidden" name="page" value="playlistSongs">
                     <input type="hidden" name="songId" value=<?= $sng['songId'];?>>
                     <input type="hidden" name="playlistId" value=<?= $_SESSION['playlistId'];?>>
                     <div class="songListBrandCodes">
