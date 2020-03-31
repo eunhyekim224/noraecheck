@@ -24,9 +24,9 @@
                 <div id="selectPlaylist">
                     <select name="playlists" id="playlists">
                         <option value="0">Select a playlist...</option>
-                        <?php while ($playlist = $playlists->fetch()): ?>
+                        <?php foreach ($playlists as $playlist): ?>
                             <option value="<?= $playlist['playlistId']; ?>"><?=$playlist['playlistName']; ?></option>
-                        <?php endwhile; ?>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                 <div id="selectAllSongs">

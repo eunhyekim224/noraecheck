@@ -7,7 +7,7 @@
             <input type="hidden" name="action"id="modalFormAction" value="addToPlaylist">
             <label for="playlistId"><span>add song to playlist</span></label>
             <div id="playlistId">
-                <?php while ($playlist = $playlistsAdd->fetch()) { 
+                <?php foreach ($playlistsAdd as $playlist) { 
                     if ($playlist['playlistId'] === $playlistId) {
                         echo '<input checked type="radio" name="playlistId" id="' .$playlist['playlistId']  .'" value="' .$playlist['playlistId'] .'"/><label class="playlists" for="' .$playlist['playlistId']  .'">'.$playlist['playlistName'] .'</label>';
                     } else {

@@ -44,7 +44,6 @@
             if(!$update) {
                 throw new PDOException('Unable to edit this playlist!');
             }
-
             $update->closeCursor();
             return $score;
         }
@@ -56,7 +55,7 @@
             if(!$end) {
                 throw new PDOException('Unable get score for singer(s)!');
             }
-            $result =  $end->fetchAll();
+            $result = $end->fetchAll();
             return $result;
         }
 
