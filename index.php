@@ -114,8 +114,9 @@ try {
             }else if ($action === 'challengeInProgress') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 $round = isset($_REQUEST['round']) ? $_REQUEST['round'] : '0';
+                $scoreOption = isset($_REQUEST['scoreOption']) ? $_REQUEST['scoreOption'] : '';
                 $score = isset($_REQUEST['score']) ? $_REQUEST['score'] : '';
-                challengeInProgress($memberId,$round,$score);
+                challengeInProgress($memberId,$round,$scoreOption,$score);
             }else if ($action === 'updateScore') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 $score = isset($_REQUEST['newScore']) ? $_REQUEST['newScore'] : '';

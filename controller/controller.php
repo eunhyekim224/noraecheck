@@ -151,9 +151,10 @@
         $displayMode = 'challengeSetUp';
         require("view/home.php");
     }
-    function challengeInProgress($memberId,$round,$score) {
+    function challengeInProgress($memberId,$round,$scoreOption,$score) {
         $challengeInProgressManager = new ChallengeManager();
         $getChallenge = $challengeInProgressManager->getChallenge($memberId);
+        $scoreOpt = $scoreOption;
         $displayMode = 'challengeInProgress';
         require("view/home.php");
     }
@@ -279,10 +280,6 @@
         $increment = 0;
         $challengeManager = new ChallengeManager();
         foreach ($songsArray as $i=>$song){
-            echo "the song id is :".$song." and the singer is : ".$singersArray[$increment];
-            echo '<br>';
-            echo "increment = ".$increment;
-            echo '<br>';
             $challengeManager->insertSingerSongs($memberId,$singersArray[$increment],$song, null);
             if($increment === count($singersArray)-1){
                 $increment = 0;
@@ -291,8 +288,7 @@
             }
         }
 
-        echo '<br><strong>Enter score option: </strong>'.$scoreOption;
-        require("view/challengeInProgress.php");
+        header("Location: index.php?action=challengeInProgress&scoreOption=".$scoreOption);
     }
 
     function logout(){
