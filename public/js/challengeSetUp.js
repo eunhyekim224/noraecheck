@@ -1,6 +1,5 @@
 let onePlaylistBtn = document.querySelector('#onePlaylist');
 let allSongsBtn = document.querySelector('#allPlaylists');
-
 let selectPlaylist = document.querySelector('#selectPlaylist');
 let selectAllSongs = document.querySelector('#selectAllSongs');
 

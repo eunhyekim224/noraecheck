@@ -2,7 +2,7 @@
     <div class="modalContent" id="modalContent">
         <div class="modalButtons openSans" id="mainOptions">
             <div>
-                <?= "<a href=\"index.php?action=search&playlistId=" .$playlist['playlistId']."\">"; ?>
+                <a href="index.php?action=search&playlistId=<?=$mainPlaylist['playlistId']?>" >
                     <input type="button" name="addSong" value="Add songs" class="btn btnBlue"> 
                 </a>        
             </div>
@@ -11,7 +11,7 @@
         </div>
         <form method="post" action="index.php" id="editPlaylistForm">
             <input type="hidden" name="action" value="editPlaylist"/>
-            <input type="hidden" name="playlistId" value="<?=$playlist['playlistId']; ?>" />
+            <input type="hidden" name="playlistId" value="<?=$mainPlaylist['playlistId']; ?>" />
             <div class="editPlaylistBlock">
                 <div class="editPlaylistContent">
                     <div class="albumIcon">
@@ -19,13 +19,13 @@
                         <div>Edit</div>
                     </div>
                     <div id="editPlaylistInfo">
-                        <input type="text" name="newPlaylistName" id="newPlaylistName" autofocus value="<?= $playlist['playlistName']; ?>" autocomplete="off"/>
-                        <p>by <?=  $playlist['username']; ?></p>
+                        <input type="text" name="newPlaylistName" id="newPlaylistName" autofocus value="<?=$mainPlaylist['playlistName'];?>" autocomplete="off"/>
+                        <p>by <?=  $mainPlaylist['username']; ?></p>
                         <p>
                             <i class="fas fa-music darkGrey" title="number of songs"></i>
-                            <span class="darkGrey"><?= $playlist['songCount'];?></span>
+                            <span class="darkGrey"><?= $mainPlaylist['songCount'];?></span>
                             <i class="far fa-calendar-alt darkGrey" title="creation date"></i>
-                            <span class="darkGrey"><?= $playlist['playlistCreationDate']; ?></span>
+                            <span class="darkGrey"><?= $mainPlaylist['playlistCreationDate']; ?></span>
                         </p>
                     </div>
                 </div>

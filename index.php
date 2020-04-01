@@ -4,7 +4,6 @@ require("./controller/controller.php");
 /**
  * TODO: verify cookies, if cookies set, showAllPlaylists, if not showLandingPage
  */
-
 try {
     $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
     if(isset($_SESSION['memberId'])){
@@ -47,16 +46,17 @@ try {
                     deletePlaylist(($_SESSION['playlistId']), $_SESSION['memberId']);
                 }
             } else if ($action === 'editBrandCode') {
+                $page = isset($_POST['page']) ? $_POST['page'] : '';
+                $round = isset($_POST['round']) ? $_POST['round'] : '';
                 $playlistId = isset($_POST['playlistId']) ? $_POST['playlistId'] : '';
                 $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
                 $tjCode = isset($_POST['tjCode']) ? $_POST['tjCode'] : '';
                 $kumyoungCode = isset($_POST['kumyoungCode']) ? $_POST['kumyoungCode'] : '';
                 if ($playlistId && $songId) {
-                    editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode);
+                    editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode,$page,$round);
                 }  
             } else if ($action === 'deleteSong') {
                 $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
-                echo $songId;
                 if ($songId) {
                     deleteSong($songId);
                 }
@@ -130,7 +130,18 @@ try {
                 $noOfSongs = isset($_POST['noOfSongs']) ? $_POST['noOfSongs'] : '';
                 $scoreOption = isset($_POST['scoreOption']) ? $_POST['scoreOption'] : '';
                 insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption);                 
-            } else {
+            } else if ($action ==='endChallenge') {
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                endChallenge($memberId);
+            } else if ($action ==='deleteChallenge') {
+                // clear the results
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                deleteChallenge($memberId); 
+            } else if ( $action === "newChallenge"){
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                newChallenge($memberId); 
+            }
+            else {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 showAllPlaylists($memberId); 
             }
@@ -154,9 +165,6 @@ try {
         $status = isset($_GET['success']) ? $_GET['success'] : '';
         showLandingPage($error,$status);
     }
-
-
-
 }
     catch(PDOException $e) {
         $msg = $e->getMessage();

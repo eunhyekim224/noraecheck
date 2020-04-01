@@ -101,7 +101,6 @@ function loadFile(entry, category) { //function takes inputs from these two vari
 
 
     input.addEventListener('keyup', function(e) {
-        // console.log("e.target.value.length", e.target.value.length>1);
         let div_parent = document.querySelector('#searchResults');
         div_parent.innerHTML = "";
         if (e.target.value) {
@@ -254,7 +253,6 @@ let modals = document.getElementsByClassName("modalSearch");
 
 
 function autocorrect(searchedValue, category) {
-    // console.log("e.target.value.length", e.target.value.length>1);
     let div_parent = document.querySelector('#searchResults');
     div_parent.innerHTML = "";
     if (searchedValue) {
@@ -268,7 +266,6 @@ if (modalDisplay.value === 'on') {
         modals[i].style.display = "block";
         playlistId = document.getElementById('playlistId');
         searchCache = document.getElementById('searchCache');
-        console.log(searchCache.value);
         searchCategory = document.getElementById('searchCategory');
         switchOptions(searchCategory.value);
         finalSearchCache = searchCache.value.replace(/_/g, " ");

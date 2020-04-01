@@ -9,7 +9,6 @@ let category = document.getElementById('category');
 
 function switchOptionsDisplay(index) {
 
-
     song.classList.remove("searchOptionExpanded");
     singer.classList.remove("searchOptionExpanded");
     no.classList.remove("searchOptionExpanded");
@@ -71,6 +70,7 @@ function switchOptionsDisplay(index) {
             break;
     }
 }
+
 function switchOptions(index) {
 
     switch (index) {
@@ -84,9 +84,8 @@ function switchOptions(index) {
             category.value = "no";
             break;
     }
-        
-}
 
+}
 
 song.addEventListener('click', function() {
     if (searchOptionIndex === 'song') {
@@ -119,15 +118,13 @@ no.addEventListener('click', function() {
     switchOptions(searchOptionIndex);
     switchOptionsDisplay(searchOptionIndex);
     autocorrect(entry.value, category.value);
-    
+
 });
-entry.addEventListener('click',function(){
-    if(searchOptionIndex === 'all'){
+entry.addEventListener('click', function() {
+    if (searchOptionIndex === 'all') {
         searchOptionIndex = category.value;
         switchOptionsDisplay(searchOptionIndex);
         autocorrect(entry.value, category.value);
-        
+
     }
 })
-
-

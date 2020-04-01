@@ -1,14 +1,14 @@
-    //Open and close block to change password
-    let showChangePwdBtn = document.querySelector('.changePwdBtn');
-    let changePwdBlock = document.querySelector('.changePwd');
+//Open and close block to change password
+let showChangePwdBtn = document.querySelector('.changePwdBtn');
+let changePwdBlock = document.querySelector('.changePwd');
 
-    showChangePwdBtn.addEventListener('click', () => {
-        if (changePwdBlock.style.visibility === "hidden") {
-            changePwdBlock.style.visibility = "visible";
-        } else {
-            changePwdBlock.style.visibility = "hidden";
-        }
-    });
+showChangePwdBtn.addEventListener('click', () => {
+    if (changePwdBlock.style.visibility === "hidden") {
+        changePwdBlock.style.visibility = "visible";
+    } else {
+        changePwdBlock.style.visibility = "hidden";
+    }
+});
 
 //Open and close modal to delete profile
 

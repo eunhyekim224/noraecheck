@@ -10,16 +10,25 @@
         <div id="mainSongInfo">
             <p class="darkGrey playlistNameText"><?=$getChallenge[$round]['song']?></p>
             <p>by <?=$getChallenge[$round]['singer']?></p>
-            <div class="songBrandCodeContainer">
-                <div class="songListBrandCodes challengeCode">
-                    <label for="tjCode<?=$getChallenge[$round]['songId']?>">TJ</label>
-                    <input type="text" name="tjCode" maxlength=10 id="tjCode<?=$getChallenge[$round]['songId']?>" autocomplete="off" value=<?=$getChallenge[$round]['tj']?> >
-                </div>
-                <div class="songListBrandCodes challengeCode">
-                    <label for="kumyoungCode<?=$getChallenge[$round]['songId']?>">KY</label>
-                    <input type="text" name="kumyoungCode" maxlength=10 id="kumyoungCode<?=$getChallenge[$round]['songId']?>" autocomplete="off" value=<?=$getChallenge[$round]['kumyoung']?> >
-                </div>
+            <div class="">
+                
+                
             </div>
+            <form method="post" action="index.php" class="songListBrands songBrandCodeContainer">
+                    <input type="hidden" name="action" value="editBrandCode">
+                    <input type="hidden" name="page" value="challengeInProgress">
+                    <input type="hidden" name="round" value= <?=$round?>>
+                    <input type="hidden" name="songId" value=<?= $getChallenge[$round]['songId'];?>>
+                    <input type="hidden" name="playlistId" value=<?= $_SESSION['playlistId'];?>>
+                    <div class="songListBrandCodes challengeCode">
+                        <label for="tjCode<?=$getChallenge[$round]['songId']?>">TJ</label>
+                        <input type="text" name="tjCode" maxlength=10 id="tjCode<?=$getChallenge[$round]['songId']?>" autocomplete="off" value=<?=$getChallenge[$round]['tj']?> >
+                    </div>
+                    <div class="songListBrandCodes challengeCode">
+                        <label for="kumyoungCode<?=$getChallenge[$round]['songId']?>">KY</label>
+                        <input type="text" name="kumyoungCode" maxlength=10 id="kumyoungCode<?=$getChallenge[$round]['songId']?>" autocomplete="off" value=<?=$getChallenge[$round]['kumyoung']?> >
+                    </div>
+                </form>
         </div>
         <form id="scoreEnterDiv" action="index.php">
             <img src='public/images/plusIcon4.png' class = 'addScoreImg'/>
@@ -33,8 +42,6 @@
             <p name="oldScore" id="oldScore" class="hidden"><?=$score?></p>
             <input type="hidden" name="action" value="updateScore">
             <input type="button" id="reEnter" value="re-enter" class="enterScore hidden">
-            
-            
         </form>
     </div> 
     <form method="post" id="challengeRoundForm" action="index.php">
@@ -46,8 +53,8 @@
                 <input type="button" name="cancel" id="nextRound" value="next" class="btn btnBlue">
             </div>
             
-            
     </form>
     <?php include("challengeExitModal.php");?>
     <script src="./public/js/challengeInProgress.js"></script>
+    <script src="./public/js/editBrandCode.js"></script>
 </div>

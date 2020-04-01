@@ -5,6 +5,7 @@
 
 
 /**********************************/
+
 @media all and (min-width: 640px) and (max-width: 700px) {
     body {
         background-color: rgb(206, 206, 206);
@@ -146,7 +147,6 @@ padding-bottom: 0;
     .navIcons {
         width: 40%;
     }
-    
     /*_____ search page media queries_____ */
     .searchOptions {
         width: 20%;
@@ -184,20 +184,17 @@ padding-bottom: 0;
         width: 35%;
         font-size: 3vh;
     }
-    .modalContentSearch{
+    .modalContentSearch {
         margin-top: 30%;
         width: 80%;
     }
-
-    #playlistName{
-        width:70%;
+    #playlistName {
+        width: 70%;
     }
-    .modalButtons .btn{
-        font-size:4vh;
-        padding:1%;
+    .modalButtons .btn {
+        font-size: 4vh;
+        padding: 1%;
     }
-
-    
 }
 
 @media all and (min-width: 700px) and (max-width: 1050px) {
@@ -341,7 +338,6 @@ padding-bottom: 0;
     .navIcons {
         width: 40%;
     }
-    
     /*_____ search page media queries_____ */
     .searchOptions {
         width: 20%;
@@ -379,26 +375,48 @@ padding-bottom: 0;
         width: 35%;
         font-size: 3vh;
     }
-
-    #results{
-        height:90%;
+    #results {
+        height: 90%;
     }
-    .modalContentSearch{
+    .modalContentSearch {
         margin-top: 30%;
         width: 80%;
     }
-
-    #playlistName{
-        width:70%;
+    #playlistName {
+        width: 70%;
     }
-    .modalButtons .btn{
-        font-size:4vh;
-        padding:1%;
+    .modalButtons .btn {
+        font-size: 4vh;
+        padding: 1%;
     }
-
     /* challengeSetUp */
-
     #challengeSongs h1 {
         font-size: 1.5em;
+    }
+    /* challenge in progress */
+    #mainSongInfo p {
+        font-size: 3vh;
+    }
+    .challengeCode {
+        width: 45% !important;
+    }
+    .challengeCode label {
+        font-size: 3vh;
+    }
+    .challengeCode input {
+        font-size: 3vh;
+    }
+    .enterScore {
+        margin-left: 2%;
+        width: 90%;
+        font-size: 1.5em;
+    }
+    #newScore {
+        font-size: 2em;
+        width: 50%;
+        margin-left: 20%;
+    }
+    #user {
+        font-size: 2vh;
     }
 }
