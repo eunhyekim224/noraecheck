@@ -221,12 +221,17 @@
     }
 
     function insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption) {
-        // echo '<strong>List of all singers: </strong>'.$allSingers;
+        echo '<strong>List of all singers: </strong>'.$allSingers;
         $singersArray = explode(',',$allSingers);
         $playlistsArray = array();
         $playlistManager = new PlaylistManager();
         
-        $playlistsDb = ($chalPlaylistOptions === 'onePlaylist')? $playlistManager->getMainPlaylist($chalPlaylistId) : $playlistManager->getAllPlaylists($memberId);
+        if ($chalPlaylistOptions === 'onePlaylist') {
+            $playlistsDb = array();
+            array_push ($playlistsDb, $playlistManager->getMainPlaylist($chalPlaylistId));
+        } else{
+            $playlistsDb = $playlistManager->getAllPlaylists($memberId);
+        }
         
         foreach ($playlistsDb as $playlists) {
             array_push($playlistsArray, $playlists['playlistId']);
@@ -238,7 +243,7 @@
         for ($i=0, $c=count($playlistsArray); $i<$c; $i++) {
             $songsDb = array_merge($songsDb, $songManager->getSongs($playlistsArray[$i]));
         }
-        
+
         foreach ($songsDb as $song) {
             array_push($songsArray, $song["songId"]);
         }
@@ -265,14 +270,9 @@
                 $increment++;
             }
         }
-            // echo '<br> Singers Array new: ';
-            // print_r($singerChalArray);
-            // echo '<br> Singers and Songs Array: ';
-            // print_r($singerAndSongArray);
-            // print_r('<br><strong>Number of singers: </strong>'.count($singerChalArray));
-            // print_r('<br><strong>Number of songs: </strong>'.count($songsChal));
-        
+
         echo '<br><strong>Enter score option: </strong>'.$scoreOption;
+        require("view/challengeInProgress.php");
     }
 
     function logout(){
