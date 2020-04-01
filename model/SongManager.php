@@ -47,7 +47,7 @@
             if(!$resp) {
                 throw new PDOException('Unable to display this playlist!');
             }
-            return $songs;
+            return $songs->fetchAll();
         }
 
         private function countSongsFromPlaylist($playlistId) {

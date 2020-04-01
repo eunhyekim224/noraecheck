@@ -223,78 +223,55 @@
     function insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption) {
         // echo '<strong>List of all singers: </strong>'.$allSingers;
         $singersArray = explode(',',$allSingers);
-
-        if ($chalPlaylistOptions === 'allPlaylists') {
-            $playlistsArray = array();
-            $playlistManager = new PlaylistManager();
-            $playlistsDb = $playlistManager->getAllPlaylists($memberId);
-            
-            while ($playlists = $playlistsDb->fetch()) {
-                array_push($playlistsArray, $playlists['playlistId']);
-            }
-
-            $songsArray = array();
-            $songManager = new SongManager();
-            for ($i=0, $c=count($playlistsArray); $i<$c; $i++) {
-                $songsDb = $songManager->getSongs($playlistsArray[$i]);
+        $playlistsArray = array();
+        $playlistManager = new PlaylistManager();
         
-                while ( $songs = $songsDb->fetch()) {
-                    array_push($songsArray, $songs['songName']);
-                }
-            }
-            // print_r($songsArray);
-            shuffle($songsArray);
-            // print_r($songsArray);
-            
-            if ($noOfSongs >= count($songsArray)) {
-                $songsChal = $songsArray;
-            } else {
-                $songsChal = array_slice($songsArray,0,$noOfSongs);
-            }
-
-            
-            print_r($singersArray);
-            echo '<br>';
-            print_r($songsChal);
-
-            $singerAndSongArray = array();
-
-            if (count($singersArray) < count($songsChal)) {
-                // while ($songsChal) {
-                //     for ($i=0, $c=count($singersArray); $i<$c; $i++) {
-                //         $singerAndSongArray[$singersArray[$i]] = $songsChal[$i];
-                //         // print_r('<br>'.$singersArray[$i]);
-                //         // print_r('<br>'.$songsChal[$i]);
-                //     }
-                //     array_shift($songsChal);
-                //     shuffle($songsChal);
-                // }
-                // for ($i=count($songsChal), $c=0; $i>=$c; $i--) {
-                //     for ($j=0, $k=count($singersArray); $j<$k; $j++) {
-                //         $singerAndSongArray[$singersArray[$j]] = $songsChal[$j];
-                //         // print_r('<br>'.$singersArray[$j]);
-                //         // print_r('<br>'.$songsChal[$j]);
-                //         shuffle($songsChal);
-                //         // $singerAndSongArray = array_combine($singersArray,$songsChal);
-                //     }
-                //     // array_shift($songsChal);  
-                // }
-
-                foreach ($songsChal as $value2) {
-                    foreach ($singersArray as $key => $value) {
-                        echo '<br>'.$value2;
-                        $singerAndSongArray[$value] = $value2;
-                    }
-                }
-            }
-
-            echo '<br>';
-            print_r($singerAndSongArray);
-            print_r('<br><strong>Number of songs: </strong>'.count($songsChal));
-        } else if ($chalPlaylistOptions === 'onePlaylist') {
-            echo '<br><strong>Option to choose songs from: </strong>'.$chalPlaylistOptions;
-            echo '<br><strong>Playlist ID selected: </strong>'.$chalPlaylistId;
+        $playlistsDb = ($chalPlaylistOptions === 'onePlaylist')? $playlistManager->getMainPlaylist($chalPlaylistId) : $playlistManager->getAllPlaylists($memberId);
+        
+        foreach ($playlistsDb as $playlists) {
+            array_push($playlistsArray, $playlists['playlistId']);
         }
+
+        $songsArray = array();
+        $songManager = new SongManager();
+        $songsDb = array();
+        for ($i=0, $c=count($playlistsArray); $i<$c; $i++) {
+            $songsDb = array_merge($songsDb, $songManager->getSongs($playlistsArray[$i]));
+        }
+        
+        foreach ($songsDb as $song) {
+            array_push($songsArray, $song["songId"]);
+        }
+        shuffle($songsArray);
+
+        if ($chalPlaylistOptions === 'allPlaylist'){
+            if($noOfSongs <= count($songsArray)) {
+                $songsArray = array_slice($songsArray,0,$noOfSongs);
+            } 
+        }
+        
+        $countSinger = count($singersArray);
+        $increment = 0;
+        $challengeManager = new ChallengeManager();
+        foreach ($songsArray as $i=>$song){
+            echo "the song id is :".$song." and the singer is : ".$singersArray[$increment];
+            echo '<br>';
+            echo "increment = ".$increment;
+            echo '<br>';
+            $challengeManager->insertSingerSongs($memberId,$singersArray[$increment],$song, null);
+            if($increment === count($singersArray)-1){
+                $increment = 0;
+            } else {
+                $increment++;
+            }
+        }
+            // echo '<br> Singers Array new: ';
+            // print_r($singerChalArray);
+            // echo '<br> Singers and Songs Array: ';
+            // print_r($singerAndSongArray);
+            // print_r('<br><strong>Number of singers: </strong>'.count($singerChalArray));
+            // print_r('<br><strong>Number of songs: </strong>'.count($songsChal));
+        
         echo '<br><strong>Enter score option: </strong>'.$scoreOption;
     }
 

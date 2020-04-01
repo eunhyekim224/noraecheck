@@ -51,5 +51,19 @@
             $update->closeCursor();
             return $score;
         }
+
+        public function insertSingerSongs($memberId,$singer,$songId,$score) {
+            $insert = $this->_db->prepare("INSERT INTO challenges(memberId, singer, songId, score) VALUES(:memberId, :singer, :songId, :score)");
+            $insert->bindParam(':memberId',$memberId,PDO::PARAM_INT);
+            $insert->bindParam(':singer',$singer,PDO::PARAM_STR);
+            $insert->bindParam(':songId',$songId,PDO::PARAM_INT);
+            $insert->bindParam(':score',$score);
+            $insert->execute();
+            if(!$insert) {
+                throw new PDOException('Unable to add singers and songs');
+            }
+
+            $insert->closeCursor();
+        }
     
 }
