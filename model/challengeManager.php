@@ -9,7 +9,7 @@
 
 
         public function getChallenge($memberId) {
-            $playlists = $this->_db->prepare('SELECT c.singer AS player, s.singer AS singer , s.song AS song, s.tjCode AS tj, s.kumyoungCode AS kumyoung, c.songId AS songId
+            $playlists = $this->_db->prepare('SELECT c.singer AS player, s.singer AS singer , s.song AS song, s.tjCode AS tj, s.kumyoungCode AS kumyoung, c.songId AS songId, s.playlistId AS playlistId
                                         FROM challenges c
                                         JOIN songs s
                                         ON c.songId = s.id
@@ -28,6 +28,7 @@
                     "tj" => $data['tj'],
                     "kumyoung" => $data['kumyoung'],
                     "songId" => $data['songId'],
+                    "playlistId" => $data['playlistId'],
                 ];
                 array_push($challengeArray,$roundArray);
             }
