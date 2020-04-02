@@ -10,16 +10,14 @@
         <div id="mainSongInfo">
             <p class="darkGrey playlistNameText"><?=$getChallenge[$round]['song']?></p>
             <p>by <?=$getChallenge[$round]['singer']?></p>
-            <div class="">
-            <!-- scoreOption value ($scoreOpt) should be passed on to endChallenge   -->
-            <?php echo $scoreOpt; ?>  
+            <div class="">  
             </div>
             <form method="post" action="index.php" class="songListBrands songBrandCodeContainer">
                 <input type="hidden" name="action" value="editBrandCode">
                 <input type="hidden" name="page" value="challengeInProgress">
                 <input type="hidden" name="round" value= <?=$round?>>
                 <input type="hidden" name="songId" value=<?= $getChallenge[$round]['songId'];?>>
-                <input type="hidden" name="playlistId" value=<?= $_SESSION['playlistId'];?>>
+                <input type="hidden" name="playlistId" value=<?=$getChallenge[$round]['playlistId']?>>
                 <div class="songListBrandCodes challengeCode">
                     <label for="tjCode<?=$getChallenge[$round]['songId']?>">TJ</label>
                     <input type="text" name="tjCode" maxlength=10 id="tjCode<?=$getChallenge[$round]['songId']?>" autocomplete="off" value=<?=$getChallenge[$round]['tj']?> >

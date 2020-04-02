@@ -699,7 +699,7 @@ padding-bottom: 0;
 
 /* Galaxy S5 */
 
-@media all and (min-height: 568px) and (max-height: 736px) {
+@media all and (min-height: 568px) and (max-height: 636px) {
     #singerInput {
         width: 78%;
     }

@@ -181,6 +181,8 @@
     function newChallenge ($memberId) {
         $deleteChallenge = new ChallengeManager();
         $deleteChallenge->deleteChallenge($memberId);
+        $playlistManager = new PlaylistManager();
+        $playlists = $playlistManager->getAllPlaylists($memberId);
         $displayMode = 'challengeSetUp';
         require("view/home.php");
     }
@@ -270,7 +272,7 @@
         }
         shuffle($songsArray);
 
-        if ($chalPlaylistOptions === 'allPlaylist'){
+        if ($chalPlaylistOptions === 'allPlaylists'){
             if($noOfSongs <= count($songsArray)) {
                 $songsArray = array_slice($songsArray,0,$noOfSongs);
             } 
