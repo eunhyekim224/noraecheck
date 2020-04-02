@@ -15,6 +15,8 @@
             <form method="post" action="index.php" class="songListBrands songBrandCodeContainer">
                 <input type="hidden" name="action" value="editBrandCode">
                 <input type="hidden" name="page" value="challengeInProgress">
+                <input type="hidden" name="scoreOption" value=<?=$scoreOpt;?>>
+                <input type="hidden" name="oldScore" value=<?=$score?>>
                 <input type="hidden" name="round" value= <?=$round?>>
                 <input type="hidden" name="songId" value=<?= $getChallenge[$round]['songId'];?>>
                 <input type="hidden" name="playlistId" value=<?=$getChallenge[$round]['playlistId']?>>
@@ -40,12 +42,14 @@
             <p name="oldScore" id="oldScore" class="hidden"><?=$score?></p>
             <input type="hidden" name="action" value="updateScore">
             <input type="button" id="reEnter" value="re-enter" class="enterScore hidden">
+            <input type="hidden" name="scoreOption" value=<?=$scoreOpt;?>>
         </form>
     </div> 
     <form method="post" id="challengeRoundForm" action="index.php">
         <input type="hidden" name="action" value="challengeInProgress">
         <input type="hidden" id="numberOfRounds" value=<?=count($getChallenge);?>>
         <input type="hidden" name="round" id="round" value= <?=$round?>>
+        <input type="hidden" id="scoreMode"name="scoreOption" value=<?=$scoreOpt;?>>
         <div id="challengeBtns">
             <input type="button" name="addToPlaylist" id="exit" value="exit" class="btn btnBlue">
             <input type="button" name="cancel" id="nextRound" value="next" class="btn btnBlue">

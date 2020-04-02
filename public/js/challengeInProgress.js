@@ -4,8 +4,13 @@ const numOfRounds = parseInt(document.getElementById("numberOfRounds").value);
 const challengeRoundForm = document.getElementById("challengeRoundForm");
 const action = document.getElementsByName('action')[2];
 const exit = document.getElementById('exit');
+let scoreMode = document.getElementById('scoreMode').value;
+
+const changeScoreDiv = document.getElementById('scoreEnterDiv');
 
 console.log(numOfRounds);
+
+
 
 
 if(!scoreMode){
@@ -60,7 +65,6 @@ finalExit.addEventListener('click', function() {
 
 //change form on click
 
-const changeScoreDiv = document.getElementById('scoreEnterDiv');
 
 //view1
 const bigPlus = document.getElementById('scoreEnterDiv').childNodes[1];
