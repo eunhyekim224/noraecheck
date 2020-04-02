@@ -1,5 +1,4 @@
-<input type="hidden" id="scoreMode"name="scoreOption" value=<?=$scoreOption;?>>
-<table id="displayBoard" align="center">
+<table align="center">
     <thead>
         <tr>
             <th colspan="3">Challenge Scoreboard</th>

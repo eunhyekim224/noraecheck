@@ -90,13 +90,13 @@
         require("view/home.php");
     }
 
-    function editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode,$page,$round,$scoreOption,$possibleScore) {
+    function editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode,$page,$round) {
         $songManager = new SongManager();
         $editBrandCodes = $songManager->editBrandCodes($songId,$tjCode,$kumyoungCode);
         if($page == 'playlistSongs'){
             header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
         } else if($page == 'challengeInProgress'){
-            header('Location: index.php?action=challengeInProgress&score='.$possibleScore.'&round='.$round .'&scoreOption=' .$scoreOption);
+            header('Location: index.php?action=challengeInProgress&round='.$round);
         }
         
     }
@@ -159,13 +159,13 @@
         require("view/home.php");
     }
 
-    function updateScore($memberId,$score,$songId,$round,$scoreOption){
+    function updateScore($memberId,$score,$songId,$round){
         $updateScore = new ChallengeManager();
         $updatedScore = $updateScore->updateScore($memberId,$score,$songId);
-        header('Location: index.php?action=challengeInProgress&score='.$updatedScore.'&round='.$round .'&scoreOption=' .$scoreOption);
+        header('Location: index.php?action=challengeInProgress&score='.$updatedScore.'&round='.$round);
     }
 
-    function endChallenge($memberId,$scoreOption) {
+    function endChallenge($memberId) {
         $endChallenge = new ChallengeManager();
         $trophy = $endChallenge->endChallenge($memberId);
         $displayMode = 'endChallenge';
