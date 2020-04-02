@@ -287,7 +287,6 @@
                 $increment++;
             }
         }
-        
         header("Location: index.php?action=challengeInProgress&scoreOption=".$scoreOption);
     }
 
