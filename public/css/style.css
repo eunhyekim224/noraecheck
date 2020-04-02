@@ -1351,7 +1351,6 @@ label[for=playlistId] {
     background: #84fab0;
 }
 
-#selectPlaylist,
 #selectAllSongs {
     display: none;
 }
