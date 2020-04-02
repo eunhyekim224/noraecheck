@@ -175,14 +175,7 @@ function displayResults(array) {
         let searchCache = createNode('input', { 'type': 'hidden', 'name': 'searchCache', 'value': entry.value });
         let categoryCache = createNode('input', { 'type': 'hidden', 'name': 'categoryCache', 'value': category.value });
 
-        // hiddenSong.setAttribute('value', array[i].song);
-        // hiddenSinger.setAttribute('value', array[i].singer);
-        // hiddenTj.setAttribute('value', tjCode);
-        // hiddenKumyoung.setAttribute('value', kumgoungCode);
-        // hiddenAction.setAttribute('value', 'searchModal');
-        // searchCache.setAttribute('value', entry.value);
-        // categoryCache.setAttribute('value', category.value);
-
+       
         iconImg.addEventListener('click', () => {
             searchResults.submit();
         });

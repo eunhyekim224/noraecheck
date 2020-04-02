@@ -54,7 +54,7 @@ body {
     color: white;
     outline: none;
     /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
-    box-shadow: 0 0 20px #eee;
+    /* box-shadow: 0 0 20px #eee; */
     border-radius: 10px;
     background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
 }
@@ -983,9 +983,6 @@ span.psw {
     }
 }
 
-
-/* form 3 test */
-
 .field {
     --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #666060);
 }
@@ -1234,12 +1231,12 @@ span.psw {
         padding: 2px;
         text-align: center;
         text-transform: uppercase;
-        transition: 0.5s;
+        /* transition: 0.5s; */
         background-size: 257% auto;
         color: white;
         outline: none;
         /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
-        box-shadow: 0 0 20px #eee;
+        /* box-shadow: 0 0 20px #eee; */
         border-radius: 2px;
         background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
     }
@@ -1258,6 +1255,3 @@ span.psw {
         padding-top: 60px;
     }
 }
-
-
-/* form 3 test end */

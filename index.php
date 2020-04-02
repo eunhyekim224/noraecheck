@@ -1,7 +1,6 @@
 <?php
 session_start();
 require("./controller/controller.php");
-
 try {
     $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
     if(isset($_SESSION['memberId'])){
@@ -44,12 +43,14 @@ try {
                     deletePlaylist(($_SESSION['playlistId']), $_SESSION['memberId']);
                 }
             } else if ($action === 'editBrandCode') {
+                $page = isset($_POST['page']) ? $_POST['page'] : '';
+                $round = isset($_POST['round']) ? $_POST['round'] : '';
                 $playlistId = isset($_POST['playlistId']) ? $_POST['playlistId'] : '';
                 $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
                 $tjCode = isset($_POST['tjCode']) ? $_POST['tjCode'] : '';
                 $kumyoungCode = isset($_POST['kumyoungCode']) ? $_POST['kumyoungCode'] : '';
                 if ($playlistId && $songId) {
-                    editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode);
+                    editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode,$page,$round);
                 }  
             } else if ($action === 'deleteSong') {
                 $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
@@ -110,8 +111,9 @@ try {
             }else if ($action === 'challengeInProgress') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 $round = isset($_REQUEST['round']) ? $_REQUEST['round'] : '0';
+                $scoreOption = isset($_REQUEST['scoreOption']) ? $_REQUEST['scoreOption'] : '';
                 $score = isset($_REQUEST['score']) ? $_REQUEST['score'] : '';
-                challengeInProgress($memberId,$round,$score);
+                challengeInProgress($memberId,$round,$scoreOption,$score);
             }else if ($action === 'updateScore') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 $score = isset($_REQUEST['newScore']) ? $_REQUEST['newScore'] : '';
@@ -120,8 +122,24 @@ try {
                 updateScore($memberId,$score,$songId,$round);
             } else if ($action ==='insertChallengeInfo') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-                insertChallengeInfo($memberId);                 
-            } else {
+                $allSingers = isset($_POST['allSingers']) ? $_POST['allSingers'] : '';
+                $chalPlaylistOptions = isset($_POST['chalOptions']) ? $_POST['chalOptions'] : '';
+                $chalPlaylistId = isset($_POST['playlists']) ? $_POST['playlists'] : '';
+                $noOfSongs = isset($_POST['noOfSongs']) ? $_POST['noOfSongs'] : '';
+                $scoreOption = isset($_POST['scoreOption']) ? $_POST['scoreOption'] : '';
+                insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption);                 
+            } else if ($action ==='endChallenge') {
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                endChallenge($memberId);
+            } else if ($action ==='deleteChallenge') {
+                // clear the results
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                deleteChallenge($memberId); 
+            } else if ( $action === "newChallenge"){
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                newChallenge($memberId); 
+            }
+            else {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 showAllPlaylists($memberId); 
             }
@@ -145,9 +163,6 @@ try {
         $status = isset($_GET['success']) ? $_GET['success'] : '';
         showLandingPage($error,$status);
     }
-
-
-
 }
     catch(PDOException $e) {
         $msg = $e->getMessage();

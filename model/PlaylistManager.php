@@ -54,7 +54,13 @@
             if(!$playlistsResp) {
                 throw new PDOException('Unable to retrieve all playlists!');
             }
-            return $playlists;
+            return $playlists->fetchAll();
+            
+            // $playlistArray =[];
+            // while ($playlist = $playlists->fetch()){
+            //     array_push($playlistArray,$playlist);
+            // }
+            // return $playlistArray;
         }
 
         public function getMainPlaylist($playlistId) {
@@ -64,13 +70,12 @@
                                         JOIN members m
                                         ON p.memberId = m.id
                                         WHERE p.id = :playlistId');
-            $playlistResp = $playlist->execute(array(
-                'playlistId' => $playlistId
-            ));
+            $playlist->bindParam(':playlistId',$playlistId,PDO::PARAM_INT);
+            $playlistResp = $playlist->execute();
             if(!$playlistResp) {
                 throw new PDOException('Unable to retrieve the selected playlist!');
             }
-            return $playlist;
+            return $playlist->fetch();
         }
 
                 
@@ -88,7 +93,7 @@
             if($existingPlaylistId != "") {
                 $del = $this->_db->prepare("DELETE FROM playlists WHERE id = :playlistId");
                 $del->bindParam(':playlistId',$playlistId,PDO::PARAM_INT);
-                $del->execute($params);
+                $del->execute();
                 
                 $numberOfDeletedRows = $del->rowCount();
                 if ($numberOfDeletedRows < 1) {
@@ -109,10 +114,9 @@
 
         public function editPlaylistName($playlistName,$playlistId) {
             $editPlaylistName = $this->_db->prepare("UPDATE playlists SET name = :playlistName WHERE id = :playlistId");
-            $editPlaylistName->execute(array(
-                'playlistName' => $playlistName,
-                'playlistId' => $playlistId
-            ));
+            $editPlaylistName->bindParam(':playlistName',$playlistName,PDO::PARAM_STR);
+            $editPlaylistName->bindParam(':playlistId',$playlistId,PDO::PARAM_INT);
+            $editPlaylistName->execute();
             if(!$editPlaylistName) {
                 throw new PDOException('Unable to edit this playlist!');
             }

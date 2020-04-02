@@ -1,27 +1,22 @@
-// gets the buttons and gives the user a pop up if there are errors on the modal
-const SubmitRegBtn = document.getElementById('submitRegister');
-const CreateActBtn = document.getElementById('createAccount');
+const btnSign = document.getElementById('signInText');
+btnSign.onclick = function() {
+    const signInMod = document.getElementById('signIn');
+    signInMod.style.display = "block";
+}
 
-// const SignInBtn = document.getElementById('signInText');
-// const Login = document.getElementById('loginForm');
-
-// test if pop up shows automatically
-
-// function show_popup() {
-//     SignInMod.style.display = 'block';
-//     SignUpMod.style.display = 'block';
-// }
-// window.onload = show_popup;
-// SignInMod.addEventListener('click', show_popup);
-// SignUpMod.addEventListener('click', show_popup);
+const btnCreate = document.getElementById('createAccount');
+btnCreate.onclick = function() {
+    const signUpMod = document.getElementById('signUp');
+    signUpMod.style.display = "block";
+}
 
 function setDisplayModals(elt) {
     elt.addEventListener("click", function(e) {
-        const SignInMod = document.getElementById('SignIn');
-        const SignUpMod = document.getElementById('SignUp');
-        if (e.target.className == "close" || e.target == SignInMod || e.target == SignUpMod) {
-            hideModal(SignInMod);
-            hideModal(SignUpMod);
+        const signInMod = document.getElementById('signIn');
+        const signUpMod = document.getElementById('signUp');
+        if (e.target.className == "close" || e.target == signInMod || e.target == signUpMod) {
+            hideModal(signInMod);
+            hideModal(signUpMod);
             errors = document.querySelectorAll("p.error");
             for (let i = 0; i < errors.length; i++) {
                 errors[i].style.display = "none";
@@ -45,25 +40,18 @@ function signInVerify(signInForm, e) {
 }
 
 function signUpVerify(signUpForm, e) {
-    // const emregex = /(.+)@(.+){2,}\.(.+){2,}/;
-    // const pwregex = /^[a-zA-Z0-9]{8,}/g;
-    // const logregex = /^[a-zA-Z0-9]{4,}/g;
-
-    // const pwd = document.getElementById('pwd');
-    // const pwdConf = document.getElementById('pwdConf');
-    // const em = document.getElementById('email');
-    // const lg = document.getElementById('loginNew');
-
     if (signUpForm.querySelector('#loginNew').value && signUpForm.querySelector('#email').value && signUpForm.querySelector('#pwd').value && signUpForm.querySelector('#pwdConf').value) {
-
+        // const emregex = /(.+)@(.+){2,}\.(.+){2,}/;
+        // const pwregex = /^[a-zA-Z0-9]{8,}/g;
+        // const logregex = /^[a-zA-Z0-9]{4,}/g;
+        // const pwd = document.getElementById('pwd');
+        // const pwdConf = document.getElementById('pwdConf');
+        // const em = document.getElementById('email');
+        // const lg = document.getElementById('loginNew');
         // pwd.value.match(pwregex);
         // em.value.match(emregex);
         // lg.value.match(logregex);
-
         // pwd.value == pwdConf.value;
-
-        //other tests like regex etc....
-
         signUpForm.submit();
     } else {
         e.preventDefault();
@@ -71,7 +59,6 @@ function signUpVerify(signUpForm, e) {
         error.style.display = "block";
     }
 }
-
 /********EXECUTION******* */
 
 {

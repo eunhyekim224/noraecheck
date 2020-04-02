@@ -4,9 +4,6 @@
     require_once("./model/SongManager.php");
     require_once("./model/challengeManager.php");
 
-    // use \Wcoding\Noraecheck\Model\MemberManager;
-    // use \Wcoding\Noraecheck\Model\PlaylistManager;
-
     function showLandingPage($error,$status) {
         require("view/landing.php");
     }
@@ -20,16 +17,17 @@
         $usernameInUse = $memberManager->getMember($username);
 
         if($username AND $password AND $passwordConf AND $email){
-            // $usernameInUse = $memberManager->getMember($username);
+           
             if(!$usernameInUse){
                 if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
                     if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$password)) {
                         if ($username AND $password == $passwordConf){
                             $status = $memberManager->addMember($email,$username,$password);
                             header("location:index.php?action=login&success=1");
-                        } else if ($password != $passwordCheck){
+                        } else if ($password != $passwordConf){
                             $errors['pwdConf'] = 'password does not match';
-                        } 
+                        }
+                         
                     } else {
                         $errors['pwd'] = 'please include 8 characters, upper/lower case letters, and digits';
                     }
@@ -42,9 +40,7 @@
                 $errors['loginNew'] = 'username taken';
                 
             }
-        } else {
-            // require("view/landingSignup.php");
-            // require("view/landingSignIn.php"); 
+        } else { 
             require("view/landing.php");
         }
         require("view/landing.php");  
@@ -94,10 +90,15 @@
         require("view/home.php");
     }
 
-    function editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode) {
+    function editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode,$page,$round) {
         $songManager = new SongManager();
         $editBrandCodes = $songManager->editBrandCodes($songId,$tjCode,$kumyoungCode);
-        header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
+        if($page == 'playlistSongs'){
+            header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
+        } else if($page == 'challengeInProgress'){
+            header('Location: index.php?action=challengeInProgress&round='.$round);
+        }
+        
     }
 
     function editPlaylist($newPlaylistName,$playlistId) {
@@ -150,9 +151,10 @@
         $displayMode = 'challengeSetUp';
         require("view/home.php");
     }
-    function challengeInProgress($memberId,$round,$score) {
+    function challengeInProgress($memberId,$round,$scoreOption,$score) {
         $challengeInProgressManager = new ChallengeManager();
         $getChallenge = $challengeInProgressManager->getChallenge($memberId);
+        $scoreOpt = $scoreOption;
         $displayMode = 'challengeInProgress';
         require("view/home.php");
     }
@@ -161,6 +163,26 @@
         $updateScore = new ChallengeManager();
         $updatedScore = $updateScore->updateScore($memberId,$score,$songId);
         header('Location: index.php?action=challengeInProgress&score='.$updatedScore.'&round='.$round);
+    }
+
+    function endChallenge($memberId) {
+        $endChallenge = new ChallengeManager();
+        $trophy = $endChallenge->endChallenge($memberId);
+        $displayMode = 'endChallenge';
+        require("view/home.php");
+    }
+
+    function deleteChallenge($memberId) {
+        $deleteChallenge = new ChallengeManager();
+        $deleteChallenge->deleteChallenge($memberId);
+        header('Location: index.php?action=showMyList');
+    }
+     
+    function newChallenge ($memberId) {
+        $deleteChallenge = new ChallengeManager();
+        $deleteChallenge->deleteChallenge($memberId);
+        $displayMode = 'challengeSetUp';
+        require("view/home.php");
     }
 
     function showProfile($memberId,$userName) {
@@ -213,22 +235,60 @@
         require("view/home.php");
     } 
 
-    function deleteProfile($memberId) {
+    function deleteProfile($singer,$score) {
         $memberManager = new MemberManager();
         $deleteProfile = $memberManager->deleteProfile($memberId);
         header("Location: index.php?success=1");
     }
 
-    function insertChallengeInfo($memberId) {
-        echo '<strong>List of all singers: </strong>'.$_POST['allSingers'];
-        if ($_POST['chalOptions'] === 'allPlaylists') {
-            echo '<br><strong>Option to choose songs from: </strong>'. $_POST['chalOptions'];
-            echo '<br><strong>Number of songs: </strong>'.$_POST['noOfSongs'];
-        } else if ($_POST['chalOptions'] === 'onePlaylist') {
-            echo '<br><strong>Option to choose songs from: </strong>'. $_POST['chalOptions'];
-            echo '<br><strong>Playlist ID selected: </strong>'.$_POST['playlists'];
+    function insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption) {
+        echo '<strong>List of all singers: </strong>'.$allSingers;
+        $singersArray = explode(',',$allSingers);
+        $playlistsArray = array();
+        $playlistManager = new PlaylistManager();
+        
+        if ($chalPlaylistOptions === 'onePlaylist') {
+            $playlistsDb = array();
+            array_push ($playlistsDb, $playlistManager->getMainPlaylist($chalPlaylistId));
+        } else{
+            $playlistsDb = $playlistManager->getAllPlaylists($memberId);
         }
-        echo '<br><strong>Enter score option: </strong>'.$_POST['scoreOption'];
+        
+        foreach ($playlistsDb as $playlists) {
+            array_push($playlistsArray, $playlists['playlistId']);
+        }
+
+        $songsArray = array();
+        $songManager = new SongManager();
+        $songsDb = array();
+        for ($i=0, $c=count($playlistsArray); $i<$c; $i++) {
+            $songsDb = array_merge($songsDb, $songManager->getSongs($playlistsArray[$i]));
+        }
+
+        foreach ($songsDb as $song) {
+            array_push($songsArray, $song["songId"]);
+        }
+        shuffle($songsArray);
+
+        if ($chalPlaylistOptions === 'allPlaylist'){
+            if($noOfSongs <= count($songsArray)) {
+                $songsArray = array_slice($songsArray,0,$noOfSongs);
+            } 
+        }
+        
+        $countSinger = count($singersArray);
+        $increment = 0;
+        $challengeManager = new ChallengeManager();
+        foreach ($songsArray as $i=>$song){
+            $challengeManager->insertSingerSongs($memberId,$singersArray[$increment],$song, null);
+            if($increment === count($singersArray)-1){
+                $increment = 0;
+            } else {
+                $increment++;
+            }
+        }
+
+        header("Location: index.php?action=challengeInProgress&scoreOption=".$scoreOption);
     }
 
     function logout(){

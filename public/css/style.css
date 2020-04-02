@@ -27,37 +27,36 @@ a {
     text-decoration: none;
 }
 
+
 /* top menu css */
 
-#topHeader{
-    width:90%;
-    display:flex;
-    flex-direction:column;
+#topHeader {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
     align-items: flex-end;
-    background-color:rgb(240, 240, 240);
+    background-color: rgb(240, 240, 240);
     /* opacity: 50%; */
-    height:25px;
+    height: 25px;
     padding-top: .5%;
     padding-right: 10%;
-    margin-bottom:1%;
+    margin-bottom: 1%;
 }
 
-#topMenu{
-    display:flex;
+#topMenu {
+    display: flex;
     justify-content: space-between;
     /* width:15%; */
     font-size: 3vh;
-    margin-left:50%;
-
-    
+    margin-left: 50%;
 }
-#lang{
+
+#lang {
     margin-right: 20%;
 }
 
-#topMenuDropDown{
+#topMenuDropDown {
     z-index: 1;
-    
 }
 
 .mainWrapper {
@@ -65,14 +64,15 @@ a {
     height: 99.9vh;
     margin: auto;
     width: 65%;
-    padding: 0px,35px,35px;
+    padding: 0px, 35px, 35px;
 }
+
 .mainWrapper {
     border-radius: 20px;
     height: 99.9vh;
     margin: auto;
     width: 65%;
-    padding: 0px,35px,35px;
+    padding: 0px, 35px, 35px;
 }
 
 .shown {
@@ -217,7 +217,6 @@ a {
 
 /* LIST VIEW */
 
-
 .myList {
     height: 80%;
     display: flex;
@@ -301,11 +300,11 @@ a {
 .displayedPlaylists {
     text-decoration: none;
     color: white;
-    width:30%;
+    width: 30%;
 }
 
-.displayedPlaylists:hover p{
-    color:#f460faff;
+.displayedPlaylists:hover p {
+    color: #f460faff;
 }
 
 .songListBrands {
@@ -331,9 +330,9 @@ a {
 }
 
 .songListBrandCodes:active {
-  background-color: #5fbbe9;
-  box-shadow: 3px 5px rgb(143, 142, 142);
-  transform: translateY(4px);
+    background-color: #5fbbe9;
+    box-shadow: 3px 5px rgb(143, 142, 142);
+    transform: translateY(4px);
 }
 
 .songListBrandCodes label {
@@ -348,9 +347,10 @@ a {
     margin-right: 8%;
     border-radius: 3px;
     border: none;
-    background-color:transparent;
+    background-color: transparent;
     color: white;
 }
+
 
 /* new playlist modal  */
 
@@ -524,10 +524,12 @@ input.question+label>span {
 #mySongList li {
     padding: 2% 0 4% 0;
 }
-#songsInOnePlaylist p{
+
+#songsInOnePlaylist p {
     margin-top: .75em;
     margin-bottom: .75em;
 }
+
 
 /* minus icon for songs and delete song modal*/
 
@@ -535,13 +537,15 @@ img.minusIcon {
     background-color: transparent;
     height: 63%;
 }
-img.minusIcon:hover,.addIcon img:hover{
+
+img.minusIcon:hover,
+.addIcon img:hover {
     background-color: #84fab0;
     height: 63%;
 }
 
-.addIcon img{
-    padding:5%;
+.addIcon img {
+    padding: 5%;
     border-radius: 10px;
 }
 
@@ -549,6 +553,7 @@ img.minusIcon:hover,.addIcon img:hover{
     height: 21%;
     font-size: 1.8em;
 }
+
 
 /* ellipse menu on playlist options */
 
@@ -604,6 +609,7 @@ img.minusIcon:hover,.addIcon img:hover{
 #mainPlaylist .modalButtons div {
     width: 100%;
 }
+
 #editPlaylistForm {
     display: none;
 }
@@ -613,7 +619,8 @@ img.minusIcon:hover,.addIcon img:hover{
     padding-top: 11%;
 }
 
-#areYouSure .areYouSureBtns input, .areYouSureBtns input{
+#areYouSure .areYouSureBtns input,
+.areYouSureBtns input {
     height: 63px;
     border: none;
     padding: 4% 5%;
@@ -622,6 +629,7 @@ img.minusIcon:hover,.addIcon img:hover{
     cursor: pointer;
 }
 
+
 /* edit playlist */
 
 .editPlaylistBlock {
@@ -629,18 +637,23 @@ img.minusIcon:hover,.addIcon img:hover{
     flex-direction: column;
     align-items: center;
 }
-.editPlaylistContent, #editBtns{
+
+.editPlaylistContent,
+#editBtns {
     display: flex;
 }
+
 .editPlaylistContent {
     justify-content: center;
     align-items: center;
     margin: 10% 0 1% 0;
 }
+
 .albumIcon {
     width: 25%;
     position: relative;
 }
+
 .albumIcon div {
     position: absolute;
     bottom: 4%;
@@ -650,16 +663,19 @@ img.minusIcon:hover,.addIcon img:hover{
     background-color: rgba(0, 0, 0, 0.40);
     border-radius: 0 0 10px 10px;
 }
+
 #editPlaylistImg {
     width: 100%;
     background-color: rgb(238, 238, 238);
     border-radius: 10px;
 }
+
 #editPlaylistInfo {
     text-align: left;
     width: 30%;
     margin: 0 0 0 5%;
 }
+
 #newPlaylistName {
     width: 100%;
     border-radius: 3px;
@@ -669,14 +685,17 @@ img.minusIcon:hover,.addIcon img:hover{
     color: rgb(206, 206, 206);
     padding: 0 0 0 3%;
 }
+
 #editPlaylistInfo p {
     font-size: 0.5em;
     margin: 10% 0;
 }
+
 #editBtns {
     justify-content: center;
     width: 60%;
 }
+
 #editBtns input {
     height: 63px;
     border: none;
@@ -685,6 +704,7 @@ img.minusIcon:hover,.addIcon img:hover{
     width: 38%;
     cursor: pointer;
 }
+
 
 /* Scrollbar */
 
@@ -717,7 +737,7 @@ img.minusIcon:hover,.addIcon img:hover{
 #bannerImage img {
     width: 35%;
     height: 35%;
-    padding:5%;
+    padding: 5%;
     /* padding-left: 15%; */
 }
 
@@ -744,7 +764,7 @@ img.minusIcon:hover,.addIcon img:hover{
     font-family: 'Jua', sans-serif;
     /* text-shadow: 0 0 3px rgba(0, 0, 0, 1); */
     font-size: 5em;
-    background-color:  rgb(240, 239, 239);
+    background-color: rgb(240, 239, 239);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -764,33 +784,43 @@ img.minusIcon:hover,.addIcon img:hover{
     -webkit-text-fill-color: transparent;
 }
 
+
 /*----------- profile page style -----------------*/
 
-#editProfileForm, .editProfileBlock, #profilelastP {
+#editProfileForm,
+.editProfileBlock,
+#profilelastP {
     display: flex;
 }
+
 #editProfileForm {
     flex-direction: column;
     align-items: center;
     margin: 5% 0 0 0;
 }
+
 .editProfileBlock {
     width: 80%;
 }
+
 .editProfileBlock {
     justify-content: center;
 }
+
 .profileImg {
     width: 20%;
     margin: 0 3% 0 0;
 }
+
 .error {
     color: red;
 }
+
 .profileformP label {
     width: 40%;
     margin: 0 3% 0 0;
 }
+
 .profileformP input {
     width: 50%;
     border-radius: 3px;
@@ -800,17 +830,21 @@ img.minusIcon:hover,.addIcon img:hover{
     color: rgb(102, 96, 96);
     padding: 0 0 0 3%;
 }
+
 #profilelastP {
     width: 65%;
     justify-content: center;
 }
+
 #profilelastP .btn {
     width: 30%;
     border: none;
 }
+
 .changePwd {
     visibility: hidden;
 }
+
 .changePwdBtn {
     width: 45%;
     /* cursor: pointer; */
@@ -828,13 +862,16 @@ img.minusIcon:hover,.addIcon img:hover{
 }
 
 .changePwdBtn:active {
-  background-color: #5fbbe9;
-  box-shadow: 3px 5px rgb(143, 142, 142);
-  transform: translateY(4px);
+    background-color: #5fbbe9;
+    box-shadow: 3px 5px rgb(143, 142, 142);
+    transform: translateY(4px);
 }
+
+
 /* .deleteProfileModal {
     display: none;
 } */
+
 
 /*----------- search page style -----------------*/
 
@@ -1044,7 +1081,6 @@ margin: 1%;
     display: none;
 }
 
-
 .visibleSearchNewPlaylist {
     display: flex !important;
     justify-content: center;
@@ -1062,7 +1098,6 @@ margin: 1%;
     display: none;
 }
 
-
 .addPlaylistSearchBtn {
     background-color: #84fab0;
     /* box-shadow: 0 0 20px #eee; */
@@ -1073,7 +1108,7 @@ margin: 1%;
     /* display: inline-block; */
     /* top: 52%;
     left: 10%; */
-    margin:auto;
+    margin: auto;
     margin-top: 5%;
     height: 25% !important;
     width: 60% !important;
@@ -1095,12 +1130,12 @@ margin: 1%;
     padding: 7%
 }
 
-
 .searchSubmit {
     position: relative;
     top: 50%;
 }
-label[for=playlistId]{
+
+label[for=playlistId] {
     padding-bottom: 5px;
 }
 
@@ -1112,10 +1147,10 @@ label[for=playlistId]{
     color: white;
     padding: 1vh;
     width: 80%;
-    max-height:40vh !important;
+    max-height: 40vh !important;
     overflow-y: scroll;
-    margin:auto;
-    display:flex;
+    margin: auto;
+    display: flex;
     flex-direction: column;
     height: 0%;
     border: none;
@@ -1128,29 +1163,26 @@ label[for=playlistId]{
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
-    margin-top:3%;
-    
-
+    margin-top: 3%;
 }
 
-
-.playlists{
+.playlists {
     cursor: pointer;
-    padding:3%;
+    padding: 3%;
 }
+
 #playlistId input[type=radio] {
     display: none;
 }
 
-#playlistId input[type=radio]:checked + .playlists {
+#playlistId input[type=radio]:checked+.playlists {
     background-color: #84fab0;
-    
 }
 
-.playlistName{
-    height:1.5em;
-    margin:5% auto;
-    font-size:4vh;
+.playlistName {
+    height: 1.5em;
+    margin: 5% auto;
+    font-size: 4vh;
 }
 
 #playlistId option {
@@ -1160,6 +1192,7 @@ label[for=playlistId]{
 .modalContentSearch form {
     height: 40%;
 }
+
 
 /* challenge page style */
 
@@ -1221,17 +1254,17 @@ label[for=playlistId]{
 #listOfSingers li:nth-child(odd) {
     background-color: #8fd3f4;
 }
-  
+
 #listOfSingers li:nth-child(even) {
     background-color: white;
     color: rgb(146, 143, 143);
 }
 
 #listOfSingers li input {
-   float: right;
-   width: 10%;
-   height: 25px;
-   background: transparent url('../images/minusIcon3.png') center/cover;
+    float: right;
+    width: 10%;
+    height: 25px;
+    background: transparent url('../images/minusIcon3.png') center/cover;
 }
 
 #challengeSingers input {
@@ -1256,7 +1289,7 @@ label[for=playlistId]{
     background: url('../images/plusIcon4.png') center/cover;
 }
 
-#singerInput button:active, 
+#singerInput button:active,
 #singerInput button:hover {
     background-color: rgb(156, 156, 156);
     color: white;
@@ -1267,7 +1300,6 @@ label[for=playlistId]{
 #singerInput button:focus {
     outline: 0;
 }
-
 
 #challengeSingers label {
     padding: 25px;
@@ -1311,7 +1343,6 @@ label[for=playlistId]{
    
 }
 
-
 #chalPlaylistOptionsBtns input[type=radio] {
     display: none;
 }
@@ -1320,6 +1351,7 @@ label[for=playlistId]{
     background: #84fab0;
 }
 
+#selectPlaylist,
 #selectAllSongs {
     display: none;
 }
@@ -1348,7 +1380,7 @@ label[for=playlistId]{
 
 #selectPlaylist option {
     color: white;
-    background-color:#8fd3f4;
+    background-color: #8fd3f4;
 }
 
 #selectAllSongs {
@@ -1379,27 +1411,27 @@ label[for=playlistId]{
 @keyframes clickMe {
     0% {
         transform: translate(0px, 0px);
-        animation-timing-function:ease-in-out
+        animation-timing-function: ease-in-out
     }
     25% {
         transform: translate(0px, 4px);
-        animation-timing-function:ease-in-out
+        animation-timing-function: ease-in-out
     }
     50% {
         transform: translate(0px, 0px);
-        animation-timing-function:ease-in-out
+        animation-timing-function: ease-in-out
     }
     75% {
         transform: translate(0px, 0px);
-        animation-timing-function:ease-in-out
+        animation-timing-function: ease-in-out
     }
     100% {
         transform: translate(0px, 0px);
-        animation-timing-function:ease-in-out
+        animation-timing-function: ease-in-out
     }
 }
 
-#startChalBtn:hover, 
+#startChalBtn:hover,
 #startChalBtn:active {
     box-shadow: 3px 5px rgb(143, 142, 142);
     transform: translateY(4px);
@@ -1408,189 +1440,189 @@ label[for=playlistId]{
 
 /*______________Challenge in progress style________________*/
 
-#challengeSong{
-    display:flex;
+#challengeSong {
+    display: flex;
 }
 
-#challengeUser{
-    display:flex;
+#challengeUser {
+    display: flex;
     flex-direction: column;
-    align-items:center;
-    border-bottom: #eee solid 2px;;
+    align-items: center;
+    border-bottom: #eee solid 2px;
+    ;
 }
 
-#challengeUser span{
-    font-family: Jua,sans-serif;
+#challengeUser span {
+    font-family: Jua, sans-serif;
     font-size: 4em;
-    color:#f460faff;
+    color: #f460faff;
     border-radius: 20px;
 }
-#challengeUser p{
-    font-family: Jua,sans-serif;
+
+#challengeUser p {
+    font-family: Jua, sans-serif;
     margin-top: 0%;
     margin-bottom: 2%;
     font-size: 2em;
-    color:#f460faff;
+    color: #f460faff;
     border-radius: 20px;
 }
-#challengeSong img{
+
+#challengeSong img {
     margin-left: 7%;
 }
-#mainSongInfo{
-    padding-left:5%;
-    width:70%;
+
+#mainSongInfo {
+    padding-left: 5%;
+    width: 70%;
 }
 
-.challengeCode{
-    width:30% !important;
+.challengeCode {
+    width: 30% !important;
 }
 
-.songBrandCodeContainer{
+.songBrandCodeContainer {
     display: flex;
 }
-#scoreEnterDiv{
-    background-color: #84fab0;
-    width:15%;
-    margin-right: 5%;
-    padding-left:.5%;
-    border-radius: 20px;
 
+#scoreEnterDiv {
+    background-color: #84fab0;
+    width: 15%;
+    margin-right: 5%;
+    padding-left: .5%;
+    border-radius: 20px;
 }
-.addScoreImg{
-    width:80%;
+
+.addScoreImg {
+    width: 80%;
 }
-.addScoreText{
-    margin-top:2%;
+
+.addScoreText {
+    margin-top: 2%;
     margin-left: 4%;
     color: rgb(113, 112, 112);
     font-size: 3vh;
 }
-.yourScoreText{
+
+.yourScoreText {
     margin-left: 10%;
     color: rgb(113, 112, 112);
     font-size: 1em;
 }
 
-.enterScore{
+.enterScore {
     font-size: 1em;
-    width:70%;
+    width: 70%;
     margin-left: 12%;
-    margin-top:10%;
+    margin-top: 10%;
     background-color: #8fd3f4;
-    color:white;
+    color: white;
     border-radius: 20px;
-    border:none;
-}
-#newScore{
-    border:none;
-    height:20%;
-    font-size: 1em;
-    width:50%;
-    margin-left:20%;
-}
-#oldScore{
-    font-size: 2em;
-    margin-top:2%;
-    margin-bottom:2%;
-    margin-left:25%;
+    border: none;
 }
 
-#challengeSong{
+#newScore {
+    border: none;
+    height: 20%;
+    font-size: 1em;
+    width: 50%;
+    margin-left: 20%;
+}
+
+#oldScore {
+    font-size: 2em;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 25%;
+}
+
+#challengeSong {
     margin-top: 1%;
 }
-#challengeBtns{
+
+#challengeBtns {
     margin-top: 1%;
-    width:100%;
-    display:flex;
+    width: 100%;
+    display: flex;
     justify-content: space-evenly;
 }
 
-#challengeBtns input{
+#challengeBtns input {
     font-family: sans-serif;
     font-size: 3vh;
     padding-top: 1%;
     padding-bottom: 1%;
 }
 
-#exitModal p{
-    margin-top:2em;
+#exitModal p {
+    margin-top: 2em;
     margin-bottom: 0em;
     font-size: 1.5em;
 }
 
 
+/* endChallenge css start */
 
-
-
-
-
-
-
-
-
-
-
-
-/**********landingSignup Style***********/
-
-
-/* 
-.signupPage {
-    background-color: rgb(206, 206, 206);
+table,
+th,
+td {
+    border: solid 1px #000;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: center;
 }
 
-#registrationContent {
-    padding: 5%;
+.singer,
+.music,
+.score {
+    color: #f462fa;
+}
+
+table {
+    width: 176px;
+    border-collapse: collapse;
+    margin: 50px auto;
+    border-collapse: collapse;
+    caption-side: bottom;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+#accountBtns {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: center;
 }
 
-#kakaoLogin img {
-    height: 10%;
-    width: 10%
+button:hover {
+    opacity: 0.8;
 }
 
-#registrationContent form {
-    width: 50%;
+#signInText,
+#createAccount {
+    display: block;
+    width: 40vh;
+    height: 20%;
+    padding: 14px 0;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 1.1em;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
-#registrationContent p,
-#kakaoLogin {
-    display: flex;
-    justify-content: justify;
-    align-content: center;
-    background-color: rgb(228, 225, 225);
-    padding: 3%;
-    border-radius: 20px;
-}
 
-#kakaoLogin {
-    background-color: rgb(251, 255, 0);
-    font-family: 'Jua', sans-serif;
-    font-size: xx-large;
-    justify-content: center;
-    align-content: center;
-    margin-bottom: 10%;
-    ;
-    padding: 1%;
-}
-
-#kakaoLogin span {
-    margin-right: 5%;
-}
-
-#registrationContent p label {
-    width: 50%
-}
-
-#registrationContent p input {
-    flex-grow: 1;
-}
-
-#reset,
-#submitRegister {
-    margin-left: 10%;
-    margin-right: 10%;
-} */
+/* endChallenge css end */

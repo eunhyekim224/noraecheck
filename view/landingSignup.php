@@ -1,4 +1,4 @@
-<div id="SignUp" class="modal" style="display:<?php if(isset($errors) AND isset($errors['contextUp']) AND $errors['contextUp'] == "signUp")  { echo "block";} ?>">
+<div id="signUp" class="modal" style="display:<?php if(isset($errors) AND isset($errors['contextUp']) AND $errors['contextUp'] == "signUp")  { echo "block";} ?>">
     <form class="modal-content animate" id="signUpForm" action="index.php?action=register" method="POST">
         <input type="hidden" name="action" id="action" value="register"/>
         <div class="imgcontainer">
@@ -18,11 +18,9 @@
                            echo "<p class='error'>".$errors['loginNew']."</p>";
                         }        
                         ?>    
-                        <!-- <p class="error">that id has already been taken </p>  -->
                     </span>
                 </label>
             </p>
-
             <p class="signformP">
                 <label class="field a-field a-field_a2">
                     <input type="text" name="email" id="email" class="field__input a-field__input" placeholder="e.g. karaokelife@mail" required/>
@@ -33,11 +31,9 @@
                                 echo "<p class='error'>".$errors['email']."</p>";
                             }        
                             ?>   
-                            <!-- <p class="error">please enter a valid email address</p>  -->
                         </span>
                 </label>
             </p>
-
             <p class="signformP">
                 <label class="field a-field a-field_a3">
                     <input type="password" name="pwd" id="pwd" class="field__input a-field__input" placeholder="at lease 8 characters" required/>
@@ -48,11 +44,9 @@
                                 echo "<p class='error'>".$errors['pwd']."</p>";
                             }        
                             ?>  
-                            <!-- <p class="error">@TODO : add verification</p>  -->
                         </span>
                 </label>
             </p>
-
             <p class="signformP">
                 <label class="field a-field a-field_a3">
                     <input type="password" name="pwdConf" id="pwdConf" class="field__input a-field__input" placeholder="same password" required/>
@@ -63,11 +57,9 @@
                                 echo "<p class='error'>".$errors['pwdConf']."</p>";
                             }        
                             ?>  
-                            <!-- <p class="error">please make sure that your passwords are the same</p>  -->
                         </span>
                 </label>
             </p>
-
             <p id="lastP">
                 <input class="btn" type="submit" name="submitSignUp" id="submitSignUp" value="Create"/>
                 <input class="btn" type="reset" name="reset" id="reset"  value="Reset"/>

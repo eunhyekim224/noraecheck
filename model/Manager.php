@@ -13,8 +13,6 @@ class Manager {
         $dbname = self::DBNAME;
         $this->_db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", self::LOGIN, self::PWD);
     }
-
-    
 }
 
     

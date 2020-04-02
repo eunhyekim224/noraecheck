@@ -24,8 +24,10 @@ include("topMenu.php");
         include("profile.php");
     } else if ($displayMode == 'challengeInProgress') {
         include("challengeInProgress.php");
+    } else if ($displayMode == 'endChallenge') {
+        include("endChallenge.php");
     }
-     ?>
+    ?>
         <!-- add divs with the list of songs from js function -->
     </section>   
     <?php include('nav.php'); ?>

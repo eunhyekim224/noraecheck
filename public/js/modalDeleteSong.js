@@ -20,7 +20,7 @@ function closeModals(modals) {
     for (let i = 0, c = modals.length; i < c; i++) {
         cancelButton = modals[i].querySelector('.cancelDel');
         cancelButton.addEventListener('click', () => {
-        modals[i].style.display = "none";
+            modals[i].style.display = "none";
         });
 
         window.addEventListener('click', (e) => {

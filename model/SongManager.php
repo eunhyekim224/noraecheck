@@ -47,14 +47,18 @@
             if(!$resp) {
                 throw new PDOException('Unable to display this playlist!');
             }
-            return $songs;
+            return $songs->fetchAll();
+            // $songArray =[];
+            // while ($song = $songs->fetch()){
+            //     array_push($songArray,$song);
+            // }
+            // return $songArray;
         }
 
         private function countSongsFromPlaylist($playlistId) {
             $count = $this->_db->prepare('SELECT count(*) AS songCount FROM songs s WHERE playlistId = :id');
-            $resp = $count->execute(array(
-                'id' => $playlistId
-            ));
+            $count->bindParam(':playlistId',$playlistId,PDO::PARAM_INT);
+            $resp = $count->execute();
             $songCount = $count->fetch()['songCount'];
             $count->closeCursor();
             return $songCount;
@@ -79,18 +83,17 @@
         }
 
         public function deleteSong($songId) {
-            $params = array(
-                'songId' => $songId
-            );
             $song = $this->_db->prepare("SELECT id, playlistId FROM songs WHERE id = :songId");
-            $song->execute($params);
+            $song->bindParam(':songId',$songId,PDO::PARAM_INT);
+            $song->execute();
             $selectedSong = $song->fetch();
             $existingSongId = $selectedSong['id'];
             $playlistId = $selectedSong['playlistId'];
 
             if ($existingSongId != "") {
                 $delSong = $this->_db->prepare("DELETE FROM songs WHERE id = :songId");
-                $delSong->execute($params);
+                $delSong->bindParam(':songId',$songId,PDO::PARAM_INT);
+                $delSong->execute();
     
                 $numberOfDeletedSongs = $delSong->rowCount();
                 if ($numberOfDeletedSongs < 1) {
