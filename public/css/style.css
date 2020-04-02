@@ -1600,8 +1600,8 @@ button:hover {
     opacity: 0.8;
 }
 
-#signInText,
-#createAccount {
+#backPlaylist,
+#challengeAgain {
     display: block;
     width: 40vh;
     height: 20%;
@@ -1612,6 +1612,37 @@ button:hover {
     margin: 0 0 10px 0;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.btnEnd {
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    width: 174px;
+}
+
+.modalContentEnd {
+    background-color: rgb(206, 206, 206);
+    box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
+    color: white;
+    margin: 15% auto;
+    padding: 1% 0px 3.5% 0px;
+    width: 16%;
+    height: 35%;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.7em;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: center;
+    /* position: absolute; */
 }
 
 
