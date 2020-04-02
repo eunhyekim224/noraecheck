@@ -1,9 +1,6 @@
 <?php
 session_start();
 require("./controller/controller.php");
-/**
- * TODO: verify cookies, if cookies set, showAllPlaylists, if not showLandingPage
- */
 try {
     $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
     if(isset($_SESSION['memberId'])){
