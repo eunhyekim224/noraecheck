@@ -1148,11 +1148,6 @@ span.psw {
     bottom: calc(var(--uiFieldHeight) + .5em);
 }
 
-.field {
-    /* --fieldBorderColor: #fda085; */
-    /* --fieldBorderColorActive: #fd6d365; */
-}
-
 .page {
     box-sizing: border-box;
     width: 100%;

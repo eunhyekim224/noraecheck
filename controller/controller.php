@@ -90,13 +90,13 @@
         require("view/home.php");
     }
 
-    function editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode,$page,$round) {
+    function editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode,$page,$round,$scoreOption,$possibleScore) {
         $songManager = new SongManager();
         $editBrandCodes = $songManager->editBrandCodes($songId,$tjCode,$kumyoungCode);
         if($page == 'playlistSongs'){
             header('Location: index.php?action=showMySongs&playlistId='.$playlistId);
         } else if($page == 'challengeInProgress'){
-            header('Location: index.php?action=challengeInProgress&round='.$round);
+            header('Location: index.php?action=challengeInProgress&score='.$possibleScore.'&round='.$round .'&scoreOption=' .$scoreOption);
         }
         
     }
@@ -159,13 +159,13 @@
         require("view/home.php");
     }
 
-    function updateScore($memberId,$score,$songId,$round){
+    function updateScore($memberId,$score,$songId,$round,$scoreOption){
         $updateScore = new ChallengeManager();
         $updatedScore = $updateScore->updateScore($memberId,$score,$songId);
-        header('Location: index.php?action=challengeInProgress&score='.$updatedScore.'&round='.$round);
+        header('Location: index.php?action=challengeInProgress&score='.$updatedScore.'&round='.$round .'&scoreOption=' .$scoreOption);
     }
 
-    function endChallenge($memberId) {
+    function endChallenge($memberId,$scoreOption) {
         $endChallenge = new ChallengeManager();
         $trophy = $endChallenge->endChallenge($memberId);
         $displayMode = 'endChallenge';
@@ -181,6 +181,8 @@
     function newChallenge ($memberId) {
         $deleteChallenge = new ChallengeManager();
         $deleteChallenge->deleteChallenge($memberId);
+        $playlistManager = new PlaylistManager();
+        $playlists = $playlistManager->getAllPlaylists($memberId);
         $displayMode = 'challengeSetUp';
         require("view/home.php");
     }
@@ -270,7 +272,7 @@
         }
         shuffle($songsArray);
 
-        if ($chalPlaylistOptions === 'allPlaylist'){
+        if ($chalPlaylistOptions === 'allPlaylists'){
             if($noOfSongs <= count($songsArray)) {
                 $songsArray = array_slice($songsArray,0,$noOfSongs);
             } 
