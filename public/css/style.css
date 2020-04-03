@@ -620,7 +620,7 @@ img.minusIcon:hover,
 }
 
 #areYouSure .areYouSureBtns input,
-.areYouSureBtns input, 
+.areYouSureBtns input,
 .editProfileBtns input[type=submit],
 .editProfileBtns input[type=button] {
     height: 63px;
@@ -706,6 +706,7 @@ img.minusIcon:hover,
     width: 38%;
     cursor: pointer;
 }
+
 .editProfileBtns {
     display: flex;
     justify-content: center;
@@ -823,6 +824,7 @@ img.minusIcon:hover,
     font-size: 0.9em;
     margin: 0 0 3% 0;
 }
+
 .error+p {
     display: none;
 }
@@ -1608,10 +1610,15 @@ tbody {
 
 #accountBtns {
     display: flex;
+    position: relative;
+    right: 0;
+    left: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px;
+    /* padding: 10px; */
+    /* padding: 11%; */
+    margin: 4%;
 }
 
 button:hover {
@@ -1621,7 +1628,7 @@ button:hover {
 #backPlaylist,
 #challengeAgain {
     display: block;
-    width: 40vh;
+    width: 39vh;
     height: 20%;
     padding: 14px 0;
     border-radius: 10px;
