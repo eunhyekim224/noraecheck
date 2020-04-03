@@ -1,4 +1,4 @@
-<div class="modal">
+<div class="modal" style="display:<?php if(isset($errors) AND isset($errors['contextUp']) AND $errors['contextUp'] == "editProfile")  { echo "block";} ?>">
     <div class="modalContent editProfileVerifyModal">
         <p class="profileformP">
             <label id="pwdProfile" for="oldPwd">Password to verify</label>

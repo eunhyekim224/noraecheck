@@ -1,6 +1,5 @@
-//Open and close block to change password
-// let showChangePwdBtn = document.querySelector('.changePwdBtn');
-// let changePwdBlock = document.querySelector('.changePwd');
+//Open and close div to change password
+
 let showChangePwdBtn = document.getElementById('changePwdBtn');
 let changePwdBlock = document.getElementById('changePwd');
 
@@ -18,30 +17,61 @@ let deleteProfileBtn = document.querySelector('#deleteProfileBtn');
 let editProfileBtn = document.querySelector('#editProfileBtn');
 let editProfileModal = document.querySelector('.modal');
 let cancelEditButton = document.getElementsByName("cancelEdit");
+let editProfileForm = document.querySelector('#editProfileForm');
 
-showAndCloseModal(editProfileModal, editProfileBtn, cancelEditButton[0]);
-showAndCloseModal(editProfileModal, deleteProfileBtn, cancelEditButton[0]);
 
-function showAndCloseModal(modals, buttons, cancelButtons) {
-    showModal(modals, buttons);
-    closeModal(modals, cancelButtons);
-}
+editProfileBtn.addEventListener('click', ()=>{
+    editProfileModal.style.display = "block";
+});
 
-function showModal(modal, button) {
-    button.addEventListener('click', ()=> {
-        modal.style.display = "block";
-    }); 
-}
+deleteProfileBtn.addEventListener('click', ()=>{
+    editProfileModal.style.display = "block";
+});
 
-function closeModal (modal, cancelButton) {
-    cancelButton.addEventListener('click', ()=> {
-        modal.style.display = "none";
-        location.reload();  
-    });
-    window.addEventListener('click', (e)=> {
-        if (e.target == modal) {
-            modal.style.display = "none";
-            location.reload();  
+
+function setDisplayModals(elt) {
+    elt.addEventListener("click", function(e) {
+        const editProfileMod = document.querySelector('.modal');
+        if (e.target == cancelEditButton[0] || e.target == editProfileModal) {
+            hideModal(editProfileMod);
+            errors = document.querySelectorAll("div .error");
+            for (let i = 0; i < errors.length; i++) {
+                errors[i].style.display = "none";
+            }
         }
-    });      
+    });
+}
+
+function hideModal(elt) {
+    elt.style.display = "none";
+}
+
+function editProfileVerify(editProfileForm, e) {
+    if (editProfileForm.querySelector('#newUsername').value && editProfileForm.querySelector('#oldPwd').value) {
+        editProfileForm.submit();
+    } else {
+        e.preventDefault();
+        error = editProfileForm.querySelector("div .error");
+        error.style.display = "block";
+    }
+}
+
+/********EXECUTION******* */
+
+{
+    function init() {
+        setDisplayModals(window);
+        let cancelEditButton = document.getElementsByName("cancelEdit");
+        // closeModals = document.querySelectorAll("span.close");
+        // for (let i = 0; i < closeModals.length; i++) {
+        setDisplayModals(cancelEditButton[0]);
+        // }
+
+        const submitEdit = document.querySelector('.editProfileBtns input[name=edit]');
+        submitEdit.addEventListener("click", function(e) {
+            editProfileVerify(document.querySelector('#editProfileForm'), e);
+        });
+        // for the button to the creation
+    }
+    init();
 }

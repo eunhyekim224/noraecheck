@@ -75,8 +75,8 @@
         }
 
         public function deleteChallenge($memberId) {
-            $delete = $this->_db->prepare("DELETE FROM `challenges` WHERE `memberId` = 8");
-            $delete->bindParam(':memberID',$memberId, PDO::PARAM_INT);
+            $delete = $this->_db->prepare("DELETE FROM `challenges` WHERE `memberId` = :memberId");
+            $delete->bindParam(':memberId',$memberId, PDO::PARAM_INT);
             $delete->execute();
             if(!$delete) {
                 throw new PDOException('Impossible to delete the challenge');

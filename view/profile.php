@@ -77,7 +77,7 @@
             <input class="btn btnBlue" type="button" name="editProfileBtn" id="editProfileBtn" value="Edit"/>
             <input class="btn btnOrange" type="button" name="deleteProfileBtn" id="deleteProfileBtn" value="Delete"/>
         </p>
-        <?php include("editPlaylistModal.php"); ?>
+        <?php include("editProfileModal.php"); ?>
     </form>
 </div>
 <?php } ?>
