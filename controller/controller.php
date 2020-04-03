@@ -201,10 +201,11 @@
         );
         
         $currentProfile = $memberManager->getMember($oldUsername);
+        $newUsernameConf = $memberManager->getMember($newUsername);
 
         if($newUsername && $email && $oldPwd){
             if (password_verify($oldPwd, $currentProfile['password'])){
-                if($currentProfile['username'] != $newUsername){
+                if(!$newUsernameConf && $currentProfile['username'] != $newUsername){
                     if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
                         if ($newPwd && $newpwdConf) {
                             if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$newPwd)) {
@@ -244,7 +245,6 @@
     }
 
     function insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption) {
-        echo '<strong>List of all singers: </strong>'.$allSingers;
         $singersArray = explode(',',$allSingers);
         $playlistsArray = array();
         $playlistManager = new PlaylistManager();
@@ -276,7 +276,7 @@
             if($noOfSongs <= count($songsArray)) {
                 $songsArray = array_slice($songsArray,0,$noOfSongs);
             } 
-        }
+        } 
         
         $countSinger = count($singersArray);
         $increment = 0;
@@ -290,7 +290,6 @@
                 $increment++;
             }
         }
-
         header("Location: index.php?action=challengeInProgress&scoreOption=".$scoreOption);
     }
 

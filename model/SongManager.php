@@ -47,12 +47,12 @@
             if(!$resp) {
                 throw new PDOException('Unable to display this playlist!');
             }
-            return $songs->fetchAll();
-            // $songArray =[];
-            // while ($song = $songs->fetch()){
-            //     array_push($songArray,$song);
-            // }
-            // return $songArray;
+            // return $songs->fetchAll();
+            $songArray =[];
+            while ($song = $songs->fetch()){
+                array_push($songArray,$song);
+            }
+            return $songArray;
         }
 
         private function countSongsFromPlaylist($playlistId) {

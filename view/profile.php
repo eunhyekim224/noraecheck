@@ -37,18 +37,18 @@
                     <!-- <p class="error">please enter a valid email address</p>  -->
                 </p>
                 
-                <p class="profileformP">
+                <!-- <p class="profileformP">
                     <label id="pwdProfile" for="oldPwd">Password to verify</label>
                     <input type="password" name="oldPwd" id="oldPwd"/>  
-                    <?php 
+                    <php 
                     if(isset($errors) AND isset($errors['oldPwdConf'])) {
                         echo "<div class='error'>".$errors['oldPwdConf']."</div>";
                     }        
                     ?>  
-                </p>
+                </p> -->
 
-                <div class="changePwdBtn">Change password</div>
-                <div class="changePwd">
+                <div id="changePwdBtn">Change password</div>
+                <div id="changePwd">
                     <p class="profileformP">
                         <label id="pwdProfile" for="newPwd"> New password</label>
                         <input type="password" name="newPwd" id="newPwd" placeholder="at lease 8 characters"/>  
@@ -74,19 +74,11 @@
             </div>
         </div>
         <p id="profilelastP">
-            <input class="btn btnBlue" type="submit" name="editProfileBtn" id="editProfileBtn" value="Edit"/>
+            <input class="btn btnBlue" type="button" name="editProfileBtn" id="editProfileBtn" value="Edit"/>
             <input class="btn btnOrange" type="button" name="deleteProfileBtn" id="deleteProfileBtn" value="Delete"/>
         </p>
+        <?php include("editProfileModal.php"); ?>
     </form>
-    <div class="modal">
-        <div class="modalContent deleteProfileModal">
-            <form action="index.php" method="post">
-                <input type="hidden" name="action" value="deleteProfile">
-                <input type="hidden" name="memberId" value=<?=$_SESSION['memberId']?>>
-                <?php include('areYouSureModal.php'); ?>
-            </form>
-        </div>
-    </div>
 </div>
 <?php } ?>
 <script src="./public/js/editProfile.js"></script>

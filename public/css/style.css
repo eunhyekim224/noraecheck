@@ -620,7 +620,9 @@ img.minusIcon:hover,
 }
 
 #areYouSure .areYouSureBtns input,
-.areYouSureBtns input {
+.areYouSureBtns input, 
+.editProfileBtns input[type=submit],
+.editProfileBtns input[type=button] {
     height: 63px;
     border: none;
     padding: 4% 5%;
@@ -703,6 +705,10 @@ img.minusIcon:hover,
     font-size: 0.6em;
     width: 38%;
     cursor: pointer;
+}
+.editProfileBtns {
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -814,6 +820,11 @@ img.minusIcon:hover,
 
 .error {
     color: red;
+    font-size: 0.9em;
+    margin: 0 0 3% 0;
+}
+.error+p {
+    display: none;
 }
 
 .profileformP label {
@@ -841,13 +852,13 @@ img.minusIcon:hover,
     border: none;
 }
 
-.changePwd {
+#changePwd {
     visibility: hidden;
 }
 
-.changePwdBtn {
+#changePwdBtn {
     width: 45%;
-    /* cursor: pointer; */
+    cursor: pointer;
     border-radius: 3px;
     border: none;
     box-shadow: 3px 5px rgb(187, 186, 186);
@@ -857,11 +868,11 @@ img.minusIcon:hover,
     text-align: center;
 }
 
-.changePwdBtn:hover {
+#changePwdBtn:hover {
     background-color: #5fbbe9;
 }
 
-.changePwdBtn:active {
+#changePwdBtn:active {
     background-color: #5fbbe9;
     box-shadow: 3px 5px rgb(143, 142, 142);
     transform: translateY(4px);
