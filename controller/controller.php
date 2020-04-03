@@ -281,6 +281,7 @@
         $countSinger = count($singersArray);
         $increment = 0;
         $challengeManager = new ChallengeManager();
+        $challengeManager->deleteChallenge($memberId);
         foreach ($songsArray as $i=>$song){
             $challengeManager->insertSingerSongs($memberId,$singersArray[$increment],$song, null);
             if($increment === count($singersArray)-1){
