@@ -1340,22 +1340,19 @@ label[for=playlistId] {
 #chalPlaylistOptionsBtns label:active,
 #chalPlaylistOptionsBtns label:hover {
     box-shadow: 3px 5px rgb(143, 142, 142);
-   
 }
 
 #chalPlaylistOptionsBtns input[type=radio] {
     display: none;
 }
 
-#chalPlaylistOptionsBtns input[type=radio]:checked + label {
+#chalPlaylistOptionsBtns input[type=radio]:checked+label {
     background: #84fab0;
 }
 
 #selectAllSongs {
     display: none;
 }
-
-
 
 #selectPlaylist {
     width: 89%;
@@ -1603,6 +1600,7 @@ tbody {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 100px;
 }
 
 button:hover {
