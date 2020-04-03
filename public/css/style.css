@@ -1291,11 +1291,13 @@ label[for=playlistId] {
 #singerInput button {
     border: none;
     border-radius: 10px;
-    height: 103%;
+    height: 75%;
+    width: 12%;
     padding-top: -11px;
     vertical-align: top;
     color: rgb(146, 143, 143);
     box-shadow: 3px 5px rgb(187, 186, 186);
+    background: url('../images/plusIcon4.png') center/cover;
 }
 
 #singerInput button:active,
@@ -1343,21 +1345,28 @@ label[for=playlistId] {
     border: none;
     font-weight: bold;
     box-shadow: 3px 5px rgb(143, 142, 142);
+    background: linear-gradient(to right, #84fab0 0%, #8fd3f4 20%, #8fd3f4 71%, #84fab0 100%);
 }
 
 #chalPlaylistOptionsBtns label:active,
 #chalPlaylistOptionsBtns label:hover {
     box-shadow: 3px 5px rgb(143, 142, 142);
+   
 }
 
 #chalPlaylistOptionsBtns input[type=radio] {
     display: none;
 }
 
-#selectPlaylist,
+#chalPlaylistOptionsBtns input[type=radio]:checked + label {
+    background: #84fab0;
+}
+
 #selectAllSongs {
     display: none;
 }
+
+
 
 #selectPlaylist {
     width: 89%;
@@ -1372,7 +1381,7 @@ label[for=playlistId] {
     color: white;
     font-size: 1.3em;
     box-shadow: 3px 5px rgb(143, 142, 142);
-    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 20%, #8fd3f4 71%, #84fab0 100%);
+    background-color: #84fab0;
 }
 
 #playlists:focus {
@@ -1611,8 +1620,8 @@ button:hover {
     opacity: 0.8;
 }
 
-#signInText,
-#createAccount {
+#backPlaylist,
+#challengeAgain {
     display: block;
     width: 40vh;
     height: 20%;
@@ -1623,6 +1632,37 @@ button:hover {
     margin: 0 0 10px 0;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.btnEnd {
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    width: 174px;
+}
+
+.modalContentEnd {
+    background-color: rgb(206, 206, 206);
+    box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
+    color: white;
+    margin: 15% auto;
+    padding: 1% 0px 3.5% 0px;
+    width: 16%;
+    height: 35%;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.7em;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: center;
+    /* position: absolute; */
 }
 
 

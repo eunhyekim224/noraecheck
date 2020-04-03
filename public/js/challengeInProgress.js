@@ -4,15 +4,23 @@ const numOfRounds = parseInt(document.getElementById("numberOfRounds").value);
 const challengeRoundForm = document.getElementById("challengeRoundForm");
 const action = document.getElementsByName('action')[2];
 const exit = document.getElementById('exit');
+let scoreMode = document.getElementById('scoreMode').value;
+
+const changeScoreDiv = document.getElementById('scoreEnterDiv');
 
 console.log(numOfRounds);
+
+
+if(!scoreMode){
+    changeScoreDiv.classList.add('hidden');
+}
 
 //go to next round
 nextButton.addEventListener('click', function() {
     roundNumber.setAttribute('value', (parseInt(roundNumber.value) + 1));
     if (parseInt(roundNumber.value) === numOfRounds) {
         //once the challengeComplete page is made, change the following line to route it there
-        action.setAttribute('value', 'showMyList');
+        action.setAttribute('value', 'endChallenge');
     }
     challengeRoundForm.submit();
 
@@ -47,7 +55,7 @@ const finalExit = document.getElementsByName('exit')[0];
 
 finalExit.addEventListener('click', function() {
     //also change this to the final page once it is created
-    action.setAttribute('value', 'showMyList');
+    action.setAttribute('value', 'endChallenge');
     challengeRoundForm.submit();
 
 })
@@ -55,7 +63,6 @@ finalExit.addEventListener('click', function() {
 
 //change form on click
 
-const changeScoreDiv = document.getElementById('scoreEnterDiv');
 
 
 //view1

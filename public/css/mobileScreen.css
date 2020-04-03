@@ -238,66 +238,50 @@ padding-bottom: 0;
         font-size: 1.2em;
         padding: 6px;
     }
-
-    
     /* challenge in progress */
-
-    #mainPlaylistImg{
-        display:none;
+    #mainPlaylistImg {
+        display: none;
     }
-
-    #scoreEnterDiv{
+    #scoreEnterDiv {
         width: 20%;
-        height:40%;
+        height: 40%;
     }
-    
-    .challengeCode{
-        width:45% !important;
+    .challengeCode {
+        width: 45% !important;
     }
-    .challengeCode input{
+    .challengeCode input {
         font-size: 3vh;
     }
-
-
     /* top header */
-
-    #topHeader{
-        width:25%;
+    #topHeader {
+        width: 25%;
         align-items: center;
-        background-color:transparent !important;
+        background-color: transparent !important;
     }
-    
-    #lang{
-        display:none;
+    #lang {
+        display: none;
         margin-right: 0%;
     }
-
-    
-    #topMenuDropDown{
+    #topMenuDropDown {
         z-index: 1;
         margin-left: 50%;
     }
-    #topMenuDropDown p{
-        display:none;
+    #topMenuDropDown p {
+        display: none;
     }
-    #topMenuDropDown{
-        margin-top:10%
+    #topMenuDropDown {
+        margin-top: 10%
     }
-
-    /* playlistSongs page */ 
-
+    /* playlistSongs page */
     #mySongList {
         height: 69%;
     }
-
     #mySongList li {
         padding-bottom: 30px;
     }
-
     .songImgInPlaylistSongs {
         display: none;
     }
-
     #mySongList img {
         background-color: transparent;
         height: 40px;
@@ -305,16 +289,13 @@ padding-bottom: 0;
         margin: 0;
         padding-left: 40px;
     }
-
     .songListBrandCodes {
         width: 33%;
     }
-
     #editBtns input {
         font-size: 0.5em;
         height: 53px;
     }
-
     #editPlaylistInfo {
         width: 37%;
     }
@@ -500,13 +481,10 @@ padding-bottom: 0;
         width: 35%;
         font-size: 3vh;
     }
-
     /* challenge in progress */
-
-    #mainPlaylistImg{
-        display:none;
+    #mainPlaylistImg {
+        display: none;
     }
-
 }
 
 @media all and (min-width: 500px) and (max-width: 640px) {
@@ -687,19 +665,16 @@ padding-bottom: 0;
         width: 35%;
         font-size: 3vh;
     }
-
     /* challenge in progress */
-
-    #mainPlaylistImg{
-        display:none;
+    #mainPlaylistImg {
+        display: none;
     }
-
 }
 
 
 /* Galaxy S5 */
 
-/* @media all and (min-height: 568px) and (max-height: 736px) {
+/* @media all and (min-height: 568px) and (max-height: 636px) {
     #singerInput {
         width: 78%;
     }
@@ -710,3 +685,22 @@ padding-bottom: 0;
         height: 57px;
     }
 } */
+
+
+@media all and (min-width: 320px) and (max-width: 1000px) {
+    .modalContentEnd {
+        background-color: rgb(206, 206, 206);
+        box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
+        color: white;
+        margin: 47% auto;
+        padding: 1% 0px 3.5% 0px;
+        width: 64%;
+        height: 37%;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 1.7em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

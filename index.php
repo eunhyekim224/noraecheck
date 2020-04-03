@@ -1,9 +1,6 @@
 <?php
 session_start();
 require("./controller/controller.php");
-/**
- * TODO: verify cookies, if cookies set, showAllPlaylists, if not showLandingPage
- */
 try {
     $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
     if(isset($_SESSION['memberId'])){
@@ -52,8 +49,10 @@ try {
                 $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
                 $tjCode = isset($_POST['tjCode']) ? $_POST['tjCode'] : '';
                 $kumyoungCode = isset($_POST['kumyoungCode']) ? $_POST['kumyoungCode'] : '';
+                $scoreOption = isset($_REQUEST['scoreOption']) ? $_REQUEST['scoreOption'] : '';
+                $possibleScore = isset($_REQUEST['oldScore']) ? $_REQUEST['oldScore'] : '';
                 if ($playlistId && $songId) {
-                    editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode,$page,$round);
+                    editBrandCode($playlistId,$songId,$tjCode,$kumyoungCode,$page,$round,$scoreOption,$possibleScore);
                 }  
             } else if ($action === 'deleteSong') {
                 $songId = isset($_POST['songId']) ? $_POST['songId'] : '';
@@ -122,7 +121,8 @@ try {
                 $score = isset($_REQUEST['newScore']) ? $_REQUEST['newScore'] : '';
                 $songId = isset($_REQUEST['songIdToUpdate']) ? $_REQUEST['songIdToUpdate'] : '';
                 $round = isset($_REQUEST['round']) ? $_REQUEST['round'] : '';
-                updateScore($memberId,$score,$songId,$round);
+                $scoreOption = isset($_REQUEST['scoreOption']) ? $_REQUEST['scoreOption'] : '';
+                updateScore($memberId,$score,$songId,$round,$scoreOption);
             } else if ($action ==='insertChallengeInfo') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 $allSingers = isset($_POST['allSingers']) ? $_POST['allSingers'] : '';
@@ -133,7 +133,8 @@ try {
                 insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption);                 
             } else if ($action ==='endChallenge') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-                endChallenge($memberId);
+                $scoreOption = isset($_REQUEST['scoreOption']) ? $_REQUEST['scoreOption'] : '';
+                endChallenge($memberId,$scoreOption);
             } else if ($action ==='deleteChallenge') {
                 // clear the results
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
