@@ -197,7 +197,7 @@
     function editProfile($memberId,$oldUsername,$newUsername,$email,$oldPwd,$newPwd,$newpwdConf){
         $memberManager = new MemberManager();
         $errors = array(
-            "contextUp" => "editProfile"
+            "context" => "editProfile"
         );
         
         $currentProfile = $memberManager->getMember($oldUsername);
@@ -220,7 +220,11 @@
                             }   
                         } else {
                             $status = $memberManager->editMember($memberId,$email,$newUsername,$oldPwd);
-                            header("Location: index.php?success=1");
+                            $_SESSION['username'] = $newUsername;
+                            $errors['context'] = '';
+                            $displayMode = 'profile';
+                            require("view/home.php");
+                            // header("Location: index.php?success=1");
                         }
                     } else {
                         $errors['email'] = 'incorrect email'; 
@@ -238,7 +242,7 @@
         require("view/home.php");
     } 
 
-    function deleteProfile($singer,$score) {
+    function deleteProfile($memberId) {
         $memberManager = new MemberManager();
         $deleteProfile = $memberManager->deleteProfile($memberId);
         header("Location: index.php?success=1");
