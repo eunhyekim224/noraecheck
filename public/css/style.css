@@ -38,7 +38,8 @@ a {
     background-color: rgb(240, 240, 240);
     /* opacity: 50%; */
     height: 25px;
-    padding-top: .5%;
+    padding-top: .2%;
+    padding-bottom: .2%;
     padding-right: 10%;
     margin-bottom: 1%;
 }
@@ -55,8 +56,17 @@ a {
     margin-right: 20%;
 }
 
+#iconProf {
+    width: 5%;
+}
+
 #topMenuDropDown {
     z-index: 1;
+    background-color: rgb(240, 240, 240);
+    border-radius: 0 0 5px 5px;
+    width: 5%;
+    text-align: center;
+    padding-bottom: .5%;
 }
 
 .mainWrapper {
@@ -285,6 +295,7 @@ a {
 
 #mainPlaylistInfo {
     padding-left: 2%;
+    width: 58.5%;
 }
 
 #createTxt {
@@ -1007,6 +1018,21 @@ img.minusIcon:hover,
     padding: 1%;
 }
 
+#goBackBtn {
+    width: 85%;
+    border-radius: 10px;
+    padding: 0.2%;
+}
+
+#goBackBtn:hover {
+    background-color: #84fab0;
+}
+
+#mainPlaylist a {
+    width: 5%;
+    align-self: flex-start;
+
+}
 
 /* #mainPlaylist p {
 margin: 1%;
