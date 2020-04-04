@@ -47,7 +47,7 @@
         height: 70%;
         position: absolute;
         top: 17.5%;
-        width: 100%;
+        width: 95%;
         /* box-shadow: -60px 0 120px rgb(240, 240, 240) inset; */
         box-shadow: -60px 0 120px rgb(206, 206, 206) inset;
     }
@@ -262,17 +262,37 @@ padding-bottom: 0;
         display: none;
         margin-right: 0%;
     }
+    #iconProf {
+        width: 55%;
+    }
     #topMenuDropDown {
         z-index: 1;
-        margin-left: 50%;
+        margin-left: 10%;
+        margin-top: 10%;
+        display: none;
     }
     #topMenuDropDown p {
         display: none;
     }
-    #topMenuDropDown {
-        margin-top: 10%
-    }
+    
     /* playlistSongs page */
+    #goBackBtn {
+        width: 175%;
+        border-radius: 10px;
+        padding: 0.2%;
+    }
+    
+    #goBackBtn:hover {
+        background-color: #84fab0;
+    }
+    
+    #mainPlaylist a {
+        width: 7%;
+        align-self: flex-start;
+    }
+    #mainPlaylistInfo {
+        width: 75%;
+    }
     #mySongList {
         height: 69%;
     }

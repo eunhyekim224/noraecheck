@@ -8,8 +8,8 @@
                     <button type="button" id="singerSubmit" value="singerSubmit"></button>
                 </div>
                 <ul id="listOfSingers">
-                    <li><?= $_SESSION['username']; ?>
-                        <input type="button" id="deleteSinger" name="deleteSinger">
+                    <li data-singer="<?= $_SESSION['username'];?>"><?= $_SESSION['username'];?>
+                        <input type="button" id="deleteSinger" name="deleteSinger"/>
                     </li>
                 </ul>
             </div>

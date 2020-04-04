@@ -70,7 +70,9 @@ challengeSetUpForm.addEventListener('submit', addSingers);
 
 function getSingers() {
     let singerNames = document.querySelectorAll('#listOfSingers li');
-    for (let i=0, c=singerNames.length; i<c; i++) {
+    const firstSinger = singerNames[0].getAttribute("data-singer");
+    allSingerNames.push(firstSinger);
+    for (let i=1, c=singerNames.length; i<c; i++){
         allSingerNames.push(singerNames[i].textContent);
     }
 }
