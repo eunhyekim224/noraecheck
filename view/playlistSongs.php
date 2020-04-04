@@ -1,6 +1,6 @@
 <div id="mainPlaylist">
 <?php if ($mainPlaylist): $_SESSION['playlistId'] = $mainPlaylist['playlistId']?>
-    <img src="public/images/album2.png" id="mainPlaylistImg">
+    <img src="public/images/album2.png" id="mainPlaylistImg" title="Album icon">
     <div id="mainPlaylistInfo">
         <p class="darkGrey playlistNameText"><?= $mainPlaylist['playlistName']; ?></p>
         <p>by <?=$mainPlaylist['username'];?></p>
@@ -17,6 +17,11 @@
         </div>
         <?php include('playlistOptionsModal.php'); ?>
     </div>
+    <a href="index.php?action=showMyList" title="Go back to my list">
+        <!-- <div> -->
+            <img src="public/images/backArrow2.png" id="goBackBtn" title="Back button">
+        <!-- </div> -->
+    </a>
 </div>
 <?php endif; ?>
 

@@ -3,7 +3,9 @@
         <!-- <select id="lang">
             <option value="English">english</option>
         </select>  -->
-        <span id="user"><?=$_SESSION['username'] ?> </span>
+        <div id="user">
+            <img src="public/images/profileTopMenu2.png" id="iconProf" title="Profile icon">
+        </div>
     </div>
     <div id="topMenuDropDown" class="hidden">
         <a href="index.php?action=showProfile" title="Go to profile">
