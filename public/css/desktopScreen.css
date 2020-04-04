@@ -178,8 +178,18 @@
     #searchNewPlaylist input {
         width: 77%;
     }
+    #topHeader {
+        padding-bottom: .2%;
+    }
     #topMenu {
         font-size: 2vh;
+    }
+    #user {
+        display: flex;
+        justify-content: flex-end;
+    }
+    #iconProf {
+        width: 6%;
     }
 
     #challengeUser {
