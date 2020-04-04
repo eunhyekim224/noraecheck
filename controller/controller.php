@@ -23,7 +23,8 @@
                     if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$password)) {
                         if ($username AND $password == $passwordConf){
                             $status = $memberManager->addMember($email,$username,$password);
-                            header("location:index.php?action=login&success=1");
+                            // header("location:index.php?action=login&success=1");
+                            header("location:index.php");
                         } else if ($password != $passwordConf){
                             $errors['pwdConf'] = 'password does not match';
                         }
@@ -63,9 +64,10 @@
                 $errors['password'] = 'incorrect password';
             }
         } else {
-            $errors['username'] = 'there are no accounts with that ID';
+            $errors['username'] = 'username does not exist';
         }
         require("view/landing.php");
+
     }
 
     function makePlaylist($memberId, $name) {
@@ -238,7 +240,7 @@
         require("view/home.php");
     } 
 
-    function deleteProfile($singer,$score) {
+    function deleteProfile($memberId) {
         $memberManager = new MemberManager();
         $deleteProfile = $memberManager->deleteProfile($memberId);
         header("Location: index.php?success=1");
