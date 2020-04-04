@@ -222,7 +222,8 @@
                             }   
                         } else {
                             $status = $memberManager->editMember($memberId,$email,$newUsername,$oldPwd);
-                            header("Location: index.php?success=1");
+                            $_SESSION['username'] = $newUsername;
+                            header("Location: index.php?action=showProfile");
                         }
                     } else {
                         $errors['email'] = 'incorrect email'; 
