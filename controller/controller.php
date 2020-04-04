@@ -240,7 +240,7 @@
         require("view/home.php");
     } 
 
-    function deleteProfile($singer,$score) {
+    function deleteProfile($memberId) {
         $memberManager = new MemberManager();
         $deleteProfile = $memberManager->deleteProfile($memberId);
         header("Location: index.php?success=1");
