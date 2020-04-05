@@ -38,7 +38,8 @@ a {
     background-color: rgb(240, 240, 240);
     /* opacity: 50%; */
     height: 25px;
-    padding-top: .5%;
+    padding-top: .2%;
+    padding-bottom: .2%;
     padding-right: 10%;
     margin-bottom: 1%;
 }
@@ -55,8 +56,17 @@ a {
     margin-right: 20%;
 }
 
+#iconProf {
+    width: 5%;
+}
+
 #topMenuDropDown {
     z-index: 1;
+    background-color: rgb(240, 240, 240);
+    border-radius: 0 0 5px 5px;
+    width: 5%;
+    text-align: center;
+    padding-bottom: .5%;
 }
 
 .mainWrapper {
@@ -285,6 +295,7 @@ a {
 
 #mainPlaylistInfo {
     padding-left: 2%;
+    width: 58.5%;
 }
 
 #createTxt {
@@ -620,7 +631,9 @@ img.minusIcon:hover,
 }
 
 #areYouSure .areYouSureBtns input,
-.areYouSureBtns input {
+.areYouSureBtns input,
+.editProfileBtns input[type=submit],
+.editProfileBtns input[type=button] {
     height: 63px;
     border: none;
     padding: 4% 5%;
@@ -703,6 +716,11 @@ img.minusIcon:hover,
     font-size: 0.6em;
     width: 38%;
     cursor: pointer;
+}
+
+.editProfileBtns {
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -814,6 +832,12 @@ img.minusIcon:hover,
 
 .error {
     color: red;
+    font-size: 0.9em;
+    margin: 0 0 3% 0;
+}
+
+.error+p {
+    display: none;
 }
 
 .profileformP label {
@@ -841,13 +865,13 @@ img.minusIcon:hover,
     border: none;
 }
 
-.changePwd {
+#changePwd {
     visibility: hidden;
 }
 
-.changePwdBtn {
+#changePwdBtn {
     width: 45%;
-    /* cursor: pointer; */
+    cursor: pointer;
     border-radius: 3px;
     border: none;
     box-shadow: 3px 5px rgb(187, 186, 186);
@@ -857,11 +881,11 @@ img.minusIcon:hover,
     text-align: center;
 }
 
-.changePwdBtn:hover {
+#changePwdBtn:hover {
     background-color: #5fbbe9;
 }
 
-.changePwdBtn:active {
+#changePwdBtn:active {
     background-color: #5fbbe9;
     box-shadow: 3px 5px rgb(143, 142, 142);
     transform: translateY(4px);
@@ -996,6 +1020,21 @@ img.minusIcon:hover,
     padding: 1%;
 }
 
+#goBackBtn {
+    width: 85%;
+    border-radius: 10px;
+    padding: 0.2%;
+}
+
+#goBackBtn:hover {
+    background-color: #84fab0;
+}
+
+#mainPlaylist a {
+    width: 5%;
+    align-self: flex-start;
+
+}
 
 /* #mainPlaylist p {
 margin: 1%;
@@ -1340,22 +1379,19 @@ label[for=playlistId] {
 #chalPlaylistOptionsBtns label:active,
 #chalPlaylistOptionsBtns label:hover {
     box-shadow: 3px 5px rgb(143, 142, 142);
-   
 }
 
 #chalPlaylistOptionsBtns input[type=radio] {
     display: none;
 }
 
-#chalPlaylistOptionsBtns input[type=radio]:checked + label {
+#chalPlaylistOptionsBtns input[type=radio]:checked+label {
     background: #84fab0;
 }
 
 #selectAllSongs {
     display: none;
 }
-
-
 
 #selectPlaylist {
     width: 89%;
@@ -1600,19 +1636,25 @@ tbody {
 
 #accountBtns {
     display: flex;
+    position: relative;
+    right: 0;
+    left: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* padding: 10px; */
+    /* padding: 11%; */
+    margin: 4%;
 }
 
 button:hover {
     opacity: 0.8;
 }
 
-#signInText,
-#createAccount {
+#backPlaylist,
+#challengeAgain {
     display: block;
-    width: 40vh;
+    width: 39vh;
     height: 20%;
     padding: 14px 0;
     border-radius: 10px;
@@ -1621,6 +1663,37 @@ button:hover {
     margin: 0 0 10px 0;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.btnEnd {
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    width: 174px;
+}
+
+.modalContentEnd {
+    background-color: rgb(206, 206, 206);
+    box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
+    color: white;
+    margin: 15% auto;
+    padding: 1% 0px 3.5% 0px;
+    width: 16%;
+    height: 35%;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.7em;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: center;
+    /* position: absolute; */
 }
 
 

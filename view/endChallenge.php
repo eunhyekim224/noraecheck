@@ -24,10 +24,13 @@
     </tbody>
 </table>
 
+
 <div id="accountBtns">
     <!-- <a href="index.php?action=deleteChallenge" id="playAgain" class="btn"> Play again ?</a> -->
     <button id="challengeAgain" class="btn btnOrange"> Play again ?</button>
-    <a href="index.php?action=deleteChallenge" id="createAccount" class="btn btnOrange">Go back to my playlists</a>
+    <a href="index.php?action=deleteChallenge" id="backPlaylist" class="btn btnOrange">Go back to my playlists</a>
 </div>
 
-<?php require("newChallenge.php"); ?>
+<!-- <div class="modalButtons" id="mainOptions"> -->
+    <?php require("newChallenge.php"); ?>
+<!-- </div> -->

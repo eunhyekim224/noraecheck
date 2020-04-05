@@ -23,7 +23,8 @@
                     if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$password)) {
                         if ($username AND $password == $passwordConf){
                             $status = $memberManager->addMember($email,$username,$password);
-                            header("location:index.php?action=login&success=1");
+                            // header("location:index.php?action=login&success=1");
+                            header("location:index.php");
                         } else if ($password != $passwordConf){
                             $errors['pwdConf'] = 'password does not match';
                         }
@@ -63,9 +64,10 @@
                 $errors['password'] = 'incorrect password';
             }
         } else {
-            $errors['username'] = 'there are no accounts with that ID';
+            $errors['username'] = 'username does not exist';
         }
         require("view/landing.php");
+
     }
 
     function makePlaylist($memberId, $name) {
@@ -207,14 +209,15 @@
     function editProfile($memberId,$oldUsername,$newUsername,$email,$oldPwd,$newPwd,$newpwdConf){
         $memberManager = new MemberManager();
         $errors = array(
-            "contextUp" => "editProfile"
+            "context" => "editProfile"
         );
         
         $currentProfile = $memberManager->getMember($oldUsername);
+        $newUsernameConf = $memberManager->getMember($newUsername);
 
         if($newUsername && $email && $oldPwd){
             if (password_verify($oldPwd, $currentProfile['password'])){
-                if($currentProfile['username'] != $newUsername){
+                if(!$newUsernameConf && $currentProfile['username'] != $newUsername){
                     if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
                         if ($newPwd && $newpwdConf) {
                             if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$newPwd)) {
@@ -229,7 +232,11 @@
                             }   
                         } else {
                             $status = $memberManager->editMember($memberId,$email,$newUsername,$oldPwd);
-                            header("Location: index.php?success=1");
+                            $_SESSION['username'] = $newUsername;
+                            // $errors['context'] = '';
+                            // $displayMode = 'profile';
+                            // require("view/home.php");
+                            header("Location: index.php?action=showProfile");
                         }
                     } else {
                         $errors['email'] = 'incorrect email'; 
@@ -247,14 +254,13 @@
         require("view/home.php");
     } 
 
-    function deleteProfile($singer,$score) {
+    function deleteProfile($memberId) {
         $memberManager = new MemberManager();
         $deleteProfile = $memberManager->deleteProfile($memberId);
         header("Location: index.php?success=1");
     }
 
     function insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption) {
-        echo '<strong>List of all singers: </strong>'.$allSingers;
         $singersArray = explode(',',$allSingers);
         $playlistsArray = array();
         $playlistManager = new PlaylistManager();
@@ -286,7 +292,7 @@
             if($noOfSongs <= count($songsArray)) {
                 $songsArray = array_slice($songsArray,0,$noOfSongs);
             } 
-        }
+        } 
         
         $countSinger = count($singersArray);
         $increment = 0;
@@ -300,7 +306,6 @@
                 $increment++;
             }
         }
-
         header("Location: index.php?action=challengeInProgress&scoreOption=".$scoreOption);
     }
 
