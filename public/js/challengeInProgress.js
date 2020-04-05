@@ -11,6 +11,8 @@ const changeScoreDiv = document.getElementById('scoreEnterDiv');
 console.log(numOfRounds);
 
 
+
+
 if(!scoreMode){
     changeScoreDiv.classList.add('hidden');
 }
@@ -62,7 +64,6 @@ finalExit.addEventListener('click', function() {
 
 
 //change form on click
-
 
 
 //view1
