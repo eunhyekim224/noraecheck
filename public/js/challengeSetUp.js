@@ -81,3 +81,15 @@ function addSingers() {
     hiddenInput = document.querySelector('#allSingers');
     hiddenInput.value = allSingerNames;
 }   
+
+// if an option is checked, display the relevant options
+
+if (allSongsBtn.checked) {
+    selectAllSongs.style.display = 'block';
+    selectPlaylist.style.display = 'none';
+}
+
+if (onePlaylistBtn.checked) {
+    selectAllSongs.style.display = 'none';
+    selectPlaylist.style.display = 'block';
+}

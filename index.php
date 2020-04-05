@@ -125,21 +125,38 @@ try {
                 updateScore($memberId,$score,$songId,$round,$scoreOption);
             } else if ($action ==='insertChallengeInfo') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
-                $allSingers = isset($_POST['allSingers']) ? $_POST['allSingers'] : '';
+                echo $allSingers = isset($_POST['allSingers']) ? $_POST['allSingers'] : '';
                 $chalPlaylistOptions = isset($_POST['chalOptions']) ? $_POST['chalOptions'] : '';
                 $chalPlaylistId = isset($_POST['playlists']) ? $_POST['playlists'] : '';
                 $noOfSongs = isset($_POST['noOfSongs']) ? $_POST['noOfSongs'] : '';
                 $scoreOption = isset($_POST['scoreOption']) ? $_POST['scoreOption'] : '';
+                $_SESSION['allSingers'] = explode(',',$allSingers);
+                $_SESSION['chalPlaylistOptions'] =  $chalPlaylistOptions;
+                $_SESSION['chalPlaylistId'] = $chalPlaylistId;
+                $_SESSION['noOfSongs'] = $noOfSongs;
+                $_SESSION['scoreOption'] =  $scoreOption;
                 insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption);                 
+            } else if ($action ==='repeatChallenge'){
+                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
+                repeatChallenge($memberId);
             } else if ($action ==='endChallenge') {
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 $scoreOption = isset($_REQUEST['scoreOption']) ? $_REQUEST['scoreOption'] : '';
                 endChallenge($memberId,$scoreOption);
             } else if ($action ==='deleteChallenge') {
-                // clear the results
+                unset($_SESSION['allSingers']);
+                unset($_SESSION['chalPlaylistOptions']);
+                unset($_SESSION['$chalPlaylistId']);
+                unset($_SESSION['noOfSongs']);
+                unset($_SESSION['scoreOption']);
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 deleteChallenge($memberId); 
             } else if ( $action === "newChallenge"){
+                unset($_SESSION['allSingers']);
+                unset($_SESSION['chalPlaylistOptions']);
+                unset($_SESSION['$chalPlaylistId']);
+                unset($_SESSION['noOfSongs']);
+                unset($_SESSION['scoreOption']);
                 $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 newChallenge($memberId); 
             }

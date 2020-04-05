@@ -199,6 +199,10 @@
         require("view/home.php");
     }
 
+    function repeatChallenge($memberId) { 
+       newChallenge($memberId);
+    }
+
     function showProfile($memberId,$userName) {
         $profileManager = new MemberManager();
         $currentProfile = $profileManager->getMember($userName);
