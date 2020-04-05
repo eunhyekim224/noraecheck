@@ -148,6 +148,11 @@
     function showChallenge($memberId) {
         $playlistManager = new PlaylistManager();
         $playlists = $playlistManager->getAllPlaylists($memberId);
+        for ($i = 0;$i < count($playlists); $i++){
+            if($playlists[$i]['songCount'] == 0){
+                unset($playlists[$i]);
+            }
+        }
         $displayMode = 'challengeSetUp';
         require("view/home.php");
     }
@@ -183,6 +188,11 @@
         $deleteChallenge->deleteChallenge($memberId);
         $playlistManager = new PlaylistManager();
         $playlists = $playlistManager->getAllPlaylists($memberId);
+        for ($i = 0;$i < count($playlists); $i++){
+            if($playlists[$i]['songCount'] == 0){
+                unset($playlists[$i]);
+            }
+        }
         $displayMode = 'challengeSetUp';
         require("view/home.php");
     }
