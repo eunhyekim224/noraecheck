@@ -1,0 +1,239 @@
+/**********************************/
+
+
+/*********Desktop Managment*********/
+
+
+/**********************************/
+
+@media all and (min-width: 950px) and (max-width: 1200px) {
+    .myListIcons {
+        width: 12%;
+    }
+    /* create playlist MODAL */
+    .modalContent {
+        width: 84%;
+        height: 30%;
+        display: flex;
+        margin-top: 35%;
+        font-size: 2.5em;
+    }
+    .modalButtons {
+        padding: 3% 0 3% 0;
+        display: flex;
+        justify-content: center;
+    }
+    .modalButtons input {
+        width: 25%;
+        font-size: 0.75em;
+    }
+    input.question {
+        font-size: 1em;
+    }
+    input.question:focus {
+        padding-top: 25px;
+    }
+    input.question+label>span {
+        font-size: 0.65em;
+        top: -65px;
+        left: -12px;
+    }
+    input.question:focus+label>span {
+        font-size: 0.7em;
+        top: -90px;
+        left: -15px;
+    }
+    /* nav */
+    #menuIcons li {
+        width: 15%;
+    }
+}
+
+
+/* tiny screen */
+
+@media all and (max-height: 600px) {
+    /* #mainOptions{
+        height:40%;
+    } */
+    #mainOptions div input,
+    #editPlaylist,
+    #deletePlaylist {
+        height: 50px;
+    }
+    #mainPlaylist {
+        height: 30%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #mainPlaylistInfo p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    #mainPlaylist img {
+        height: 40%;
+        width: 5%
+    }
+    #mySongList {
+        height: 60%;
+    }
+    #songsInOnePlaylist p {
+        margin-top: .75em;
+        margin-bottom: .75em;
+    }
+    /* challenge_in_progress */
+    #challengeInProgress {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    #challengeSong {
+        width: 60%;
+    }
+    #challengeUser {
+        flex-direction: row;
+        border: none;
+        width: 40%;
+    }
+    #challengeUser span {
+        margin-left: 10%;
+    }
+    #challengeUser p {
+        margin-left: 15%;
+    }
+    #challengeSong img {
+        display: none;
+    }
+    #mainSongInfo {
+        padding-left: 5%;
+        width: 70%;
+    }
+    .challengeCode {
+        width: 30% !important;
+    }
+    #scoreEnterDiv {
+        height: 80%;
+        cursor: pointer;
+    }
+    .addScoreImg {
+        width: 80%;
+    }
+    .addScoreText {
+        font-size: 5vh;
+        margin-top: 20%;
+    }
+    #challengeRoundForm {
+        width: 100%;
+    }
+    #challengeBtns {
+        align-self: center;
+    }
+}
+
+@media all and (max-height: 550px) {
+    /* create playlist MODAL */
+    .modalButtons {
+        padding: 1% 0 1% 0;
+        display: flex;
+        justify-content: center;
+    }
+    .addSongToNewPlaylistButton {
+        height: 5%;
+    }
+    #searchResults {
+        height: 70%;
+    }
+    .myList {
+        height: 70%;
+    }
+    #mySongList {
+        height: 60%;
+    }
+    #newPlaylistBtn {
+        width: 70% !important;
+    }
+    #menuIcons li {
+        height: 30%;
+    }
+    #mainOptions div input,
+    #editPlaylist,
+    #deletePlaylist {
+        margin: .5%
+    }
+    #songsInOnePlaylist p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+@media all and (min-device-width: 1504px) {
+    .songImg {
+        background-color: rgb(238, 238, 238);
+        width: 10%;
+        height: 10%;
+        border-radius: 10px;
+        margin: 0;
+        padding: 0 1% 0 0;
+    }
+    #searchNewPlaylist input {
+        width: 77%;
+    }
+    #topHeader {
+        padding-bottom: .2%;
+    }
+    #topMenu {
+        font-size: 2vh;
+    }
+    #user {
+        display: flex;
+        justify-content: flex-end;
+    }
+    #iconProf {
+        width: 6%;
+    }
+
+    #challengeUser {
+        height: 177px;
+        justify-content: center;
+    }
+
+    #challengeSong #mainPlaylistImg {
+        width: 16%;
+    }
+
+    #scoreEnterDiv {
+        width: 20%;
+    }
+}
+
+
+/* responsive for challengeSetUp */
+
+@media all and (min-width: 1051px) and (max-width: 1355px) {
+    #singerInput input {
+        width: 70%;
+    }
+    #selectAllSongs input {
+        width: 9%;
+        height: 63%;
+    }
+}
+
+@media all and (min-width: 429px) and (max-width: 1050px) {
+    #singerInput input {
+        width: 55%;
+    }
+    #challengeSongs h1 {
+        font-size: 1.5em;
+    }
+    #selectAllSongs input {
+        width: 9%;
+        height: 63%;
+    }
+    #challengeSingers label {
+        font-size: 1em;
+    }
+    #challengeSongs h1 {
+        font-size: 1em;
+    }
+}
