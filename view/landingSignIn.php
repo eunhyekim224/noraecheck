@@ -11,11 +11,9 @@
                         <input name="username" type="text" name="username" id="username" maxlength="15" class="field__input a-field__input" placeholder="e.g. mr.trot101" required/>
                         <span class="a-field__label-wrap">
                             <label for="username" class="a-field__label">Username</label>
-                            <?php 
-                            if(isset($errors) AND isset($errors['username'])) {
-                                echo "<p class='error'>".$errors['username']."</p>";
-                            }        
-                            ?>                
+                            <?php if(isset($errors) AND isset($errors['username'])): ?>
+                                <p class='error'><?= $errors['username']; ?></p>       
+                            <?php endif; ?>                
                         </span>
                     </label>
                 </p>
@@ -24,11 +22,9 @@
                         <input type="password" name="password" id="password" class="field__input a-field__input" placeholder="at least 8 characters" required />
                         <span class="a-field__label-wrap">
                             <label for="password" class="a-field__label">Password</label>
-                            <?php 
-                            if(isset($errors) AND isset($errors['password'])) {
-                                echo "<p class='error'>".$errors['password']."</p>";
-                            }
-                            ?>
+                            <?php if(isset($errors) AND isset($errors['password'])): ?>
+                                <p class='error'><?= $errors['password']; ?></p>
+                            <?php endif; ?>
                         </span>
                     </label>
                 </p>

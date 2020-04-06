@@ -27,7 +27,6 @@
                 </div>
                 <div id="selectPlaylist">
                     <select name="playlists" id="playlists">
-                        <option value="0">Select a playlist...</option>
                         <?php foreach ($playlists as $playlist): ?>
                             <option value="<?= $playlist['playlistId']; ?>"><?=$playlist['playlistName']; ?></option>
                         <?php endforeach; ?>
@@ -39,8 +38,9 @@
                 </div>
             </div>
             <div id="scoreOptionWrapper">
-                <label for="scoreOption">Enter the scores</label>
+                <div>Enter the scores</div>
                 <input type="checkbox" name="scoreOption" id="scoreOption">
+                <label for="scoreOption"></label>
             </div>
             <div id="startBtn">
                 <input type="submit" name="startChalBtn" value="START" class="btn" id="startChalBtn">

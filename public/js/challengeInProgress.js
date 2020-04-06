@@ -8,7 +8,7 @@ let scoreMode = document.getElementById('scoreMode').value;
 
 const changeScoreDiv = document.getElementById('scoreEnterDiv');
 
-console.log(numOfRounds);
+
 
 
 if(!scoreMode){
@@ -62,7 +62,6 @@ finalExit.addEventListener('click', function() {
 
 
 //change form on click
-
 
 
 //view1
