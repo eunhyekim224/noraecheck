@@ -144,6 +144,24 @@ padding-bottom: 0;
     .navIcons {
         width: 40%;
     }
+    /* profile page */
+    
+    .editProfileBlock {
+        flex-direction: column;
+        align-items: center;        
+    }
+    .profileContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #profilelastP {
+        flex-direction: column;
+        align-items: center;
+    }
+    #profilelastP .btn {
+        width: 100%;
+    }
     /*_____ search page media queries_____ */
     .searchOptions {
         width: 20%;
