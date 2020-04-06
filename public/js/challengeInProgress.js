@@ -8,8 +8,6 @@ let scoreMode = document.getElementById('scoreMode').value;
 
 const changeScoreDiv = document.getElementById('scoreEnterDiv');
 
-console.log(numOfRounds);
-
 
 
 
