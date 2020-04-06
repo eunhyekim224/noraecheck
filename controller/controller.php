@@ -294,16 +294,27 @@
         } else{
             $playlistsDb = $playlistManager->getAllPlaylists($memberId);
         }
+
+        if (empty($playlistsDb)) {
+            header('Location:index.php?action=showChallenge');
+            return;
+        }
         
         foreach ($playlistsDb as $playlists) {
             array_push($playlistsArray, $playlists['playlistId']);
         }
 
         $songsArray = array();
+
         $songManager = new SongManager();
         $songsDb = array();
         for ($i=0, $c=count($playlistsArray); $i<$c; $i++) {
             $songsDb = array_merge($songsDb, $songManager->getSongs($playlistsArray[$i]));
+        }
+
+        if (empty($songsDb)) {
+            header('Location:index.php?action=showChallenge');
+            return;
         }
 
         foreach ($songsDb as $song) {
