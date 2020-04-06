@@ -13,11 +13,9 @@
                     <input type="text" name="loginNew" id="loginNew" maxlength="15" class="field__input a-field__input" placeholder="e.g. mrs.trot102" required/>
                     <span class="a-field__label-wrap">
                         <label id="loginland" for="loginNew" class="a-field__label">Login</label>
-                        <?php 
-                        if(isset($errors) AND isset($errors['loginNew'])) {
-                           echo "<p class='error'>".$errors['loginNew']."</p>";
-                        }        
-                        ?>    
+                        <?php if(isset($errors) AND isset($errors['loginNew'])): ?>
+                           <p class='error'><?= $errors['loginNew']; ?></p>      
+                        <?php endif; ?>    
                     </span>
                 </label>
             </p>
@@ -26,11 +24,9 @@
                     <input type="text" name="email" id="email" class="field__input a-field__input" placeholder="e.g. karaokelife@mail" required/>
                         <span class="a-field__label-wrap">
                             <label id="emailland" type="email" class="a-field__label">Email</label>
-                            <?php 
-                            if(isset($errors) AND isset($errors['email'])) {
-                                echo "<p class='error'>".$errors['email']."</p>";
-                            }        
-                            ?>   
+                            <?php if(isset($errors) AND isset($errors['email'])): ?>
+                                <p class='error'><?= $errors['email']; ?></p>      
+                            <?php endif; ?>   
                         </span>
                 </label>
             </p>
@@ -39,11 +35,9 @@
                     <input type="password" name="pwd" id="pwd" class="field__input a-field__input" placeholder="at lease 8 characters" required/>
                         <span class="a-field__label-wrap">
                             <label id="pwdland" for="pwd" class="a-field__label">Password</label>
-                            <?php 
-                            if(isset($errors) AND isset($errors['pwd'])) {
-                                echo "<p class='error'>".$errors['pwd']."</p>";
-                            }        
-                            ?>  
+                            <?php if(isset($errors) AND isset($errors['pwd'])): ?> 
+                                <p class='error'><?= $errors['pwd']; ?></p>       
+                            <?php endif; ?>  
                         </span>
                 </label>
             </p>
@@ -52,11 +46,9 @@
                     <input type="password" name="pwdConf" id="pwdConf" class="field__input a-field__input" placeholder="same password" required/>
                         <span class="a-field__label-wrap">
                             <label id="conpwdland" type="pwdConf" class="a-field__label">Confirm Password</label>
-                            <?php 
-                            if(isset($errors) AND isset($errors['pwdConf'])) {
-                                echo "<p class='error'>".$errors['pwdConf']."</p>";
-                            }        
-                            ?>  
+                            <?php if(isset($errors) AND isset($errors['pwdConf'])): ?>
+                                <p class='error'><?= $errors['pwdConf']; ?></p>   
+                            <?php endif; ?>  
                         </span>
                 </label>
             </p>

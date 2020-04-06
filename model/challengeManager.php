@@ -65,7 +65,7 @@
         
         // display score of singer on the scoreboard
         public function endChallenge($memberId) {
-            $end = $this->_db->prepare("SELECT singer, ROUND(AVG(score),0) as winner_score FROM challenges WHERE memberId = :memberId GROUP BY singer ORDER BY winner_score DESC");
+            $end = $this->_db->prepare("SELECT singer, ROUND(AVG(score),0) as winner_score FROM challenges WHERE memberId = :memberId GROUP BY singer ORDER BY winner_score DESC LIMIT 0,3");
             $end->bindParam(':memberId', $memberId ,PDO::PARAM_INT);
             $end->execute();
             if(!$end) {
