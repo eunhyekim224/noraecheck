@@ -4,6 +4,8 @@
 <?php $noOfSongs = isset($_SESSION['noOfSongs']) ? $_SESSION['noOfSongs'] : ''; ?>
 <?php $scoreOption = isset( $_SESSION['scoreOption']) ? $_SESSION['scoreOption'] : ''; ?>
 
+
+
 <div id="challengeWrapper">
     <div id="challengeScndWrapper">
         <div id="singerFlex">
