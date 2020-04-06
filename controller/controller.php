@@ -207,14 +207,15 @@
 
         if($newUsername && $email && $oldPwd){
             if (password_verify($oldPwd, $currentProfile['password'])){
-                if(!$newUsernameConf && $currentProfile['username'] != $newUsername){
+                if(!$newUsernameConf && $currentProfile['username'] != $newUsernameConf['username']){
                     if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
                         if ($newPwd && $newpwdConf) {
                             if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$newPwd)) {
-                                if ($newUsername && $newPwd && $newpwdConf && $newPwd == $newpwdConf){
+                                if ($newPwd == $newpwdConf){
                                     $status = $memberManager->editMember($memberId,$email,$newUsername,$newPwd);
-                                    header("Location: index.php?success=1");
-                                } else if ($newPwd && $newpwdConf && $newPwd != $newpwdConf){
+                                    $_SESSION['username'] = $newUsername;
+                                    header("Location: index.php?action=showProfile");
+                                } else {
                                     $errors['pwdConf'] = 'password does not match';
                                 }
                             } else {
@@ -231,6 +232,28 @@
                     } else {
                         $errors['email'] = 'incorrect email'; 
                     }
+                } else if ($currentProfile['username'] == $newUsernameConf['username']) {
+                    if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
+                        if ($newPwd && $newpwdConf) {
+                            if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$newPwd)) {
+                                if ($newPwd == $newpwdConf){
+                                    $status = $memberManager->editMember($memberId,$email,$newUsername,$newPwd);
+                                    header("Location: index.php?success=1");
+                                } else {
+                                    $errors['pwdConf'] = 'password does not match';
+                                }
+                            } else {
+                                $errors['pwd'] = 'please include 8 characters, upper/lower case letters, and digits';
+                            }   
+                        } else {
+                            $status = $memberManager->editMember($memberId,$email,$newUsername,$oldPwd);
+                            $_SESSION['username'] = $newUsername;
+                            // $errors['context'] = '';
+                            // $displayMode = 'profile';
+                            // require("view/home.php");
+                            header("Location: index.php?action=showProfile");
+                        }   
+                    }        
                 } else{
                     $errors['loginNew'] = 'username taken'; 
                 }
