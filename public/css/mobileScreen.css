@@ -50,6 +50,7 @@
         width: 95%;
         /* box-shadow: -60px 0 120px rgb(240, 240, 240) inset; */
         box-shadow: -60px 0 120px rgb(206, 206, 206) inset;
+        width: 100%;
     }
     #mainContent h1 {
         font-size: 2.5em;
@@ -144,6 +145,24 @@ padding-bottom: 0;
     .navIcons {
         width: 40%;
     }
+    /* profile page */
+    
+    .editProfileBlock {
+        flex-direction: column;
+        align-items: center;        
+    }
+    .profileContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #profilelastP {
+        flex-direction: column;
+        align-items: center;
+    }
+    #profilelastP .btn {
+        width: 100%;
+    }
     /*_____ search page media queries_____ */
     .searchOptions {
         width: 20%;
@@ -206,6 +225,7 @@ padding-bottom: 0;
     #singerFlex,
     #songsAndScoreFlex {
         width: auto;
+        height: auto;
     }
     #songsAndScoreFlex {
         height: 46%;
@@ -221,18 +241,28 @@ padding-bottom: 0;
         font-size: 1.5em;
     }
     #chalPlaylistOptionsBtns {
-        height: 80%;
+        height: 100px;
+        padding-bottom: 120px;
     }
     #chalPlaylistOptionsBtns label {
-        height: 60%;
+       font-size: 1em;
+       height: 30px;
+    }
+
+    #selectPlaylist, #selectAllSongs {
+        width: 100%;
+        /* padding-bottom: 150px; */
+    }
+    #selectPlaylist {
+        margin-top: 0;
     }
     #selectAllSongs {
-        margin-top: 6%;
+        /* margin-top: 6%; */
         font-size: 0.9em;
     }
     #scoreOptionWrapper {
-        margin-top: 42%;
-        margin-bottom: 5%;
+        margin-top: 48%;
+        margin-bottom: 25%;
     }
     #startChalBtn {
         font-size: 1.2em;
