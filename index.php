@@ -11,10 +11,9 @@ try {
             } else if ($action === 'showMySongs') {
                 $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';
                 showSongs($playlistId); 
-            }
-            else if ($action === 'logout') {
+            } else if ($action === 'logout') {
                 logout(); 
-            }  else if ($action === 'register') {
+            } else if ($action === 'register') {
                 $username = isset($_POST['loginNew']) ? $_POST['loginNew'] : '';
                 $pass1 = isset($_POST['pwd']) ? $_POST['pwd'] : '';
                 $pass2 = isset($_POST['pwdConf']) ? $_POST['pwdConf'] : '';
@@ -103,12 +102,12 @@ try {
                 search($memberId,$searchCache,$categoryCache);     
             } else if ($action === 'showChallenge') {
                 showChallenge($memberId);
-            }else if ($action === 'challengeInProgress') {
+            } else if ($action === 'challengeInProgress') {
                 $round = isset($_REQUEST['round']) ? $_REQUEST['round'] : '0';
                 $scoreOption = isset($_REQUEST['scoreOption']) ? $_REQUEST['scoreOption'] : '';
                 $score = isset($_REQUEST['score']) ? $_REQUEST['score'] : '';
                 challengeInProgress($memberId,$round,$scoreOption,$score);
-            }else if ($action === 'updateScore') {
+            } else if ($action === 'updateScore') {
                 $score = isset($_REQUEST['newScore']) ? $_REQUEST['newScore'] : '';
                 $songId = isset($_REQUEST['songIdToUpdate']) ? $_REQUEST['songIdToUpdate'] : '';
                 $round = isset($_REQUEST['round']) ? $_REQUEST['round'] : '';

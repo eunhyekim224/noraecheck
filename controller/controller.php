@@ -291,7 +291,7 @@
         if ($chalPlaylistOptions === 'onePlaylist') {
             $playlistsDb = array();
             array_push ($playlistsDb, $playlistManager->getMainPlaylist($chalPlaylistId));
-        } else{
+        } else {
             $playlistsDb = $playlistManager->getAllPlaylists($memberId);
         }
 
