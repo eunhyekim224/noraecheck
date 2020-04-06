@@ -52,6 +52,11 @@ a {
     margin-left: 50%;
 }
 
+#user{
+    display:flex;
+    justify-content: flex-end;
+}
+
 #lang {
     margin-right: 20%;
 }
@@ -1727,6 +1732,8 @@ button:hover {
     justify-content: center;
     /* position: absolute; */
 }
+
+
 
 
 /* endChallenge css end */

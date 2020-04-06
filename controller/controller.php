@@ -19,7 +19,7 @@
         if($username AND $password AND $passwordConf AND $email){
            
             if(!$usernameInUse){
-                if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
+                if(preg_match("#^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,6}$#",$email)){
                     if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$password)) {
                         if ($username AND $password == $passwordConf){
                             $status = $memberManager->addMember($email,$username,$password);
@@ -243,7 +243,7 @@
                         $errors['email'] = 'incorrect email'; 
                     }
                 } else if ($currentProfile['username'] == $newUsernameConf['username']) {
-                    if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$#",$email)){
+                    if(preg_match("#^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-z]{2,6}$#",$email)){
                         if ($newPwd && $newpwdConf) {
                             if(preg_match("#^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$#",$newPwd)) {
                                 if ($newPwd == $newpwdConf){
