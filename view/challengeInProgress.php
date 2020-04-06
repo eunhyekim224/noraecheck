@@ -1,5 +1,3 @@
-<?php 
-?>
 <div id="challengeInProgress">
     <div id="challengeUser">
         <span><?=$getChallenge[$round]['player']?></span>

@@ -27,7 +27,6 @@
                 </div>
                 <div id="selectPlaylist">
                     <select name="playlists" id="playlists">
-                        <option value="0">Select a playlist...</option>
                         <?php foreach ($playlists as $playlist): ?>
                             <option value="<?= $playlist['playlistId']; ?>"><?=$playlist['playlistName']; ?></option>
                         <?php endforeach; ?>

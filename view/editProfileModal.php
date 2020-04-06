@@ -3,11 +3,9 @@
         <p class="profileformP">
             <label id="pwdProfile" for="oldPwd">Password to verify</label>
             <input type="password" name="oldPwd" id="oldPwd"/>  
-            <?php 
-            if(isset($errors) AND isset($errors['oldPwdConf'])) {
-                echo "<div class='error'>".$errors['oldPwdConf']."</div>";
-            }        
-            ?>  
+            <?php if(isset($errors) AND isset($errors['oldPwdConf'])): ?>
+                <div class='error'><?= $errors['oldPwdConf']; ?></div>      
+            <?php endif; ?>  
         </p>
         <div class="editProfileBtns">
             <input type="submit" name="edit" value="OK" class="btn btnBlue">
