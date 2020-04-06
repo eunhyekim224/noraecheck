@@ -1700,6 +1700,7 @@ button:hover {
     margin: 0 0 10px 0;
     text-transform: uppercase;
     text-decoration: none;
+    border: none;
 }
 
 .btnEnd {
