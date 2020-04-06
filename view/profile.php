@@ -1,5 +1,5 @@
 <?php if ($currentProfile) { ?>
-<div id="profileMainWrappe">
+<div id="profileMainWrapper">
     <form  id="editProfileForm" action="index.php" method="POST">
         <?php
         if(isset($errors) AND isset($errors['blanks'])) {
