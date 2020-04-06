@@ -34,10 +34,12 @@ function setDisplayModals(elt) {
         const editProfileMod = document.querySelector('.modal');
         if (e.target == cancelEditButton[0] || e.target == editProfileModal) {
             hideModal(editProfileMod);
-            errors = document.querySelectorAll("div .error");
-            for (let i = 0; i < errors.length; i++) {
-                errors[i].style.display = "none";
-            }
+            errors = document.querySelector(" .modal div .error");
+            errors.style.display = "none";
+            // errors = document.querySelectorAll("div .error");
+            // for (let i = 0; i < errors.length; i++) {
+            //     errors[i].style.display = "none";
+            // }
         }
     });
 }
