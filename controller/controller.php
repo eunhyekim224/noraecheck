@@ -185,7 +185,7 @@
         header('Location: index.php?action=showMyList');
     }
      
-    function newChallenge ($memberId) {
+    function newChallenge($memberId) {
         $deleteChallenge = new ChallengeManager();
         $deleteChallenge->deleteChallenge($memberId);
         $playlistManager = new PlaylistManager();
@@ -200,7 +200,7 @@
     }
 
     function repeatChallenge($memberId) { 
-       newChallenge($memberId);
+        newChallenge($memberId);
     }
 
     function showProfile($memberId,$userName) {

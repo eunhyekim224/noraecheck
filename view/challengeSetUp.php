@@ -1,3 +1,4 @@
+<?php $allSingers = isset($_SESSION['allSingers']) ? $_SESSION['allSingers'] : ''; ?>
 <div id="challengeWrapper">
     <div id="challengeScndWrapper">
         <div id="singerFlex">
@@ -13,11 +14,13 @@
                         <input type="button" id="deleteSinger" name="deleteSinger"/>
                     </li>
                     <?php if ($allSingers && $allSingers !== ''): ?>
-                        <li data-singer>
-                            <?= $allSingers[$i];?>
-                            <input type="button" id="deleteSinger" name="deleteSinger"/>
-                        </li>
-                    <?php endif; ?>
+                        <?php for($i=1, $c=count($allSingers); $i<$c; $i++): ?>
+                            <li>
+                                <?= $allSingers[$i];?>
+                                <input type="button" id="deleteSinger" name="deleteSinger"/>
+                            </li>
+                        <?php endfor; ?>
+                    <?php endif; ?>            
                 </ul>
             </div>
         </div>
@@ -35,21 +38,13 @@
                 <div id="selectPlaylist">
                     <select name="playlists" id="playlists">
                         <?php foreach ($playlists as $playlist): ?>
-                            <?php if ($playlist['playlistId'] == $chalPlaylistId): ?> 
-                                <option selected value="<?= $playlist['playlistId']; ?>"><?=$playlist['playlistName']; ?></option>
-                                <?php else: ?>
-                                <option value="<?= $playlist['playlistId']; ?>"><?=$playlist['playlistName']; ?></option>
-                            <?php endif; ?>
+                            <option value="<?= $playlist['playlistId']; ?>"><?=$playlist['playlistName']; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
                 <div id="selectAllSongs">
                     <label for="noOfSongs">How many songs would you like to sing?</label>
-                    <?php if ($noOfSongs): ?>
-                        <input type="number" name="noOfSongs" id="noOfSongs" min="1" max="50" value=<?= $noOfSongs; ?>>
-                        <?php else: ?>
-                        <input type="number" name="noOfSongs" id="noOfSongs" min="1" max="50">
-                    <?php endif; ?>
+                    <input type="number" name="noOfSongs" id="noOfSongs" min="1" max="50">
                 </div>
             </div>
             <div id="scoreOptionWrapper">

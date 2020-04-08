@@ -69,7 +69,7 @@
             $end->bindParam(':memberId', $memberId ,PDO::PARAM_INT);
             $end->execute();
             if(!$end) {
-                throw new PDOException('Unable get score for singer(s)!');
+                throw new PDOException('Unable to get score for singer(s)!');
             }
             $result = $end->fetchAll();
             return $result;
@@ -84,4 +84,14 @@
             }
         }
     
+        public function getChallengeSingers($memberId) {
+            $getSingers = $this->_db->prepare("SELECT singer FROM challenges WHERE memberId = :memberId");
+            $getSingers->bindParam(':memberId', $memberId ,PDO::PARAM_INT);
+            $getSingers->execute();
+            if(!$getSingers) {
+                throw new PDOException('Unable to retrieve the challenge singers');
+            }
+            $challengeSingers = $getSingers->fetchAll();
+            return $challengeSingers;
+        }
 }

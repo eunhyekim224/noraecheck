@@ -119,16 +119,18 @@ try {
                 $chalPlaylistId = isset($_POST['playlists']) ? $_POST['playlists'] : '';
                 $noOfSongs = isset($_POST['noOfSongs']) ? $_POST['noOfSongs'] : '';
                 $scoreOption = isset($_POST['scoreOption']) ? $_POST['scoreOption'] : '';
+                $_SESSION['allSingers'] = explode(',',$allSingers);
                 insertChallengeInfo($memberId,$allSingers,$chalPlaylistOptions,$chalPlaylistId,$noOfSongs,$scoreOption);                 
             } else if ($action ==='repeatChallenge'){
-                $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
                 repeatChallenge($memberId);
             } else if ($action ==='endChallenge') {
                 $scoreOption = isset($_REQUEST['scoreOption']) ? $_REQUEST['scoreOption'] : '';
                 endChallenge($memberId,$scoreOption);
             } else if ($action ==='deleteChallenge') {
+                unset($_SESSION['allSingers']);
                 deleteChallenge($memberId); 
             } else if ( $action === "newChallenge"){
+                unset($_SESSION['allSingers']);
                 newChallenge($memberId); 
             }
             else {
