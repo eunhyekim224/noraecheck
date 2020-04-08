@@ -22,7 +22,7 @@
                     </li>
                     <?php if ($allSingers && $allSingers !== ''): ?>
                         <?php for($i=1, $c=count($allSingers); $i<$c; $i++): ?>
-                            <li>
+                            <li data-singer>
                                 <?= $allSingers[$i];?>
                                 <input type="button" id="deleteSinger" name="deleteSinger"/>
                             </li>
