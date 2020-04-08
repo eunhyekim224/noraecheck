@@ -1,11 +1,3 @@
-<?php $allSingers = isset($_SESSION['allSingers']) ? $_SESSION['allSingers'] : ''; ?>
-<?php $chalPlaylistOptions = isset($_SESSION['chalPlaylistOptions']) ? $_SESSION['chalPlaylistOptions'] : ''; ?>
-<?php $chalPlaylistId = isset($_SESSION['chalPlaylistId']) ? $_SESSION['chalPlaylistId'] : ''; ?>
-<?php $noOfSongs = isset($_SESSION['noOfSongs']) ? $_SESSION['noOfSongs'] : ''; ?>
-<?php $scoreOption = isset( $_SESSION['scoreOption']) ? $_SESSION['scoreOption'] : ''; ?>
-
-
-
 <div id="challengeWrapper">
     <div id="challengeScndWrapper">
         <div id="singerFlex">
@@ -21,12 +13,10 @@
                         <input type="button" id="deleteSinger" name="deleteSinger"/>
                     </li>
                     <?php if ($allSingers && $allSingers !== ''): ?>
-                        <?php for($i=1, $c=count($allSingers); $i<$c; $i++): ?>
-                            <li data-singer>
-                                <?= $allSingers[$i];?>
-                                <input type="button" id="deleteSinger" name="deleteSinger"/>
-                            </li>
-                        <?php endfor; ?>
+                        <li data-singer>
+                            <?= $allSingers[$i];?>
+                            <input type="button" id="deleteSinger" name="deleteSinger"/>
+                        </li>
                     <?php endif; ?>
                 </ul>
             </div>
@@ -37,22 +27,10 @@
             <div id="challengeSongs">
                 <h1>Choose songs from...</h1>
                 <div id="chalPlaylistOptionsBtns">
-                    <?php if ($chalPlaylistOptions == 'onePlaylist'): ?>
-                        <input type="radio" checked id="onePlaylist" name="chalOptions" value="onePlaylist">
-                        <label for="onePlaylist" class="btn">One Playlist</label>
-                        <input type="radio" id="allPlaylists" name="chalOptions" value="allPlaylists">
-                        <label for="allPlaylists" class="btn" >All Playlists</label>
-                        <?php elseif ($chalPlaylistOptions == 'allPlaylists'): ?> 
-                        <input type="radio" id="onePlaylist" name="chalOptions" value="onePlaylist">
-                        <label for="onePlaylist" class="btn">One Playlist</label>
-                        <input type="radio" checked id="allPlaylists" name="chalOptions" value="allPlaylists">
-                        <label for="allPlaylists" class="btn" >All Playlists</label> 
-                        <?php else: ?>
-                        <input type="radio" checked id="onePlaylist" name="chalOptions" value="onePlaylist">
-                        <label for="onePlaylist" class="btn">One Playlist</label>
-                        <input type="radio" id="allPlaylists" name="chalOptions" value="allPlaylists">
-                        <label for="allPlaylists" class="btn" >All Playlists</label>
-                    <?php endif; ?>
+                    <input type="radio" checked id="onePlaylist" name="chalOptions" value="onePlaylist">
+                    <label for="onePlaylist" class="btn">One Playlist</label>
+                    <input type="radio" id="allPlaylists" name="chalOptions" value="allPlaylists">
+                    <label for="allPlaylists" class="btn" >All Playlists</label>
                 </div>
                 <div id="selectPlaylist">
                     <select name="playlists" id="playlists">
@@ -75,12 +53,9 @@
                 </div>
             </div>
             <div id="scoreOptionWrapper">
-                <label for="scoreOption">Enter the scores</label>
-                <?php if ($scoreOption === 'on'): ?>
-                    <input type="checkbox" checked name="scoreOption" id="scoreOption">
-                    <?php else: ?>
-                    <input type="checkbox" name="scoreOption" id="scoreOption">
-                <?php endif; ?>
+                <div>Enter the scores</div>
+                <input type="checkbox" name="scoreOption" id="scoreOption">
+                <label for="scoreOption"></label>
             </div>
             <div id="startBtn">
                 <input type="submit" name="startChalBtn" value="START" class="btn" id="startChalBtn">

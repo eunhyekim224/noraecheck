@@ -52,6 +52,11 @@ a {
     margin-left: 50%;
 }
 
+#user{
+    display:flex;
+    justify-content: flex-end;
+}
+
 #lang {
     margin-right: 20%;
 }
@@ -62,7 +67,6 @@ a {
 
 #topMenuDropDown {
     z-index: 1;
-    background-color: rgb(240, 240, 240);
     border-radius: 0 0 5px 5px;
     width: 5%;
     text-align: center;
@@ -1355,7 +1359,7 @@ label[for=playlistId] {
 
 #scoreOptionWrapper {
     display: flex;
-    margin: 15%;
+    margin: 20% 0 15% 0;
     font-size: 1.2em;
 }
 
@@ -1441,6 +1445,39 @@ label[for=playlistId] {
     padding: 20px;
     box-shadow: 3px 5px rgb(187, 186, 186);
     animation: clickMe 2s infinite;
+}
+
+#scoreOptionWrapper label {
+    background-color: #aaa;
+    /* background-color: rgb(206, 206, 206); */
+	border: 1px solid #fff;
+	border-radius: 20px;
+	position: relative;
+	width: 39px;
+	height: 21px;
+}
+
+#scoreOptionWrapper label::after {
+	content: ' ';
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 1.5px;
+	left: 1px;
+	transform: translateX(0);
+	transition: transform 0.3s linear;
+	width: 18px;
+	height: 18px;
+}
+#scoreOptionWrapper input:checked + label {
+    background-color: #84fab0;
+}
+
+#scoreOptionWrapper input {
+	visibility: hidden;
+}
+#scoreOptionWrapper input:checked + label::after {
+	transform: translateX(calc(100% + 0.5px));
 }
 
 @keyframes clickMe {
@@ -1663,6 +1700,7 @@ button:hover {
     margin: 0 0 10px 0;
     text-transform: uppercase;
     text-decoration: none;
+    border: none;
 }
 
 .btnEnd {
