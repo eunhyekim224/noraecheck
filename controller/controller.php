@@ -3,6 +3,7 @@
     require_once("./model/PlaylistManager.php");
     require_once("./model/SongManager.php");
     require_once("./model/challengeManager.php");
+    require_once("./model/KaraokeManager.php");
 
     function showLandingPage($error,$status) {
         require("view/landing.php");
@@ -345,6 +346,13 @@
             }
         }
         header("Location: index.php?action=challengeInProgress&scoreOption=".$scoreOption);
+    }
+
+    function getSongs($category, $entry) {
+        $karaokeManager = new KaraokeManager();
+        $tjSongs = $karaokeManager->getTjSongs($category, $entry);
+        $kySongs = $karaokeManager->getKySongs($category, $entry);
+        print_r($tjSongs + $kySongs);
     }
 
     function logout(){

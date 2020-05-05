@@ -1,12 +1,17 @@
 <?php
 session_start();
 require("./controller/controller.php");
+
 try {
     $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
     $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
     if(isset($_SESSION['memberId'])){
         if (isset($_REQUEST['action'])) {
-            if ($action === 'showMyList') {
+            if ($action === 'getSongs') {             
+                $category = isset($_GET['category']) ? $_GET['category'] : '';
+                $entry = isset($_GET['entry']) ? $_GET['entry'] : '';
+                getSongs($category, $entry);
+            } else if ($action === 'showMyList') {
                 showAllPlaylists($memberId); 
             } else if ($action === 'showMySongs') {
                 $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';

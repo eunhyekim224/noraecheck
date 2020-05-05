@@ -1,12 +1,13 @@
 function loadFile(entry, category) { //function takes inputs from these two variables
     var xhr = new XMLHttpRequest();
 
-    xhr.open('GET', `https://api.manana.kr/karaoke/${category}/${entry}.json`);
+    xhr.open('GET', `index.php?action=getSongs&category=${category}&entry=${entry}`);
 
     xhr.addEventListener('readystatechange', function() { //manage an asynchronous request in this function
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) { //if the file is loaded without error
-
-            obj = JSON.parse(xhr.response);
+            console.log(xhr.response);
+            let songs = xhr.response;
+            console.log('songs', songs);
 
             //make maps for the song+artist and code
             let tjCodeMap = new Map();
@@ -14,30 +15,30 @@ function loadFile(entry, category) { //function takes inputs from these two vari
             //the array we'll return
             let arrayToReturn = [];
 
-            for (let i = 0, c = obj.length; i < c; i++) {
-                if (obj[i].brand === 'tj') {
-                    let tjNameAndTitle = nameAndTitleCheck(obj[i].singer, obj[i].title, obj[i].brand);
+            for (let i = 0, c = songs.length; i < c; i++) {
+                if (songs[i].brand === 'tj') {
+                    let tjNameAndTitle = nameAndTitleCheck(songs[i].singer, songs[i].title, songs[i].brand);
 
                     tjNameAndTitle = tjNameAndTitle.toLowerCase().replace(/ /g, '');
-                    tjCodeMap.set(tjNameAndTitle, obj[i].no);
-                } else if (obj[i].brand === 'kumyoung') {
-                    let kumNameAndTitle = nameAndTitleCheck(obj[i].singer, obj[i].title, obj[i].brand);
+                    tjCodeMap.set(tjNameAndTitle, songs[i].no);
+                } else if (songs[i].brand === 'kumyoung') {
+                    let kumNameAndTitle = nameAndTitleCheck(songs[i].singer, songs[i].title, songs[i].brand);
 
                     kumNameAndTitle = kumNameAndTitle.toLowerCase().replace(/ /g, '');
-                    kumyoungCodeMap.set(kumNameAndTitle, obj[i].no);
+                    kumyoungCodeMap.set(kumNameAndTitle, songs[i].no);
                 }
 
             }
-            for (let i = 0, c = obj.length; i < c; i++) {
-                if (obj[i].brand === 'tj' || obj[i].brand === 'kumyoung') {
+            for (let i = 0, c = songs.length; i < c; i++) {
+                if (songs[i].brand === 'tj' || songs[i].brand === 'kumyoung') {
 
-                    let songKey = nameAndTitleCheck(obj[i].singer, obj[i].title, obj[i].brand);
+                    let songKey = nameAndTitleCheck(songs[i].singer, songs[i].title, songs[i].brand);
                     songKey = songKey.toLowerCase().replace(/ /g, '');
 
                     if (tjCodeMap.has(songKey) && kumyoungCodeMap.has(songKey)) {
                         let songEntry = {
-                            singer: obj[i].singer,
-                            song: obj[i].title,
+                            singer: songs[i].singer,
+                            song: songs[i].title,
                             tj_code: tjCodeMap.get(songKey),
                             kumyoung_code: kumyoungCodeMap.get(songKey)
                         };
@@ -47,8 +48,8 @@ function loadFile(entry, category) { //function takes inputs from these two vari
 
                     } else if (tjCodeMap.has(songKey)) {
                         let songEntry = {
-                            singer: obj[i].singer,
-                            song: obj[i].title,
+                            singer: songs[i].singer,
+                            song: songs[i].title,
                             tj_code: tjCodeMap.get(songKey)
                         };
                         arrayToReturn.push(songEntry);
@@ -56,8 +57,8 @@ function loadFile(entry, category) { //function takes inputs from these two vari
 
                     } else if (kumyoungCodeMap.has(songKey)) {
                         let songEntry = {
-                            singer: obj[i].singer,
-                            song: obj[i].title,
+                            singer: songs[i].singer,
+                            song: songs[i].title,
                             kumyoung_code: kumyoungCodeMap.get(songKey)
                         };
                         arrayToReturn.push(songEntry);

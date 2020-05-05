@@ -1,9 +1,9 @@
 let searchOptions = document.getElementById('searchOptions');
-let searchOptionIndex = 'song';
+let searchOptionIndex = 'title';
 
-let song = document.getElementById('song');
-let singer = document.getElementById('singer');
-let no = document.getElementById('no');
+let song = document.getElementById('title');
+let singer = document.getElementById('artist');
+let no = document.getElementById('id');
 let entry = document.getElementById('entry');
 let category = document.getElementById('category');
 
@@ -17,28 +17,28 @@ function switchOptionsDisplay(index) {
     no.classList.remove("searchOptionSelected");
 
     switch (index) {
-        case 'song':
+        case 'title':
             singer.classList.add("hidden");
             no.classList.add("hidden");
             searchOptions.classList.remove('searchOptionsExpanded');
-            category.value = "song";
+            category.value = "title";
             entry.classList.remove("compactEntry");
             break;
-        case 'singer':
+        case 'artist':
             singer.classList.remove("hidden");
             song.classList.add("hidden");
             no.classList.add("hidden");
             entry.classList.remove("compactEntry");
             searchOptions.classList.remove('searchOptionsExpanded');
-            category.value = "singer";
+            category.value = "artist";
 
             break;
-        case 'no':
+        case 'id':
             song.classList.add("hidden");
             singer.classList.add("hidden");
             entry.classList.remove("compactEntry");
             searchOptions.classList.remove('searchOptionsExpanded');
-            category.value = "no";
+            category.value = "id";
 
 
             break;
@@ -55,14 +55,14 @@ function switchOptionsDisplay(index) {
             searchOptions.classList.add('searchOptionsExpanded');
             entry.classList.add("compactEntry");
             switch (category.value) {
-                case 'song':
+                case 'title':
                     song.classList.add("searchOptionSelected");
                     break;
 
-                case 'singer':
+                case 'artist':
                     singer.classList.add("searchOptionSelected");
                     break;
-                case 'no':
+                case 'id':
                     no.classList.add("searchOptionSelected");
                     break;
             }
@@ -74,34 +74,34 @@ function switchOptionsDisplay(index) {
 function switchOptions(index) {
 
     switch (index) {
-        case 'song':
-            category.value = "song";
+        case 'title':
+            category.value = "title";
             break;
-        case 'singer':
-            category.value = "singer";
+        case 'artist':
+            category.value = "artist";
             break;
-        case 'no':
-            category.value = "no";
+        case 'id':
+            category.value = "id";
             break;
     }
 
 }
 
 song.addEventListener('click', function() {
-    if (searchOptionIndex === 'song') {
+    if (searchOptionIndex === 'title') {
         searchOptionIndex = 'all';
     } else {
-        searchOptionIndex = 'song';
+        searchOptionIndex = 'title';
         entry.focus();
     }
     switchOptions(searchOptionIndex);
     switchOptionsDisplay(searchOptionIndex);
 });
 singer.addEventListener('click', function() {
-    if (searchOptionIndex === 'singer') {
+    if (searchOptionIndex === 'artist') {
         searchOptionIndex = 'all';
     } else {
-        searchOptionIndex = 'singer';
+        searchOptionIndex = 'artist';
         entry.focus();
     }
     switchOptions(searchOptionIndex);
@@ -109,10 +109,10 @@ singer.addEventListener('click', function() {
     autocorrect(entry.value, category.value);
 });
 no.addEventListener('click', function() {
-    if (searchOptionIndex === 'no') {
+    if (searchOptionIndex === 'id') {
         searchOptionIndex = 'all';
     } else {
-        searchOptionIndex = 'no';
+        searchOptionIndex = 'id';
         entry.focus();
     }
     switchOptions(searchOptionIndex);
