@@ -34,9 +34,9 @@
       public function getKySongs($category, $entry) {
         $kySongs = $this->_db->prepare('SELECT id, title, artist
                                        FROM songs_ky
-                                       WHERE artist = "Frank Sinatra"');
-        // $kySongs->bindParam(':category', $category, PDO::PARAM_STR);
-        // $kySongs->bindParam(':entry', $entry, PDO::PARAM_STR);
+                                       WHERE :category = :entry');
+        $kySongs->bindParam(':category', $category, PDO::PARAM_STR);
+        $kySongs->bindParam(':entry', $entry, PDO::PARAM_STR);
         $resp = $kySongs->execute();
         if(!$resp) {
           throw new PDOException('Unable to get KY songs');

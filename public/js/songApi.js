@@ -5,8 +5,8 @@ function loadFile(entry, category) { //function takes inputs from these two vari
 
     xhr.addEventListener('readystatechange', function() { //manage an asynchronous request in this function
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) { //if the file is loaded without error
-            console.log(xhr.response);
-            let songs = xhr.response;
+
+            let songs = JSON.parse(xhr.response);
             console.log('songs', songs);
 
             //make maps for the song+artist and code

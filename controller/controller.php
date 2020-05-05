@@ -351,8 +351,14 @@
     function getSongs($category, $entry) {
         $karaokeManager = new KaraokeManager();
         $tjSongs = $karaokeManager->getTjSongs($category, $entry);
-        $kySongs = $karaokeManager->getKySongs($category, $entry);
-        print_r($tjSongs + $kySongs);
+        $kySongs = $karaokeManager->getKySongs($category, $entry); 
+        if (count($tjSongs) > 0) {
+            for ($i=0; $i<count($tjSongs); $i++) {
+                array_push($kySongs, $tjSongs[$i]);
+            }
+        }
+        $jsonSongs = json_encode($kySongs);
+        print_r($jsonSongs);
     }
 
     function logout(){
