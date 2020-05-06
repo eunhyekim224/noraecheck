@@ -15,7 +15,8 @@ try {
                 showAllPlaylists($memberId); 
             } else if ($action === 'showMySongs') {
                 $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';
-                showSongs($playlistId); 
+                showSongs($playlistId);
+            } else if ($action === 'logout') { 
                 logout(); 
             } else if ($action === 'register') {
                 $username = isset($_POST['loginNew']) ? $_POST['loginNew'] : '';
