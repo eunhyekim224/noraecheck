@@ -356,7 +356,7 @@
             for ($i=0; $i<count($tjSongs); $i++) {
                 array_push($kySongs, $tjSongs[$i]);
             }
-        }
+        };
         $jsonSongs = json_encode($kySongs);
         print_r($jsonSongs);
     }

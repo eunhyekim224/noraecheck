@@ -8,10 +8,23 @@
       } 
 
       public function getTjSongs($category, $entry) {
-        $tjSongs = $this->_db->prepare('SELECT id, title, artist
+        switch($category) {
+          case 'title':
+            $tjSongs = $this->_db->prepare("SELECT id, title, artist
                                        FROM songs_tj
-                                       WHERE :category = :entry');
-        $tjSongs->bindParam(':category', $category, PDO::PARAM_STR);
+                                       WHERE title LIKE concat('%', :entry, '%')");
+            break;
+          case 'artist':
+            $tjSongs = $this->_db->prepare("SELECT id, title, artist
+                                       FROM songs_tj
+                                       WHERE artist LIKE concat('%', :entry, '%')");
+            break;
+          case 'id':
+            $tjSongs = $this->_db->prepare("SELECT id, title, artist
+                                       FROM songs_tj
+                                       WHERE id LIKE concat('%', :entry, '%')");
+        }
+    
         $tjSongs->bindParam(':entry', $entry, PDO::PARAM_STR);
         $resp = $tjSongs->execute();
         if(!$resp) {
@@ -32,10 +45,23 @@
       } 
 
       public function getKySongs($category, $entry) {
-        $kySongs = $this->_db->prepare('SELECT id, title, artist
+        switch($category) {
+          case 'title':
+            $kySongs = $this->_db->prepare("SELECT id, title, artist
                                        FROM songs_ky
-                                       WHERE :category = :entry');
-        $kySongs->bindParam(':category', $category, PDO::PARAM_STR);
+                                       WHERE title LIKE concat('%', :entry, '%')");
+            break;
+          case 'artist':
+            $kySongs = $this->_db->prepare("SELECT id, title, artist
+                                       FROM songs_ky
+                                       WHERE artist LIKE concat('%', :entry, '%')");
+            break;
+          case 'id':
+            $kySongs = $this->_db->prepare("SELECT id, title, artist
+                                       FROM songs_ky
+                                       WHERE id LIKE concat('%', :entry, '%')");
+        }
+
         $kySongs->bindParam(':entry', $entry, PDO::PARAM_STR);
         $resp = $kySongs->execute();
         if(!$resp) {

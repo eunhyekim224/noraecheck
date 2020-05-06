@@ -6,9 +6,9 @@ try {
     $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
     $memberId = isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '';
     if(isset($_SESSION['memberId'])){
-        if (isset($_REQUEST['action'])) {
-            if ($action === 'getSongs') {             
-                $category = isset($_GET['category']) ? $_GET['category'] : '';
+        if ($action) {       
+            if ($action === 'getSongs') {   
+                $category = isset($_GET['category']) ? $_GET['category'] : '';     
                 $entry = isset($_GET['entry']) ? $_GET['entry'] : '';
                 getSongs($category, $entry);
             } else if ($action === 'showMyList') {
@@ -16,7 +16,6 @@ try {
             } else if ($action === 'showMySongs') {
                 $playlistId = isset($_GET['playlistId']) ? $_GET['playlistId'] : '';
                 showSongs($playlistId); 
-            } else if ($action === 'logout') {
                 logout(); 
             } else if ($action === 'register') {
                 $username = isset($_POST['loginNew']) ? $_POST['loginNew'] : '';

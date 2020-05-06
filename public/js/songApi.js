@@ -5,10 +5,8 @@ function loadFile(entry, category) { //function takes inputs from these two vari
 
     xhr.addEventListener('readystatechange', function() { //manage an asynchronous request in this function
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) { //if the file is loaded without error
-
             let songs = JSON.parse(xhr.response);
-            console.log('songs', songs);
-
+        
             //make maps for the song+artist and code
             let tjCodeMap = new Map();
             let kumyoungCodeMap = new Map();
@@ -21,7 +19,7 @@ function loadFile(entry, category) { //function takes inputs from these two vari
 
                     tjNameAndTitle = tjNameAndTitle.toLowerCase().replace(/ /g, '');
                     tjCodeMap.set(tjNameAndTitle, songs[i].no);
-                } else if (songs[i].brand === 'kumyoung') {
+                } else if (songs[i].brand === 'ky') {
                     let kumNameAndTitle = nameAndTitleCheck(songs[i].singer, songs[i].title, songs[i].brand);
 
                     kumNameAndTitle = kumNameAndTitle.toLowerCase().replace(/ /g, '');
@@ -30,7 +28,7 @@ function loadFile(entry, category) { //function takes inputs from these two vari
 
             }
             for (let i = 0, c = songs.length; i < c; i++) {
-                if (songs[i].brand === 'tj' || songs[i].brand === 'kumyoung') {
+                if (songs[i].brand === 'tj' || songs[i].brand === 'ky') {
 
                     let songKey = nameAndTitleCheck(songs[i].singer, songs[i].title, songs[i].brand);
                     songKey = songKey.toLowerCase().replace(/ /g, '');
@@ -131,7 +129,7 @@ function nameAndTitleCheck(singer, title, brand) {
         } else {
             nameAndTitle = singer + title;
         }
-    } else if (brand === 'kumyoung') {
+    } else if (brand === 'ky') {
         if (test = /\w+ \(\w+.\w+ \w+\)/gi.test(title)) {
             regex = title.replace(/\(\w+.\w+ \w+\)/gi, '');
             nameAndTitle = singer + regex;
