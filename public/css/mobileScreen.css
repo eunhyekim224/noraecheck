@@ -25,7 +25,7 @@
         box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
         /* box-shadow: -60px 0 120px rgb(206, 206, 206) inset; */
         border-radius: 10px;
-        height: 15%;
+        height: 8%;
         position: absolute;
         top: 0;
         width: 100%;
@@ -34,7 +34,7 @@
         display: none;
     }
     #bannerImage {
-        width: 25%;
+        width: 14%;
         margin: 0;
         padding: 0 0 0 0;
     }
@@ -44,9 +44,9 @@
         padding-left: 0%;
     }
     #mainContent {
-        height: 70%;
+        height: 80%;
         position: absolute;
-        top: 17.5%;
+        top: 10.5%;
         width: 95%;
         /* box-shadow: -60px 0 120px rgb(240, 240, 240) inset; */
         box-shadow: -60px 0 120px rgb(206, 206, 206) inset;
@@ -222,6 +222,11 @@ padding-bottom: 0;
         flex-direction: column;
         align-items: center;
     }
+
+    #challengeSingers label {
+        padding: 9px;
+    }
+
     #singerFlex,
     #songsAndScoreFlex {
         width: auto;
@@ -231,7 +236,20 @@ padding-bottom: 0;
         height: 46%;
     }
     #singerInput {
-        width: 77%;
+        display: flex;
+        width: 80%;
+        align-items: center;
+    }
+    #singerInput #singerSubmit {
+        border: none;
+        border-radius: 10px;
+        height: 75%;
+        width: 12%;
+        padding-top: -11px;
+        vertical-align: top;
+        color: rgb(146, 143, 143);
+        box-shadow: 3px 5px rgb(187, 186, 186);
+        background: url('../images/plusIcon4.png') center/cover;
     }
     #listOfSingers {
         width: 280px;
@@ -242,7 +260,7 @@ padding-bottom: 0;
     }
     #chalPlaylistOptionsBtns {
         height: 100px;
-        padding-bottom: 120px;
+        padding-bottom: 100px;
     }
     #chalPlaylistOptionsBtns label {
        font-size: 1em;
@@ -261,8 +279,8 @@ padding-bottom: 0;
         font-size: 0.9em;
     }
     #scoreOptionWrapper {
-        margin-top: 48%;
-        margin-bottom: 25%;
+        margin-top: 80%;
+        margin-bottom: 20%;
     }
     #startChalBtn {
         font-size: 1.2em;
@@ -357,7 +375,7 @@ padding-bottom: 0;
     }
     .mainWrapper {
         border-radius: 0;
-        height: 100vh;
+        height: 94vh;
         margin: auto;
         width: auto;
         padding: 0px;
@@ -369,7 +387,7 @@ padding-bottom: 0;
         box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
         /* box-shadow: -60px 0 120px rgb(206, 206, 206) inset; */
         border-radius: 20px;
-        height: 15%;
+        height: 8%;
         position: absolute;
         top: 0;
         width: 100%;
@@ -378,7 +396,7 @@ padding-bottom: 0;
         display: none;
     }
     #bannerImage {
-        width: 23%;
+        width: 14%;
         margin: 0;
         padding: 0 0 0 0;
     }
@@ -388,12 +406,14 @@ padding-bottom: 0;
         padding-left: 0%;
     }
     #mainContent {
-        height: 70%;
+        height: 60%;
         position: absolute;
-        top: 17.5%;
+        top: 10.5%;
         width: 100%;
         /* box-shadow: -60px 0 120px rgb(240, 240, 240) inset; */
         box-shadow: -60px 0 120px rgb(206, 206, 206) inset;
+        overflow: scroll;
+        overflow-x: hidden;
     }
     #mainContent h1 {
         font-size: 3.5em;
@@ -535,6 +555,17 @@ padding-bottom: 0;
     #mainPlaylistImg {
         display: none;
     }
+    /* #singerInput #singerSubmit {
+        border: none;
+        border-radius: 10px;
+        height: 75%;
+        width: 12%;
+        padding-top: -11px;
+        vertical-align: top;
+        color: rgb(146, 143, 143);
+        box-shadow: 3px 5px rgb(187, 186, 186);
+        background: url('../images/plusIcon4.png') center/cover;
+    } */
 }
 
 @media all and (min-width: 500px) and (max-width: 640px) {
@@ -555,7 +586,7 @@ padding-bottom: 0;
         box-shadow: -60px 0 120px rgb(240, 240, 240) inset;
         /* box-shadow: -60px 0 120px rgb(206, 206, 206) inset; */
         border-radius: 10px;
-        height: 15%;
+        height: 8%;
         position: absolute;
         top: 0;
         width: 100%;
@@ -564,7 +595,7 @@ padding-bottom: 0;
         display: none;
     }
     #bannerImage {
-        width: 18%;
+        width: 14%;
         margin: 0;
         padding: 0 0 0 0;
     }
@@ -719,23 +750,18 @@ padding-bottom: 0;
     #mainPlaylistImg {
         display: none;
     }
+    /* #singerInput #singerSubmit {
+        border: none;
+        border-radius: 10px;
+        height: 75%;
+        width: 12%;
+        padding-top: -11px;
+        vertical-align: top;
+        color: rgb(146, 143, 143);
+        box-shadow: 3px 5px rgb(187, 186, 186);
+        background: url('../images/plusIcon4.png') center/cover;
+    } */
 }
-
-
-/* Galaxy S5 */
-
-/* @media all and (min-height: 568px) and (max-height: 636px) {
-    #singerInput {
-        width: 78%;
-    }
-    #songsAndScoreFlex {
-        font-size: 0.7em;
-    }
-    #listOfSingers {
-        height: 57px;
-    }
-} */
-
 
 @media all and (min-width: 320px) and (max-width: 1000px) {
     .modalContentEnd {
