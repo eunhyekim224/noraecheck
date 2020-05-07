@@ -18,11 +18,11 @@
     </div>
     
     <?php 
-    require("landingSignIn.php"); 
-    require("landingSignUp.php"); 
+    require($_SERVER['DOCUMENT_ROOT'] . "/view/landingSignIn.php"); 
+    require($_SERVER['DOCUMENT_ROOT'] . "/view/landingSignUp.php"); 
     ?>
 </div>
 
 <script src="./public/js/modalLanding.js"></script>
 <?php $content = ob_get_clean();?>
-<?php require('template.php');?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . "/view/template.php");?>

@@ -4,8 +4,8 @@ class Manager {
 
     CONST HOST = "localhost";
     CONST DBNAME = "noraecheck";
-    CONST LOGIN = "root";
-    CONST PWD = "";
+    CONST LOGIN = "noraecheck-web";
+    CONST PWD = "putYourRecordsOn1+";
     
     // constructor
     function __construct() {
