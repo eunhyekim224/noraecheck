@@ -264,6 +264,7 @@ a {
     margin-right: 3%;
     padding: 0.5%;
     border-radius: 10px;
+    width: 85px;
 }
 
 .myListIcons {
@@ -1320,7 +1321,7 @@ label[for=playlistId] {
     padding-left: 5%;
 }
 
-#singerInput button {
+#singerInput #singerSubmit {
     border: none;
     border-radius: 10px;
     height: 75%;

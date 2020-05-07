@@ -6,7 +6,7 @@
                 <label for="singer">Enter the singers</label>
                 <div id="singerInput">
                     <input type="text" name="singer" id="singer">
-                    <button type="button" id="singerSubmit" value="singerSubmit"></button>
+                    <input type="button" id="singerSubmit"></input>
                 </div>
                 <ul id="listOfSingers">
                     <li data-singer="<?= $_SESSION['username'];?>">

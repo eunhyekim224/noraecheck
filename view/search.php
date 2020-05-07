@@ -16,12 +16,12 @@
     <!-- include banner php file instead of header tag -->
     <div id='search' class="gothamPro">
         <div id="searchOptions" class="searchOptions">
-            <div class="searchOption" id="song" ><span>song</span></div>
-            <div class="searchOption hidden" id="singer"><span>artist</span></div>
-            <div class="searchOption hidden" id="no"><span>code</span></div>
+            <div class="searchOption" id="title" ><span>song</span></div>
+            <div class="searchOption hidden" id="artist"><span>artist</span></div>
+            <div class="searchOption hidden" id="id"><span>code</span></div>
         </div>
         <input type="text" name="entry" class = "entry"id="entry" size="30" maxlength="50" required/>
-        <input type="hidden" name="category" id="category" value="song">
+        <input type="hidden" name="category" id="category" value="title">
         <button type="reset"  id="resetSearch">cancel</button>
     </div>
     <script src="./public/js/searchBarDisplay.js"></script>
