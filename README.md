@@ -1,6 +1,4 @@
-# noraecheck v2.0
+# noraecheck
 
-An app for searching for karaoke songs and play singing challenges.
-
-Being extended and enhanced from my bootcamp group project legacy code.
+An app for searching for karaoke songs and play singing challenges
 
